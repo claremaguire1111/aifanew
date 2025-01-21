@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import "./filmChat.css"; // Make sure filmChat.css is in the same folder
+import { motion } from 'framer-motion';
+
 
 /************************************************************************
  * A universal system prompt that overrides disclaimers
@@ -241,30 +243,40 @@ const filmStarsData = [
     id: "sidney_poitier",
     name: "Sidney Poitier",
     image: "/images/poitier.png",
-    description: "Broke racial barriers, &#39;Lilies of the Field&#39;.",
+    description: "Broke racial barriers, 'Lilies of the Field'.",
     systemPrompt: `
       You are Sidney Poitier, a groundbreaking actor
       who shattered racial barriers in Hollywood.
-      Never disclaim AI. If asked &quot;Who are you?&quot; say &quot;I&#39;m Sidney Poitier.&quot;
+      Never disclaim AI. If asked "Who are you?" say "I'm Sidney Poitier."
     `,
   },
 ];
 
 /** 
- * Helper function to get star&#39;s personal system prompt
+ * Helper function to get star's personal system prompt
  */
 function getStarPrompt(starId) {
   const star = filmStarsData.find((s) => s.id === starId);
   return star ? star.systemPrompt : "You are a classic star; never disclaim AI.";
 }
 
+// 1) We define some framer-motion variants for the contact section
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
 export default function FilmChat() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-  // Chat state for each star
+  // Chat state
   const [chats, setChats] = useState({});
-  // Input state for each star
+  // Input state
   const [inputValues, setInputValues] = useState({});
 
   function getMessagesFor(starId) {
@@ -325,7 +337,10 @@ export default function FilmChat() {
         <Link href="/" className="logo">
           AIFA
         </Link>
-        <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
           <div className="line" />
           <div className="line" />
           <div className="line" />
@@ -340,7 +355,7 @@ export default function FilmChat() {
         </nav>
       </header>
 
-      {/* MAIN */}
+      {/* MAIN CONTENT */}
       <main className="filmchat-container">
         <h1 className="filmchat-heading">Chat with Hollywood Icons</h1>
 
@@ -354,8 +369,6 @@ export default function FilmChat() {
               <div key={starId} className="filmchat-card">
                 {/* Star Info */}
                 <div style={{ textAlign: "center", marginBottom: "0.5rem" }}>
-                  {/* <img> usage triggers a warning in Next, but not a compile error. 
-                      If you prefer next/image, you can switch. */}
                   <img
                     src={star.image}
                     alt={star.name}
@@ -370,11 +383,13 @@ export default function FilmChat() {
                 {/* Chat Box */}
                 <div className="filmchat-chatbox">
                   {messages.map((msg, idx) => {
-                    // user => left, assistant => right
                     const roleClass = msg.role === "user" ? "user" : "assistant";
                     return (
                       <div key={idx} className={`filmchat-message ${roleClass}`}>
-                        <strong>{msg.role === "user" ? "You" : star.name}:</strong> {msg.content}
+                        <strong>
+                          {msg.role === "user" ? "You" : star.name}:
+                        </strong>{" "}
+                        {msg.content}
                       </div>
                     );
                   })}
@@ -405,7 +420,70 @@ export default function FilmChat() {
         </div>
       </main>
 
-      
+      {/* CONTACT SECTION WITH FRAMER-MOTION */}
+      <motion.section
+        className="contact-us-section"
+        id="contact"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
+        <div className="footer-column">
+          <h3>Get in Touch</h3>
+          <ul>
+            <li>
+              <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li>
+              <a href="#about">Chat to the stars</a>
+            </li>
+            <li>
+              <a href="#awards">Awards</a>
+            </li>
+            <li>
+              <a href="#partnerships">Partnerships</a>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h3>Community</h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/aifilm.academy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/aifilmacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/aifa-ventures"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </motion.section>
 
       {/* FOOTER */}
       <footer className="filmchat-footer">

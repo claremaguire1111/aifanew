@@ -202,6 +202,8 @@
   flex-wrap: nowrap;
   box-sizing: border-box;
 }
+
+
 .contact-column {
   flex: 1;
   min-width: 200px;
@@ -262,6 +264,159 @@
     margin-bottom: 20px;
   }
 }
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 40px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 20px;
+  margin: 40px auto;
+  width: 80%;
+  position: relative;
+  z-index: 1;
+  box-shadow: none;
+}
+.footer-column {
+  flex: 1;
+  margin-right: 20px;
+  min-width: 200px;
+}
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+.footer-column a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.footer-column a:hover {
+  color: var(--red);
+}
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-subscribe input {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 2px solid var(--white);
+  background-color: transparent;
+  color: var(--white);
+  width: 100%;
+}
+.footer-subscribe button {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.footer-subscribe button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-column {
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------------------------
+   SIGNUP SECTION
+---------------------------- */
+.signup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 100px 80px;
+  overflow: hidden;
+  text-align: center;
+}
+.three-d-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* behind signup box */
+  background-image: url('/images/aifa-web-view.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.signup-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+.signup-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+  background-color: #333;
+  color: white;
+  text-align: left;
+}
+.signup-box button {
+  padding: 12px;
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+.signup-box button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
 
 /* FOOTER */
 .filmchat-footer {

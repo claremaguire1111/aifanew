@@ -1,3 +1,5 @@
+// app/film-chat/page.js
+
 "use client";
 
 import React, { useState } from "react";
@@ -267,7 +269,6 @@ export default function FilmChat() {
   // Input state for each star
   const [inputValues, setInputValues] = useState({});
 
-  // Helper to retrieve or set messages
   function getMessagesFor(starId) {
     return chats[starId] || [];
   }
@@ -281,7 +282,6 @@ export default function FilmChat() {
     setInputValues((prev) => ({ ...prev, [starId]: val }));
   }
 
-  // Sending the chat to your server endpoint
   async function sendMessage(starId) {
     const userText = getInputValueFor(starId).trim();
     if (!userText) return;

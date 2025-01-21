@@ -289,7 +289,7 @@ export default function HomePage() {
   viewport={{ once: true, amount: 0.3 }}
   variants={sectionVariants}
 >
-  <h1 className="services-heading parallax-image">Services</h1>
+  <h1 className="services-heading parallax-image">What we offer</h1>
   <div className="services-grid">
     
     {/* Education */}

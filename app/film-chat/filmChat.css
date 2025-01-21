@@ -183,6 +183,86 @@
   background-color: #c10812; /* slightly darker red on hover */
 }
 
+/* ---------------------------
+   CONTACT SECTION
+---------------------------- */
+.contact-us-section {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 5px solid var(--white);
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+.contact-column {
+  flex: 1;
+  min-width: 200px;
+}
+.contact-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.contact-column ul {
+  list-style: none;
+  padding: 0;
+}
+.contact-column ul li {
+  margin-bottom: 10px;
+}
+.contact-column a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.contact-column a:hover {
+  color: var(--red);
+}
+.contact-subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact-subscribe input {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 2px solid var(--white);
+  background-color: transparent;
+  color: var(--white);
+  width: 100%;
+}
+.contact-subscribe button {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact-subscribe button:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+@media (max-width: 768px) {
+  .contact-us-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .contact-column {
+    margin-bottom: 20px;
+  }
+}
+
 /* FOOTER */
 .filmchat-footer {
   background-color: #000;

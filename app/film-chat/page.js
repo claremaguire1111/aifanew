@@ -405,6 +405,8 @@ export default function FilmChat() {
         </div>
       </main>
 
+      
+
       {/* FOOTER */}
       <footer className="filmchat-footer">
         <p>© AIFA 2024</p>

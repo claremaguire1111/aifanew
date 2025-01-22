@@ -160,7 +160,14 @@ export default function HomePage() {
           </video>
         </div>
         <div className="overlay">
-          <h1 className="hero-text">AIFA</h1>
+        <h1 className="hero-text">
+  <img
+    src="/images/AIFAlogo.png"
+    alt="AIFA Logo"
+    style={{ width: "200px", height: "auto" }}
+  />
+</h1>
+
           <h2 className="hero-subtext">Do you want to be a Filmmaker? <p>Chat to Hollywood stars and ask them your questions</p></h2>
           {/* Button => "/film-chat" */}
           <Link href="/film-chat" className="hero-button" style={{ marginTop: "20px" }}>

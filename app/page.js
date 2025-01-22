@@ -12,6 +12,40 @@ export default function HomePage() {
   const videoRefs = useRef([]);
   const imageRefs = useRef([]);
 
+  // 1) The list of brand/press partners in ALL CAPS
+  const brandNames = [
+    "SOTHEBY'S INSTITUTE OF ART",
+    "NFC",
+    "GALXE",
+    "DRESSX",
+    "BRIGHTMOMENTS",
+    "REKT",
+    "ZORA",
+    "SUPERRARE",
+    "AIMAGINE",
+    "MUSE FRAME",
+    "HUG",
+    "DECRYPT",
+    "INTERCELLAR",
+    "RED-EYE",
+    "RUG RADIO",
+    "[S]EDITION",
+    "OBJECT SUBJECT FORM",
+    "NON-FUN GERBILS",
+    "DIG-IN",
+    "WEB3SENSE",
+    "CASA NUA",
+    "ASVOF",
+    "L'OFFICIEL",
+    "FIZZY MAG",
+    "REDLION NEWS",
+    "BLOCKSTER",
+    "BINANCE",
+    "PROMPT MAGAZINE",
+    "BINANCE",
+    "DECRYPT",
+  ];
+
   // Track mouse position -> custom circle cursor
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -29,7 +63,7 @@ export default function HomePage() {
           rect.bottom >= window.innerHeight / 2
         ) {
           const bgColor = window.getComputedStyle(section).backgroundColor;
-          // If background is white => cursor black
+          // If background is white => set cursor black
           if (bgColor === "rgb(255, 255, 255)") {
             newCursorColor = "#000000";
           }
@@ -48,7 +82,7 @@ export default function HomePage() {
     };
   }, []);
 
-  // Intersection Observer for lazy‐loading images + videos
+  // Intersection Observer for lazy-loading images + videos
   useEffect(() => {
     const options = {
       root: null,
@@ -60,10 +94,12 @@ export default function HomePage() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (entry.target.tagName === "VIDEO") {
+            // Lazy-load video
             const vid = entry.target;
             vid.src = vid.dataset.src || "";
             vid.load();
           } else if (entry.target.tagName === "IMG") {
+            // Lazy-load image
             const img = entry.target;
             img.src = img.dataset.src || "";
           }
@@ -84,7 +120,9 @@ export default function HomePage() {
           const scrollY = window.scrollY;
           const offset = image.getBoundingClientRect().top + window.scrollY;
           const parallaxSpeed = 0.3;
-          image.style.transform = `translateY(${(scrollY - offset) * parallaxSpeed}px)`;
+          image.style.transform = `translateY(${
+            (scrollY - offset) * parallaxSpeed
+          }px)`;
         }
       });
     };
@@ -95,7 +133,11 @@ export default function HomePage() {
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" },
+    },
   };
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -114,13 +156,13 @@ export default function HomePage() {
 
       {/* HEADER */}
       <header className="header">
-      <Link href="/" className="logo">
-  <img
-    src="/images/AIFAlogo.png"
-    alt="AIFA Logo"
-    style={{ width: "50px", height: "auto" }}
-  />
-</Link>
+        <Link href="/" className="logo">
+          <img
+            src="/images/AIFAlogo.png"
+            alt="AIFA Logo"
+            style={{ width: "50px", height: "auto" }}
+          />
+        </Link>
         <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
           <div className="line" />
           <div className="line" />
@@ -160,17 +202,24 @@ export default function HomePage() {
           </video>
         </div>
         <div className="overlay">
-        <h1 className="hero-text">
-  <img
-    src="/images/AIFAlogo.png"
-    alt="AIFA Logo"
-    style={{ width: "200px", height: "auto" }}
-  />
-</h1>
+          <h1 className="hero-text">
+            <img
+              src="/images/AIFAlogo.png"
+              alt="AIFA Logo"
+              style={{ width: "200px", height: "auto" }}
+            />
+          </h1>
 
-          <h2 className="hero-subtext">Do you want to be a Filmmaker? <p>Chat to Hollywood stars and ask them your questions</p></h2>
+          <h2 className="hero-subtext">
+            Do you want to be a Filmmaker?
+            <p>Chat to Hollywood stars and ask them your questions</p>
+          </h2>
           {/* Button => "/film-chat" */}
-          <Link href="/film-chat" className="hero-button" style={{ marginTop: "20px" }}>
+          <Link
+            href="/film-chat"
+            className="hero-button"
+            style={{ marginTop: "20px" }}
+          >
             Chat to Hollywood Stars
           </Link>
         </div>
@@ -187,13 +236,14 @@ export default function HomePage() {
         <div className="text-content">
           <h2 className="section-header">A positive future for online entertainment</h2>
           <p>
-  AIFA is developing educational tools and resources to help you create the films
-  you’ve always envisioned. Now you can learn the craft side-by-side with your
-  favorite Hollywood movie stars and directors—gaining insights, guidance, and
-  practical knowledge every step of the way. We're making the art of filmmaking
-  more accessible and inclusive for everyone, so you can bring your cinematic
-  visions to life.
-</p>        </div>
+            AIFA is developing educational tools and resources to help you create the films
+            you’ve always envisioned. Now you can learn the craft side-by-side with your
+            favorite Hollywood movie stars and directors—gaining insights, guidance, and
+            practical knowledge every step of the way. We're making the art of filmmaking
+            more accessible and inclusive for everyone, so you can bring your cinematic
+            visions to life.
+          </p>
+        </div>
       </motion.section>
 
       {/* AWARDS SECTION */}
@@ -291,72 +341,62 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-{/* Services (Offerings) Section */}
-<motion.section
-  className="services-section"
-  id="services"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={sectionVariants}
->
-  <h1 className="services-heading parallax-image">What we offer</h1>
-  <div className="services-grid">
-    
-    {/* Education */}
-    <div className="service-box">
-      <h2>Education</h2>
-      <p>
-        Have fun making films! Collaborate on your ideas with your favorite Hollywood stars, directors, and more.
-      </p>
-    </div>
-    
-    {/* Community */}
-    <div className="service-box">
-      <h2>Community</h2>
-      <p>
-        We’ve built the world’s first Film AI Agent on X (Twitter) to bring you facts, fiction, and the latest news in film.
-      </p>
-    </div>
-    
-    {/* Awards */}
-    <div className="service-box">
-      <h2>Awards</h2>
-      <p>
-        Proud hosts of one of the world’s first AI Film Awards in Lisbon 2024, returning this year with even more innovation.
-      </p>
-    </div>
-    
-    {/* Partnerships */}
-    <div className="service-box">
-      <h2>Partnerships</h2>
-      <p>
-        We’ve partnered with top institutions, including Sotheby’s Institute. Our community joined us for a lecture on the Future of Film.
-      </p>
-    </div>
-    
-    {/* Press */}
-    <div className="service-box">
-      <h2>Press</h2>
-      <p>
-        We have been featured in leading publications, including L'Officiel, Binance, and Decrypt.
-      </p>
-    </div>
-    
-    {/* Exhibits */}
-    <div className="service-box">
-      <h2>Exhibits</h2>
-      <p>
-        Featured artists from our awards have been exhibited globally since our inaugural event in 2024.
-      </p>
-    </div>
-    
-  </div>
-</motion.section>
+      {/* Services (Offerings) Section */}
+      <motion.section
+        className="services-section"
+        id="services"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
+        <h1 className="services-heading parallax-image">What we offer</h1>
+        <div className="services-grid">
+          <div className="service-box">
+            <h2>Education</h2>
+            <p>
+              Have fun making films! Collaborate on your ideas with your favorite Hollywood stars, directors, and more.
+            </p>
+          </div>
 
-      
+          <div className="service-box">
+            <h2>Community</h2>
+            <p>
+              We’ve built the world’s first Film AI Agent on X (Twitter) to bring you facts, fiction, and the latest news in film.
+            </p>
+          </div>
 
-      {/* BRANDS SECTION */}
+          <div className="service-box">
+            <h2>Awards</h2>
+            <p>
+              Proud hosts of one of the world’s first AI Film Awards in Lisbon 2024, returning this year with even more innovation.
+            </p>
+          </div>
+
+          <div className="service-box">
+            <h2>Partnerships</h2>
+            <p>
+              We’ve partnered with top institutions, including Sotheby’s Institute. Our community joined us for a lecture on the Future of Film.
+            </p>
+          </div>
+
+          <div className="service-box">
+            <h2>Press</h2>
+            <p>
+              We have been featured in leading publications, including L'Officiel, Binance, and Decrypt.
+            </p>
+          </div>
+
+          <div className="service-box">
+            <h2>Exhibits</h2>
+            <p>
+              Featured artists from our awards have been exhibited globally since our inaugural event in 2024.
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* BRANDS SECTION (MOVING CAROUSEL) */}
       <motion.section
         className="brands-section"
         id="brands"
@@ -367,51 +407,11 @@ export default function HomePage() {
       >
         <div className="moving-brands">
           <div className="brand-row">
-            <img
-              data-src="/partners/01_Galxe_B_White Full Logo.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="Galxe"
-            />
-            <img
-              data-src="/partners/BrightLogo-IconText-White.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="BrightLogo"
-            />
-            <img
-              data-src="/partners/Casa Nua 3 wh tr.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="Casa Nua"
-            />
-            <img
-              data-src="/partners/DressX lighter.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="DressX"
-            />
-            <img
-              data-src="/partners/Muse Frame wh text.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="Muse Frame"
-            />
-            <img
-              data-src="/partners/Non Fun Gerbils Wh tr.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="Non Fun Gerbils"
-            />
-            <img
-              data-src="/partners/object_subject_form_mark_wht.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="Object Subject"
-            />
-            <img
-              data-src="/partners/sedition logo wh long.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="Sedition"
-            />
-            <img
-              data-src="/partners/W3S-Light-Logo-x3 wh.png"
-              ref={(el) => el && imageRefs.current.push(el)}
-              alt="W3S"
-            />
+            {brandNames.map((brand, idx) => (
+              <div key={idx} className="brand-name">
+                {brand}
+              </div>
+            ))}
           </div>
         </div>
       </motion.section>
@@ -448,9 +448,6 @@ export default function HomePage() {
           </ul>
         </div>
         <div className="footer-column">
-          {/* 
-            3) Change from "Social" to "Community"
-          */}
           <h3>Community</h3>
           <ul>
             <li>

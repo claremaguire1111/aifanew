@@ -114,9 +114,13 @@ export default function HomePage() {
 
       {/* HEADER */}
       <header className="header">
-        <Link href="/" className="logo">
-          AIFA
-        </Link>
+      <Link href="/" className="logo">
+  <img
+    src="/images/AIFAlogo.png"
+    alt="AIFA Logo"
+    style={{ width: "50px", height: "auto" }}
+  />
+</Link>
         <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
           <div className="line" />
           <div className="line" />

@@ -1,0 +1,42 @@
+/* app/profile/profile.css */
+
+/* Profile page container */
+.profile-container {
+    /* Additional profile styles if needed */
+  }
+  
+  /* Profile header styles */
+  .profile-header {
+    /* Customize header spacing, alignment, etc. */
+  }
+  
+  .profile-avatar {
+    /* For the avatar image, already applied inline in page.js */
+  }
+  
+  .profile-username {
+    /* Adjust font size and weight if needed */
+  }
+  
+  /* Profile button style (smaller sleek buttons) */
+  .profile-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 9999px; /* fully rounded */
+    background: linear-gradient(90deg, #3f3cbb 0%, #6055ca 50%, #b958cc 100%);
+    color: white;
+    transition: background 0.3s;
+  }
+  .profile-btn:hover {
+    background: linear-gradient(90deg, #2f2cac 0%, #5045ba 50%, #a948bc 100%);
+  }
+  
+  /* Tab button overrides */
+  .profile-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+  }
+  
+  /* Grid styling can remain as is, or adjust gap as desired */
+  

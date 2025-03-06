@@ -1,127 +1,105 @@
 /* app/global.css */
 
-/* Tailwind includes (if you're using Tailwind) */
+/* 1) Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 
-   1) Define the Mosvita font from /public/assets/fonts
-   (make sure spelling matches your actual file names!)
-*/
+/* 2) Mosvita font-face */
 @font-face {
   font-family: 'Mosvita';
   src: url('/assets/fonts/mosvita-regular-webfont.woff2') format('woff2'),
-       url('/assets/fonts/mosvita-regular-webfont.woff')  format('woff');
+       url('/assets/fonts/mosvita-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* optional, helps performance */
+  font-display: swap;
 }
 
-/* 
-   2) Make Mosvita the default site-wide font
-   (Remove other body references from home.css or filmChat.css, so no override)
-*/
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #000;     /* or your var(--background) if you want */
-  color: #F3E3E2;             /* or #fff, or your var(--foreground) */
-  font-family: 'Mosvita', sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 3) Basic color variables */
+:root {
+  --background: #000000;
+  --foreground: #F3E3E2;
+
+  /* Link color & hover => bright red for standard <a> links */
+  --link-color: #e50914;
+  --link-hover: #ff4d4d;
+
+  --black: #000;
+  --white: #fff;
 }
 
-/* 
-   3) Some generic styles (example link styles) 
-*/
-a {
-  color: #4B0000;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #8f1010;
-}
-
-/* 
-   4) Button or heading defaults
-   (Your existing button or heading styles)
-*/
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  background-color: #1a1a1a;
-  color: #fff;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-/* 2) Set Mosvita as default body font */
+/* 4) Base body & link styling */
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Mosvita', sans-serif; 
+  font-family: 'Mosvita', sans-serif;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Example link styling */
+/* Make all <a> red by default (e.g. "Back to Artwork Gallery") */
 a {
-  color: #a11826;
+  color: var(--link-color);
   text-decoration: none;
+  transition: color 0.3s;
 }
 a:hover {
-  color: #8f1010;
+  color: var(--link-hover);
 }
 
-/* Example heading sizing */
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Utility to force Mosvita font if needed */
+.font-mosvita {
+  font-family: 'Mosvita', sans-serif !important;
 }
 
-/* Example button styling */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* 5) “Billion-dollar” purple gradient .btn class (like your Profile page) */
+.btn {
+  @apply inline-flex items-center justify-center 
+         rounded-full 
+         px-4 py-2 
+         text-sm font-medium 
+         shadow-sm 
+         transition-colors 
+         duration-300;
+
+  /* Purple gradient: #3f3cbb → #b958cc */
+  background: linear-gradient(90deg, #3f3cbb 0%, #b958cc 100%);
   color: #fff;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.btn:hover {
+  background: linear-gradient(90deg, #2f2cac 0%, #a948bc 100%);
 }
 
-/* Light scheme override if you want */
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-    color: #000;
-  }
+/* 6) .tab => same purple gradient for consistency */
+.tab {
+  @apply inline-flex items-center justify-center 
+         rounded-full 
+         px-3 py-1 
+         text-sm font-medium 
+         shadow-sm 
+         transition-colors 
+         duration-300;
+
+  background: linear-gradient(90deg, #3f3cbb 0%, #b958cc 100%);
+  color: #fff;
+}
+.tab:hover {
+  background: linear-gradient(90deg, #2f2cac 0%, #a948bc 100%);
+}
+
+/* 7) Glass effect (optional) */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Example utility if you want white backgrounds with black text for cards, etc. */
+.artwork-card {
+  color: #000;
+  background-color: #fff;
+  border-radius: 8px;
 }

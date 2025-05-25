@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function FilmGeneration({ prompts, onFilmReady }) {
+export default function FilmGeneration({ onFilmReady }) {
   const [loading, setLoading] = useState(false);
 
   const generateFilm = async () => {

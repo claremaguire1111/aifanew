@@ -141,7 +141,7 @@ export default function Awards2025() {
         <meta name="twitter:site" content="@aifilmacademy" />
         <link rel="canonical" href="https://aifilm.academy/awards/2025" />
         <script type="application/ld+json">
-          {JSON.stringify(require('./schema.json'))}
+          {JSON.stringify({"@context":"https://schema.org","@type":"Event","name":"AIFA Awards 2025","description":"World's #1 Global Film Awards for AI Innovation","startDate":"2025-06-03","location":{"@type":"Place","name":"NFC Lisbon","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"Portugal"}},"organizer":{"@type":"Organization","name":"AIFA Ventures","url":"https://aifilm.academy"}})}
         </script>
       </Head>
       {/* HEADER */}

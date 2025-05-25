@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req) {
   try {
-    const { prompts } = await req.json();
+    const { /* prompts */ } = await req.json();
     // Here you’d integrate with Runway or another AI video service.
     // Example: call an external API, pass `prompts`.
 

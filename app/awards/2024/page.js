@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Metadata } from "next";
 import Head from "next/head";
 import "../awards.css";
 
@@ -247,7 +246,7 @@ export default function Awards2024() {
         <meta name="twitter:site" content="@aifilmacademy" />
         <link rel="canonical" href="https://aifilm.academy/awards/2024" />
         <script type="application/ld+json">
-          {JSON.stringify(require('./schema.json'))}
+          {JSON.stringify({"@context":"https://schema.org","@type":"Event","name":"AIFA Awards 2024","description":"World's #1 Film Awards for AI Filmmaking","startDate":"2024-05-01","location":{"@type":"Place","name":"AIFA Venue London","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"UK"}},"organizer":{"@type":"Organization","name":"AIFA Ventures","url":"https://aifilm.academy"}})}
         </script>
       </Head>
       {/* HEADER */}

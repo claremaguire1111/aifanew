@@ -880,12 +880,21 @@
   gap: 20px;
 }
 
-.signup-box input {
+.signup-box input,
+.signup-box textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid var(--medium-grey);
   background-color: var(--white);
   font-size: 16px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.signup-box textarea {
+  resize: vertical;
+  min-height: 100px;
+  grid-column: span 2;
 }
 
 .signup-box button {

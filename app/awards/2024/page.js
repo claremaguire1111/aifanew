@@ -459,12 +459,13 @@ export default function Awards2024() {
         <div className="signup-box">
           <h1 className="fade-in">Join Our Community</h1>
           <p className="fade-in">
-            For all enquiries and to stay up to date, sign up below
+            For all enquiries and to stay up to date, sign up below. For any questions, send us a message.
           </p>
           <form action="https://formspree.io/f/mnnqqvqd" method="POST" className="fade-in">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
-            <button type="submit">Subscribe</button>
+            <textarea name="message" placeholder="Your Message (Optional)" rows="4"></textarea>
+            <button type="submit">Submit</button>
           </form>
         </div>
       </section>

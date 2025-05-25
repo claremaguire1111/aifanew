@@ -608,10 +608,19 @@
   margin: 0 auto;
 }
 
-.signup-box input {
+.signup-box input,
+.signup-box textarea {
   padding: 12px 15px;
   border: 1px solid var(--medium-grey);
   font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.signup-box textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .signup-box button {

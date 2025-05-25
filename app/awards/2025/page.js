@@ -259,13 +259,6 @@ export default function Awards2025() {
             </div>
           </div>
           
-          <div className="submission-cta fade-in">
-            <p>Want to submit your film for consideration?</p>
-            <Link href="/awards/2025/screening-consent" className="submit-button">
-              Submit Your Film
-            </Link>
-            <p className="deadline-note">Deadline: May 29, 2025, 5pm UK</p>
-          </div>
         </div>
       </section>
 

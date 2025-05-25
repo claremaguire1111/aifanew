@@ -735,7 +735,7 @@
 }
 
 .jury-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -761,6 +761,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .jury-image {
@@ -770,6 +771,7 @@
   overflow: hidden;
   background-color: var(--light-grey);
   margin: 0 auto 8px;
+  cursor: pointer;
 }
 
 .jury-image img {
@@ -784,6 +786,32 @@
   border-radius: 0; /* Ensure square corners */
 }
 
+.jury-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.jury-image-overlay span {
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border: 1px solid white;
+}
+
+.jury-image:hover .jury-image-overlay {
+  opacity: 1;
+}
+
 .jury-member:hover .jury-image img {
   transform: scale(1.05);
 }
@@ -791,20 +819,72 @@
 .jury-info {
   width: 100%;
   text-align: center;
-  margin-top: 8px;
 }
 
 .jury-info h3 {
-  font-size: 0.9rem;
-  margin-bottom: 3px;
-  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 500;
   letter-spacing: 0.02em;
 }
 
-.jury-info p {
-  font-size: 0.75rem;
+.jury-role {
+  font-size: 0.85rem;
   color: var(--dark-grey);
   font-style: italic;
+}
+
+.jury-bio-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.jury-bio-content {
+  background-color: white;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 4px;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.jury-bio-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.jury-bio-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--dark-grey);
+  margin-bottom: 20px;
+}
+
+.jury-bio-close {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+
+.jury-bio-close:hover {
+  background-color: var(--medium-grey);
 }
 
 @media (max-width: 1200px) {

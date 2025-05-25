@@ -10,8 +10,17 @@ export default function Awards2025() {
   // Metadata API won't work with 'use client' directive
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [activeBio, setActiveBio] = useState(null);
   
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+  
+  const toggleBio = (index) => {
+    if (activeBio === index) {
+      setActiveBio(null);
+    } else {
+      setActiveBio(index);
+    }
+  };
 
   // Header scroll effect
   useEffect(() => {
@@ -50,52 +59,62 @@ export default function Awards2025() {
     { 
       name: "Diane Pernet", 
       role: "Fashion Film",
-      image: "/images/jury2025/diane_pernet.jpg" 
+      image: "/images/jury2025/diane_pernet.jpg",
+      bio: "Diane Pernet, American-born and Paris-based, is a pioneering fashion critic and journalist. She launched the first fashion film festival in 2006, before the genre existed. Starting as a designer in New York, she moved to Paris, where her visionary work has profoundly influenced global fashion and the evolution of fashion film."
     },
     { 
       name: "David Sheldrick", 
       role: "Artist",
-      image: "/images/jury2025/david_sheldrick.PNG" 
+      image: "/images/jury2025/david_sheldrick.PNG",
+      bio: "Sheldrick is a British-Korean artist exploring image assembly, nature, and technology. Building on his award-winning fashion photography, he has developed custom AI pipelines for an experimental fine art practice. His recent collection Empire sold out in 24 hours and has established him as one of the most exciting AI artists working today."
     },
     { 
       name: "Ethereal Moon", 
       role: "Artist",
-      image: "/images/jury2025/Ethereal_Moon.jpg" 
+      image: "/images/jury2025/Ethereal_Moon.jpg",
+      bio: "Ethereal Moon is a collaborative artistic venture founded by Ethereal Gwirl, an AI artist based in New York, known for her expressive depictions of daily life, and LeMoon, an AI artist from France, whose nostalgic and unsettling style explores surreal themes. Together, this international female duo fuses creativity and innovation, crafting narrative-driven films that confront raw, difficult emotions, all while maintaining an accessible visual language."
     },
     { 
       name: "Roy Joseph Butler", 
       role: "LOCO Festival",
-      image: "/images/jury2025/Roy_Joseph_Butler.jpg" 
+      image: "/images/jury2025/Roy_Joseph_Butler.jpg",
+      bio: "Roy is the Director of LOCO London Comedy Film Festival, the world's largest festival of funny films. He is also CEO of Packed Lunch, a non-profit production studio, specialising in animation and fine art. With a background in community engagement, Roy is passionate about creative ways to grow human capital."
     },
     { 
       name: "Clare Maguire", 
       role: "NOPRBLM",
-      image: "/images/jury2025/Clare_Maguire.jpg" 
+      image: "/images/jury2025/Clare_Maguire.jpg",
+      bio: "Clare Maguire is a founder, angel investor and winner of the 2024 TechWomen 100 award. She has managed, advised and led brands, entrepreneurs, creators and businesses for over a decade. A music industry veteran, she is an expert in tech, marketing, social media, blockchain and AI, growing creative projects to achieve audiences of over 50 million."
     },
     { 
       name: "GLITCHOFMIND", 
       role: "Artist",
-      image: "/images/jury2025/glitch_of_mind.jpg" 
+      image: "/images/jury2025/glitch_of_mind.jpg",
+      bio: "GLITCHOFMIND (Leonel Pichardo) is a multidisciplinary artist blending identity, technology, and nature through digital fashion, character design, and editorial storytelling. Founder of INTERLÔR Atelier, his immersive visuals explore self-awareness and futurism, with work featured in Vogue, Forbes, and more."
     },
     { 
       name: "Pinny Grylls", 
       role: "Filmmaker",
-      image: "/images/jury2025/Pinny_Grylls.png" 
+      image: "/images/jury2025/Pinny_Grylls.png",
+      bio: "Pinny Grylls is a groundbreaking filmmaker, blending humour, cutting-edge technology and profound human stories. From the multi-award-winning short Peter and Ben to 2024 SXSW Feature Doc Winner Grand Theft Hamlet, she draws on her background as an ethnographer to explore the human need for connection."
     },
     { 
       name: "Leo Crane", 
       role: "Producer",
-      image: "/images/jury2025/leo_crane.jpg" 
+      image: "/images/jury2025/leo_crane.jpg",
+      bio: "Leo Crane is a producer, founder and educator with 25 years' experience in creative industries and emerging technologies. He is co-founder of AIFA Ventures, International Advisor to the OmenaArt Foundation, Director of Figuration, Board Member for Animate Projects, and Course Leader at Sotheby's Institute, WIRED Summer Lab and V&A Academy. He holds MA (Distinction) in Computer Animation from Bournemouth and MA (Hons) in Classics from Oxford University."
     },
     { 
       name: "Pedro Guez", 
       role: "ASVOFF",
-      image: "/images/jury2025/pedroguez_portrait.png" 
+      image: "/images/jury2025/pedroguez_portrait.png",
+      bio: "Pedro Guez is the curator of the AI-Generated Film category at the ASVOFF Film Festival. A Paris-based multidisciplinary creative, he is currently pursuing an Executive MBA in Global Fashion Management at IFM Paris, focusing on digital innovation and technologies applied to creative direction and communications."
     },
     { 
       name: "Dyl Blaquiere", 
       role: "Sedition",
-      image: "/images/jury2025/Dyl.jpg" 
+      image: "/images/jury2025/Dyl.jpg",
+      bio: "Dyl Blaquiere is a founder and CEO building at the convergence of art, technology, and culture. At the helm of Sedition, he is reshaping how digital art is collected, experienced, and owned — bringing a product-led vision to a legacy platform and positioning it for a new era of growth. He is also the founder of Muse Frame, a hardware company pioneering the digital art display category."
     }
   ];
 
@@ -272,13 +291,25 @@ export default function Awards2025() {
           <div className="jury-grid fade-in">
             {juryMembers.map((member, index) => (
               <div className="jury-member" key={index}>
-                <div className="jury-image">
+                <div className="jury-image" onClick={() => toggleBio(index)}>
                   <img src={member.image} alt={`${member.name} - ${member.role} - AIFA Awards 2025 Jury Member`} />
+                  <div className="jury-image-overlay">
+                    <span>View Bio</span>
+                  </div>
                 </div>
                 <div className="jury-info">
                   <h3>{member.name}</h3>
-                  <p>{member.role}</p>
+                  <p className="jury-role">{member.role}</p>
                 </div>
+                {activeBio === index && (
+                  <div className="jury-bio-modal">
+                    <div className="jury-bio-content">
+                      <h3>{member.name}</h3>
+                      <p>{member.bio}</p>
+                      <button className="jury-bio-close" onClick={() => toggleBio(index)}>Close</button>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>

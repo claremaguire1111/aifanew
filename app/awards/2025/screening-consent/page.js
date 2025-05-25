@@ -263,13 +263,17 @@ export default function ScreeningConsent2025() {
               <label className="form-label">
                 Artist headshot
               </label>
-              <input
-                type="file"
-                name="artistHeadshot"
-                onChange={handleFileChange}
-                accept="image/*"
-              />
-              <div className="file-button">Add a File</div>
+              <div className="file-input-container">
+                <input
+                  type="file"
+                  id="artistHeadshot"
+                  name="artistHeadshot"
+                  onChange={handleFileChange}
+                  accept="image/*"
+                />
+                <label htmlFor="artistHeadshot" className="file-button">Add a File</label>
+                <span className="file-name">{formData.artistHeadshot ? formData.artistHeadshot.name : "No file chosen"}</span>
+              </div>
             </div>
 
             <div className="form-group">
@@ -372,14 +376,18 @@ export default function ScreeningConsent2025() {
               <label className="form-label">
                 Film Still <span className="required">*</span>
               </label>
-              <input
-                type="file"
-                name="filmStill"
-                onChange={handleFileChange}
-                accept="image/*"
-                required
-              />
-              <div className="file-button">Add a File</div>
+              <div className="file-input-container">
+                <input
+                  type="file"
+                  id="filmStill"
+                  name="filmStill"
+                  onChange={handleFileChange}
+                  accept="image/*"
+                  required
+                />
+                <label htmlFor="filmStill" className="file-button">Add a File</label>
+                <span className="file-name">{formData.filmStill ? formData.filmStill.name : "No file chosen"}</span>
+              </div>
               <div className="field-note">16:9 aspect ratio</div>
             </div>
 

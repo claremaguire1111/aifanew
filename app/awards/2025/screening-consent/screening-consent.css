@@ -100,6 +100,13 @@ textarea {
 }
 
 /* File upload styling */
+.file-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
 input[type="file"] {
   width: 0.1px;
   height: 0.1px;
@@ -115,14 +122,21 @@ input[type="file"] {
   background-color: var(--light-grey);
   color: var(--black);
   cursor: pointer;
-  margin-top: 5px;
   font-size: 14px;
   border: 1px solid var(--medium-grey);
   transition: background-color 0.3s;
+  margin-right: 10px;
 }
 
 .file-button:hover {
   background-color: var(--medium-grey);
+}
+
+.file-name {
+  font-size: 14px;
+  color: var(--dark-grey);
+  flex: 1;
+  margin-left: 10px;
 }
 
 /* Checkbox styling */

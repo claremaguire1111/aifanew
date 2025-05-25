@@ -543,7 +543,7 @@ export default function FilmChat() {
       {/* FOOTER */}
       <div style={{ textAlign: "center", padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)" }}>© 2025 AIFA Ventures. All rights reserved</p>
-        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>A positive future for entertainment</p>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>AIFA Awards - The World's #1 Film Awards | Leading Global Entertainment Venture</p>
       </div>
     </div>
   );

@@ -91,8 +91,8 @@ export default function ScreeningConsent2025() {
     });
     
     try {
-      // Formspree endpoint - you'll need to create a new form for this
-      const response = await fetch("https://formspree.io/f/xzlwqgre", {
+      // Formspree endpoint for screening consent
+      const response = await fetch("https://formspree.io/f/mvgajqdv", {
         method: "POST",
         body: submitData,
         headers: {

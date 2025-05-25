@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 2) Mosvita font-face */
+/* 2) Font declarations */
 @font-face {
   font-family: 'Mosvita';
   src: url('/assets/fonts/mosvita-regular-webfont.woff2') format('woff2'),
@@ -15,91 +15,147 @@
   font-display: swap;
 }
 
-/* 3) Basic color variables */
+/* 3) Basic color variables - WeF°lk-inspired */
 :root {
-  --background: #000000;
-  --foreground: #F3E3E2;
-
-  /* Link color & hover => bright red for standard <a> links */
-  --link-color: #e50914;
-  --link-hover: #ff4d4d;
-
-  --black: #000;
-  --white: #fff;
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #333333;
+  
+  /* Link colors */
+  --link-color: #000000;
+  --link-hover: #666666;
+  
+  --black: #000000;
+  --white: #ffffff;
+  --light-grey: #f5f5f5;
+  --medium-grey: #e0e0e0;
+  --dark-grey: #333333;
 }
 
-/* 4) Base body & link styling */
+/* 4) Base styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Mosvita', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; 
 }
 
-/* Make all <a> red by default (e.g. "Back to Artwork Gallery") */
+/* Link styling */
 a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, opacity 0.3s;
 }
+
 a:hover {
   color: var(--link-hover);
+}
+
+/* Container utilities */
+.container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Grid layout utilities */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+.btn-outline:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* Typography classes */
+.heading-xl {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.heading-md {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.text-md {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.5;
+}
+
+.text-sm {
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  line-height: 1.5;
 }
 
 /* Utility to force Mosvita font if needed */
 .font-mosvita {
   font-family: 'Mosvita', sans-serif !important;
-}
-
-/* 5) “Billion-dollar” purple gradient .btn class (like your Profile page) */
-.btn {
-  @apply inline-flex items-center justify-center 
-         rounded-full 
-         px-4 py-2 
-         text-sm font-medium 
-         shadow-sm 
-         transition-colors 
-         duration-300;
-
-  /* Purple gradient: #3f3cbb → #b958cc */
-  background: linear-gradient(90deg, #3f3cbb 0%, #b958cc 100%);
-  color: #fff;
-}
-.btn:hover {
-  background: linear-gradient(90deg, #2f2cac 0%, #a948bc 100%);
-}
-
-/* 6) .tab => same purple gradient for consistency */
-.tab {
-  @apply inline-flex items-center justify-center 
-         rounded-full 
-         px-3 py-1 
-         text-sm font-medium 
-         shadow-sm 
-         transition-colors 
-         duration-300;
-
-  background: linear-gradient(90deg, #3f3cbb 0%, #b958cc 100%);
-  color: #fff;
-}
-.tab:hover {
-  background: linear-gradient(90deg, #2f2cac 0%, #a948bc 100%);
-}
-
-/* 7) Glass effect (optional) */
-.glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-}
-
-/* Example utility if you want white backgrounds with black text for cards, etc. */
-.artwork-card {
-  color: #000;
-  background-color: #fff;
-  border-radius: 8px;
 }

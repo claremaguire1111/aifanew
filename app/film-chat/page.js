@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "./filmChat.css"; // Make sure filmChat.css is in the same folder
-import { motion } from 'framer-motion';
 
 
 /************************************************************************
@@ -296,19 +295,26 @@ function getStarPrompt(starId) {
   return star ? star.systemPrompt : "You are a classic star; never disclaim AI.";
 }
 
-// 1) We define some framer-motion variants for the contact section
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
+// No longer using framer-motion
 
 export default function FilmChat() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  // Header scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setHeaderScrolled(true);
+      } else {
+        setHeaderScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Chat state
   const [chats, setChats] = useState({});
@@ -369,15 +375,14 @@ export default function FilmChat() {
   return (
     <div className="filmchat-page">
       {/* HEADER */}
-      <header className="header">
-      <Link href="/" className="logo">
-  <img
-    src="/images/AIFAlogo.png"
-    alt="AIFA Logo"
-    style={{ width: "50px", height: "auto" }}
-  />
-</Link>
-
+      <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
+        <Link href="/" className="logo">
+          <img
+            src="/images/AIFAlogo.png"
+            alt="AIFA Logo"
+            style={{ filter: "brightness(0) invert(1)" }}
+          />
+        </Link>
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}
@@ -390,15 +395,28 @@ export default function FilmChat() {
           <Link href="/" onClick={toggleMenu}>
             Home
           </Link>
+          <Link href="/awards/2025" onClick={toggleMenu}>
+            Awards 2025
+          </Link>
+          <Link href="/awards/2024" onClick={toggleMenu}>
+            Awards 2024
+          </Link>
           <Link href="/film-chat" onClick={toggleMenu}>
             Chat
           </Link>
         </nav>
       </header>
 
+      {/* HERO SECTION */}
+      <section className="filmchat-hero">
+        <div className="filmchat-hero-content">
+          <h1 className="filmchat-hero-title">Just for fun</h1>
+          <p className="filmchat-hero-subtitle">brought to you by AIFA, chat to the stars</p>
+        </div>
+      </section>
+
       {/* MAIN CONTENT */}
       <main className="filmchat-container">
-        <h1 className="filmchat-heading">Chat with Hollywood Icons</h1>
 
         <div className="filmchat-grid">
           {filmStarsData.map((star) => {
@@ -427,9 +445,9 @@ export default function FilmChat() {
                     const roleClass = msg.role === "user" ? "user" : "assistant";
                     return (
                       <div key={idx} className={`filmchat-message ${roleClass}`}>
-                        <strong>
-                          {msg.role === "user" ? "You" : star.name}:
-                        </strong>{" "}
+                        <span style={{ fontWeight: "600" }}>
+                          {msg.role === "user" ? "You: " : `${star.name}: `}
+                        </span>
                         {msg.content}
                       </div>
                     );
@@ -461,15 +479,8 @@ export default function FilmChat() {
         </div>
       </main>
 
-      {/* CONTACT SECTION WITH FRAMER-MOTION */}
-      <motion.section
-        className="contact-us-section"
-        id="contact"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
+      {/* CONTACT SECTION */}
+      <section className="contact-us-section" id="contact">
         <div className="footer-column">
           <h3>Get in Touch</h3>
           <ul>
@@ -479,21 +490,24 @@ export default function FilmChat() {
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Company</h3>
+          <h3>Navigate</h3>
           <ul>
             <li>
-              <a href="#about">Chat to the stars</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#awards">Awards</a>
+              <Link href="/awards/2025">Awards 2025</Link>
             </li>
             <li>
-              <a href="#partnerships">Partnerships</a>
+              <Link href="/awards/2024">Awards 2024</Link>
+            </li>
+            <li>
+              <Link href="/film-chat">Chat</Link>
             </li>
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Community</h3>
+          <h3>Follow</h3>
           <ul>
             <li>
               <a
@@ -524,13 +538,13 @@ export default function FilmChat() {
             </li>
           </ul>
         </div>
-      </motion.section>
+      </section>
 
       {/* FOOTER */}
-      <footer className="filmchat-footer">
-        <p>© AIFA 2024</p>
-        <p>Developed by NOPRBLM</p>
-      </footer>
+      <div style={{ textAlign: "center", padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)" }}>© 2025 AIFA Ventures. All rights reserved</p>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>A positive future for entertainment</p>
+      </div>
     </div>
   );
 }

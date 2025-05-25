@@ -2,15 +2,18 @@
 import './global.css';
 
 export const metadata = {
-  title: 'AIFA EdTech',
-  description: 'High-tech AI learning platform',
+  title: 'AIFA | A positive future for entertainment',
+  description: 'AIFA London is developing educational tools and resources to help you create the films you have always envisioned.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        {/* No logo here, we rely on each page to add it if needed */}
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/images/AIFAlogo.png" />
+      </head>
+      <body>
         {children}
       </body>
     </html>

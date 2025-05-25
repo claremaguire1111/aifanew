@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import "./home.css"; // local styles for Home
+import "./home.css";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [cursorColor, setCursorColor] = useState("#ffffff");
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   const videoRefs = useRef([]);
   const imageRefs = useRef([]);
 
-  // 1) The list of brand/press partners in ALL CAPS
+  // List of brand/press partners
   const brandNames = [
     "SOTHEBY'S INSTITUTE OF ART",
     "NFC",
@@ -37,130 +35,99 @@ export default function HomePage() {
     "CASA NUA",
     "ASVOF",
     "L'OFFICIEL",
-    "FIZZY MAG",
-    "REDLION NEWS",
-    "BLOCKSTER",
-    "BINANCE",
-    "PROMPT MAGAZINE",
-    "BINANCE",
-    "DECRYPT",
+    "FIZZY MAG"
   ];
 
-  // Track mouse position -> custom circle cursor
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setCursorPosition({ x: event.clientX, y: event.clientY });
-    };
-
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      let newCursorColor = "#ffffff";
-
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (
-          rect.top <= window.innerHeight / 2 &&
-          rect.bottom >= window.innerHeight / 2
-        ) {
-          const bgColor = window.getComputedStyle(section).backgroundColor;
-          // If background is white => set cursor black
-          if (bgColor === "rgb(255, 255, 255)") {
-            newCursorColor = "#000000";
-          }
-        }
-      });
-
-      setCursorColor(newCursorColor);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Intersection Observer for lazy-loading images + videos
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (entry.target.tagName === "VIDEO") {
-            // Lazy-load video
-            const vid = entry.target;
-            vid.src = vid.dataset.src || "";
-            vid.load();
-          } else if (entry.target.tagName === "IMG") {
-            // Lazy-load image
-            const img = entry.target;
-            img.src = img.dataset.src || "";
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    videoRefs.current.forEach((video) => observer.observe(video));
-    imageRefs.current.forEach((image) => observer.observe(image));
-  }, []);
-
-  // Parallax effect for images
+  // Header scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      imageRefs.current.forEach((image) => {
-        if (image && image.classList.contains("parallax-image")) {
-          const scrollY = window.scrollY;
-          const offset = image.getBoundingClientRect().top + window.scrollY;
-          const parallaxSpeed = 0.3;
-          image.style.transform = `translateY(${
-            (scrollY - offset) * parallaxSpeed
-          }px)`;
-        }
-      });
+      if (window.scrollY > 50) {
+        setHeaderScrolled(true);
+      } else {
+        setHeaderScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
+  // Lazy loading for images and videos (excluding hero section)
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "50px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.tagName === "VIDEO" && !entry.target.classList.contains('background-video')) {
+            // Lazy-load non-hero videos
+            const vid = entry.target;
+            if (vid.dataset.src) {
+              vid.src = vid.dataset.src;
+              vid.load();
+            }
+          } else if (entry.target.tagName === "IMG" && entry.target.dataset.src) {
+            // Lazy-load images
+            const img = entry.target;
+            img.src = img.dataset.src;
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    // Filter out the hero video from the references
+    const nonHeroVideos = videoRefs.current.filter(
+      video => !video.classList.contains('background-video')
+    );
+    
+    nonHeroVideos.forEach(video => observer.observe(video));
+    imageRefs.current.forEach(image => {
+      if (image.dataset.src) {
+        observer.observe(image);
+      }
+    });
+    
+    return () => {
+      nonHeroVideos.forEach(video => observer.unobserve(video));
+      imageRefs.current.forEach(image => observer.unobserve(image));
+    };
+  }, []);
+
+  // Animation for scroll-triggered elements
+  useEffect(() => {
+    const animatedElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(el => observer.observe(el));
+    
+    return () => {
+      animatedElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <div className="home-page">
-      {/* CUSTOM CURSOR */}
-      <div
-        className="custom-cursor"
-        style={{
-          left: `${cursorPosition.x}px`,
-          top: `${cursorPosition.y}px`,
-          backgroundColor: cursorColor,
-        }}
-      />
-
       {/* HEADER */}
-      <header className="header">
+      <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
         <Link href="/" className="logo">
           <img
             src="/images/AIFAlogo.png"
             alt="AIFA Logo"
-            style={{ width: "50px", height: "auto" }}
+            style={{ height: "40px", width: "auto" }}
           />
         </Link>
         <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
@@ -169,9 +136,14 @@ export default function HomePage() {
           <div className="line" />
         </div>
         <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
-          {/* Only 'Home' and 'Chat' */}
           <Link href="/" onClick={toggleMenu}>
             Home
+          </Link>
+          <Link href="/awards/2025" onClick={toggleMenu}>
+            Awards 2025
+          </Link>
+          <Link href="/awards/2024" onClick={toggleMenu}>
+            Awards 2024
           </Link>
           <Link href="/film-chat" onClick={toggleMenu}>
             Chat
@@ -179,19 +151,12 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* ABOUT SECTION (Fullscreen Video) */}
-      <motion.section
-        className="about-section"
-        id="about"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
+      {/* HERO SECTION */}
+      <section className="about-section" id="about">
+        {/* Video Background */}
         <div className="video-wrapper">
           <video
-            data-src="/videos/7677235-hd_1920_1080_25fps.mp4"
-            ref={(el) => el && videoRefs.current.push(el)}
+            src="/videos/7677235-hd_1920_1080_25fps.mp4"
             autoPlay
             loop
             muted
@@ -200,211 +165,203 @@ export default function HomePage() {
           >
             Your browser does not support the video tag.
           </video>
+          <div className="video-overlay"></div>
         </div>
-        <div className="overlay">
-          <h1 className="hero-text">
+        
+        {/* Centered Content */}
+        <div className="overlay centered">
+          <div className="logo-container">
             <img
               src="/images/AIFAlogo.png"
               alt="AIFA Logo"
-              style={{ width: "200px", height: "auto" }}
+              className="hero-logo"
+              style={{ filter: "brightness(0) invert(1)" }} 
             />
-          </h1>
-
+          </div>
           <h2 className="hero-subtext">
-            Do you want to be a Filmmaker?
-            <p>Chat to Hollywood stars and ask them your questions</p>
+            A Positive Future for Entertainment
+            <p className="hero-location">London | Global</p>
           </h2>
-          {/* Button => "/film-chat" */}
-          <Link
-            href="/film-chat"
-            className="hero-button"
-            style={{ marginTop: "20px" }}
-          >
-            Chat to Hollywood Stars
-          </Link>
         </div>
-      </motion.section>
+      </section>
 
       {/* ABOUT DESCRIPTION SECTION */}
-      <motion.section
-        className="about-description-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
+      <section className="about-description-section">
         <div className="text-content">
-          <h2 className="section-header">A positive future for online entertainment</h2>
-          <p>
-            AIFA is developing educational tools and resources to help you create the films
-            you’ve always envisioned. Now you can learn the craft side-by-side with your
-            favorite Hollywood movie stars and directors—gaining insights, guidance, and
-            practical knowledge every step of the way. We're making the art of filmmaking
-            more accessible and inclusive for everyone, so you can bring your cinematic
-            visions to life.
-          </p>
+          <h2 className="section-header fade-in">About AIFA</h2>
+          <div className="fade-in">
+            <p>
+              AIFA is a forward-thinking venture that supports and 
+              champions the future of entertainment. We connect emerging creators, established filmmakers, 
+              and innovative technologists through yearly awards, educational resources, and dynamic events 
+              across the globe.
+            </p>
+          </div>
         </div>
-      </motion.section>
-
-      {/* AWARDS SECTION */}
-      <motion.section
-        className="awards-section"
-        id="awards"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
-        <div className="awards-content">
-          <h1 className="awards-heading">Awards</h1>
-          <p className="awards-subtext">
-            We empower creators, entrepreneurs, and the future of creativity and
-            technology through our annual awards. Our first awards were held in
-            Lisbon in 2024, celebrating outstanding achievements in arts and
-            technology.
-          </p>
+      </section>
+      
+      <section className="what-we-do-section">
+        <div className="text-content">
+          <h2 className="section-header fade-in">What We Do</h2>
+          <div className="services-columns fade-in">
+            <div className="service-column">
+              <h3>Film Awards</h3>
+              <p>
+                We shine a spotlight on creators who push the boundaries of innovation in film and technology. 
+                From our first awards in 2024 to our upcoming 2025 edition, we celebrate groundbreaking 
+                achievements in storytelling, cinematic artistry, and emerging tech.
+              </p>
+            </div>
+            <div className="service-column">
+              <h3>Partnerships & Events</h3>
+              <p>
+                We're proud to collaborate with innovators in art, tech, and film, such as ASVOFF, 
+                Sotheby's Institute, and more. We host lectures, panels, and showcases that shape 
+                the conversation around the future of online entertainment and filmmaking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="awards-preview-section">
+        <div className="text-content">
+          <h2 className="section-header fade-in">2025 AIFA Awards</h2>
+          <div className="fade-in">
+            <p>
+              Join us in May for our annual AIFA Awards, celebrating excellence in film, 
+              creativity, and technology. This year, we're also hosting an exclusive series of events, 
+              showcasing transformative new projects, networking opportunities, and inspiring talks from industry 
+              trailblazers.
+            </p>
+          </div>
+        </div>
+        {/* Video removed */}
+        
+        <div className="awards-grid-container">
           <div className="awards-grid">
             <div className="award-item">
-              <img
-                data-src="/images/aifa_image_3.JPG"
-                ref={(el) => el && imageRefs.current.push(el)}
-                alt="Award Ceremony"
-                className="award-image parallax-image"
-              />
+              <img src="/images/aifa-web-14.jpg" alt="AIFA Web 14" />
             </div>
             <div className="award-item">
-              <img
-                data-src="/images/aifa-web-13.jpg"
-                ref={(el) => el && imageRefs.current.push(el)}
-                alt="Award Winner"
-                className="award-image parallax-image"
-              />
+              <img src="/images/aifa-web-13.jpg" alt="AIFA Web 13" />
             </div>
             <div className="award-item">
-              <img
-                data-src="/images/aifa-web-14.jpg"
-                ref={(el) => el && imageRefs.current.push(el)}
-                alt="Award 3"
-                className="award-image parallax-image"
-              />
+              <img src="/images/aifa_image_5.JPG" alt="AIFA Image 5" />
             </div>
             <div className="award-item">
-              <img
-                data-src="/images/aifa_image_4.JPG"
-                ref={(el) => el && imageRefs.current.push(el)}
-                alt="Award 4"
-                className="award-image parallax-image"
-              />
+              <img src="/images/aifa_image_4.JPG" alt="AIFA Image 4" />
+            </div>
+            <div className="award-item">
+              <img src="/images/aifa_image_3.JPG" alt="AIFA Image 3" />
+            </div>
+            <div className="award-item">
+              <img src="/images/aifa_image_2.JPG" alt="AIFA Image 2" />
+            </div>
+            <div className="award-item">
+              <img src="/images/aifa_image_1.JPG" alt="AIFA Image 1" />
+            </div>
+            <div className="award-item">
+              <img src="/images/john-aifa.jpg" alt="John AIFA" />
+            </div>
+            <div className="award-item">
+              <img src="/images/beeple-aifa.jpg" alt="Beeple AIFA" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front1.jpg" alt="AIFA Award Front 1" className="bw-image" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front2.jpg" alt="AIFA Award Front 2" className="bw-image" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front3.jpg" alt="AIFA Award Front 3" className="bw-image" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front4.jpg" alt="AIFA Award Front 4" className="bw-image" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front5.jpg" alt="AIFA Award Front 5" className="bw-image" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front6.jpg" alt="AIFA Award Front 6" className="bw-image" />
+            </div>
+            <div className="award-item">
+              <img src="/images/award_front7.jpg" alt="AIFA Award Front 7" className="bw-image" />
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* PARTNERSHIPS SECTION */}
-      <motion.section
-        className="partnerships-section"
-        id="partnerships"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
-        <div className="partnerships-content">
-          <div className="text-content">
-            <h1>Partnerships and Events</h1>
+      {/* Partnerships section removed */}
+
+      {/* FOUNDERS SECTION */}
+      <section className="founders-section" id="founders">
+        <div className="services-container">
+          <h1 className="services-heading fade-in">Founders</h1>
+          <div className="text-content fade-in">
             <p>
-              We are committed to developing partnerships and hosting events that
-              support the future of online entertainment and filmmaking. Our
-              initiatives include the annual AIFA Awards, collaborations with the
-              Sotheby's Institute, and involvement in ASVOFF, among others.
-            </p>
-            <p>
-              By working with renowned institutions and participating in
-              significant industry events, we continue to foster creativity,
-              innovation, and technological growth at the highest levels,
-              ensuring that both culture and technology evolve hand-in-hand.
+              Leo Crane and Clare Maguire
             </p>
           </div>
-          <div className="video-box">
-            <video
-              data-src="/videos/video-section-3.mp4"
-              ref={(el) => el && videoRefs.current.push(el)}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="partnership-video"
-            >
-              Your browser does not support the video tag.
-            </video>
+          <div className="founders-grid">
+            <div className="founder-image">
+              <img src="/images/founders/leo_founder.jpg" alt="Leo Crane - AIFA Founder" />
+            </div>
+            <div className="founder-image founder-main">
+              <img src="/images/aifa-founders.jpg" alt="AIFA Founders - Leo Crane and Clare Maguire" />
+            </div>
+            <div className="founder-image">
+              <img src="/images/founders/clare_founder.jpg" alt="Clare Maguire - AIFA Founder" />
+            </div>
           </div>
         </div>
-      </motion.section>
-
-      {/* Services (Offerings) Section */}
-      <motion.section
-        className="services-section"
-        id="services"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
-        <h1 className="services-heading parallax-image">What we offer</h1>
-        <div className="services-grid">
-          <div className="service-box">
-            <h2>Education</h2>
+      </section>
+      
+      {/* SUPPORT SECTION */}
+      <section className="support-section" id="support">
+        <div className="services-container">
+          <h1 className="services-heading fade-in">Support & Opportunities</h1>
+          <div className="text-content fade-in">
             <p>
-              Have fun making films! Collaborate on your ideas with your favorite Hollywood stars, directors, and more.
+              We support and curate opportunities for upcoming and established filmmakers, connecting them with leading 
+              industry experts, technology partners, and creative collaborators.
             </p>
           </div>
-
-          <div className="service-box">
-            <h2>Community</h2>
-            <p>
-              We’ve built the world’s first Film AI Agent on X (Twitter) to bring you facts, fiction, and the latest news in film.
-            </p>
+          
+          <div className="highlights-row fade-in">
+            <div className="highlight-item">
+              <h3>Press & Features</h3>
+              <p>AIFA has been featured in L'Officiel, Binance, Decrypt, and other esteemed publications.</p>
+            </div>
+            <div className="highlight-item">
+              <h3>Global Exhibits</h3>
+              <p>Winners and featured artists from the AIFA Awards are showcased globally, reflecting our commitment to elevating visionary talent.</p>
+            </div>
+            <div className="highlight-item">
+              <h3>Upcoming Collaborations</h3>
+              <p>We're continuously partnering with pioneers in art, tech, and film. Expect exciting new announcements soon!</p>
+            </div>
           </div>
-
-          <div className="service-box">
-            <h2>Awards</h2>
-            <p>
-              Proud hosts of one of the world’s first AI Film Awards in Lisbon 2024, returning this year with even more innovation.
-            </p>
-          </div>
-
-          <div className="service-box">
-            <h2>Partnerships</h2>
-            <p>
-              We’ve partnered with top institutions, including Sotheby’s Institute. Our community joined us for a lecture on the Future of Film.
-            </p>
-          </div>
-
-          <div className="service-box">
-            <h2>Press</h2>
-            <p>
-              We have been featured in leading publications, including L'Officiel, Binance, and Decrypt.
-            </p>
-          </div>
-
-          <div className="service-box">
-            <h2>Exhibits</h2>
-            <p>
-              Featured artists from our awards have been exhibited globally since our inaugural event in 2024.
-            </p>
+          
+          <div className="support-images-grid">
+            <div className="support-image-item">
+              <img src="/images/aifa-web-11.jpg" alt="AIFA Event" />
+            </div>
+            <div className="support-image-item">
+              <img src="/images/aifa-web-12.jpg" alt="AIFA Event" />
+            </div>
+            <div className="support-image-item">
+              <img src="/images/aifa-event.jpg" alt="AIFA Event" />
+            </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* BRANDS SECTION (MOVING CAROUSEL) */}
-      <motion.section
-        className="brands-section"
-        id="brands"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
+      {/* BRANDS SECTION */}
+      <section className="brands-section" id="brands">
+        <div className="brands-container">
+          <h2 className="section-header fade-in">Our Partners</h2>
+        </div>
         <div className="moving-brands">
           <div className="brand-row">
             {brandNames.map((brand, idx) => (
@@ -412,19 +369,32 @@ export default function HomePage() {
                 {brand}
               </div>
             ))}
+            {brandNames.map((brand, idx) => (
+              <div key={`dup-${idx}`} className="brand-name">
+                {brand}
+              </div>
+            ))}
           </div>
         </div>
-      </motion.section>
+      </section>
+
+      {/* SIGNUP SECTION */}
+      <section className="signup-section" id="signup">
+        <div className="signup-box">
+          <h1 className="fade-in">Join Our Community</h1>
+          <p className="fade-in">
+            For all enquiries and to stay up to date, sign up below
+          </p>
+          <form action="https://formspree.io/f/mnnqqvqd" method="POST" className="fade-in">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
 
       {/* CONTACT SECTION */}
-      <motion.section
-        className="contact-us-section"
-        id="contact"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
+      <section className="contact-us-section" id="contact">
         <div className="footer-column">
           <h3>Get in Touch</h3>
           <ul>
@@ -434,21 +404,24 @@ export default function HomePage() {
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Company</h3>
+          <h3>Navigate</h3>
           <ul>
             <li>
-              <a href="#about">Chat to the stars</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#awards">Awards</a>
+              <Link href="/awards/2025">Awards 2025</Link>
             </li>
             <li>
-              <a href="#partnerships">Partnerships</a>
+              <Link href="/awards/2024">Awards 2024</Link>
+            </li>
+            <li>
+              <Link href="/film-chat">Chat</Link>
             </li>
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Community</h3>
+          <h3>Follow</h3>
           <ul>
             <li>
               <a
@@ -479,35 +452,11 @@ export default function HomePage() {
             </li>
           </ul>
         </div>
-      </motion.section>
+      </section>
 
-      {/* SIGN-UP SECTION */}
-      <motion.section
-        className="signup-section"
-        id="signup"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-      >
-        <div className="signup-box">
-          <h1>Sign Up</h1>
-          <p>
-            Stay informed and inspired by signing
-            up to receive the latest updates and resources directly to your
-            inbox. Including creator grants, job offerings, interviews, and more.
-          </p>
-          <form action="https://formspree.io/f/mnnqqvqd" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
-      </motion.section>
-
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <p>© AIFA 2024</p>
-        <p>Developed by NOPRBLM</p>
+      <div style={{ textAlign: "center", padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)" }}>© 2025 AIFA Ventures. All rights reserved</p>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>A positive future for entertainment</p>
       </div>
     </div>
   );

@@ -1,0 +1,242 @@
+/* Screening Consent Form Styles */
+
+.consent-form-section {
+  padding: 120px 20px 80px;
+  background-color: var(--white);
+}
+
+.consent-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.consent-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.consent-deadline {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: var(--dark-grey);
+}
+
+.form-status {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-status.success {
+  background-color: rgba(0, 128, 0, 0.1);
+  color: #006400;
+  border: 1px solid #00640030;
+}
+
+.form-status.error {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #8b0000;
+  border: 1px solid #8b000030;
+}
+
+.consent-form {
+  background-color: var(--white);
+  padding: 40px;
+  border: 1px solid var(--medium-grey);
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.required {
+  color: #8b0000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--medium-grey);
+  font-size: 14px;
+  font-family: inherit;
+  background-color: var(--white);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 15px;
+}
+
+.name-fields .input-group {
+  flex: 1;
+}
+
+.field-note {
+  font-size: 0.8rem;
+  color: var(--dark-grey);
+  margin-top: 5px;
+}
+
+/* File upload styling */
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--light-grey);
+  color: var(--black);
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid var(--medium-grey);
+  transition: background-color 0.3s;
+}
+
+.file-button:hover {
+  background-color: var(--medium-grey);
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  margin-top: 15px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+/* Consent section */
+.consent-intro {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.consent-terms {
+  background-color: var(--light-grey);
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid var(--medium-grey);
+}
+
+.consent-terms p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.consent-terms p:last-child {
+  margin-bottom: 0;
+}
+
+.consent-checkbox {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+/* Submit button */
+.form-submit {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.form-submit button {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  padding: 12px 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-submit button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.form-submit button:disabled {
+  background-color: var(--medium-grey);
+  border-color: var(--medium-grey);
+  color: var(--dark-grey);
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .consent-form-section {
+    padding: 100px 20px 60px;
+  }
+  
+  .consent-form {
+    padding: 25px;
+  }
+  
+  .name-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .consent-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .consent-form-section {
+    padding: 90px 15px 50px;
+  }
+  
+  .consent-form {
+    padding: 20px 15px;
+  }
+  
+  .consent-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-submit button {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}

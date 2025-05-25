@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "AIFA Awards 2024",
+  "description": "The AI Film Academy Awards 2024 celebrates innovation in AI filmmaking with winners including Ethereal Moon, Rainisto, B O E Y, Mind Wank, Mflux, and Hallidonto.",
+  "image": "/images/Awards2024/awardwinners/denny_the_shark.png",
+  "startDate": "2024-07-22",
+  "endDate": "2024-07-22",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "London",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "UK"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "AIFA Ventures",
+    "url": "https://aifilm.academy"
+  },
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "Ethereal Moon"
+    },
+    {
+      "@type": "Person",
+      "name": "Rainisto"
+    },
+    {
+      "@type": "Person",
+      "name": "B O E Y"
+    },
+    {
+      "@type": "Person",
+      "name": "Mind Wank"
+    },
+    {
+      "@type": "Person",
+      "name": "Mflux"
+    },
+    {
+      "@type": "Person",
+      "name": "Hallidonto"
+    }
+  ],
+  "awards": [
+    {
+      "@type": "CreativeWork",
+      "name": "Denny the Shark",
+      "creator": {
+        "@type": "Person",
+        "name": "Ethereal Moon"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Birthday Story",
+      "creator": {
+        "@type": "Person",
+        "name": "Rainisto"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "not a problem",
+      "creator": {
+        "@type": "Person",
+        "name": "B O E Y"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "You Are, Unfortunately, an AI Artist",
+      "creator": {
+        "@type": "Person",
+        "name": "Mind Wank"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "AInferno",
+      "creator": {
+        "@type": "Person",
+        "name": "Mflux"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Bacillus Anthracis",
+      "creator": {
+        "@type": "Person",
+        "name": "Hallidonto"
+      }
+    }
+  ]
+}

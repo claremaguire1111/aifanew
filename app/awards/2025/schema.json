@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "AIFA Awards 2025",
+  "description": "The AI Film Academy Awards 2025 celebrates innovation in AI filmmaking, launching June 3 at NFC with award ceremony on July 22 in London.",
+  "image": "/images/jury2025/david_sheldrick.PNG",
+  "startDate": "2025-06-03",
+  "endDate": "2025-07-22",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": [
+    {
+      "@type": "Place",
+      "name": "NFC Lisbon",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lisbon",
+        "addressCountry": "Portugal"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "London",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "UK"
+      }
+    }
+  ],
+  "organizer": {
+    "@type": "Organization",
+    "name": "AIFA Ventures",
+    "url": "https://aifilm.academy"
+  },
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "David Sheldrick",
+      "roleName": "Artist"
+    }
+  ],
+  "subEvent": [
+    {
+      "@type": "Event",
+      "name": "Finalists Announcement",
+      "startDate": "2025-06-03",
+      "location": {
+        "@type": "Place",
+        "name": "NFC Lisbon"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Awards Ceremony",
+      "startDate": "2025-07-22",
+      "location": {
+        "@type": "Place",
+        "name": "London"
+      }
+    }
+  ]
+}

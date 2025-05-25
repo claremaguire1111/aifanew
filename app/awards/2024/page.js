@@ -2,9 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+import Head from "next/head";
 import "../awards.css";
 
 export default function Awards2024() {
+  // Since we're using 'use client', we need to add SEO with Head component
+  // Metadata API won't work with 'use client' directive
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -230,12 +234,28 @@ export default function Awards2024() {
 
   return (
     <div className="awards-page">
+      <Head>
+        <title>AIFA Awards 2024 | World's #1 Film Awards for AI Filmmaking</title>
+        <meta name="description" content="AIFA Awards 2024 - The world's leading AI film awards celebrating groundbreaking innovation in filmmaking with winners including Ethereal Moon, Rainisto, B O E Y, Mind Wank, Mflux, and Hallidonto." />
+        <meta name="keywords" content="AIFA Awards, World's #1 Film Awards, AI Film Academy, AI filmmaking, Ethereal Moon, digital art awards, NFT film, AI artists, global film awards, future of entertainment" />
+        <meta property="og:title" content="AIFA Awards 2024 | World's #1 Film Awards for AI Filmmaking" />
+        <meta property="og:description" content="Discover the winners of AIFA Awards 2024, the world's leading celebration of innovation in AI-generated filmmaking and digital art, shaping the future of global entertainment." />
+        <meta property="og:image" content="/images/Awards2024/awardwinners/denny_the_shark.png" />
+        <meta property="og:url" content="https://aifilm.academy/awards/2024" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@aifilmacademy" />
+        <link rel="canonical" href="https://aifilm.academy/awards/2024" />
+        <script type="application/ld+json">
+          {JSON.stringify(require('./schema.json'))}
+        </script>
+      </Head>
       {/* HEADER */}
       <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
         <Link href="/" className="logo">
           <img
             src="/images/AIFAlogo.png"
-            alt="AIFA Logo"
+            alt="AI Film Academy (AIFA) Logo"
             style={{ filter: "brightness(0) invert(1)" }}
           />
         </Link>
@@ -361,7 +381,7 @@ export default function Awards2024() {
               key={index}
             >
               <div className="gallery-image">
-                <img src={item.image} alt={item.title} />
+                <img src={item.image} alt={`${item.title} by ${item.artist} - ${item.type === 'winner' ? 'Award Winner' : item.type === 'featured' ? 'Featured Artist' : 'Finalist'} at AIFA Awards 2024`} />
                 <div className="collect-overlay">
                   <span>Collect</span>
                 </div>
@@ -423,7 +443,7 @@ export default function Awards2024() {
             {juryMembers.map((member, index) => (
               <div className="jury-member" key={index}>
                 <div className="jury-image">
-                  <img src={member.image} alt={member.name} />
+                  <img src={member.image} alt={`${member.name} - ${member.role} - AIFA Awards 2024 Jury Member`} />
                 </div>
                 <div className="jury-info">
                   <h3>{member.name}</h3>
@@ -513,7 +533,7 @@ export default function Awards2024() {
 
       <div style={{ textAlign: "center", padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)" }}>© 2025 AIFA Ventures. All rights reserved</p>
-        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>A positive future for entertainment</p>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>AIFA Awards - The World's #1 Film Awards | Leading Global Entertainment Venture</p>
       </div>
     </div>
   );

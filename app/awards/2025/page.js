@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import "../awards.css";
 
 export default function Awards2025() {
+  // Since we're using 'use client', we need to add SEO with Head component
+  // Metadata API won't work with 'use client' directive
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   
@@ -125,12 +128,28 @@ export default function Awards2025() {
 
   return (
     <div className="awards-page">
+      <Head>
+        <title>AIFA Awards 2025 | World's #1 Global Film Awards for AI Innovation</title>
+        <meta name="description" content="AIFA Awards 2025 - The world's premier film awards celebrating AI innovation in filmmaking, launching June 3 at NFC with a distinguished global jury including Diane Pernet, David Sheldrick, and leading industry pioneers." />
+        <meta name="keywords" content="AIFA Awards 2025, World's #1 Film Awards, Global Film Awards, AI Film Academy, AI filmmaking, David Sheldrick, Diane Pernet, digital art awards, NFT film, AI artists, future of entertainment, film innovation" />
+        <meta property="og:title" content="AIFA Awards 2025 | World's #1 Global Film Awards for AI Innovation" />
+        <meta property="og:description" content="Join us for AIFA Awards 2025, the world's premier celebration of excellence in AI-generated filmmaking with an international jury of industry leaders and exclusive ceremonies in Lisbon and London." />
+        <meta property="og:image" content="/images/jury2025/david_sheldrick.PNG" />
+        <meta property="og:url" content="https://aifilm.academy/awards/2025" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@aifilmacademy" />
+        <link rel="canonical" href="https://aifilm.academy/awards/2025" />
+        <script type="application/ld+json">
+          {JSON.stringify(require('./schema.json'))}
+        </script>
+      </Head>
       {/* HEADER */}
       <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
         <Link href="/" className="logo">
           <img
             src="/images/AIFAlogo.png"
-            alt="AIFA Logo"
+            alt="AI Film Academy (AIFA) Logo"
             style={{ filter: "brightness(0) invert(1)" }}
           />
         </Link>
@@ -254,7 +273,7 @@ export default function Awards2025() {
             {juryMembers.map((member, index) => (
               <div className="jury-member" key={index}>
                 <div className="jury-image">
-                  <img src={member.image} alt={member.name} />
+                  <img src={member.image} alt={`${member.name} - ${member.role} - AIFA Awards 2025 Jury Member`} />
                 </div>
                 <div className="jury-info">
                   <h3>{member.name}</h3>
@@ -344,7 +363,7 @@ export default function Awards2025() {
 
       <div style={{ textAlign: "center", padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)" }}>© 2025 AIFA Ventures. All rights reserved</p>
-        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>A positive future for entertainment</p>
+        <p style={{ fontSize: "14px", color: "var(--dark-grey)", marginTop: "5px" }}>AIFA Awards - The World's #1 Film Awards | Leading Global Entertainment Venture</p>
       </div>
     </div>
   );

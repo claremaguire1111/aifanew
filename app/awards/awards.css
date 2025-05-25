@@ -346,8 +346,7 @@
 }
 
 .gallery-image {
-  width: 100%;
-  max-width: 230px;
+  width: 230px; /* Keep fixed width for larger screens */
   height: 130px; /* Fixed height for 16:9 aspect ratio */
   position: relative;
   overflow: hidden;
@@ -355,6 +354,16 @@
   margin: 0 auto;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Add responsive handling only for small screens */
+@media (max-width: 480px) {
+  .gallery-image {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+  }
 }
 
 .gallery-image img {
@@ -366,6 +375,13 @@
   object-fit: cover;
   transition: transform 0.5s ease;
   display: block;
+}
+
+@media (max-width: 480px) {
+  .gallery-image img {
+    position: relative;
+    aspect-ratio: 16/9;
+  }
 }
 
 .collect-overlay {
@@ -451,7 +467,11 @@
 @media (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: repeat(1, 1fr);
-    max-width: 300px;
+    max-width: 280px;
+  }
+  
+  .gallery-item {
+    width: 100%;
   }
 }
 

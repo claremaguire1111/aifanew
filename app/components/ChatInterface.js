@@ -28,6 +28,7 @@ export default function ChatInterface({ artist, artwork }) {
         { sender: artist.name, text: response.data.reply },
       ]);
     } catch (error) {
+      console.error('Chat error:', error);
       setMessages((prev) => [
         ...prev,
         { sender: artist.name, text: 'Sorry, something went wrong.' },

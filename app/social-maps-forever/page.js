@@ -149,7 +149,18 @@ export default function SocialMapsForever() {
       posts: [
         {
           type: "Partners Post",
-          content: "🎥 AIFA PARTNERS 2025\n\nWe're thrilled to collaborate with Sedition, Muse Frame, and NOPRBLM this year",
+          content: "🎥 AIFA PARTNERS 2025\n\nWe're thrilled to collaborate with Sedition, Muse Frame, and NOPRBLM this year to the AIFA Awards Supported by Innovate UK",
+          isThreadStart: false,
+          isThreadEnd: false
+        }
+      ]
+    },
+    {
+      date: "June 1",
+      posts: [
+        {
+          type: "Press Post",
+          content: "🎥 AIFA IN THE PRESS\n\n⟡ Co-Founder of AIFA Ventures Leo Crane discusses AI and creativity, read more below ↴",
           isThreadStart: false,
           isThreadEnd: false
         }
@@ -711,6 +722,12 @@ export default function SocialMapsForever() {
                           </div>
                         )}
                         
+                        {post.type === "Press Post" && (
+                          <div className="date-background-box" style={{ background: "#000" }}>
+                            <div className="date-text">AIFA IN THE PRESS</div>
+                            <div className="aifa-label">MEDIA COVERAGE</div>
+                          </div>
+                        )}
                         {post.type === "Morning Post" && !post.content.includes("LONDON") && !post.content.includes("WINNERS") && dateSection.date !== "July 22" && (
                           <div className="date-background-box">
                             <div className="date-text">MORNING POST</div>
@@ -973,6 +990,13 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 2</div>
           </div>
           <div className="instagram-feed-item">
+            <div className="date-background-box" style={{ background: "#000" }}>
+              <div className="date-text">AIFA IN THE PRESS</div>
+              <div className="aifa-label">JUNE 1</div>
+            </div>
+            <div className="instagram-feed-date">June 1</div>
+          </div>
+          <div className="instagram-feed-item">
             <img src="/images/social/june1.PNG" alt="June 1 Post" />
             <div className="instagram-feed-date">June 1</div>
           </div>
@@ -1082,8 +1106,8 @@ export default function SocialMapsForever() {
         </div>
       </section>
 
-      <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)", position: "relative" }}>
-        <div style={{ position: "absolute", left: "20px", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center" }}>
+      <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
+        <div style={{ position: "absolute", left: "20px", display: "flex", alignItems: "center" }}>
           <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
           <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
         </div>

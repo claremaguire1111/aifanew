@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
     // Allow production builds to continue even with TypeScript errors
     ignoreBuildErrors: true,
   },
+  // Ensure images are properly handled
+  images: {
+    unoptimized: true,
+    domains: ['aifilmacademy.io', 'www.aifilmacademy.io'],
+  },
+  // Set asset prefix if needed (uncomment if you're having path issues)
+  // assetPrefix: '.',
 };
 
 export default nextConfig;

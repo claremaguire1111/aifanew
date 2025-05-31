@@ -34,6 +34,18 @@
             border-radius: 3px;
             margin-bottom: 10px;
         }
+        .solutions {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        code {
+            font-family: monospace;
+            background-color: #f1f1f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +74,31 @@
         <h2>Different Social Image Test</h2>
         <div class="path">/images/social/may31.png</div>
         <img src="/images/social/may31.png" alt="May 31 Image">
+    </div>
+    
+    <div class="image-container">
+        <h2>Full Domain Test</h2>
+        <div class="path">https://aifilmacademy.io/images/social/AIFA1.png</div>
+        <img src="https://aifilmacademy.io/images/social/AIFA1.png" alt="AIFA1 Image (Full Domain)">
+    </div>
+    
+    <div class="solutions">
+        <h2>Troubleshooting Solutions</h2>
+        <p>If the images from /images/social/ and /images/support/ are not loading, but regular images are, try these solutions:</p>
+        
+        <h3>Solution 1: Update AIFAImage component</h3>
+        <p>If you are using the AIFAImage component, it will now use absolute URLs for these folders in production.</p>
+        
+        <h3>Solution 2: Manually update image paths</h3>
+        <p>Change image paths from:</p>
+        <code>&lt;img src="/images/social/AIFA1.png" /&gt;</code>
+        <p>To:</p>
+        <code>&lt;img src="https://aifilmacademy.io/images/social/AIFA1.png" /&gt;</code>
+        
+        <h3>Solution 3: Use Next.js Image component</h3>
+        <p>Replace standard img tags with Next.js Image component:</p>
+        <code>import Image from 'next/image';<br>
+        &lt;Image src="/images/social/AIFA1.png" width={500} height={300} /&gt;</code>
     </div>
     
     <script>

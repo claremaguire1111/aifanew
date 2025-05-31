@@ -510,7 +510,7 @@ export default function SocialMapsForever() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
                 className="login-input"
-                onKeyPress={(e) => e.key === 'Enter' && checkPassword()}
+                onKeyDown={(e) => e.key === 'Enter' && checkPassword()}
               />
               <button onClick={checkPassword} className="login-button">Access Content</button>
               {errorMessage && <p className="login-error">{errorMessage}</p>}
@@ -518,6 +518,7 @@ export default function SocialMapsForever() {
           </div>
         </div>
       ) : (
+        <>
 
       {/* HEADER */}
       <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
@@ -1098,6 +1099,7 @@ export default function SocialMapsForever() {
         </div>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
       </div>
+        </>
       )}
     </div>
   );

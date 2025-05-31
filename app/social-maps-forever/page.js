@@ -8,8 +8,30 @@ import "./social-maps-forever.css";
 export default function SocialMapsForever() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  // Password verification
+  const checkPassword = () => {
+    // Simple password protection - in a real app, this should be more secure
+    if (password === 'aifasocial2025') {
+      setIsAuthenticated(true);
+      setErrorMessage('');
+      localStorage.setItem('aifsSecretAccess', 'true');
+    } else {
+      setErrorMessage('Incorrect password. Please try again.');
+    }
+  };
+
+  // Check for authentication on page load
+  useEffect(() => {
+    if (localStorage.getItem('aifsSecretAccess') === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   // Header scroll effect
   useEffect(() => {
@@ -27,6 +49,8 @@ export default function SocialMapsForever() {
 
   // Animation for scroll-triggered elements
   useEffect(() => {
+    if (!isAuthenticated) return;
+    
     const animatedElements = document.querySelectorAll('.fade-in');
     
     const observer = new IntersectionObserver(entries => {
@@ -42,7 +66,7 @@ export default function SocialMapsForever() {
     return () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
-  }, []);
+  }, [isAuthenticated]);
 
   const socialPosts = [
     {
@@ -453,10 +477,47 @@ export default function SocialMapsForever() {
   return (
     <div className="social-page">
       <Head>
-        <title>AIFA Social Media Content Calendar | AI Film Academy</title>
-        <meta name="description" content="AIFA's social media content calendar for promoting the 2025 Awards and events" />
+        <title>AIFA Internal Document | Not Public</title>
+        <meta name="description" content="Internal planning document - not for public viewing" />
         <meta name="robots" content="noindex,nofollow" />
+        <meta name="googlebot" content="noindex,nofollow" />
+        <meta name="bingbot" content="noindex,nofollow" />
+        <meta name="yandex" content="none" />
+        <meta name="baidu" content="noindex,nofollow" />
+        <meta name="googlebot-news" content="noindex,nofollow" />
+        <meta name="googlebot-image" content="noindex,nofollow" />
+        <meta name="googlebot-video" content="noindex,nofollow" />
+        <meta name="slurp" content="noindex,nofollow" />
+        <meta name="search-engine-index" content="0" />
+        <meta httpEquiv="X-Robots-Tag" content="noindex, nofollow" />
+        <link rel="canonical" href="https://aifilm.academy" />
       </Head>
+      
+      {!isAuthenticated ? (
+        <div className="login-container">
+          <div className="login-box">
+            <img
+              src="/images/AIFAlogo.png"
+              alt="AI Film Academy (AIFA) Logo"
+              className="login-logo"
+            />
+            <h1>AIFA Private Content</h1>
+            <p>This page contains private planning information for AIFA team members only.</p>
+            <div className="login-form">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter password"
+                className="login-input"
+                onKeyPress={(e) => e.key === 'Enter' && checkPassword()}
+              />
+              <button onClick={checkPassword} className="login-button">Access Content</button>
+              {errorMessage && <p className="login-error">{errorMessage}</p>}
+            </div>
+          </div>
+        </div>
+      ) : (
 
       {/* HEADER */}
       <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
@@ -501,7 +562,6 @@ export default function SocialMapsForever() {
 
       {/* CONTENT SECTION */}
       <section className="social-content">
-        <h2 className="content-title fade-in">Content Calendar</h2>
 
         <div className="social-posts">
           {socialPosts.map((dateSection, dateIndex) => (
@@ -1038,6 +1098,7 @@ export default function SocialMapsForever() {
         </div>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
       </div>
+      )}
     </div>
   );
 }

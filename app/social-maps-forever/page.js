@@ -6,6 +6,33 @@ import Head from "next/head";
 import "./social-maps-forever.css";
 import AIFAImage from "../components/AIFAImage";
 
+// Special component just for the Innovate UK image to ensure it loads correctly
+function InnovateUKImage() {
+  const [imageSrc, setImageSrc] = useState('/images/support/innovateuk.jpg');
+  
+  // Update the image src with the correct domain once the component mounts
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setImageSrc(`${window.location.origin}/images/support/innovateuk.jpg`);
+    }
+  }, []);
+  
+  // Handle image loading errors
+  const handleError = () => {
+    // Try aifilmacademy.io as a fallback
+    setImageSrc('https://aifilmacademy.io/images/support/innovateuk.jpg');
+  };
+  
+  return (
+    <img 
+      src={imageSrc}
+      alt="Innovate UK" 
+      style={{ height: "20px", width: "auto" }}
+      onError={handleError}
+    />
+  );
+}
+
 export default function SocialMapsForever() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -1096,7 +1123,7 @@ export default function SocialMapsForever() {
       <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
         <div style={{ position: "absolute", left: "20px", display: "flex", alignItems: "center" }}>
           <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
-          <AIFAImage src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
+          <InnovateUKImage />
         </div>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
       </div>

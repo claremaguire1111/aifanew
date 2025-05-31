@@ -1,18 +1,40 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
 
 /**
  * A component for handling image paths correctly in both development and production environments
+ * Works with multiple domains including aifilmacademy.io and aifaventures.com
  */
 export default function AIFAImage({ src, alt, className, style }) {
-  // Check if we're in a production environment
-  const isProduction = process.env.NODE_ENV === 'production';
+  // We'll use state to store the final src after determining current domain
+  const [finalSrc, setFinalSrc] = useState(src);
   
-  // Handle the case of URLs vs relative paths
+  // For social and support images, determine the best URL on component mount
+  useEffect(() => {
+    // Check if we're in a browser environment
+    if (typeof window === 'undefined') return;
+    
+    // For local images, determine if it's a special case (social or support folders)
+    const isSocialImage = src.includes('/images/social/');
+    const isSupportImage = src.includes('/images/support/');
+    
+    if (isSocialImage || isSupportImage) {
+      // Extract the image filename
+      const parts = src.split('/');
+      const filename = parts[parts.length - 1];
+      const folder = isSocialImage ? 'social' : 'support';
+      
+      // Get the current domain
+      const currentDomain = window.location.origin;
+      
+      // Set the final src with the current domain
+      setFinalSrc(`${currentDomain}/images/${folder}/${filename}`);
+    }
+  }, [src]);
+  
+  // External URLs pass through directly
   if (src.startsWith('http')) {
-    // External URL - use as is
     return (
       <img 
         src={src}
@@ -23,39 +45,10 @@ export default function AIFAImage({ src, alt, className, style }) {
     );
   }
   
-  // For local images, let's determine if it's a special case (social or support folders)
-  const isSocialImage = src.includes('/images/social/');
-  const isSupportImage = src.includes('/images/support/');
-  
-  // Special handling for social and support images
-  if (isSocialImage || isSupportImage) {
-    // Extract the image filename
-    const parts = src.split('/');
-    const filename = parts[parts.length - 1];
-    const folder = isSocialImage ? 'social' : 'support';
-    
-    // In production, use a special CDN pattern
-    if (isProduction) {
-      // Use absolute URL with domain for these special folders
-      const domain = 'https://aifilmacademy.io';
-      return (
-        <img 
-          src={`${domain}/images/${folder}/${filename}`}
-          alt={alt || ''}
-          className={className || ''}
-          style={style || {}}
-        />
-      );
-    }
-  }
-  
-  // For normal images or local development
-  // Ensure the src path starts with a slash if it doesn't already
-  const normalizedSrc = src.startsWith('/') ? src : `/${src}`;
-  
+  // For all other images, use the finalSrc
   return (
     <img 
-      src={normalizedSrc}
+      src={finalSrc}
       alt={alt || ''}
       className={className || ''}
       style={style || {}}

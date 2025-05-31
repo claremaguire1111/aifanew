@@ -1035,48 +1035,6 @@ export default function SocialMapsForever() {
         </p>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section className="contact-us-section" id="contact">
-        <div className="footer-column">
-          <h3>Get in Touch</h3>
-          <ul>
-            <li>
-              <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Navigate</h3>
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/awards/2025">Awards 2025</Link>
-            </li>
-            <li>
-              <Link href="/awards/2024">Awards 2024</Link>
-            </li>
-            <li>
-              <Link href="/film-chat">Chat</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Follow</h3>
-          <ul>
-            <li>
-              <a href="https://www.instagram.com/aifilm.academy" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </li>
-            <li>
-              <a href="https://x.com/aifilmacademy" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/company/aifa-ventures" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
         <div style={{ position: "absolute", left: "20px", display: "flex", alignItems: "center" }}>

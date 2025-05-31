@@ -502,11 +502,6 @@ export default function SocialMapsForever() {
       {/* CONTENT SECTION */}
       <section className="social-content">
         <h2 className="content-title fade-in">Content Calendar</h2>
-        <p className="content-description fade-in">
-          This calendar outlines our social media strategy for the AIFA Awards 2025 campaign.
-          Each post includes space for an Instagram-sized image, and content will be adapted 
-          for various platforms including Twitter, Instagram, and LinkedIn.
-        </p>
 
         <div className="social-posts">
           {socialPosts.map((dateSection, dateIndex) => (

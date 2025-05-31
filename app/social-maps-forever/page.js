@@ -829,6 +829,10 @@ export default function SocialMapsForever() {
         <div className="instagram-feed-grid fade-in">
           {/* Most recent posts at the top */}
           <div className="instagram-feed-item">
+            <img src="/images/social/july22.JPG" alt="July 31 Post" />
+            <div className="instagram-feed-date">July 31</div>
+          </div>
+          <div className="instagram-feed-item">
             <img src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">July 30</div>
           </div>
@@ -1031,7 +1035,7 @@ export default function SocialMapsForever() {
         </p>
       </section>
 
-      {/* FOOTER */}
+      {/* CONTACT SECTION */}
       <section className="contact-us-section" id="contact">
         <div className="footer-column">
           <h3>Get in Touch</h3>

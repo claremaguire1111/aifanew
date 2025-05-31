@@ -1066,31 +1066,13 @@ export default function SocialMapsForever() {
           <h3>Follow</h3>
           <ul>
             <li>
-              <a
-                href="https://www.instagram.com/aifilm.academy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
+              <a href="https://www.instagram.com/aifilm.academy" target="_blank" rel="noopener noreferrer">Instagram</a>
             </li>
             <li>
-              <a
-                href="https://x.com/aifilmacademy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                X (Twitter)
-              </a>
+              <a href="https://x.com/aifilmacademy" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
             </li>
             <li>
-              <a
-                href="https://www.linkedin.com/company/aifa-ventures"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
+              <a href="https://www.linkedin.com/company/aifa-ventures" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </li>
           </ul>
         </div>

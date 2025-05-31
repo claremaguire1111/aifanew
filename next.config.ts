@@ -21,8 +21,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     domains: ['aifilmacademy.io', 'www.aifilmacademy.io'],
   },
-  // Set asset prefix if needed (uncomment if you're having path issues)
-  // assetPrefix: '.',
+  // Use asset prefix to fix path issues in production
+  assetPrefix: './',
 };
 
 export default nextConfig;

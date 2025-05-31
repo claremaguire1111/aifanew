@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import "./social-maps-forever.css";
+import AIFAImage from "../components/AIFAImage";
 
 export default function SocialMapsForever() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -496,7 +497,7 @@ export default function SocialMapsForever() {
       {!isAuthenticated ? (
         <div className="login-container">
           <div className="login-box">
-            <img
+            <AIFAImage
               src="/images/AIFAlogo.png"
               alt="AI Film Academy (AIFA) Logo"
               className="login-logo"
@@ -523,7 +524,7 @@ export default function SocialMapsForever() {
       {/* HEADER */}
       <header className={`header ${headerScrolled ? "scrolled" : ""}`}>
         <Link href="/" className="logo">
-          <img
+          <AIFAImage
             src="/images/AIFAlogo.png"
             alt="AI Film Academy (AIFA) Logo"
             style={{ filter: "brightness(0) invert(1)" }}
@@ -583,7 +584,7 @@ export default function SocialMapsForever() {
                         {/* Type-based images */}
                         {post.type === "Announcement Post" && (
                           <>
-                            <img src="/images/social/AIFA1.png" alt="AIFA Awards 2025" style={{ filter: 'none' }} />
+                            <AIFAImage src="/images/social/AIFA1.png" alt="AIFA Awards 2025" style={{ filter: 'none' }} />
                             <div className="announcement-overlay">
                               <div className="announcement-title">AIFA AWARDS 2025</div>
                               <div className="announcement-subtitle">London | Lisbon | Global</div>
@@ -595,7 +596,7 @@ export default function SocialMapsForever() {
                         )}
                         {(post.type === "Featured Artist Post" || (post.type === "Standard Post" && post.content.includes("Featured Artist"))) && (
                           <>
-                            <img src="/images/social/Sheldrick_feature.png" alt="David Sheldrick" style={{ filter: 'none' }} />
+                            <AIFAImage src="/images/social/Sheldrick_feature.png" alt="David Sheldrick" style={{ filter: 'none' }} />
                             <div className="featured-artist-overlay">
                               <div className="featured-title">AIFA Awards 2025</div>
                               <div className="featured-title">Featured Artist</div>
@@ -1095,7 +1096,7 @@ export default function SocialMapsForever() {
       <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
         <div style={{ position: "absolute", left: "20px", display: "flex", alignItems: "center" }}>
           <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
-          <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
+          <AIFAImage src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
         </div>
         <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
       </div>

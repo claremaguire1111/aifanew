@@ -15,20 +15,24 @@
       }
     ]
   },
-  "routes": [
+  "headers": [
     {
-      "src": "/images/social/(.*)",
-      "dest": "/images/social/$1",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
+      "source": "/images/social/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
-      "src": "/images/support/(.*)",
-      "dest": "/images/support/$1",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
+      "source": "/images/support/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }

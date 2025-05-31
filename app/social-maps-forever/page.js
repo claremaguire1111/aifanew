@@ -803,40 +803,40 @@ export default function SocialMapsForever() {
                          !post.content.includes("AIFA PARTNERS 2025") && (
                           <>
                             {dateSection.date === "May 31" && (
-                              <img src="/images/social/may31.png" alt="May 31" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/may31.png" alt="May 31" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "June 1" && (
-                              <img src="/images/social/june1.PNG" alt="June 1" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/june1.PNG" alt="June 1" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "June 2" && (
-                              <img src="/images/social/june2.png" alt="June 2" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/june2.png" alt="June 2" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "June 4" && (
-                              <img src="/images/social/june4.png" alt="June 4" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/june4.png" alt="June 4" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "June 6" && (
-                              <img src="/images/social/june6.png" alt="June 6" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/june6.png" alt="June 6" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "June 9" && (
-                              <img src="/images/social/june9.png" alt="June 9" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/june9.png" alt="June 9" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "July 1" && (
-                              <img src="/images/social/july1.png" alt="July 1" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/july1.png" alt="July 1" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "July 5" && (
-                              <img src="/images/social/july5.JPG" alt="July 5" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/july5.JPG" alt="July 5" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "July 10" && (
-                              <img src="/images/social/july10.png" alt="July 10" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/july10.png" alt="July 10" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "July 17" && (
-                              <img src="/images/social/july17.jpg" alt="July 17" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/july17.jpg" alt="July 17" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "July 20" && (
-                              <img src="/images/social/july20.JPG" alt="July 20" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/july20.JPG" alt="July 20" style={{ filter: 'none' }} />
                             )}
                             {dateSection.date === "July 22" && (
-                              <img src="/images/social/july22.JPG" alt="July 22" style={{ filter: 'none' }} />
+                              <AIFAImage src="/images/social/july22.JPG" alt="July 22" style={{ filter: 'none' }} />
                             )}
                             
                             {/* Default black background with date text for dates without specific images */}
@@ -886,15 +886,15 @@ export default function SocialMapsForever() {
         <div className="instagram-feed-grid fade-in">
           {/* Most recent posts at the top */}
           <div className="instagram-feed-item">
-            <img src="/images/social/july22.JPG" alt="July 31 Post" />
+            <AIFAImage src="/images/social/july22.JPG" alt="July 31 Post" />
             <div className="instagram-feed-date">July 31</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">July 30</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more2.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more2.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">July 27</div>
           </div>
           <div className="instagram-feed-item">
@@ -905,23 +905,23 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">July 23</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/july22.JPG" alt="July 22 Post" />
+            <AIFAImage src="/images/social/july22.JPG" alt="July 22 Post" />
             <div className="instagram-feed-date">July 22</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/july20.JPG" alt="July 20 Post" />
+            <AIFAImage src="/images/social/july20.JPG" alt="July 20 Post" />
             <div className="instagram-feed-date">July 20</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/july17.jpg" alt="July 17 Post" />
+            <AIFAImage src="/images/social/july17.jpg" alt="July 17 Post" />
             <div className="instagram-feed-date">July 17</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/july10.png" alt="July 10 Post" />
+            <AIFAImage src="/images/social/july10.png" alt="July 10 Post" />
             <div className="instagram-feed-date">July 10</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/july5.JPG" alt="July 5 Post" />
+            <AIFAImage src="/images/social/july5.JPG" alt="July 5 Post" />
             <div className="instagram-feed-date">July 5</div>
           </div>
           <div className="instagram-feed-item">
@@ -932,11 +932,11 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">July 4</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more3.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more3.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">July 3</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/july1.png" alt="July 1 Post" />
+            <AIFAImage src="/images/social/july1.png" alt="July 1 Post" />
             <div className="instagram-feed-date">July 1</div>
           </div>
           <div className="instagram-feed-item">
@@ -947,11 +947,11 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 25</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more4.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more4.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 22</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more5.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more5.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 21</div>
           </div>
           <div className="instagram-feed-item">
@@ -962,7 +962,7 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 20</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more6.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more6.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 19</div>
           </div>
           <div className="instagram-feed-item">
@@ -973,11 +973,11 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 16</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more7.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more7.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 16</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more8.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more8.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 15</div>
           </div>
           <div className="instagram-feed-item">
@@ -995,15 +995,15 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 12</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more10.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more10.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 10</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/june9.png" alt="June 9 Post" />
+            <AIFAImage src="/images/social/june9.png" alt="June 9 Post" />
             <div className="instagram-feed-date">June 9</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/june6.png" alt="June 6 Post" />
+            <AIFAImage src="/images/social/june6.png" alt="June 6 Post" />
             <div className="instagram-feed-date">June 6</div>
           </div>
           <div className="instagram-feed-item">
@@ -1014,11 +1014,11 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 5</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more10.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more10.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 4</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/june4.png" alt="June 4 Post" />
+            <AIFAImage src="/images/social/june4.png" alt="June 4 Post" />
             <div className="instagram-feed-date">June 4</div>
           </div>
           <div className="instagram-feed-item">
@@ -1029,11 +1029,11 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 3</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/june2.png" alt="June 2 Post" />
+            <AIFAImage src="/images/social/june2.png" alt="June 2 Post" />
             <div className="instagram-feed-date">June 2</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more11.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more11.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">June 2</div>
           </div>
           <div className="instagram-feed-item">
@@ -1044,15 +1044,15 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">June 1</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/june1.PNG" alt="June 1 Post" />
+            <AIFAImage src="/images/social/june1.PNG" alt="June 1 Post" />
             <div className="instagram-feed-date">June 1</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">May 31</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/may31.png" alt="May 31 Post" />
+            <AIFAImage src="/images/social/may31.png" alt="May 31 Post" />
             <div className="instagram-feed-date">May 31</div>
           </div>
           <div className="instagram-feed-item">
@@ -1063,11 +1063,11 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">May 30</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/more2.jpg" alt="More content" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/more2.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">May 30</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/Sheldrick_feature.png" alt="David Sheldrick Feature" />
+            <AIFAImage src="/images/social/Sheldrick_feature.png" alt="David Sheldrick Feature" />
             <div className="instagram-feed-date">May 29</div>
           </div>
           <div className="instagram-feed-item">
@@ -1075,15 +1075,15 @@ export default function SocialMapsForever() {
             <div className="instagram-feed-date">May 28</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/may271.png" alt="AIFA Awards Announcement 1" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/may271.png" alt="AIFA Awards Announcement 1" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">May 27</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/AIFA1.png" alt="AIFA Awards Announcement" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/AIFA1.png" alt="AIFA Awards Announcement" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">May 27</div>
           </div>
           <div className="instagram-feed-item">
-            <img src="/images/social/may272.PNG" alt="AIFA Awards Announcement 2" style={{ filter: 'none' }} />
+            <AIFAImage src="/images/social/may272.PNG" alt="AIFA Awards Announcement 2" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">May 27</div>
           </div>
         </div>

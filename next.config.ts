@@ -21,10 +21,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     domains: ['aifilmacademy.io', 'www.aifilmacademy.io'],
   },
-  // Use asset prefix to fix path issues in production
-  assetPrefix: './',
-  // Enable static exports to include all assets
-  output: 'export',
+  // Custom output directory configuration for Vercel
+  distDir: process.env.VERCEL ? '.vercel/output/static' : '.next',
 };
 
 export default nextConfig;

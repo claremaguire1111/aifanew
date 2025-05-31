@@ -27,19 +27,8 @@ export default function AIFAImage({ src, alt, className, style }) {
   // Ensure the src path starts with a slash if it doesn't already
   const normalizedSrc = src.startsWith('/') ? src : `/${src}`;
   
-  // Handle social and support images specifically
+  // Handle image paths for Vercel deployment
   let finalSrc = normalizedSrc;
-  
-  if (isProduction) {
-    // For social and support images in production
-    if (normalizedSrc.includes('/images/social/') || normalizedSrc.includes('/images/support/')) {
-      // Fix the path structure - keeping the leading slash but using double dots to go back one level
-      finalSrc = `..${normalizedSrc}`;
-    } else {
-      // For other images, just remove the leading slash
-      finalSrc = normalizedSrc.substring(1);
-    }
-  }
   
   return (
     <img 

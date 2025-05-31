@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "cleanUrls": true,
+  "public": true,
+  "outputDirectory": ".vercel/output/static",
+  "images": {
+    "sizes": [256, 640, 1200, 1920],
+    "domains": ["aifilmacademy.io", "www.aifilmacademy.io"],
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "**"
+      }
+    ]
+  }
+}

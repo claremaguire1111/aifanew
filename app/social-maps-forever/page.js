@@ -57,7 +57,7 @@ export default function SocialMapsForever() {
       ]
     },
     {
-      date: "May 28",
+      date: "May 31",
       posts: [
         {
           type: "Thread Start",
@@ -134,7 +134,7 @@ export default function SocialMapsForever() {
       ]
     },
     {
-      date: "May 29",
+      date: "May 31",
       posts: [
         {
           type: "Featured Artist Post",
@@ -145,7 +145,7 @@ export default function SocialMapsForever() {
       ]
     },
     {
-      date: "May 30",
+      date: "June 1",
       posts: [
         {
           type: "Partners Post",
@@ -156,7 +156,7 @@ export default function SocialMapsForever() {
       ]
     },
     {
-      date: "May 31",
+      date: "June 1",
       posts: [
         {
           type: "Standard Post",
@@ -427,7 +427,7 @@ export default function SocialMapsForever() {
       ]
     },
     {
-      date: "Late July (Optional/Adjust Date)",
+      date: "August 5",
       posts: [
         {
           type: "Standard Post",
@@ -1082,8 +1082,8 @@ export default function SocialMapsForever() {
         </div>
       </section>
 
-      <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
-        <div style={{ position: "absolute", left: "20px", display: "flex", alignItems: "center" }}>
+      <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)", position: "relative" }}>
+        <div style={{ position: "absolute", left: "20px", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center" }}>
           <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
           <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
         </div>

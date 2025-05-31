@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Loading Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border: 1px solid #eee;
+        }
+        .path {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    <p>This page tests loading images from different directories to diagnose issues with image loading in production.</p>
+    
+    <div class="image-container">
+        <h2>Social Image Test</h2>
+        <div class="path">/images/social/AIFA1.png</div>
+        <img src="/images/social/AIFA1.png" alt="AIFA1 Image">
+    </div>
+    
+    <div class="image-container">
+        <h2>Support Image Test</h2>
+        <div class="path">/images/support/innovateuk.jpg</div>
+        <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo">
+    </div>
+    
+    <div class="image-container">
+        <h2>Regular Image Test (Known Working)</h2>
+        <div class="path">/images/AIFAlogo.png</div>
+        <img src="/images/AIFAlogo.png" alt="AIFA Logo">
+    </div>
+    
+    <div class="image-container">
+        <h2>Different Social Image Test</h2>
+        <div class="path">/images/social/may31.png</div>
+        <img src="/images/social/may31.png" alt="May 31 Image">
+    </div>
+    
+    <script>
+        // Log image loading errors
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.error('Failed to load image:', this.src);
+                this.after(document.createTextNode('❌ Failed to load image'));
+                this.style.border = '2px solid red';
+            });
+            
+            img.addEventListener('load', function() {
+                console.log('Successfully loaded image:', this.src);
+                this.after(document.createTextNode('✅ Image loaded successfully'));
+                this.style.border = '2px solid green';
+            });
+        });
+    </script>
+</body>
+</html>

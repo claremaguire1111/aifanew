@@ -46,11 +46,11 @@ export default function SocialMapsForever() {
 
   const socialPosts = [
     {
-      date: "May 27",
+      date: "May 28",
       posts: [
         {
           type: "Announcement Post",
-          content: "🎥 AIFA AWARDS 2025, It's Almost Time!\n\nWe are delighted to announce our second edition of AIFA Awards 2025\n\nThis year, we're presenting The Award of Awards, shining a spotlight on the very best in AI-driven film\n\nWinners will be revealed on June 3 at NFC Lisbon, with some surprises in store\n\nThe official awards ceremony will follow at a private event in London on July 22—more soon!",
+          content: "🎥 AIFA AWARDS 2025, It's Almost Time!\n\nWe are delighted to announce our second edition of AIFA Awards 2025.\n\nThis year, we're presenting The Award of Awards, shining a spotlight on the very best in AI-driven film.\n\nWinners will be revealed on June 3 at NFC Lisbon, with some surprises in store.\n\nThe official awards ceremony will follow at a private event in London on July 22—more soon!",
           isThreadStart: false,
           isThreadEnd: false
         }
@@ -61,7 +61,7 @@ export default function SocialMapsForever() {
       posts: [
         {
           type: "Thread Start",
-          content: "🎥 AIFA AWARDS 2025 JURY\n\nWe're honored to work with these remarkable individuals\n\nEach jury member brings a wealth of expertise in fashion, film, art, and AI",
+          content: "🎥 AIFA AWARDS 2025 JURY\n\n⟡ We're honored to work with these remarkable individuals.\n⟡ Each jury member brings a wealth of expertise in fashion, film, art, and AI. ↴",
           isThreadStart: true,
           isThreadEnd: false
         },
@@ -127,7 +127,7 @@ export default function SocialMapsForever() {
         },
         {
           type: "Thread End",
-          content: "🎥 AIFA AWARDS 2025 JURY\n\nWe couldn't be prouder to have them on board\n\nJoin us on June 3 at NFC Lisbon to find out who they've selected!",
+          content: "🎥 AIFA AWARDS 2025 JURY\n\n⟡ We couldn't be prouder to have them on board.\n⟡ Join us on June 3 at NFC Lisbon to find out who they've selected!",
           isThreadStart: false,
           isThreadEnd: true
         }
@@ -138,7 +138,7 @@ export default function SocialMapsForever() {
       posts: [
         {
           type: "Featured Artist Post",
-          content: "🎥 Featured Artist – David Sheldrick\n\nWe're shining a light on his bold fusion of AI-driven imagery, nature, and fashion\n\nHis award-winning approach truly exemplifies the spirit of AIFA 2025",
+          content: "🎥 Featured Artist – David Sheldrick\n\n⟡ We're shining a light on his bold fusion of AI-driven imagery, nature, and fashion.\n⟡ His award-winning approach truly exemplifies the spirit of AIFA 2025.",
           isThreadStart: false,
           isThreadEnd: false
         }
@@ -419,19 +419,19 @@ export default function SocialMapsForever() {
       posts: [
         {
           type: "Thread Start",
-          content: "🎥 AIFA x Sotheby's – A Summer of Learning\nIt's been an incredible (and educational) few weeks collaborating with Sotheby's and our many partners",
+          content: "🎥 AIFA x Sotheby's – A Summer of Learning\n⟡ It's been an incredible (and educational) few weeks collaborating with Sotheby's and our many partners.",
           isThreadStart: true,
           isThreadEnd: false
         },
         {
           type: "Thread",
-          content: "As the AIFA summer season comes to a close, we want to thank our artists, jurors, sponsors, and the venues who kindly hosted us",
+          content: "🎥 AIFA 2025\n⟡ As the AIFA summer season comes to a close, we want to thank our artists, jurors, sponsors, and the venues who kindly hosted us.",
           isThreadStart: false,
           isThreadEnd: false
         },
         {
           type: "Thread End",
-          content: "And a huge thank you to you, our global community, for joining us on this journey from Lisbon to London and beyond\n\nStay tuned for what's next in the AIFA world!",
+          content: "🎥 AIFA 2025\n⟡ And a huge thank you to you, our global community, for joining us on this journey from Lisbon to London and beyond.\n\nStay tuned for what's next with AIFA Ventures ↴\nwww.aifaventures.io",
           isThreadStart: false,
           isThreadEnd: true
         }
@@ -828,10 +828,6 @@ export default function SocialMapsForever() {
         <h2 className="instagram-feed-title fade-in">@aifilm.academy</h2>
         <div className="instagram-feed-grid fade-in">
           {/* Most recent posts at the top */}
-          <div className="instagram-feed-item">
-            <img src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
-            <div className="instagram-feed-date">July 31</div>
-          </div>
           <div className="instagram-feed-item">
             <img src="/images/social/more1.jpg" alt="More content" style={{ filter: 'none' }} />
             <div className="instagram-feed-date">July 30</div>

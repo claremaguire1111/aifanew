@@ -23,6 +23,8 @@ const nextConfig: NextConfig = {
   },
   // Use asset prefix to fix path issues in production
   assetPrefix: './',
+  // Enable static exports to include all assets
+  output: 'export',
 };
 
 export default nextConfig;

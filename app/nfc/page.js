@@ -229,40 +229,58 @@ export default function NFCPage() {
             flexDirection: 'column', 
             alignItems: 'center', 
             marginTop: '40px',
+            width: '100%',
             maxWidth: '800px',
             margin: '40px auto 0'
           }}>
+            {/* Bio Section - Responsive Layout */}
             <div style={{ 
               display: 'flex', 
               flexDirection: 'row', 
-              alignItems: 'center',
+              alignItems: 'flex-start',
               gap: '40px',
               width: '100%',
-              marginBottom: '30px'
+              marginBottom: '30px',
+              flexWrap: 'wrap',
+              justifyContent: 'center'
             }}>
-              <div style={{ flex: '0 0 300px' }}>
+              {/* Image Container - Mobile Friendly */}
+              <div style={{ 
+                flex: '0 0 300px',
+                maxWidth: '100%',
+                minWidth: '200px'
+              }}>
                 <img 
                   src="/images/jury2025/leo_crane.jpg" 
                   alt="Leo Crane - AIFA Co-Founder and Producer" 
                   style={{ 
                     width: '100%', 
                     height: 'auto',
-                    filter: 'grayscale(0%)'
+                    filter: 'grayscale(0%)',
+                    marginBottom: '20px'
                   }} 
                 />
               </div>
-              <div style={{ flex: '1' }}>
+              
+              {/* Bio Text - Mobile Friendly */}
+              <div style={{ 
+                flex: '1',
+                minWidth: '280px'
+              }}>
                 <h3 style={{ 
-                  fontSize: '1.4rem', 
+                  fontSize: 'clamp(1.2rem, 4vw, 1.4rem)', 
                   marginBottom: '15px',
                   fontWeight: '500'
                 }}>Leo Crane</h3>
                 <p style={{ 
-                  fontSize: '1.1rem', 
+                  fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
                   marginBottom: '10px',
                   fontStyle: 'italic'
                 }}>AIFA Co-Founder & Producer</p>
-                <p style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>
+                <p style={{ 
+                  fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', 
+                  lineHeight: '1.6' 
+                }}>
                   Leo Crane is a producer, founder and educator with 25 years' experience in creative industries and emerging technologies. 
                   He is co-founder of AIFA Ventures, International Advisor to the OmenaArt Foundation, Director of Figuration, 
                   Board Member for Animate Projects, and Course Leader at Sotheby's Institute, WIRED Summer Lab and V&A Academy.
@@ -270,19 +288,20 @@ export default function NFCPage() {
               </div>
             </div>
             
+            {/* Main Stage Presentation Box */}
             <div style={{ 
               backgroundColor: 'var(--light-grey)', 
-              padding: '25px', 
+              padding: 'clamp(15px, 4vw, 25px)', 
               borderRadius: '4px',
               width: '100%'
             }}>
               <h4 style={{ 
-                fontSize: '1.2rem', 
+                fontSize: 'clamp(1rem, 3vw, 1.2rem)', 
                 marginBottom: '15px',
                 textAlign: 'center'
               }}>Main Stage Presentation</h4>
               <p style={{ 
-                fontSize: '0.95rem', 
+                fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', 
                 lineHeight: '1.6',
                 textAlign: 'center',
                 marginBottom: '15px'
@@ -290,115 +309,141 @@ export default function NFCPage() {
                 Join Leo Crane on the NFC main stage for an exploration of how AI is transforming filmmaking and creative expression.
                 Leo will share insights from AIFA's pioneering work and announce the official launch of the AIFA Awards 2025.
               </p>
+              
+              {/* Event Details - Responsive Grid */}
               <div style={{ 
                 display: 'flex', 
                 justifyContent: 'center', 
-                gap: '15px',
-                margin: '20px 0 10px'
+                gap: 'clamp(10px, 3vw, 15px)',
+                margin: '20px 0 10px',
+                flexWrap: 'wrap'
               }}>
                 <div style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  margin: '0 5px 10px'
                 }}>
                   <span style={{ 
-                    fontSize: '1.1rem', 
-                    fontWeight: '500'
+                    fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
+                    fontWeight: '500',
+                    textAlign: 'center'
                   }}>June 4th, 2025</span>
                   <span style={{ 
-                    fontSize: '0.9rem', 
+                    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                     color: 'var(--dark-grey)'
                   }}>Date</span>
                 </div>
                 <div style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  margin: '0 5px 10px'
                 }}>
                   <span style={{ 
-                    fontSize: '1.1rem', 
-                    fontWeight: '500'
+                    fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
+                    fontWeight: '500',
+                    textAlign: 'center'
                   }}>16:50</span>
                   <span style={{ 
-                    fontSize: '0.9rem', 
+                    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                     color: 'var(--dark-grey)'
                   }}>Time</span>
                 </div>
                 <div style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  margin: '0 5px 10px'
                 }}>
                   <span style={{ 
-                    fontSize: '1.1rem', 
-                    fontWeight: '500'
+                    fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
+                    fontWeight: '500',
+                    textAlign: 'center'
                   }}>Main Stage</span>
                   <span style={{ 
-                    fontSize: '0.9rem', 
+                    fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                     color: 'var(--dark-grey)'
                   }}>Location</span>
                 </div>
               </div>
               
-              <div style={{ marginTop: '30px', width: '100%', backgroundColor: 'var(--light-grey)', padding: '25px', borderRadius: '4px' }}>
+              {/* Film Screening Box */}
+              <div style={{ 
+                marginTop: '30px', 
+                width: '100%', 
+                backgroundColor: 'var(--white)', 
+                padding: 'clamp(15px, 4vw, 25px)', 
+                borderRadius: '4px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+              }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: 'clamp(1rem, 3vw, 1.2rem)', 
                   marginBottom: '15px',
                   textAlign: 'center'
                 }}>Film Screening</h4>
                 <p style={{ 
-                  fontSize: '0.95rem', 
+                  fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', 
                   lineHeight: '1.6',
                   textAlign: 'center',
                   marginBottom: '15px'
                 }}>
                   Exclusive screening of AIFA award-winning films at the VIP Speakers Dinner.
                 </p>
+                
+                {/* Screening Details - Responsive Grid */}
                 <div style={{ 
                   display: 'flex', 
                   justifyContent: 'center', 
-                  gap: '15px',
-                  margin: '20px 0 10px'
+                  gap: 'clamp(10px, 3vw, 15px)',
+                  margin: '20px 0 10px',
+                  flexWrap: 'wrap'
                 }}>
                   <div style={{ 
                     display: 'flex', 
                     flexDirection: 'column', 
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    margin: '0 5px 10px'
                   }}>
                     <span style={{ 
-                      fontSize: '1.1rem', 
-                      fontWeight: '500'
+                      fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
+                      fontWeight: '500',
+                      textAlign: 'center'
                     }}>June 3rd, 2025</span>
                     <span style={{ 
-                      fontSize: '0.9rem', 
+                      fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                       color: 'var(--dark-grey)'
                     }}>Date</span>
                   </div>
                   <div style={{ 
                     display: 'flex', 
                     flexDirection: 'column', 
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    margin: '0 5px 10px'
                   }}>
                     <span style={{ 
-                      fontSize: '1.1rem', 
-                      fontWeight: '500'
+                      fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
+                      fontWeight: '500',
+                      textAlign: 'center'
                     }}>Evening</span>
                     <span style={{ 
-                      fontSize: '0.9rem', 
+                      fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                       color: 'var(--dark-grey)'
                     }}>Time</span>
                   </div>
                   <div style={{ 
                     display: 'flex', 
                     flexDirection: 'column', 
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    margin: '0 5px 10px'
                   }}>
                     <span style={{ 
-                      fontSize: '1.1rem', 
-                      fontWeight: '500'
+                      fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
+                      fontWeight: '500',
+                      textAlign: 'center'
                     }}>VIP Speakers Dinner</span>
                     <span style={{ 
-                      fontSize: '0.9rem', 
+                      fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                       color: 'var(--dark-grey)'
                     }}>Location</span>
                   </div>

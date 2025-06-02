@@ -213,7 +213,7 @@ export default function NFCPage() {
         </div>
         <div className="awards-hero-content">
           <h1 className="awards-hero-title">AIFA at NFC Lisbon</h1>
-          <p className="awards-hero-subtitle">June 3, 2025</p>
+          <p className="awards-hero-subtitle">June 3-4, 2025</p>
           <p className="awards-hero-partner">Film extract by <a href="https://www.sheldrick.ai/" target="_blank" rel="noopener noreferrer" style={{ color: '#a3a3a3' }}>David Sheldrick</a></p>
         </div>
       </section>
@@ -304,7 +304,7 @@ export default function NFCPage() {
                   <span style={{ 
                     fontSize: '1.1rem', 
                     fontWeight: '500'
-                  }}>June 3rd, 2025</span>
+                  }}>June 4th, 2025</span>
                   <span style={{ 
                     fontSize: '0.9rem', 
                     color: 'var(--dark-grey)'
@@ -318,7 +318,7 @@ export default function NFCPage() {
                   <span style={{ 
                     fontSize: '1.1rem', 
                     fontWeight: '500'
-                  }}>14:30 - 15:30</span>
+                  }}>16:50</span>
                   <span style={{ 
                     fontSize: '0.9rem', 
                     color: 'var(--dark-grey)'
@@ -337,6 +337,71 @@ export default function NFCPage() {
                     fontSize: '0.9rem', 
                     color: 'var(--dark-grey)'
                   }}>Location</span>
+                </div>
+              </div>
+              
+              <div style={{ marginTop: '30px', width: '100%', backgroundColor: 'var(--light-grey)', padding: '25px', borderRadius: '4px' }}>
+                <h4 style={{ 
+                  fontSize: '1.2rem', 
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Film Screening</h4>
+                <p style={{ 
+                  fontSize: '0.95rem', 
+                  lineHeight: '1.6',
+                  textAlign: 'center',
+                  marginBottom: '15px'
+                }}>
+                  Exclusive screening of AIFA award-winning films at the VIP Speakers Dinner.
+                </p>
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  gap: '15px',
+                  margin: '20px 0 10px'
+                }}>
+                  <div style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center'
+                  }}>
+                    <span style={{ 
+                      fontSize: '1.1rem', 
+                      fontWeight: '500'
+                    }}>June 3rd, 2025</span>
+                    <span style={{ 
+                      fontSize: '0.9rem', 
+                      color: 'var(--dark-grey)'
+                    }}>Date</span>
+                  </div>
+                  <div style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center'
+                  }}>
+                    <span style={{ 
+                      fontSize: '1.1rem', 
+                      fontWeight: '500'
+                    }}>Evening</span>
+                    <span style={{ 
+                      fontSize: '0.9rem', 
+                      color: 'var(--dark-grey)'
+                    }}>Time</span>
+                  </div>
+                  <div style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center'
+                  }}>
+                    <span style={{ 
+                      fontSize: '1.1rem', 
+                      fontWeight: '500'
+                    }}>VIP Speakers Dinner</span>
+                    <span style={{ 
+                      fontSize: '0.9rem', 
+                      color: 'var(--dark-grey)'
+                    }}>Location</span>
+                  </div>
                 </div>
               </div>
             </div>

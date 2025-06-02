@@ -278,6 +278,7 @@
 .filmchat-input-row {
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 
 .filmchat-input {
@@ -288,10 +289,13 @@
   border: 1px solid var(--medium-grey);
   border-radius: 0;
   outline: none;
+  min-width: 0; /* Prevents flex items from overflowing */
+  font-size: 16px; /* Better size for mobile */
 }
 
 .filmchat-input::placeholder {
   color: var(--dark-grey);
+  font-size: 14px;
 }
 
 /* SEND BUTTON */
@@ -307,10 +311,29 @@
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.05em;
+  white-space: nowrap; /* Prevents wrapping */
 }
 
 .filmchat-send-button:hover {
   background-color: var(--dark-grey);
+}
+
+/* Mobile responsiveness for chat input */
+@media (max-width: 480px) {
+  .filmchat-input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .filmchat-input {
+    width: 100%;
+    padding: 12px 10px;
+  }
+  
+  .filmchat-send-button {
+    width: 100%;
+    padding: 12px 10px;
+  }
 }
 
 /* CONTACT SECTION */

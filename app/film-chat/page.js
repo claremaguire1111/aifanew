@@ -541,12 +541,29 @@ export default function FilmChat() {
       </section>
 
       {/* FOOTER */}
-      <div style={{ padding: "20px 0", borderTop: "1px solid var(--medium-grey)" }}>
-        <div style={{ position: "absolute", left: "20px", display: "flex", alignItems: "center" }}>
-          <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
-          <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
+      <div style={{ 
+        padding: "20px 0", 
+        borderTop: "1px solid var(--medium-grey)",
+        position: "relative"
+      }}>
+        <div style={{ 
+          display: "flex", 
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100%",
+          marginBottom: "15px"
+        }}>
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "15px"
+          }}>
+            <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
+            <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
+          </div>
+          <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
         </div>
-        <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
       </div>
     </div>
   );

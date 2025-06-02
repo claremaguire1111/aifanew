@@ -843,9 +843,9 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 25px;
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
-  justify-items: center;
+  justify-content: center;
 }
 
 .jury-member {
@@ -955,6 +955,7 @@
   font-size: 1.3rem;
   margin-bottom: 15px;
   font-weight: 500;
+  color: #000;
 }
 
 .jury-bio-content p {
@@ -962,6 +963,8 @@
   line-height: 1.6;
   color: var(--dark-grey);
   margin-bottom: 20px;
+  text-shadow: none;
+  -webkit-text-shadow: none;
 }
 
 .jury-bio-close {
@@ -985,24 +988,35 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .jury-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 900px;
+  }
+}
+
 @media (max-width: 992px) {
   .jury-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 800px;
   }
 }
 
 @media (max-width: 768px) {
   .jury-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 700px;
   }
 }
 
 @media (max-width: 576px) {
   .jury-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 10px;
+    max-width: 350px;
   }
 }
 

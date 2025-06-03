@@ -213,7 +213,7 @@ export default function NFCPage() {
         </div>
         <div className="awards-hero-content">
           <h1 className="awards-hero-title">AIFA at NFC Lisbon</h1>
-          <p className="awards-hero-subtitle">June 3-4, 2025</p>
+          <p className="awards-hero-subtitle">June 3-5, 2025</p>
           <p className="awards-hero-partner">Film extract by <a href="https://www.sheldrick.ai/" target="_blank" rel="noopener noreferrer" style={{ color: '#a3a3a3' }}>David Sheldrick</a></p>
         </div>
       </section>
@@ -388,7 +388,7 @@ export default function NFCPage() {
                   textAlign: 'center',
                   marginBottom: '15px'
                 }}>
-                  Exclusive screening of AIFA award-winning films at the VIP Speakers Dinner.
+                  View AIFA Awards films in the VIP lounge at the main conference on the 4th and 5th June, Lisbon all day
                 </p>
                 
                 {/* Screening Details - Responsive Grid */}
@@ -409,7 +409,7 @@ export default function NFCPage() {
                       fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
                       fontWeight: '500',
                       textAlign: 'center'
-                    }}>June 3rd, 2025</span>
+                    }}>June 4-5, 2025</span>
                     <span style={{ 
                       fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                       color: 'var(--dark-grey)'
@@ -425,7 +425,7 @@ export default function NFCPage() {
                       fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
                       fontWeight: '500',
                       textAlign: 'center'
-                    }}>Evening</span>
+                    }}>All Day</span>
                     <span style={{ 
                       fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                       color: 'var(--dark-grey)'
@@ -441,7 +441,7 @@ export default function NFCPage() {
                       fontSize: 'clamp(0.9rem, 3vw, 1.1rem)', 
                       fontWeight: '500',
                       textAlign: 'center'
-                    }}>VIP Speakers Dinner</span>
+                    }}>VIP Lounge</span>
                     <span style={{ 
                       fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
                       color: 'var(--dark-grey)'

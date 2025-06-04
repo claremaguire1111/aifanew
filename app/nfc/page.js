@@ -218,6 +218,31 @@ export default function NFCPage() {
         </div>
       </section>
 
+      {/* SIGNUP SECTION - MOVED TO TOP */}
+      <section className="signup-section" id="signup" style={{ marginTop: '20px', marginBottom: '40px' }}>
+        <div className="signup-box">
+          <h1 className="fade-in">Join Our Community</h1>
+          <p className="fade-in">
+            Join Our Community during NFC 4-5 June and receive $50 in credits with our partner <a href="https://www.seditionart.com" target="_blank" rel="noopener noreferrer">Sedition</a>
+          </p>
+          <form action="https://formspree.io/f/mnnqqvqd" method="POST" className="fade-in">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message (Optional)" rows="4"></textarea>
+            <p style={{ 
+              fontSize: '0.8rem', 
+              color: 'var(--dark-grey)', 
+              textAlign: 'left', 
+              marginTop: '10px',
+              marginBottom: '15px' 
+            }}>
+              By signing up you agree to us sharing your details with Sedition Ltd.
+            </p>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+
       {/* LEO CRANE MAIN STAGE SECTION */}
       <section className="awards-about" style={{ backgroundColor: 'var(--white)' }}>
         <div className="about-container">
@@ -549,21 +574,6 @@ export default function NFCPage() {
         </div>
       </section>
 
-      {/* SIGNUP SECTION */}
-      <section className="signup-section" id="signup">
-        <div className="signup-box">
-          <h1 className="fade-in">Join Our Community</h1>
-          <p className="fade-in">
-            For all enquiries and to stay up to date, sign up below. For any questions, send us a message.
-          </p>
-          <form action="https://formspree.io/f/mnnqqvqd" method="POST" className="fade-in">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message (Optional)" rows="4"></textarea>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </section>
 
       {/* FOOTER */}
       <section className="contact-us-section" id="contact">

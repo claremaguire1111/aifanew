@@ -243,7 +243,7 @@ export default function Awards2024() {
         <meta property="og:url" content="https://aifilm.academy/awards/2024" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@aifilmacademy" />
+        <meta name="twitter:site" content="@aifaventures" />
         <link rel="canonical" href="https://aifilm.academy/awards/2024" />
         <script type="application/ld+json">
           {JSON.stringify({"@context":"https://schema.org","@type":"Event","name":"AIFA Awards 2024","description":"World's #1 Film Awards for AI Filmmaking","startDate":"2024-05-01","location":{"@type":"Place","name":"AIFA Venue London","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"UK"}},"organizer":{"@type":"Organization","name":"AIFA Ventures","url":"https://aifilm.academy"}})}
@@ -502,7 +502,7 @@ export default function Awards2024() {
           <ul>
             <li>
               <a
-                href="https://www.instagram.com/aifilm.academy"
+                href="https://www.instagram.com/aifa_ventures/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -511,7 +511,7 @@ export default function Awards2024() {
             </li>
             <li>
               <a
-                href="https://x.com/aifilmacademy"
+                href="https://x.com/aifaventures"
                 target="_blank"
                 rel="noopener noreferrer"
               >

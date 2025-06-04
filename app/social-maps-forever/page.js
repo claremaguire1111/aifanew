@@ -909,7 +909,7 @@ export default function SocialMapsForever() {
       
       {/* INSTAGRAM FEED SECTION */}
       <section className="instagram-feed-section">
-        <h2 className="instagram-feed-title fade-in">@aifilm.academy</h2>
+        <h2 className="instagram-feed-title fade-in">@aifa_ventures</h2>
         <div className="instagram-feed-grid fade-in">
           {/* Most recent posts at the top */}
           <div className="instagram-feed-item">

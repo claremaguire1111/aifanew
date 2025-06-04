@@ -426,7 +426,7 @@ export default function HomePage() {
           <ul>
             <li>
               <a
-                href="https://www.instagram.com/aifilm.academy"
+                href="https://www.instagram.com/aifa_ventures/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -435,7 +435,7 @@ export default function HomePage() {
             </li>
             <li>
               <a
-                href="https://x.com/aifilmacademy"
+                href="https://x.com/aifaventures"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -1,6 +1,6 @@
 // app/layout.js
 import './global.css';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'AIFA | A positive future for entertainment',

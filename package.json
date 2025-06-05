@@ -10,6 +10,7 @@
     "vercel-build": "node vercel-build.js && next build"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "axios": "^1.7.9",
     "framer-motion": "^12.0.1",
     "next": "15.1.5",

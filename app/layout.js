@@ -1,5 +1,6 @@
 // app/layout.js
 import './global.css';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'AIFA | A positive future for entertainment',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -20,18 +20,31 @@ export default function DulwichPage() {
 
   const exampleImagePath = "/images/Dulwich/Yinka.jpg";
   const demoVideoPath = "/videos/demo.mp4";
+  const apiKey = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07"; // Fallback API key for development
 
   // Direct interaction with RunwayML API
   const generateAnimation = async (imageBase64, promptText) => {
     try {
-      // First get API key from our secure endpoint
-      const keyResponse = await fetch('/api/runway-direct');
-      if (!keyResponse.ok) {
-        throw new Error('Failed to get API credentials');
-      }
-      const { apiKey } = await keyResponse.json();
+      // First try to get API key from our secure endpoint
+      let keyToUse = apiKey; // Start with fallback key
       
-      if (!apiKey) {
+      try {
+        const keyResponse = await fetch('/api/runway-direct');
+        if (keyResponse.ok) {
+          const data = await keyResponse.json();
+          if (data.apiKey) {
+            keyToUse = data.apiKey;
+            console.log('Using API key from server');
+          }
+        } else {
+          console.warn('Could not get API key from server, using fallback');
+        }
+      } catch (keyError) {
+        console.warn('Error getting API key, using fallback:', keyError);
+        // Continue with fallback key
+      }
+      
+      if (!keyToUse) {
         throw new Error('API key not available');
       }
       
@@ -48,7 +61,7 @@ export default function DulwichPage() {
       const response = await fetch('https://api.runwayml.com/v1/image_to_video', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `Bearer ${keyToUse}`,
           'Content-Type': 'application/json',
           'X-Runway-Version': '2024-11-06'
         },
@@ -56,8 +69,14 @@ export default function DulwichPage() {
       });
       
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || `API error: ${response.status}`);
+        let errorMessage = `API error: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorMessage;
+        } catch (e) {
+          // If parsing fails, use the default error message
+        }
+        throw new Error(errorMessage);
       }
       
       const data = await response.json();
@@ -71,18 +90,27 @@ export default function DulwichPage() {
   // Check task status directly
   const checkTaskStatus = async (taskId) => {
     try {
-      // Get API key
-      const keyResponse = await fetch('/api/runway-direct');
-      if (!keyResponse.ok) {
-        throw new Error('Failed to get API credentials');
+      // Try to get API key from secure endpoint, fall back to hardcoded key
+      let keyToUse = apiKey; // Start with fallback key
+      
+      try {
+        const keyResponse = await fetch('/api/runway-direct');
+        if (keyResponse.ok) {
+          const data = await keyResponse.json();
+          if (data.apiKey) {
+            keyToUse = data.apiKey;
+          }
+        }
+      } catch (keyError) {
+        console.warn('Error getting API key for status check, using fallback:', keyError);
+        // Continue with fallback key
       }
-      const { apiKey } = await keyResponse.json();
       
       // Check task status with Runway API
       const response = await fetch(`https://api.runwayml.com/v1/tasks/${taskId}`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `Bearer ${keyToUse}`,
           'Content-Type': 'application/json',
           'X-Runway-Version': '2024-11-06'
         }
@@ -196,7 +224,12 @@ export default function DulwichPage() {
                 
                 // Task failed
                 console.error('Animation generation failed:', status.error);
-                throw new Error(status.error || 'Animation generation failed');
+                setError(status.error || 'Animation generation failed');
+                
+                // Fall back to demo video if generation fails
+                setGeneratedReel(demoVideoPath);
+                setStep(4);
+                setIsLoading(false);
               }
               // For other statuses (PENDING, PROCESSING, etc.), continue polling
             } catch (pollError) {
@@ -209,15 +242,27 @@ export default function DulwichPage() {
         } catch (error) {
           console.error('Error in image processing:', error);
           setError(error.message || 'Failed to process the image');
-          setIsLoading(false);
-          setStep(2);
+          
+          // Fall back to demo video on error
+          setTimeout(() => {
+            setError(error.message + ' - Using demo video as fallback');
+            setGeneratedReel(demoVideoPath);
+            setStep(4);
+            setIsLoading(false);
+          }, 2000);
         }
       };
     } catch (err) {
       console.error('Error submitting animation task:', err);
       setError(err.message || 'Failed to start animation task');
-      setIsLoading(false);
-      setStep(2);
+      
+      // Fall back to demo video on error
+      setTimeout(() => {
+        setError(err.message + ' - Using demo video as fallback');
+        setGeneratedReel(demoVideoPath);
+        setStep(4);
+        setIsLoading(false);
+      }, 2000);
     }
   };
 
@@ -383,7 +428,7 @@ export default function DulwichPage() {
             <div className="result-section">
               <h3>Your Animated Sculpture</h3>
               <div className="video-container">
-                <video src={generatedReel} controls autoPlay loop className="result-video" />
+                <video src={generatedReel || demoVideoPath} controls autoPlay loop className="result-video" />
                 {error && <div className="error-notice"><p>{error}</p></div>}
               </div>
 

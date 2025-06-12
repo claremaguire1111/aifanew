@@ -1,9 +1,5 @@
 import { NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
-import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
-import fs from 'fs';
 import RunwayML from '@runwayml/sdk';
 
 export async function POST(req) {
@@ -19,20 +15,10 @@ export async function POST(req) {
       );
     }
 
-    const animationId = uuidv4();
     const bytes = await image.arrayBuffer();
     const buffer = Buffer.from(bytes);
-
-    const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
-    }
-
-    const imageFilename = `sculpture_${animationId}.jpg`;
-    const imagePath = path.join(uploadsDir, imageFilename);
-    await writeFile(imagePath, buffer);
-
     const base64Image = `data:image/jpeg;base64,${buffer.toString('base64')}`;
+
     const runwayApiKey = process.env.RUNWAY_API_KEY;
 
     if (!runwayApiKey) {
@@ -54,24 +40,17 @@ export async function POST(req) {
     const taskId = imageToVideo.id;
     let task;
 
+    // Wait for completion
     do {
       await new Promise((res) => setTimeout(res, 10000));
       task = await client.tasks.retrieve(taskId);
     } while (!['SUCCEEDED', 'FAILED'].includes(task.status));
 
     if (task.status === 'SUCCEEDED') {
-      const videoUrl = task.output[0];
-      const videoResponse = await axios.get(videoUrl, {
-        responseType: 'arraybuffer',
-      });
-      const videoBuffer = Buffer.from(videoResponse.data);
-      const videoFilename = `animation_${animationId}.mp4`;
-      const videoPath = path.join(uploadsDir, videoFilename);
-      await writeFile(videoPath, videoBuffer);
-
+      const videoUrl = task.output[0]; // Runway-hosted video URL
       return NextResponse.json({
         success: true,
-        animationUrl: `/uploads/${videoFilename}`,
+        animationUrl: videoUrl,
       });
     }
 

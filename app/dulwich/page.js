@@ -64,40 +64,62 @@ export default function DulwichPage() {
     setStep(3);
 
     try {
-      const formData = new FormData();
-      formData.append("image", file);
-      formData.append("prompt", prompt);
-      
-      // Add error handling for the fetch operation
-      const response = await fetch("/api/generate-animation", {
+      // First try the simplified demo endpoint that should always work
+      const demoResponse = await fetch("/api/animation-demo", {
         method: "POST",
-        body: formData,
       }).catch(error => {
-        console.error("Network error:", error);
+        console.error("Network error on demo endpoint:", error);
         throw new Error("Network error - please check your connection");
       });
       
-      // Handle non-JSON responses
-      let data;
+      // Get the demo video as a fallback
+      let demoData;
       try {
-        data = await response.json();
+        demoData = await demoResponse.json();
       } catch (jsonError) {
-        console.error("JSON parsing error:", jsonError);
-        throw new Error("Failed to parse server response");
+        console.error("JSON parsing error on demo endpoint:", jsonError);
+        // If even this fails, use a hardcoded fallback
+        demoData = {
+          success: false,
+          animationUrl: '/videos/demo.mp4',
+          isDemo: true,
+          message: 'Using demo video due to technical issues',
+        };
       }
       
-      if (!response.ok) {
-        throw new Error(data?.error || `Server error: ${response.status}`);
+      // Now try the real API with actual generation
+      try {
+        const formData = new FormData();
+        formData.append("image", file);
+        formData.append("prompt", prompt);
+        
+        const response = await fetch("/api/generate-animation", {
+          method: "POST",
+          body: formData,
+        });
+        
+        if (!response.ok) {
+          console.warn(`API returned status ${response.status} - using demo video`);
+          throw new Error(`Server error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setGeneratedReel(data.animationUrl);
+        if (data.isDemo) {
+          setError(data.message || "Using demo video for preview purposes.");
+        }
+      } catch (apiError) {
+        // If the main API fails, fall back to the demo video we already loaded
+        console.error("Error with main animation API:", apiError);
+        setGeneratedReel(demoData.animationUrl);
+        setError(demoData.message || "Using demo video while our systems are being updated.");
       }
       
-      setGeneratedReel(data.animationUrl);
-      if (data.isDemo) {
-        setError(data.message || "Using demo video for preview purposes.");
-      }
       setStep(4);
     } catch (err) {
-      console.error("Error generating animation:", err);
-      setError(err.message || "Failed to generate animation.");
+      // This is the fallback of the fallback - if everything fails
+      console.error("All animation attempts failed:", err);
+      setError("Our animation service is temporarily unavailable. Please try again later.");
       setGeneratedReel("/videos/demo.mp4");
       setStep(4);
     } finally {

@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { v4 as uuidv4 } from 'uuid';
 import RunwayML from '@runwayml/sdk';
 
 export async function POST(req) {
@@ -9,10 +8,7 @@ export async function POST(req) {
     const prompt = formData.get('prompt')?.toString();
 
     if (!image || !prompt) {
-      return NextResponse.json(
-        { error: 'Missing image or prompt' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Missing image or prompt" }, { status: 400 });
     }
 
     const bytes = await image.arrayBuffer();
@@ -20,16 +16,14 @@ export async function POST(req) {
     const base64Image = `data:image/jpeg;base64,${buffer.toString('base64')}`;
 
     const runwayApiKey = process.env.RUNWAY_API_KEY;
-
     if (!runwayApiKey) {
-      console.warn('⚠️ Missing RUNWAY_API_KEY');
-      return NextResponse.json({ error: 'Missing API key' }, { status: 500 });
+      return NextResponse.json({ error: "Missing API key" }, { status: 500 });
     }
 
     process.env.RUNWAYML_API_SECRET = runwayApiKey;
     const client = new RunwayML();
 
-    const imageToVideo = await client.imageToVideo.create({
+    const task = await client.imageToVideo.create({
       model: 'gen4_turbo',
       promptImage: base64Image,
       promptText: prompt,
@@ -37,35 +31,34 @@ export async function POST(req) {
       duration: 5,
     });
 
-    const taskId = imageToVideo.id;
-    let task;
-
-    // Wait for completion
+    let status;
     do {
-      await new Promise((res) => setTimeout(res, 10000));
-      task = await client.tasks.retrieve(taskId);
-    } while (!['SUCCEEDED', 'FAILED'].includes(task.status));
+      await new Promise(r => setTimeout(r, 10000));
+      status = await client.tasks.retrieve(task.id);
+    } while (!['SUCCEEDED', 'FAILED'].includes(status.status));
 
-    if (task.status === 'SUCCEEDED') {
-      const videoUrl = task.output[0]; // Runway-hosted video URL
+    if (status.status === 'SUCCEEDED') {
       return NextResponse.json({
         success: true,
-        animationUrl: videoUrl,
+        animationUrl: status.output[0],
       });
     }
 
-    throw new Error(`Task failed: ${task.error || 'Unknown error'}`);
+    throw new Error(status.error || 'Unknown error');
   } catch (error) {
-    console.error('❌ Animation error:', error.message);
     return NextResponse.json({
       success: true,
       animationUrl: '/videos/demo.mp4',
       isDemo: true,
-      message: 'Using demo video due to API error',
-      error:
-        process.env.NODE_ENV === 'development'
-          ? `API error: ${error.message}`
-          : 'Video generation temporarily unavailable',
+      message: 'Using demo video due to error',
+      error: error.message,
     });
   }
+}
+
+export async function GET() {
+  return NextResponse.json(
+    { error: "This endpoint only supports POST requests" },
+    { status: 405 }
+  );
 }

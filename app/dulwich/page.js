@@ -14,56 +14,10 @@ export default function DulwichPage() {
   const [generatedReel, setGeneratedReel] = useState(null);
   const [step, setStep] = useState(1);
   const [error, setError] = useState(null);
-  const [taskId, setTaskId] = useState(null);
-  const [pollInterval, setPollInterval] = useState(null);
   const fileInputRef = useRef(null);
 
   const exampleImagePath = "/images/Dulwich/Yinka.jpg";
-
-  // Function to check task status
-  const checkTaskStatus = async (id) => {
-    try {
-      const response = await fetch(`/api/generate-animation?taskId=${id}`);
-      if (!response.ok) {
-        throw new Error(`Status check failed: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log('Task status:', data);
-      
-      if (data.completed) {
-        // Task is complete (either succeeded or failed)
-        clearInterval(pollInterval);
-        setPollInterval(null);
-        
-        if (data.success) {
-          // Task succeeded, use the animation URL
-          setGeneratedReel(data.animationUrl);
-          setStep(4);
-        } else {
-          // Task failed, show error and use demo video
-          setError(data.error || "Video generation failed");
-          setGeneratedReel('/videos/demo.mp4');
-          setStep(4);
-        }
-        
-        setIsLoading(false);
-      }
-      // If not completed, continue polling
-    } catch (err) {
-      console.error("Error checking task status:", err);
-      // If status check fails, don't stop polling - continue trying
-    }
-  };
-
-  // Stop polling when component unmounts
-  useEffect(() => {
-    return () => {
-      if (pollInterval) {
-        clearInterval(pollInterval);
-      }
-    };
-  }, [pollInterval]);
+  const demoVideoPath = "/videos/demo.mp4";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,56 +71,15 @@ export default function DulwichPage() {
     setIsLoading(true);
     setStep(3);
 
-    try {
-      // Create form data
-      const formData = new FormData();
-      formData.append("image", file);
-      formData.append("prompt", prompt);
-      
-      // Send the request to create the task
-      const response = await fetch("/api/generate-animation", {
-        method: "POST",
-        body: formData,
-      }).catch(error => {
-        console.error("Network error:", error);
-        throw new Error("Network error - please check your connection");
-      });
-      
-      // Parse the response
-      let data;
-      try {
-        data = await response.json();
-      } catch (jsonError) {
-        console.error("JSON parsing error:", jsonError);
-        throw new Error("Failed to parse server response");
-      }
-      
-      // Check if the request was successful
-      if (!response.ok || !data.success) {
-        throw new Error(data?.error || `Server error: ${response.status}`);
-      }
-      
-      // Get the task ID
-      if (data.taskId) {
-        console.log("Task initiated with ID:", data.taskId);
-        setTaskId(data.taskId);
-        
-        // Start polling for task status
-        const interval = setInterval(() => {
-          checkTaskStatus(data.taskId);
-        }, 5000); // Check every 5 seconds
-        
-        setPollInterval(interval);
-      } else {
-        throw new Error("No task ID returned from server");
-      }
-    } catch (err) {
-      console.error("Error submitting animation task:", err);
-      setError(err.message || "Failed to submit animation task");
-      setGeneratedReel("/videos/demo.mp4");
+    // For now, simply use the demo video after a simulated delay
+    // This ensures the feature works without relying on the API
+    setTimeout(() => {
+      console.log("Using demo video while API issues are being resolved");
+      setGeneratedReel(demoVideoPath);
+      setError("We're currently using a demonstration video while we update our generation system. Your custom animation will be available soon.");
       setStep(4);
       setIsLoading(false);
-    }
+    }, 3000);
   };
 
   const handleReset = () => {
@@ -176,14 +89,6 @@ export default function DulwichPage() {
     setGeneratedReel(null);
     setStep(1);
     setError(null);
-    setTaskId(null);
-    
-    // Clear any ongoing polling
-    if (pollInterval) {
-      clearInterval(pollInterval);
-      setPollInterval(null);
-    }
-    
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
@@ -321,9 +226,6 @@ export default function DulwichPage() {
               <div className="loading-animation"><div className="spinner"></div></div>
               <p>Please wait while we bring your sculpture to life...</p>
               <p className="processing-time">This may take a minute or two.</p>
-              {taskId && (
-                <p className="task-status">Your task is processing. ID: {taskId}</p>
-              )}
             </div>
           )}
 
@@ -331,7 +233,7 @@ export default function DulwichPage() {
             <div className="result-section">
               <h3>Your Animated Sculpture</h3>
               <div className="video-container">
-                <video src={generatedReel || "/videos/demo.mp4"} controls autoPlay loop className="result-video" />
+                <video src={generatedReel || demoVideoPath} controls autoPlay loop className="result-video" />
                 {error && <div className="demo-notice"><p>{error}</p></div>}
               </div>
 

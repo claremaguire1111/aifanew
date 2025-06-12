@@ -14,10 +14,101 @@ export default function DulwichPage() {
   const [generatedReel, setGeneratedReel] = useState(null);
   const [step, setStep] = useState(1);
   const [error, setError] = useState(null);
+  const [taskId, setTaskId] = useState(null);
+  const [taskCheckInterval, setTaskCheckInterval] = useState(null);
   const fileInputRef = useRef(null);
 
   const exampleImagePath = "/images/Dulwich/Yinka.jpg";
   const demoVideoPath = "/videos/demo.mp4";
+
+  // Direct interaction with RunwayML API
+  const generateAnimation = async (imageBase64, promptText) => {
+    try {
+      // First get API key from our secure endpoint
+      const keyResponse = await fetch('/api/runway-direct');
+      if (!keyResponse.ok) {
+        throw new Error('Failed to get API credentials');
+      }
+      const { apiKey } = await keyResponse.json();
+      
+      if (!apiKey) {
+        throw new Error('API key not available');
+      }
+      
+      // Create the payload for Runway API
+      const payload = {
+        model: "gen4_turbo",
+        promptImage: imageBase64,
+        promptText: promptText,
+        ratio: "1280:720",
+        duration: 5
+      };
+      
+      // Make direct request to Runway API
+      const response = await fetch('https://api.runwayml.com/v1/image_to_video', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+          'X-Runway-Version': '2024-11-06'
+        },
+        body: JSON.stringify(payload)
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || `API error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      return { taskId: data.id };
+    } catch (error) {
+      console.error('Error generating animation:', error);
+      throw error;
+    }
+  };
+  
+  // Check task status directly
+  const checkTaskStatus = async (taskId) => {
+    try {
+      // Get API key
+      const keyResponse = await fetch('/api/runway-direct');
+      if (!keyResponse.ok) {
+        throw new Error('Failed to get API credentials');
+      }
+      const { apiKey } = await keyResponse.json();
+      
+      // Check task status with Runway API
+      const response = await fetch(`https://api.runwayml.com/v1/tasks/${taskId}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+          'X-Runway-Version': '2024-11-06'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Failed to check task status: ${response.status}`);
+      }
+      
+      const status = await response.json();
+      return status;
+    } catch (error) {
+      console.error('Error checking task status:', error);
+      throw error;
+    }
+  };
+
+  // Handle task status polling
+  useEffect(() => {
+    // Clean up polling interval when component unmounts
+    return () => {
+      if (taskCheckInterval) {
+        clearInterval(taskCheckInterval);
+      }
+    };
+  }, [taskCheckInterval]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,15 +162,63 @@ export default function DulwichPage() {
     setIsLoading(true);
     setStep(3);
 
-    // For now, simply use the demo video after a simulated delay
-    // This ensures the feature works without relying on the API
-    setTimeout(() => {
-      console.log("Using demo video while API issues are being resolved");
-      setGeneratedReel(demoVideoPath);
-      setError("We're currently using a demonstration video while we update our generation system. Your custom animation will be available soon.");
-      setStep(4);
+    try {
+      // Convert image to base64
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = async () => {
+        try {
+          const base64data = reader.result;
+          
+          // Start the animation generation process
+          const { taskId } = await generateAnimation(base64data, prompt);
+          console.log('Animation task started with ID:', taskId);
+          setTaskId(taskId);
+          
+          // Start polling for task status
+          const interval = setInterval(async () => {
+            try {
+              const status = await checkTaskStatus(taskId);
+              console.log('Task status:', status.status);
+              
+              if (status.status === 'SUCCEEDED') {
+                clearInterval(interval);
+                setTaskCheckInterval(null);
+                
+                // Task completed successfully
+                console.log('Animation generated successfully:', status.output[0]);
+                setGeneratedReel(status.output[0]);
+                setStep(4);
+                setIsLoading(false);
+              } else if (status.status === 'FAILED') {
+                clearInterval(interval);
+                setTaskCheckInterval(null);
+                
+                // Task failed
+                console.error('Animation generation failed:', status.error);
+                throw new Error(status.error || 'Animation generation failed');
+              }
+              // For other statuses (PENDING, PROCESSING, etc.), continue polling
+            } catch (pollError) {
+              console.error('Error polling task status:', pollError);
+              // Don't clear interval on polling errors - keep trying
+            }
+          }, 5000); // Check every 5 seconds
+          
+          setTaskCheckInterval(interval);
+        } catch (error) {
+          console.error('Error in image processing:', error);
+          setError(error.message || 'Failed to process the image');
+          setIsLoading(false);
+          setStep(2);
+        }
+      };
+    } catch (err) {
+      console.error('Error submitting animation task:', err);
+      setError(err.message || 'Failed to start animation task');
       setIsLoading(false);
-    }, 3000);
+      setStep(2);
+    }
   };
 
   const handleReset = () => {
@@ -89,6 +228,14 @@ export default function DulwichPage() {
     setGeneratedReel(null);
     setStep(1);
     setError(null);
+    setTaskId(null);
+    
+    // Clear any ongoing polling
+    if (taskCheckInterval) {
+      clearInterval(taskCheckInterval);
+      setTaskCheckInterval(null);
+    }
+    
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
@@ -225,7 +372,10 @@ export default function DulwichPage() {
               <h3>Creating Your Animation</h3>
               <div className="loading-animation"><div className="spinner"></div></div>
               <p>Please wait while we bring your sculpture to life...</p>
-              <p className="processing-time">This may take a minute or two.</p>
+              <p className="processing-time">This may take several minutes to complete.</p>
+              {taskId && (
+                <p className="task-id">Task ID: {taskId}</p>
+              )}
             </div>
           )}
 
@@ -233,8 +383,8 @@ export default function DulwichPage() {
             <div className="result-section">
               <h3>Your Animated Sculpture</h3>
               <div className="video-container">
-                <video src={generatedReel || demoVideoPath} controls autoPlay loop className="result-video" />
-                {error && <div className="demo-notice"><p>{error}</p></div>}
+                <video src={generatedReel} controls autoPlay loop className="result-video" />
+                {error && <div className="error-notice"><p>{error}</p></div>}
               </div>
 
               <div className="sharing-instructions">

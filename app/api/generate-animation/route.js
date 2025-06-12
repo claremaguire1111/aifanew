@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import RunwayML from '@runwayml/sdk';
 
+// Mark the route as dynamic to ensure it's not statically optimized
+export const dynamic = 'force-dynamic';
+
 export async function POST(req) {
   try {
     const formData = await req.formData();
@@ -53,26 +56,43 @@ export async function POST(req) {
       isDemo: true,
       message: 'Using demo video due to error',
       error: error.message,
-    }, { status: 200 }); // Return 200 with error information rather than failing
+    }, { 
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+    });
   }
 }
 
-// Fix for the 405 Method Not Allowed error
-export async function GET(req) {
+// Handle GET requests properly
+export async function GET() {
   return NextResponse.json(
     { error: "This endpoint only supports POST requests" },
-    { status: 405 }
+    { 
+      status: 405,
+      headers: {
+        'Allow': 'POST, OPTIONS',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+    }
   );
 }
 
-// Add OPTIONS method to handle preflight requests
-export async function OPTIONS(req) {
+// Handle OPTIONS preflight requests
+export async function OPTIONS() {
   return new NextResponse(null, {
-    status: 200,
+    status: 204, // No content
     headers: {
+      'Allow': 'POST, OPTIONS',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
+      'Access-Control-Max-Age': '86400', // 24 hours cache for preflight requests
     },
   });
 }

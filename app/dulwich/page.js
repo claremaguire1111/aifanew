@@ -14,9 +14,56 @@ export default function DulwichPage() {
   const [generatedReel, setGeneratedReel] = useState(null);
   const [step, setStep] = useState(1);
   const [error, setError] = useState(null);
+  const [taskId, setTaskId] = useState(null);
+  const [pollInterval, setPollInterval] = useState(null);
   const fileInputRef = useRef(null);
 
   const exampleImagePath = "/images/Dulwich/Yinka.jpg";
+
+  // Function to check task status
+  const checkTaskStatus = async (id) => {
+    try {
+      const response = await fetch(`/api/generate-animation?taskId=${id}`);
+      if (!response.ok) {
+        throw new Error(`Status check failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Task status:', data);
+      
+      if (data.completed) {
+        // Task is complete (either succeeded or failed)
+        clearInterval(pollInterval);
+        setPollInterval(null);
+        
+        if (data.success) {
+          // Task succeeded, use the animation URL
+          setGeneratedReel(data.animationUrl);
+          setStep(4);
+        } else {
+          // Task failed, show error and use demo video
+          setError(data.error || "Video generation failed");
+          setGeneratedReel('/videos/demo.mp4');
+          setStep(4);
+        }
+        
+        setIsLoading(false);
+      }
+      // If not completed, continue polling
+    } catch (err) {
+      console.error("Error checking task status:", err);
+      // If status check fails, don't stop polling - continue trying
+    }
+  };
+
+  // Stop polling when component unmounts
+  useEffect(() => {
+    return () => {
+      if (pollInterval) {
+        clearInterval(pollInterval);
+      }
+    };
+  }, [pollInterval]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,6 +94,13 @@ export default function DulwichPage() {
       setError("Please select an image file");
       return;
     }
+    
+    // Check file size (5MB limit)
+    if (selectedFile.size > 5 * 1024 * 1024) {
+      setError("Image is too large. Please use an image smaller than 5MB.");
+      return;
+    }
+    
     setFile(selectedFile);
     setPreview(URL.createObjectURL(selectedFile));
     setStep(2);
@@ -64,65 +118,53 @@ export default function DulwichPage() {
     setStep(3);
 
     try {
-      // First try the simplified demo endpoint that should always work
-      const demoResponse = await fetch("/api/animation-demo", {
+      // Create form data
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("prompt", prompt);
+      
+      // Send the request to create the task
+      const response = await fetch("/api/generate-animation", {
         method: "POST",
+        body: formData,
       }).catch(error => {
-        console.error("Network error on demo endpoint:", error);
+        console.error("Network error:", error);
         throw new Error("Network error - please check your connection");
       });
       
-      // Get the demo video as a fallback
-      let demoData;
+      // Parse the response
+      let data;
       try {
-        demoData = await demoResponse.json();
+        data = await response.json();
       } catch (jsonError) {
-        console.error("JSON parsing error on demo endpoint:", jsonError);
-        // If even this fails, use a hardcoded fallback
-        demoData = {
-          success: false,
-          animationUrl: '/videos/demo.mp4',
-          isDemo: true,
-          message: 'Using demo video due to technical issues',
-        };
+        console.error("JSON parsing error:", jsonError);
+        throw new Error("Failed to parse server response");
       }
       
-      // Now try the real API with actual generation
-      try {
-        const formData = new FormData();
-        formData.append("image", file);
-        formData.append("prompt", prompt);
-        
-        const response = await fetch("/api/generate-animation", {
-          method: "POST",
-          body: formData,
-        });
-        
-        if (!response.ok) {
-          console.warn(`API returned status ${response.status} - using demo video`);
-          throw new Error(`Server error: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        setGeneratedReel(data.animationUrl);
-        if (data.isDemo) {
-          setError(data.message || "Using demo video for preview purposes.");
-        }
-      } catch (apiError) {
-        // If the main API fails, fall back to the demo video we already loaded
-        console.error("Error with main animation API:", apiError);
-        setGeneratedReel(demoData.animationUrl);
-        setError(demoData.message || "Using demo video while our systems are being updated.");
+      // Check if the request was successful
+      if (!response.ok || !data.success) {
+        throw new Error(data?.error || `Server error: ${response.status}`);
       }
       
-      setStep(4);
+      // Get the task ID
+      if (data.taskId) {
+        console.log("Task initiated with ID:", data.taskId);
+        setTaskId(data.taskId);
+        
+        // Start polling for task status
+        const interval = setInterval(() => {
+          checkTaskStatus(data.taskId);
+        }, 5000); // Check every 5 seconds
+        
+        setPollInterval(interval);
+      } else {
+        throw new Error("No task ID returned from server");
+      }
     } catch (err) {
-      // This is the fallback of the fallback - if everything fails
-      console.error("All animation attempts failed:", err);
-      setError("Our animation service is temporarily unavailable. Please try again later.");
+      console.error("Error submitting animation task:", err);
+      setError(err.message || "Failed to submit animation task");
       setGeneratedReel("/videos/demo.mp4");
       setStep(4);
-    } finally {
       setIsLoading(false);
     }
   };
@@ -134,6 +176,14 @@ export default function DulwichPage() {
     setGeneratedReel(null);
     setStep(1);
     setError(null);
+    setTaskId(null);
+    
+    // Clear any ongoing polling
+    if (pollInterval) {
+      clearInterval(pollInterval);
+      setPollInterval(null);
+    }
+    
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
@@ -234,6 +284,7 @@ export default function DulwichPage() {
                 />
                 <label htmlFor="sculpture-upload" className="upload-button">Upload Image</label>
                 <p className="upload-help">or take a photo directly with your camera</p>
+                <p className="upload-limit">(Maximum image size: 5MB)</p>
               </div>
             </div>
           )}
@@ -270,6 +321,9 @@ export default function DulwichPage() {
               <div className="loading-animation"><div className="spinner"></div></div>
               <p>Please wait while we bring your sculpture to life...</p>
               <p className="processing-time">This may take a minute or two.</p>
+              {taskId && (
+                <p className="task-status">Your task is processing. ID: {taskId}</p>
+              )}
             </div>
           )}
 
@@ -292,14 +346,13 @@ export default function DulwichPage() {
               </div>
 
               <div className="share-container" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-  <button onClick={handleShare} className="share-button download-btn">
-    📥 Download Animation
-  </button>
-  <button onClick={handleReset} className="new-animation-button">
-    Create Another Animation
-  </button>
-</div>
-
+                <button onClick={handleShare} className="share-button download-btn">
+                  📥 Download Animation
+                </button>
+                <button onClick={handleReset} className="new-animation-button">
+                  Create Another Animation
+                </button>
+              </div>
             </div>
           )}
 

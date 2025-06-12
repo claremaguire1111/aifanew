@@ -22,8 +22,22 @@ export default function DulwichPage() {
   const demoVideoPath = "/videos/demo.mp4";
   const apiKey = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07"; // Fallback API key for development
 
+  // Function to properly format image for Runway API
+  const prepareImageForAPI = async (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        // Get the base64 string without the data URL prefix
+        const base64String = reader.result.split(',')[1];
+        resolve(base64String);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
   // Direct interaction with RunwayML API
-  const generateAnimation = async (imageBase64, promptText) => {
+  const generateAnimation = async (imageFile, promptText) => {
     try {
       // First try to get API key from our secure endpoint
       let keyToUse = apiKey; // Start with fallback key
@@ -47,15 +61,24 @@ export default function DulwichPage() {
       if (!keyToUse) {
         throw new Error('API key not available');
       }
+
+      // Prepare the image in the correct format
+      const base64Image = await prepareImageForAPI(imageFile);
       
-      // Create the payload for Runway API
+      // Log image size in KB to debug size issues
+      const imageSizeKB = Math.round((base64Image.length * 3/4) / 1024);
+      console.log(`Base64 image size: ~${imageSizeKB}KB`);
+      
+      // Create the payload for Runway API - note we're not including the data:image/jpeg;base64, prefix
       const payload = {
         model: "gen4_turbo",
-        promptImage: imageBase64,
+        promptImage: base64Image,
         promptText: promptText,
         ratio: "1280:720",
         duration: 5
       };
+      
+      console.log('Sending API request to RunwayML');
       
       // Make direct request to Runway API
       const response = await fetch('https://api.runwayml.com/v1/image_to_video', {
@@ -72,14 +95,17 @@ export default function DulwichPage() {
         let errorMessage = `API error: ${response.status}`;
         try {
           const errorData = await response.json();
+          console.error('API error details:', errorData);
           errorMessage = errorData.message || errorMessage;
         } catch (e) {
           // If parsing fails, use the default error message
+          console.error('Could not parse error response');
         }
         throw new Error(errorMessage);
       }
       
       const data = await response.json();
+      console.log('Successfully created task:', data);
       return { taskId: data.id };
     } catch (error) {
       console.error('Error generating animation:', error);
@@ -191,74 +217,54 @@ export default function DulwichPage() {
     setStep(3);
 
     try {
-      // Convert image to base64
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = async () => {
+      // Start the animation generation process
+      const { taskId } = await generateAnimation(file, prompt);
+      console.log('Animation task started with ID:', taskId);
+      setTaskId(taskId);
+      
+      // Start polling for task status
+      const interval = setInterval(async () => {
         try {
-          const base64data = reader.result;
+          const status = await checkTaskStatus(taskId);
+          console.log('Task status:', status.status);
           
-          // Start the animation generation process
-          const { taskId } = await generateAnimation(base64data, prompt);
-          console.log('Animation task started with ID:', taskId);
-          setTaskId(taskId);
-          
-          // Start polling for task status
-          const interval = setInterval(async () => {
-            try {
-              const status = await checkTaskStatus(taskId);
-              console.log('Task status:', status.status);
-              
-              if (status.status === 'SUCCEEDED') {
-                clearInterval(interval);
-                setTaskCheckInterval(null);
-                
-                // Task completed successfully
-                console.log('Animation generated successfully:', status.output[0]);
-                setGeneratedReel(status.output[0]);
-                setStep(4);
-                setIsLoading(false);
-              } else if (status.status === 'FAILED') {
-                clearInterval(interval);
-                setTaskCheckInterval(null);
-                
-                // Task failed
-                console.error('Animation generation failed:', status.error);
-                setError(status.error || 'Animation generation failed');
-                
-                // Fall back to demo video if generation fails
-                setGeneratedReel(demoVideoPath);
-                setStep(4);
-                setIsLoading(false);
-              }
-              // For other statuses (PENDING, PROCESSING, etc.), continue polling
-            } catch (pollError) {
-              console.error('Error polling task status:', pollError);
-              // Don't clear interval on polling errors - keep trying
-            }
-          }, 5000); // Check every 5 seconds
-          
-          setTaskCheckInterval(interval);
-        } catch (error) {
-          console.error('Error in image processing:', error);
-          setError(error.message || 'Failed to process the image');
-          
-          // Fall back to demo video on error
-          setTimeout(() => {
-            setError(error.message + ' - Using demo video as fallback');
+          if (status.status === 'SUCCEEDED') {
+            clearInterval(interval);
+            setTaskCheckInterval(null);
+            
+            // Task completed successfully
+            console.log('Animation generated successfully:', status.output[0]);
+            setGeneratedReel(status.output[0]);
+            setStep(4);
+            setIsLoading(false);
+          } else if (status.status === 'FAILED') {
+            clearInterval(interval);
+            setTaskCheckInterval(null);
+            
+            // Task failed
+            console.error('Animation generation failed:', status.error);
+            setError(status.error || 'Animation generation failed');
+            
+            // Fall back to demo video if generation fails
             setGeneratedReel(demoVideoPath);
             setStep(4);
             setIsLoading(false);
-          }, 2000);
+          }
+          // For other statuses (PENDING, PROCESSING, etc.), continue polling
+        } catch (pollError) {
+          console.error('Error polling task status:', pollError);
+          // Don't clear interval on polling errors - keep trying
         }
-      };
-    } catch (err) {
-      console.error('Error submitting animation task:', err);
-      setError(err.message || 'Failed to start animation task');
+      }, 5000); // Check every 5 seconds
+      
+      setTaskCheckInterval(interval);
+    } catch (error) {
+      console.error('Error in image processing:', error);
+      setError(error.message || 'Failed to process the image');
       
       // Fall back to demo video on error
       setTimeout(() => {
-        setError(err.message + ' - Using demo video as fallback');
+        setError(error.message + ' - Using demo video as fallback');
         setGeneratedReel(demoVideoPath);
         setStep(4);
         setIsLoading(false);

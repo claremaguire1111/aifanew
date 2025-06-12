@@ -67,16 +67,33 @@ export default function DulwichPage() {
       const formData = new FormData();
       formData.append("image", file);
       formData.append("prompt", prompt);
+      
+      // Add error handling for the fetch operation
       const response = await fetch("/api/generate-animation", {
         method: "POST",
         body: formData,
+      }).catch(error => {
+        console.error("Network error:", error);
+        throw new Error("Network error - please check your connection");
       });
-      const data = await response.json();
-      if (!response.ok)
-        throw new Error(data.error || "Failed to generate animation");
+      
+      // Handle non-JSON responses
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error("JSON parsing error:", jsonError);
+        throw new Error("Failed to parse server response");
+      }
+      
+      if (!response.ok) {
+        throw new Error(data?.error || `Server error: ${response.status}`);
+      }
+      
       setGeneratedReel(data.animationUrl);
-      if (data.isDemo)
+      if (data.isDemo) {
         setError(data.message || "Using demo video for preview purposes.");
+      }
       setStep(4);
     } catch (err) {
       console.error("Error generating animation:", err);

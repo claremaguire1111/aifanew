@@ -46,19 +46,33 @@ export async function POST(req) {
 
     throw new Error(status.error || 'Unknown error');
   } catch (error) {
+    console.error("Animation generation error:", error);
     return NextResponse.json({
-      success: true,
+      success: false,
       animationUrl: '/videos/demo.mp4',
       isDemo: true,
       message: 'Using demo video due to error',
       error: error.message,
-    });
+    }, { status: 200 }); // Return 200 with error information rather than failing
   }
 }
 
-export async function GET() {
+// Fix for the 405 Method Not Allowed error
+export async function GET(req) {
   return NextResponse.json(
     { error: "This endpoint only supports POST requests" },
     { status: 405 }
   );
+}
+
+// Add OPTIONS method to handle preflight requests
+export async function OPTIONS(req) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  });
 }

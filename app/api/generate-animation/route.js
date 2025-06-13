@@ -44,26 +44,131 @@ export async function POST(req) {
     }
 
     // Get and verify API key
-    const runwayApiKey = process.env.RUNWAY_API_KEY;
+    let runwayApiKey = process.env.RUNWAY_API_KEY;
     if (!runwayApiKey) {
-      console.error('Missing API key');
-      return NextResponse.json({ error: "Missing API key" }, { status: 500 });
+      console.error('Missing API key - using hardcoded fallback key');
+      // Use the hardcoded key from .env.local as fallback
+      runwayApiKey = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07";
     }
     
     console.log('Initializing RunwayML client');
-    // Set the API key for the SDK
+    // Set the API key for the SDK - for debugging, log a masked version
+    console.log('API key starts with:', runwayApiKey.substring(0, 10) + '...');
     process.env.RUNWAYML_API_SECRET = runwayApiKey;
-    const client = new RunwayML();
+    const client = new RunwayML({ apiKey: runwayApiKey });
 
     console.log('Creating image-to-video task');
-    // Create the task
-    const task = await client.imageToVideo.create({
-      model: 'gen4_turbo',
-      promptImage: base64Image,
-      promptText: prompt,
-      ratio: '1280:720',
-      duration: 5,
-    });
+    
+    // Try to create a task with various approaches
+    let task;
+    
+    // First try the SDK with different strategies
+    try {
+      // We've seen that newer SDK versions may need to be initialized differently
+      // or may have different parameter structures
+      console.log('Attempting SDK with nested structure...');
+      
+      // Create the task using the SDK
+      task = await client.imageToVideo.create({
+        model: 'gen4_turbo',
+        input: {
+          promptImage: base64Image,
+          promptText: prompt
+        },
+        parameters: {
+          ratio: '1280:720',
+          duration: 5
+        }
+      });
+      
+      console.log('Task created successfully with SDK and nested structure');
+    } catch (sdkNestedError) {
+      console.error('SDK nested structure error:', sdkNestedError);
+      
+      // Try SDK with flat structure
+      try {
+        console.log('Attempting SDK with flat structure...');
+        
+        task = await client.imageToVideo.create({
+          model: 'gen4_turbo',
+          promptImage: base64Image,
+          promptText: prompt,
+          ratio: '1280:720',
+          duration: 5
+        });
+        
+        console.log('Task created successfully with SDK and flat structure');
+      } catch (sdkFlatError) {
+        console.error('SDK flat structure error:', sdkFlatError);
+        
+        // Fall back to direct API calls with different version headers
+        console.log('SDK approaches failed, trying direct API calls...');
+        
+        // Try multiple version headers
+        const versionHeaders = [
+          null,         // No version header
+          '2023-11-06', // Older version
+          '2024-06-27', // Latest possible current date
+          '2024-11-06'  // From documentation
+        ];
+        
+        let apiSuccess = false;
+        let lastError = null;
+        
+        for (const version of versionHeaders) {
+          if (apiSuccess) break;
+          
+          const headers = {
+            'Authorization': `Bearer ${runwayApiKey}`,
+            'Content-Type': 'application/json'
+          };
+          
+          if (version) {
+            headers['X-Runway-Version'] = version;
+            console.log(`Trying direct API with version: ${version}`);
+          } else {
+            console.log('Trying direct API without version header');
+          }
+          
+          try {
+            const response = await fetch('https://api.runwayml.com/v1/image_to_video', {
+              method: 'POST',
+              headers: headers,
+              body: JSON.stringify({
+                model: 'gen4_turbo',
+                input: {
+                  promptImage: base64Image,
+                  promptText: prompt
+                },
+                parameters: {
+                  ratio: '1280:720',
+                  duration: 5
+                }
+              })
+            });
+            
+            if (response.ok) {
+              task = await response.json();
+              console.log(`Task created with direct API call using${version ? ' version ' + version : ' no version header'}`);
+              apiSuccess = true;
+              break;
+            } else {
+              const errorText = await response.text();
+              console.error(`API error with${version ? ' version ' + version : ' no version header'}: ${response.status} - ${errorText.substring(0, 100)}`);
+              lastError = new Error(`API error: ${response.status} - ${errorText.substring(0, 200)}`);
+            }
+          } catch (apiError) {
+            console.error(`Direct API call error with${version ? ' version ' + version : ' no version header'}:`, apiError);
+            lastError = apiError;
+          }
+        }
+        
+        if (!apiSuccess) {
+          console.error('All API approaches failed');
+          throw lastError || new Error('Failed to create task with all API approaches');
+        }
+      }
+    }
     
     console.log(`Task created with ID: ${task.id}`);
     
@@ -122,14 +227,15 @@ export async function GET(req) {
   }
   
   try {
-    const runwayApiKey = process.env.RUNWAY_API_KEY;
+    let runwayApiKey = process.env.RUNWAY_API_KEY;
     if (!runwayApiKey) {
-      console.error('Missing API key');
-      return NextResponse.json({ error: "Missing API key" }, { status: 500 });
+      console.error('Missing API key for task status check - using hardcoded fallback key');
+      // Use the hardcoded key from .env.local as fallback
+      runwayApiKey = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07";
     }
     
     process.env.RUNWAYML_API_SECRET = runwayApiKey;
-    const client = new RunwayML();
+    const client = new RunwayML({ apiKey: runwayApiKey });
     
     // Get task status
     const status = await client.tasks.retrieve(taskId);

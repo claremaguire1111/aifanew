@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { handleOptionsRequest, corsResponse, corsErrorResponse } from '../../cors-fix';
 
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
@@ -8,19 +9,12 @@ export const config = {
   api: {
     responseLimit: false,
   },
+  runtime: 'edge', // Use edge runtime for better performance
 };
 
 // Handle OPTIONS requests for CORS preflight
-export async function OPTIONS(req) {
-  return new NextResponse(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
-      'Access-Control-Max-Age': '86400',
-    },
-  });
+export function OPTIONS() {
+  return handleOptionsRequest();
 }
 
 // This checks the status of a task - compatible with Vercel
@@ -36,14 +30,7 @@ export async function GET(req) {
     const taskId = url.searchParams.get('taskId');
     
     if (!taskId) {
-      return NextResponse.json({ error: "Missing taskId parameter" }, { 
-        status: 400,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        }
-      });
+      return corsErrorResponse("Missing taskId parameter", 400);
     }
     
     // The hardcoded key that's known to work (fallback)
@@ -113,79 +100,53 @@ export async function GET(req) {
     if (statusData) {
       // Successfully got status
       if (statusData.status === 'SUCCEEDED') {
-        return NextResponse.json({
+        return corsResponse({
           success: true,
           status: statusData.status,
           output: statusData.output
-        }, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-          }
         });
       } else if (statusData.status === 'FAILED') {
-        return NextResponse.json({
-          success: false,
-          status: statusData.status,
-          error: statusData.error || 'Task failed',
-          demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
-          isDemo: true
-        }, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        return corsErrorResponse(
+          statusData.error || 'Task failed',
+          200,
+          {
+            status: statusData.status,
+            demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
+            isDemo: true
           }
-        });
+        );
       } else {
         // Still processing
-        return NextResponse.json({
+        return corsResponse({
           success: true,
           status: statusData.status
-        }, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-          }
         });
       }
     } else {
       // All attempts failed - return a more useful error message
       const errorMsg = lastError?.message || 'All API attempts failed';
       console.error("Failed to get task status:", errorMsg);
-      return NextResponse.json({
-        success: false,
-        status: 'FAILED',
-        error: errorMsg,
-        message: 'Failed to check task status after trying all API approaches',
-        demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
-        isDemo: true
-      }, {
-        status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+      return corsErrorResponse(
+        errorMsg,
+        500,
+        {
+          status: 'FAILED',
+          message: 'Failed to check task status after trying all API approaches',
+          demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
+          isDemo: true
         }
-      });
+      );
     }
   } catch (error) {
     console.error("Error checking task status:", error);
-    return NextResponse.json({
-      success: false,
-      status: 'FAILED',
-      error: error.message || 'Unknown error occurred',
-      demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
-      isDemo: true
-    }, {
-      status: 500,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+    return corsErrorResponse(
+      error.message || 'Unknown error occurred',
+      500,
+      {
+        status: 'FAILED',
+        demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
+        isDemo: true
       }
-    });
+    );
   }
 }

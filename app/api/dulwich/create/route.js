@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { handleOptionsRequest, corsResponse, corsErrorResponse } from '../../cors-fix';
 
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
@@ -11,19 +12,12 @@ export const config = {
     },
     responseLimit: false,
   },
+  runtime: 'edge', // Use edge runtime for better performance
 };
 
 // Handle OPTIONS requests for CORS preflight
-export async function OPTIONS(req) {
-  return new NextResponse(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
-      'Access-Control-Max-Age': '86400',
-    },
-  });
+export function OPTIONS() {
+  return handleOptionsRequest();
 }
 
 // This creates a task but doesn't wait for it to complete - compatible with Vercel
@@ -40,17 +34,11 @@ export async function POST(req) {
     const { base64Image, promptText } = data;
     
     if (!base64Image || !promptText) {
-      return NextResponse.json({ 
-        error: "Missing required parameters", 
-        message: "Both base64Image and promptText are required" 
-      }, { 
-        status: 400,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      });
+      return corsErrorResponse(
+        "Missing required parameters", 
+        400, 
+        { message: "Both base64Image and promptText are required" }
+      );
     }
     
     // The hardcoded key that's known to work (fallback)
@@ -155,51 +143,36 @@ export async function POST(req) {
     
     if (taskId) {
       // Successfully created a task
-      return NextResponse.json({
+      return corsResponse({
         success: true,
         id: taskId,
         message: 'Task created successfully'
       }, { 
-        status: 202,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        }
+        status: 202
       });
     } else {
       // All attempts failed - return a more useful error message
       const errorMsg = lastError?.message || 'All API attempts failed';
       console.error("Failed to create task:", errorMsg);
-      return NextResponse.json({
-        success: false,
-        error: errorMsg,
-        message: 'Failed to create animation task after trying all API approaches',
-        demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
-        isDemo: true
-      }, { 
-        status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+      return corsErrorResponse(
+        errorMsg, 
+        500, 
+        {
+          message: 'Failed to create animation task after trying all API approaches',
+          demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
+          isDemo: true
         }
-      });
+      );
     }
   } catch (error) {
     console.error("Error creating animation task:", error);
-    return NextResponse.json({
-      success: false,
-      error: error.message || 'Unknown error occurred',
-      demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
-      isDemo: true
-    }, { 
-      status: 500,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+    return corsErrorResponse(
+      error.message || 'Unknown error occurred', 
+      500, 
+      {
+        demoUrl: '/videos/demo.mp4', // Provide a fallback demo URL
+        isDemo: true
       }
-    });
+    );
   }
 }

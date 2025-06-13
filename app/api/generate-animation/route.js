@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 import RunwayML from '@runwayml/sdk';
+import { handleOptionsRequest, corsResponse, corsErrorResponse } from '../cors-fix';
 
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
+
+// Export runtime configuration
+export const config = {
+  runtime: 'edge', // Use edge runtime for better performance
+};
 
 // This is a fallback that will handle both FormData and JSON
 export async function POST(req) {
@@ -23,7 +29,7 @@ export async function POST(req) {
         
         if (!image || !promptText) {
           console.error('Missing image or prompt in FormData');
-          return NextResponse.json({ error: "Missing image or prompt" }, { status: 400 });
+          return corsErrorResponse("Missing image or prompt", 400);
         }
         
         // Convert the image to base64
@@ -34,9 +40,10 @@ export async function POST(req) {
         // Check file size
         if (buffer.length > 5 * 1024 * 1024) {
           console.error('Image too large for data URI (>5MB)');
-          return NextResponse.json({ 
-            error: "Image file too large. Please use an image smaller than 5MB." 
-          }, { status: 400 });
+          return corsErrorResponse(
+            "Image file too large. Please use an image smaller than 5MB.",
+            400
+          );
         }
       } catch (formDataError) {
         console.error('FormData parsing error:', formDataError);
@@ -53,13 +60,14 @@ export async function POST(req) {
         
         if (!base64Image || !promptText) {
           console.error('Missing base64Image or promptText in JSON');
-          return NextResponse.json({ error: "Missing required parameters" }, { status: 400 });
+          return corsErrorResponse("Missing required parameters", 400);
         }
       } catch (jsonError) {
         console.error('JSON parsing error:', jsonError);
-        return NextResponse.json({ 
-          error: "Invalid request format. Expected FormData or JSON with required parameters." 
-        }, { status: 400 });
+        return corsErrorResponse(
+          "Invalid request format. Expected FormData or JSON with required parameters.", 
+          400
+        );
       }
     }
     
@@ -197,17 +205,12 @@ export async function POST(req) {
       console.log(`Task created with ID: ${task.id}`);
       
       // Immediately return the task ID
-      return NextResponse.json({
+      return corsResponse({
         success: true,
         taskId: task.id,
         message: 'Task initiated successfully',
       }, { 
-        status: 202, // Accepted
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
+        status: 202 // Accepted
       });
     } else {
       throw new Error('Task creation failed or returned no ID');
@@ -215,20 +218,15 @@ export async function POST(req) {
   } catch (error) {
     console.error("Animation generation error:", error.message);
     
-    return NextResponse.json({
-      success: false,
-      error: error.message || 'Unknown error occurred',
-      demoUrl: '/videos/demo.mp4', // Fallback for immediate viewing
-      isDemo: true,
-      message: 'Error occurred during video generation',
-    }, { 
-      status: 500,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    return corsErrorResponse(
+      error.message || 'Unknown error occurred',
+      500,
+      {
+        demoUrl: '/videos/demo.mp4', // Fallback for immediate viewing
+        isDemo: true,
+        message: 'Error occurred during video generation',
       }
-    });
+    );
   }
 }
 
@@ -238,17 +236,7 @@ export async function GET(req) {
   const taskId = url.searchParams.get('taskId');
   
   if (!taskId) {
-    return NextResponse.json(
-      { error: "Missing taskId parameter" },
-      { 
-        status: 400,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      }
-    );
+    return corsErrorResponse("Missing taskId parameter", 400);
   }
   
   try {
@@ -267,45 +255,29 @@ export async function GET(req) {
       const status = await client.tasks.retrieve(taskId);
       
       if (status.status === 'SUCCEEDED') {
-        return NextResponse.json({
+        return corsResponse({
           success: true,
           completed: true,
           status: status.status,
           output: status.output,
-        }, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-          }
         });
       } else if (status.status === 'FAILED') {
-        return NextResponse.json({
-          success: false,
-          completed: true,
-          status: status.status,
-          error: status.error || 'Task failed',
-          demoUrl: '/videos/demo.mp4',
-          isDemo: true,
-        }, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        return corsErrorResponse(
+          status.error || 'Task failed',
+          200,
+          {
+            completed: true,
+            status: status.status,
+            demoUrl: '/videos/demo.mp4',
+            isDemo: true,
           }
-        });
+        );
       } else {
         // Still processing
-        return NextResponse.json({
+        return corsResponse({
           success: true,
           completed: false,
           status: status.status,
-        }, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-          }
         });
       }
     } catch (sdkError) {
@@ -407,32 +379,18 @@ export async function GET(req) {
     }
   } catch (error) {
     console.error("Error checking task status:", error);
-    return NextResponse.json({
-      success: false,
-      error: error.message || 'Unknown error occurred',
-      demoUrl: '/videos/demo.mp4',
-      isDemo: true
-    }, {
-      status: 500,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    return corsErrorResponse(
+      error.message || 'Unknown error occurred',
+      500,
+      {
+        demoUrl: '/videos/demo.mp4',
+        isDemo: true
       }
-    });
+    );
   }
 }
 
 // Handle OPTIONS preflight requests
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 204, // No content
-    headers: {
-      'Allow': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
-      'Access-Control-Max-Age': '86400', // 24 hours cache for preflight requests
-    },
-  });
+export function OPTIONS() {
+  return handleOptionsRequest();
 }

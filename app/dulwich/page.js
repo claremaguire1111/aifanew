@@ -20,48 +20,28 @@ export default function DulwichPage() {
 
   const exampleImagePath = "/images/Dulwich/Yinka.jpg";
   const demoVideoPath = "/videos/demo.mp4";
-  const apiKey = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07"; // Fallback API key for development
 
   // Function to properly format image for Runway API
   const prepareImageForAPI = async (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => {
-        // Get the base64 string without the data URL prefix
-        const base64String = reader.result.split(',')[1];
-        resolve(base64String);
+        // Keep the full data URI format for Runway API
+        // According to RunwayML docs, the API expects the full data URI
+        const dataUri = reader.result;
+        console.log('Prepared image data URI (first 50 chars):', dataUri.substring(0, 50) + '...');
+        resolve(dataUri);
       };
       reader.onerror = reject;
       reader.readAsDataURL(file);
     });
   };
 
-  // Direct interaction with RunwayML API
+  // Generate animation using our server endpoint
   const generateAnimation = async (imageFile, promptText) => {
     try {
-      // First try to get API key from our secure endpoint
-      let keyToUse = apiKey; // Start with fallback key
+      console.log('Preparing to generate animation');
       
-      try {
-        const keyResponse = await fetch('/api/runway-direct');
-        if (keyResponse.ok) {
-          const data = await keyResponse.json();
-          if (data.apiKey) {
-            keyToUse = data.apiKey;
-            console.log('Using API key from server');
-          }
-        } else {
-          console.warn('Could not get API key from server, using fallback');
-        }
-      } catch (keyError) {
-        console.warn('Error getting API key, using fallback:', keyError);
-        // Continue with fallback key
-      }
-      
-      if (!keyToUse) {
-        throw new Error('API key not available');
-      }
-
       // Prepare the image in the correct format
       const base64Image = await prepareImageForAPI(imageFile);
       
@@ -69,88 +49,106 @@ export default function DulwichPage() {
       const imageSizeKB = Math.round((base64Image.length * 3/4) / 1024);
       console.log(`Base64 image size: ~${imageSizeKB}KB`);
       
-      // Create the payload for Runway API - note we're not including the data:image/jpeg;base64, prefix
+      // Prepare the payload for our server endpoint
       const payload = {
-        model: "gen4_turbo",
-        promptImage: base64Image,
+        base64Image: base64Image,
         promptText: promptText,
+        model: "gen4_turbo",
         ratio: "1280:720",
         duration: 5
       };
       
-      console.log('Sending API request to RunwayML');
+      // Log the payload structure (without the full image data for brevity)
+      const payloadCopy = JSON.parse(JSON.stringify(payload));
+      if (payloadCopy.base64Image) {
+        payloadCopy.base64Image = payloadCopy.base64Image.substring(0, 50) + '...';
+      }
+      console.log('Sending payload to server:', JSON.stringify(payloadCopy, null, 2));
       
-      // Make direct request to Runway API
-      const response = await fetch('https://api.runwayml.com/v1/image_to_video', {
+      // Make request to our server endpoint
+      console.log('Sending request to runway-direct endpoint');
+      const response = await fetch('/api/runway-direct', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${keyToUse}`,
-          'Content-Type': 'application/json',
-          'X-Runway-Version': '2024-11-06'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       });
       
+      console.log('Server response status:', response.status);
+      
+      // Parse the response
+      const data = await response.json();
+      console.log('Server response data:', data);
+      
+      // Handle errors
       if (!response.ok) {
-        let errorMessage = `API error: ${response.status}`;
-        try {
-          const errorData = await response.json();
-          console.error('API error details:', errorData);
-          errorMessage = errorData.message || errorMessage;
-        } catch (e) {
-          // If parsing fails, use the default error message
-          console.error('Could not parse error response');
-        }
-        throw new Error(errorMessage);
+        console.error('Server returned error:', response.status, data.error || 'Unknown error');
+        throw new Error(data.error || `Server error: ${response.status}`);
       }
       
-      const data = await response.json();
-      console.log('Successfully created task:', data);
-      return { taskId: data.id };
+      // Successfully created task
+      if (data.id) {
+        console.log('Successfully created task with ID:', data.id);
+        return { taskId: data.id };
+      } else {
+        console.error('Unexpected server response format:', data);
+        throw new Error('Unexpected server response format');
+      }
     } catch (error) {
       console.error('Error generating animation:', error);
       throw error;
     }
   };
   
-  // Check task status directly
+  // Check task status using server endpoint with improved error handling
   const checkTaskStatus = async (taskId) => {
     try {
-      // Try to get API key from secure endpoint, fall back to hardcoded key
-      let keyToUse = apiKey; // Start with fallback key
+      console.log(`Checking status for task ${taskId}`);
       
-      try {
-        const keyResponse = await fetch('/api/runway-direct');
-        if (keyResponse.ok) {
-          const data = await keyResponse.json();
-          if (data.apiKey) {
-            keyToUse = data.apiKey;
-          }
-        }
-      } catch (keyError) {
-        console.warn('Error getting API key for status check, using fallback:', keyError);
-        // Continue with fallback key
-      }
-      
-      // Check task status with Runway API
-      const response = await fetch(`https://api.runwayml.com/v1/tasks/${taskId}`, {
+      // Send request to check task status
+      const response = await fetch(`/api/runway-direct?taskId=${taskId}`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${keyToUse}`,
-          'Content-Type': 'application/json',
-          'X-Runway-Version': '2024-11-06'
+          'Cache-Control': 'no-cache, no-store',
+          'Pragma': 'no-cache'
         }
       });
       
-      if (!response.ok) {
-        throw new Error(`Failed to check task status: ${response.status}`);
+      console.log('Task status response status:', response.status);
+      
+      // Try to parse the response even if it's not ok (to get error details)
+      let status;
+      try {
+        const text = await response.text();
+        try {
+          status = JSON.parse(text);
+        } catch (e) {
+          console.error('Failed to parse response as JSON:', text);
+          status = { error: `Invalid response: ${text.substring(0, 100)}...` };
+        }
+      } catch (parseError) {
+        console.error('Failed to read response text:', parseError);
+        status = { error: 'Failed to read response' };
       }
       
-      const status = await response.json();
+      console.log('Task status data:', status);
+      
+      if (!response.ok) {
+        console.error(`Task status check failed: ${response.status}`, status.error || 'Unknown error');
+        return {
+          status: 'FAILED',
+          error: status.error || `Server error: ${response.status}`
+        };
+      }
+      
       return status;
     } catch (error) {
       console.error('Error checking task status:', error);
-      throw error;
+      return {
+        status: 'FAILED',
+        error: error.message || 'Network error checking task status'
+      };
     }
   };
 
@@ -222,19 +220,37 @@ export default function DulwichPage() {
       console.log('Animation task started with ID:', taskId);
       setTaskId(taskId);
       
-      // Start polling for task status
+      // Start polling for task status with improved error handling
+      let errorCount = 0;
+      const maxErrors = 3; // Allow up to 3 consecutive errors before falling back
+      
       const interval = setInterval(async () => {
         try {
           const status = await checkTaskStatus(taskId);
           console.log('Task status:', status.status);
+          
+          // Reset error count on successful status check
+          if (!status.error) {
+            errorCount = 0;
+          }
           
           if (status.status === 'SUCCEEDED') {
             clearInterval(interval);
             setTaskCheckInterval(null);
             
             // Task completed successfully
-            console.log('Animation generated successfully:', status.output[0]);
-            setGeneratedReel(status.output[0]);
+            console.log('Animation generated successfully:', status.output?.[0]);
+            
+            if (status.output && status.output[0]) {
+              setGeneratedReel(status.output[0]);
+              setError(null); // Clear any previous errors
+            } else {
+              // Handle missing output URL
+              console.error('Task succeeded but no output URL provided');
+              setError('Animation generated successfully, but the video URL is missing');
+              setGeneratedReel(demoVideoPath);
+            }
+            
             setStep(4);
             setIsLoading(false);
           } else if (status.status === 'FAILED') {
@@ -249,22 +265,72 @@ export default function DulwichPage() {
             setGeneratedReel(demoVideoPath);
             setStep(4);
             setIsLoading(false);
+          } else if (status.error) {
+            // Status check returned an error but we'll keep polling
+            errorCount++;
+            console.error(`Status check error (${errorCount}/${maxErrors}):`, status.error);
+            
+            // If we've hit the maximum number of consecutive errors, fall back
+            if (errorCount >= maxErrors) {
+              clearInterval(interval);
+              setTaskCheckInterval(null);
+              
+              console.error(`Too many consecutive errors (${errorCount}), falling back to demo video`);
+              setError(`Lost connection to server after ${maxErrors} attempts - using demo video instead`);
+              
+              setGeneratedReel(demoVideoPath);
+              setStep(4);
+              setIsLoading(false);
+            }
           }
           // For other statuses (PENDING, PROCESSING, etc.), continue polling
         } catch (pollError) {
           console.error('Error polling task status:', pollError);
-          // Don't clear interval on polling errors - keep trying
+          
+          // Count the error and fall back if we hit the limit
+          errorCount++;
+          console.error(`Polling error (${errorCount}/${maxErrors}):`, pollError.message);
+          
+          if (errorCount >= maxErrors) {
+            clearInterval(interval);
+            setTaskCheckInterval(null);
+            
+            console.error(`Too many consecutive errors (${errorCount}), falling back to demo video`);
+            setError(`Unable to check task status after ${maxErrors} attempts - using demo video instead`);
+            
+            setGeneratedReel(demoVideoPath);
+            setStep(4);
+            setIsLoading(false);
+          }
         }
       }, 5000); // Check every 5 seconds
       
       setTaskCheckInterval(interval);
     } catch (error) {
       console.error('Error in image processing:', error);
-      setError(error.message || 'Failed to process the image');
+      
+      // More detailed error message
+      const errorMessage = error.message || 'Failed to process the image';
+      console.error('Animation generation failed with error:', errorMessage);
+      
+      // Check if this is an API-specific error that we can provide more details for
+      let userFriendlyMessage = 'Animation generation failed';
+      
+      if (errorMessage.includes('API key') || errorMessage.includes('authentication')) {
+        userFriendlyMessage = 'Authentication error - please try again later';
+      } else if (errorMessage.includes('timeout') || errorMessage.includes('network')) {
+        userFriendlyMessage = 'Network error - please check your connection and try again';
+      } else if (errorMessage.includes('Invalid API Version')) {
+        userFriendlyMessage = 'API compatibility error - please contact support';
+      } else {
+        userFriendlyMessage = `Error: ${errorMessage}`;
+      }
+      
+      // Set user-friendly error message and continue with demo video
+      setError(`${userFriendlyMessage} - Using demo video instead`);
       
       // Fall back to demo video on error
       setTimeout(() => {
-        setError(error.message + ' - Using demo video as fallback');
         setGeneratedReel(demoVideoPath);
         setStep(4);
         setIsLoading(false);
@@ -423,10 +489,22 @@ export default function DulwichPage() {
               <h3>Creating Your Animation</h3>
               <div className="loading-animation"><div className="spinner"></div></div>
               <p>Please wait while we bring your sculpture to life...</p>
-              <p className="processing-time">This may take several minutes to complete.</p>
-              {taskId && (
-                <p className="task-id">Task ID: {taskId}</p>
-              )}
+              <p className="processing-time">This may take 1-2 minutes to complete.</p>
+              
+              {/* Better status information */}
+              <div className="status-info">
+                {taskId ? (
+                  <>
+                    <p className="status-message">✅ Task submitted successfully</p>
+                    <p className="status-help">
+                      We're processing your animation. This uses AI to transform your image
+                      and may take up to 2 minutes. Please don't close this window.
+                    </p>
+                  </>
+                ) : (
+                  <p className="status-message">Submitting your request...</p>
+                )}
+              </div>
             </div>
           )}
 
@@ -435,7 +513,18 @@ export default function DulwichPage() {
               <h3>Your Animated Sculpture</h3>
               <div className="video-container">
                 <video src={generatedReel || demoVideoPath} controls autoPlay loop className="result-video" />
-                {error && <div className="error-notice"><p>{error}</p></div>}
+                {error && (
+                  <div className="error-notice">
+                    <p>{error}</p>
+                    {error.includes("demo video") && (
+                      <p className="demo-note">
+                        <strong>Note:</strong> You're currently viewing a demo video. 
+                        The AI generation service is experiencing temporary issues. 
+                        Please try again later to create your own unique animation.
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
 
               <div className="sharing-instructions">

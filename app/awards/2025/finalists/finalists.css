@@ -1,0 +1,142 @@
+/* Finalists Page Specific Styles */
+
+/* Gallery customization for finalists */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--black);
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.gallery-image {
+  width: 400px; /* Wider for full view */
+  height: 225px; /* Maintain 16:9 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  background-color: var(--light-grey);
+  margin: 0 auto;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.gallery-image img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-info {
+  padding: 12px 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 0 0 5px 5px;
+}
+
+.gallery-info h3 {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.gallery-filmmaker {
+  font-size: 0.85rem;
+  color: var(--dark-grey);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.gallery-description-full {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--dark-grey);
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Using the jury-bio-modal styles from awards.css */
+
+/* About Section */
+.awards-about {
+  padding: 60px 20px;
+  background-color: var(--light-grey);
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--dark-grey);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--medium-grey);
+  margin: 0 auto 30px;
+}
+
+.about-instruction {
+  font-size: 0.9rem;
+  color: var(--dark-grey);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-image {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .gallery-info {
+    max-width: 100%;
+  }
+}

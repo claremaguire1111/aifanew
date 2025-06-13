@@ -1,0 +1,221 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "AIFA Awards 2025 Finalists",
+  "description": "Discover the 14 groundbreaking AI-generated films selected as finalists for the AIFA Awards 2025, showcasing innovation in AI filmmaking.",
+  "image": "/images/jury2025/placeholder-finalist1.jpg",
+  "url": "https://aifilm.academy/awards/2025/finalists",
+  "isPartOf": {
+    "@type": "Event",
+    "name": "AIFA Awards 2025",
+    "description": "The AI Film Academy Awards 2025 celebrates innovation in AI filmmaking.",
+    "startDate": "2025-06-03",
+    "endDate": "2025-07-22",
+    "organizer": {
+      "@type": "Organization",
+      "name": "AIFA Ventures",
+      "url": "https://aifilm.academy"
+    }
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Movie",
+          "name": "Everyone is Chair",
+          "director": {
+            "@type": "Person",
+            "name": "Leilanni Todd"
+          },
+          "dateCreated": "2024",
+          "description": "Everyone is Chair is a short AI-generated film about a woman's surreal obsession with inflatable chairs—worn as both fashion and survival gear."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Movie",
+          "name": "e^(i*π) + 1 = 0",
+          "director": {
+            "@type": "Person",
+            "name": "Junie Lau"
+          },
+          "dateCreated": "2024",
+          "description": "After retirement, the former mathematical genius transformed into the creator of digital comics, becoming the god of this fictional universe."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Movie",
+          "name": "Third Impact",
+          "director": {
+            "@type": "Person",
+            "name": "S()fia Braga"
+          },
+          "dateCreated": "2025",
+          "description": "An AI-generated movie that explores the future of human and non-human collaboration through a quantum computer's emotional journey."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Movie",
+          "name": "Duck",
+          "director": {
+            "@type": "Person",
+            "name": "Rachel Maclean"
+          },
+          "dateCreated": "2023",
+          "description": "A deepfake film taking place within a world of artifice, subterfuge and intrigue, raising questions about truth and power."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Movie",
+          "name": "Artomaton Telezine",
+          "director": {
+            "@type": "Person",
+            "name": "Gabriel Aronson"
+          },
+          "dateCreated": "2024",
+          "description": "\"Found footage\" from the vault of The Fair, a massive international exposition that may or may not have happened."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Movie",
+          "name": "Life After You Dyed!!",
+          "director": {
+            "@type": "Person",
+            "name": "Raaphaël Frydman"
+          },
+          "dateCreated": "2024",
+          "description": "A 10-year-old boy spends his day watching his ceiling, mentally projecting a funny movie about the afterlife."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Movie",
+          "name": "Stillness",
+          "director": {
+            "@type": "Person",
+            "name": "Nora Hase"
+          },
+          "dateCreated": "2024",
+          "description": "A diasporic exploration of pan-African futurism from a black German point of view, inspired by the concept of quiet resistance."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Movie",
+          "name": "Aqua Alta",
+          "director": {
+            "@type": "Person",
+            "name": "Fouzi Louahem"
+          },
+          "dateCreated": "2024",
+          "description": "A metaphor for a world on the verge of submersion, staging a silent encounter between humanity and deep-sea beings."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Movie",
+          "name": "Parallax",
+          "director": {
+            "@type": "Person",
+            "name": "Ariel Kotzer"
+          },
+          "dateCreated": "2024",
+          "description": "An experimental montage film exploring the psychological effects of societal programming through personal memory."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "Movie",
+          "name": "Thiaroye 44",
+          "director": {
+            "@type": "Person",
+            "name": "Hussein Dembel Sow"
+          },
+          "dateCreated": "2024",
+          "description": "A groundbreaking AI-generated film revisiting the tragic events of the 1944 Thiaroye massacre."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "Movie",
+          "name": "FOSSiLS",
+          "director": {
+            "@type": "Person",
+            "name": "Roxanne Ducharme"
+          },
+          "dateCreated": "2024",
+          "description": "A poetic exploration of humanity's impermanence and the traces we leave behind."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "Movie",
+          "name": "Remembering",
+          "director": {
+            "@type": "Person",
+            "name": "Diego Maclean"
+          },
+          "dateCreated": "2024",
+          "description": "Reflections on the nature of memory."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "Movie",
+          "name": "The Future Can Be Yours",
+          "director": {
+            "@type": "Person",
+            "name": "Simon Ball"
+          },
+          "dateCreated": "2024",
+          "description": "A man and a woman fall into an imaginary prison."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "Movie",
+          "name": "Do Bangladroids Dream of Electric Tagore?",
+          "director": {
+            "@type": "Person",
+            "name": "Aleem Hossain"
+          },
+          "dateCreated": "2024",
+          "description": "A documentarian explores what abandoned Bangladroids recall of their homeland in the New Jersey exclusion zone."
+        }
+      }
+    ]
+  }
+}

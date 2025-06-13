@@ -50,13 +50,6 @@
       ]
     }
   ],
-  "rewrites": [
-    { "source": "/api/dulwich/create", "destination": "/api/dulwich/create" },
-    { "source": "/api/dulwich/status", "destination": "/api/dulwich/status" },
-    { "source": "/api/generate-animation", "destination": "/api/generate-animation" },
-    { "source": "/api/runway-wrapper", "destination": "/api/runway-wrapper" },
-    { "source": "/api/runway-direct/create", "destination": "/api/runway-direct/create" }
-  ],
   "routes": [
     { "src": "/api/dulwich/create", "methods": ["POST", "OPTIONS"], "dest": "/api/dulwich/create" },
     { "src": "/api/dulwich/status", "methods": ["GET", "OPTIONS"], "dest": "/api/dulwich/status" },

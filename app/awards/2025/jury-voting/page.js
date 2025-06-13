@@ -24,7 +24,7 @@ export default function JuryVoting2025() {
       filmmaker: "Leilanni Todd",
       year: "2024",
       description: "A short AI-generated film about a woman's surreal obsession with inflatable chairs—worn as both fashion and survival gear.",
-      image: "/images/filmstills/STILL01 Everyone is Chair.jpg"
+      image: "/images/placeholder1.jpg"
     },
     {
       id: "film2",
@@ -32,7 +32,7 @@ export default function JuryVoting2025() {
       filmmaker: "Junie Lau",
       year: "2024",
       description: "After retirement, the former mathematical genius transformed into the creator of digital comics, becoming the god of this fictional universe.",
-      image: "/images/filmstills/STILL02 Junie Lau.jpg"
+      image: "/images/placeholder2.jpg"
     },
     {
       id: "film3",
@@ -40,7 +40,7 @@ export default function JuryVoting2025() {
       filmmaker: "S()fia Braga",
       year: "2025",
       description: "An AI-generated movie that explores the future of human and non-human collaboration through a quantum computer's emotional journey.",
-      image: "/images/filmstills/STILL03 third_impact.jpg"
+      image: "/images/placeholder3.jpg"
     },
     {
       id: "film4",
@@ -48,7 +48,7 @@ export default function JuryVoting2025() {
       filmmaker: "Rachel Maclean",
       year: "2023",
       description: "A deepfake film taking place within a world of artifice, subterfuge and intrigue, raising questions about truth and power.",
-      image: "/images/filmstills/STILL Duck.jpg"
+      image: "/images/placeholder4.jpg"
     },
     {
       id: "film5",
@@ -56,7 +56,7 @@ export default function JuryVoting2025() {
       filmmaker: "Gabriel Aronson",
       year: "2024",
       description: "\"Found footage\" from the vault of The Fair, a massive international exposition that may or may not have happened.",
-      image: "/images/filmstills/STILL Artomaton_Telezine.jpg"
+      image: "/images/placeholder5.jpg"
     },
     {
       id: "film6",
@@ -64,7 +64,7 @@ export default function JuryVoting2025() {
       filmmaker: "Raaphaël Frydman",
       year: "2024",
       description: "A 10-year-old boy spends his day watching his ceiling, mentally projecting a funny movie about the afterlife.",
-      image: "/images/filmstills/STILL La Vie Quand.png"
+      image: "/images/placeholder6.jpg"
     },
     {
       id: "film7",
@@ -72,7 +72,7 @@ export default function JuryVoting2025() {
       filmmaker: "Nora Hase",
       year: "2024",
       description: "A diasporic exploration of pan-African futurism from a black German point of view, inspired by the concept of quiet resistance.",
-      image: "/images/filmstills/STILL Stillness.png"
+      image: "/images/placeholder7.jpg"
     },
     {
       id: "film8",
@@ -80,7 +80,7 @@ export default function JuryVoting2025() {
       filmmaker: "Fouzi Louahem",
       year: "2024",
       description: "A metaphor for a world on the verge of submersion, staging a silent encounter between humanity and deep-sea beings.",
-      image: "/images/filmstills/STILL AQUA_ALTA.png"
+      image: "/images/placeholder8.jpg"
     },
     {
       id: "film9",
@@ -88,7 +88,7 @@ export default function JuryVoting2025() {
       filmmaker: "Ariel Kotzer",
       year: "2024",
       description: "An experimental montage film exploring the psychological effects of societal programming through personal memory.",
-      image: "/images/filmstills/STILL PARALLAX.png"
+      image: "/images/placeholder9.jpg"
     },
     {
       id: "film10",
@@ -96,7 +96,7 @@ export default function JuryVoting2025() {
       filmmaker: "Hussein Dembel Sow",
       year: "2024",
       description: "A groundbreaking AI-generated film revisiting the tragic events of the 1944 Thiaroye massacre.",
-      image: "/images/filmstills/STILL Thiaroye 44.png"
+      image: "/images/placeholder10.jpg"
     },
     {
       id: "film11",
@@ -104,7 +104,7 @@ export default function JuryVoting2025() {
       filmmaker: "Roxanne Ducharme",
       year: "2024",
       description: "A poetic exploration of humanity's impermanence and the traces we leave behind.",
-      image: "/images/filmstills/STILL FOSSiLS.png"
+      image: "/images/placeholder11.jpg"
     },
     {
       id: "film12",
@@ -112,7 +112,7 @@ export default function JuryVoting2025() {
       filmmaker: "Diego Maclean",
       year: "2024",
       description: "Reflections on the nature of memory.",
-      image: "/images/filmstills/STILL Remembering.jpg"
+      image: "/images/placeholder12.jpg"
     },
     {
       id: "film13",
@@ -120,7 +120,7 @@ export default function JuryVoting2025() {
       filmmaker: "Simon Ball",
       year: "2024",
       description: "A man and a woman fall into an imaginary prison.",
-      image: "/images/filmstills/STILL Future Can Be Yours.jpg"
+      image: "/images/placeholder13.jpg"
     },
     {
       id: "film14",
@@ -128,7 +128,7 @@ export default function JuryVoting2025() {
       filmmaker: "Aleem Hossain",
       year: "2024",
       description: "A documentarian explores what abandoned Bangladroids recall of their homeland in the New Jersey exclusion zone.",
-      image: "/images/filmstills/STILL Bangladdroids.jpg"
+      image: "/images/placeholder14.jpg"
     }
   ];
   

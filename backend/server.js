@@ -1,0 +1,275 @@
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const fetch = require('node-fetch');
+const bodyParser = require('body-parser');
+
+// Load environment variables
+dotenv.config();
+
+// Initialize Express app
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// The hardcoded key that's known to work (fallback)
+const FALLBACK_API_KEY = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07";
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json({ limit: '10mb' }));
+
+// Health check endpoint
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'RunwayML API proxy server is running' });
+});
+
+// Helper function to make API requests with different auth methods
+async function makeRunwayRequest(url, httpMethod, headers, body = null) {
+  // Try multiple authentication methods
+  const authMethods = [
+    // Method 1: Bearer token with environment key
+    {
+      name: 'env_bearer',
+      headers: {
+        ...headers,
+        'Authorization': `Bearer ${process.env.RUNWAY_API_KEY || ''}`
+      }
+    },
+    // Method 2: Bearer token with fallback key
+    {
+      name: 'fallback_bearer',
+      headers: {
+        ...headers,
+        'Authorization': `Bearer ${FALLBACK_API_KEY}`
+      }
+    },
+    // Method 3: Direct key without Bearer (some APIs prefer this)
+    {
+      name: 'fallback_direct',
+      headers: {
+        ...headers,
+        'Authorization': FALLBACK_API_KEY
+      }
+    }
+  ];
+  
+  // Try each auth method until one works
+  let lastError = null;
+  let lastResponse = null;
+  
+  for (const method of authMethods) {
+    try {
+      console.log(`Trying API request with auth method: ${method.name}`);
+      
+      const response = await fetch(url, {
+        method: httpMethod,
+        headers: method.headers,
+        body: body ? JSON.stringify(body) : undefined
+      });
+      
+      lastResponse = response;
+      
+      console.log(`Auth method ${method.name} returned status: ${response.status}`);
+      
+      // If successful, return the response
+      if (response.ok) {
+        console.log(`Auth method ${method.name} succeeded!`);
+        const text = await response.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (e) {
+          data = { rawText: text };
+        }
+        return { success: true, data, status: response.status };
+      }
+    } catch (error) {
+      lastError = error;
+      console.error(`Auth method ${method.name} failed with error:`, error.message);
+    }
+  }
+  
+  // If all methods failed, return the last error or response
+  if (lastResponse) {
+    try {
+      const text = await lastResponse.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        data = { rawText: text };
+      }
+      return { success: false, data, status: lastResponse.status };
+    } catch (e) {
+      return { success: false, error: 'Failed to read response', status: lastResponse.status };
+    }
+  }
+  
+  return { success: false, error: lastError?.message || 'All authentication methods failed' };
+}
+
+// Create animation endpoint
+app.post('/api/create', async (req, res) => {
+  console.log('POST request received to create animation');
+  
+  try {
+    // Extract the necessary data from the request
+    const { base64Image, promptText, model = "gen4_turbo", ratio = "1280:720", duration = 5 } = req.body;
+    
+    if (!base64Image || !promptText) {
+      return res.status(400).json({ 
+        error: "Missing required parameters", 
+        message: "Both base64Image and promptText are required" 
+      });
+    }
+    
+    // Define API endpoints to try
+    const apiEndpoints = [
+      'https://api.dev.runwayml.com/v1/image_to_video',  // Primary (new) endpoint
+      'https://api.runwayml.com/v1/image_to_video'       // Fallback (old) endpoint
+    ];
+    
+    // Define payload formats to try
+    const payloadFormats = [
+      // Flat structure format
+      {
+        name: 'flat',
+        payload: {
+          model: model,
+          promptImage: base64Image,
+          promptText: promptText,
+          ratio: ratio,
+          duration: duration
+        }
+      },
+      // Nested structure format
+      {
+        name: 'nested',
+        payload: {
+          model: model,
+          input: {
+            promptImage: base64Image,
+            promptText: promptText
+          },
+          parameters: {
+            ratio: ratio,
+            duration: duration
+          }
+        }
+      }
+    ];
+    
+    // Try different combinations of endpoints and payload formats
+    let result = { success: false };
+    let attemptCount = 0;
+    
+    for (const endpoint of apiEndpoints) {
+      for (const format of payloadFormats) {
+        if (result.success) break; // Stop if we already have a successful result
+        
+        attemptCount++;
+        console.log(`Attempt ${attemptCount}: Making request to ${endpoint} with ${format.name} structure`);
+        
+        try {
+          const attemptResult = await makeRunwayRequest(
+            endpoint,
+            'POST',
+            {
+              'Content-Type': 'application/json',
+              'X-Runway-Version': '2024-11-06'  // Required per docs
+            },
+            format.payload
+          );
+          
+          console.log(`Attempt ${attemptCount} result:`, attemptResult.success ? 'SUCCESS' : 'FAILED');
+          
+          if (attemptResult.success) {
+            console.log(`Successful with endpoint ${endpoint} and ${format.name} format`);
+            result = attemptResult;
+            break;
+          }
+        } catch (error) {
+          console.error(`Attempt ${attemptCount} error:`, error.message);
+        }
+      }
+      
+      if (result.success) break; // Stop trying endpoints if we found a working combination
+    }
+    
+    console.log('API request result:', result.success ? 'SUCCESS' : 'FAILED');
+    
+    // Return the result with appropriate status
+    return res.status(result.status || (result.success ? 200 : 500)).json(result.data);
+  } catch (error) {
+    console.error("RunwayML API error:", error.message);
+    return res.status(500).json({
+      success: false,
+      error: error.message || 'Unknown error occurred',
+    });
+  }
+});
+
+// Check task status endpoint
+app.get('/api/status', async (req, res) => {
+  console.log('GET request received to check task status');
+  
+  try {
+    const taskId = req.query.taskId;
+    
+    if (!taskId) {
+      return res.status(400).json({ error: "Missing taskId parameter" });
+    }
+    
+    // Define API endpoints to try for task status
+    const apiEndpoints = [
+      `https://api.dev.runwayml.com/v1/tasks/${taskId}`,  // Primary (new) endpoint
+      `https://api.runwayml.com/v1/tasks/${taskId}`       // Fallback (old) endpoint
+    ];
+    
+    // Try different endpoints for task status
+    let result = { success: false };
+    
+    for (const endpoint of apiEndpoints) {
+      if (result.success) break; // Stop if we already have a successful result
+      
+      console.log(`Checking task status at endpoint: ${endpoint}`);
+      
+      try {
+        const statusResult = await makeRunwayRequest(
+          endpoint,
+          'GET',
+          {
+            'Content-Type': 'application/json',
+            'X-Runway-Version': '2024-11-06'  // Required per docs
+          }
+        );
+        
+        if (statusResult.success) {
+          console.log(`Successfully retrieved task status from ${endpoint}`);
+          result = statusResult;
+          break;
+        }
+      } catch (error) {
+        console.error(`Error checking task status at ${endpoint}:`, error.message);
+      }
+    }
+    
+    console.log(`Task status check for ${taskId}, success:`, result.success);
+    
+    // Return the result with appropriate status
+    return res.status(result.status || (result.success ? 200 : 500)).json(result.data);
+  } catch (error) {
+    console.error("Error checking task status:", error.message);
+    return res.status(500).json({
+      success: false,
+      error: error.message || 'Unknown error occurred',
+    });
+  }
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+module.exports = app; // For testing

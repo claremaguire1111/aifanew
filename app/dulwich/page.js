@@ -65,9 +65,14 @@ export default function DulwichPage() {
       }
       console.log('Sending payload to server:', JSON.stringify(payloadCopy, null, 2));
       
-      // Make request to our server endpoint
-      console.log('Sending request to runway-direct endpoint');
-      const response = await fetch('/api/runway-direct', {
+      // Make request to our dedicated backend server
+      console.log('Sending request to backend server');
+      
+      // Use the deployed backend URL - this should be set as an environment variable
+      // For local development, use http://localhost:3001
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://runway-api-backend.vercel.app';
+      
+      const response = await fetch(`${backendUrl}/api/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -106,8 +111,11 @@ export default function DulwichPage() {
     try {
       console.log(`Checking status for task ${taskId}`);
       
+      // Use the deployed backend URL - this should be set as an environment variable
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://runway-api-backend.vercel.app';
+      
       // Send request to check task status
-      const response = await fetch(`/api/runway-direct?taskId=${taskId}`, {
+      const response = await fetch(`${backendUrl}/api/status?taskId=${taskId}`, {
         method: 'GET',
         headers: {
           'Cache-Control': 'no-cache, no-store',

@@ -14,6 +14,7 @@ try {
   const publicDir = path.join(__dirname, 'public');
   const socialDir = path.join(publicDir, 'images', 'social');
   const supportDir = path.join(publicDir, 'images', 'support');
+  const filmstillsDir = path.join(publicDir, 'images', 'filmstills');
   
   // List the contents of the public directory
   console.log('Contents of public directory:');
@@ -97,6 +98,20 @@ try {
     fs.ensureDirSync(outputSupportDir);
     fs.copySync(supportDir, outputSupportDir);
     console.log(`Copied support images to ${outputSupportDir}`);
+  }
+  
+  // Copy filmstills images
+  if (fs.existsSync(filmstillsDir)) {
+    const outputFilmstillsDir = path.join(outputImagesDir, 'filmstills');
+    fs.ensureDirSync(outputFilmstillsDir);
+    fs.copySync(filmstillsDir, outputFilmstillsDir);
+    console.log(`Copied filmstills images to ${outputFilmstillsDir}`);
+  } else {
+    console.error('WARNING: Filmstills directory not found!');
+    // Create an empty directory to prevent errors
+    const outputFilmstillsDir = path.join(outputImagesDir, 'filmstills');
+    fs.ensureDirSync(outputFilmstillsDir);
+    console.log(`Created empty filmstills directory at ${outputFilmstillsDir}`);
   }
   
   // Create a verification file to indicate this script ran

@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     domains: ['aifilmacademy.io', 'www.aifilmacademy.io'],
   },
-  distDir: process.env.VERCEL ? '.vercel/output/static' : '.next',
+  distDir: '.next',
   publicRuntimeConfig: {
     dulwichPassword: process.env.DULWICH_PASSWORD,
   },

@@ -2,6 +2,8 @@
 
 import { NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+
 /**
  * Standardized CORS headers to ensure consistent handling across routes
  */

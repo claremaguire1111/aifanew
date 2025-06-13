@@ -9,7 +9,7 @@ export const config = {
   api: {
     responseLimit: false,
   },
-  runtime: 'edge', // Use edge runtime for better performance
+  runtime: 'nodejs', // Use Node.js runtime for compatibility with SDK
 };
 
 // Handle OPTIONS requests for CORS preflight

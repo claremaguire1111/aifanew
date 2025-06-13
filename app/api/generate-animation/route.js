@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 // Export runtime configuration
 export const config = {
-  runtime: 'edge', // Use edge runtime for better performance
+  runtime: 'nodejs', // Use Node.js runtime for compatibility with RunwayML SDK
 };
 
 // This is a fallback that will handle both FormData and JSON

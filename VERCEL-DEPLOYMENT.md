@@ -9,8 +9,11 @@ The following environment variables must be set in your Vercel project settings:
 | Variable | Description | Required |
 | --- | --- | --- |
 | `RUNWAY_API_KEY` | API key for RunwayML | Yes |
+| `NEXT_PUBLIC_JURY_VOTING_PASSWORD` | Password for jury voting page | Yes |
 
-Current API key to use: `key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07`
+Current values to use:
+- RunwayML API Key: `key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07`
+- Jury Voting Password: `AIFA2025Jury`
 
 ## Deployment Verification
 
@@ -21,6 +24,17 @@ https://your-vercel-domain.vercel.app/api/env-check
 ```
 
 This endpoint will show if the required environment variables are present (without exposing their values).
+
+## Password-Protected Pages
+
+The following pages are password-protected:
+
+| Page | Environment Variable | Current Password |
+| --- | --- | --- |
+| `/awards/2025/jury-voting` | `NEXT_PUBLIC_JURY_VOTING_PASSWORD` | `AIFA2025Jury` |
+| `/dulwich` | `DULWICH_PASSWORD` | `Dulwich25` |
+
+Ensure these environment variables are set in Vercel for the password protection to work correctly.
 
 ## Testing the Dulwich Page
 
@@ -45,6 +59,12 @@ If the Dulwich page animation generator doesn't work in production:
 2. Look for errors in the Vercel Function Logs
 3. Verify that the API routes are not timing out (they should complete within the 10-second limit)
 4. Make sure the RunwayML API key is valid and has not expired
+
+If the jury voting page password is not working:
+
+1. Check that `NEXT_PUBLIC_JURY_VOTING_PASSWORD` is set correctly in the Vercel environment variables
+2. Verify the password is correctly being passed to the client-side code
+3. Clear browser cache and session storage if the page was previously accessed
 
 ## Notes on RunwayML API
 

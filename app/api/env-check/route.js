@@ -9,6 +9,8 @@ export async function GET() {
   // Only check if environment variables exist, don't expose their values
   const envStatus = {
     RUNWAY_API_KEY: !!process.env.RUNWAY_API_KEY,
+    NEXT_PUBLIC_JURY_VOTING_PASSWORD: !!process.env.NEXT_PUBLIC_JURY_VOTING_PASSWORD,
+    DULWICH_PASSWORD: !!process.env.DULWICH_PASSWORD,
     NODE_ENV: process.env.NODE_ENV || 'not set',
     VERCEL_ENV: process.env.VERCEL_ENV || 'not set',
   };

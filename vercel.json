@@ -49,5 +49,19 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/api/dulwich/create", "destination": "/api/dulwich/create" },
+    { "source": "/api/dulwich/status", "destination": "/api/dulwich/status" },
+    { "source": "/api/generate-animation", "destination": "/api/generate-animation" },
+    { "source": "/api/runway-wrapper", "destination": "/api/runway-wrapper" },
+    { "source": "/api/runway-direct/create", "destination": "/api/runway-direct/create" }
+  ],
+  "routes": [
+    { "src": "/api/dulwich/create", "methods": ["OPTIONS"], "dest": "/api/dulwich/create" },
+    { "src": "/api/dulwich/status", "methods": ["OPTIONS"], "dest": "/api/dulwich/status" },
+    { "src": "/api/generate-animation", "methods": ["OPTIONS"], "dest": "/api/generate-animation" },
+    { "src": "/api/runway-wrapper", "methods": ["OPTIONS"], "dest": "/api/runway-wrapper" },
+    { "src": "/api/runway-direct/create", "methods": ["OPTIONS"], "dest": "/api/runway-direct/create" }
   ]
 }

@@ -3,9 +3,36 @@ import { NextResponse } from 'next/server';
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
 
+// Export config to specify allowed methods
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb',
+    },
+    responseLimit: false,
+  },
+};
+
+// Handle OPTIONS requests for CORS preflight
+export async function OPTIONS(req) {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
+      'Access-Control-Max-Age': '86400',
+    },
+  });
+}
+
 // This creates a task but doesn't wait for it to complete - compatible with Vercel
 export async function POST(req) {
   console.log('POST request received to create animation task');
+  
+  // Log request details for debugging
+  console.log('Request method:', req.method);
+  console.log('Request headers:', JSON.stringify(Object.fromEntries([...req.headers.entries()])));
   
   try {
     // Extract the necessary data from the request
@@ -16,7 +43,14 @@ export async function POST(req) {
       return NextResponse.json({ 
         error: "Missing required parameters", 
         message: "Both base64Image and promptText are required" 
-      }, { status: 400 });
+      }, { 
+        status: 400,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        }
+      });
     }
     
     // The hardcoded key that's known to work (fallback)
@@ -168,18 +202,4 @@ export async function POST(req) {
       }
     });
   }
-}
-
-// Handle OPTIONS preflight requests
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 204, // No content
-    headers: {
-      'Allow': 'POST, OPTIONS',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
-      'Access-Control-Max-Age': '86400', // 24 hours cache for preflight requests
-    },
-  });
 }

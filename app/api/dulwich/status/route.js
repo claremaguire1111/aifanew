@@ -3,9 +3,33 @@ import { NextResponse } from 'next/server';
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
 
+// Export config to specify allowed methods
+export const config = {
+  api: {
+    responseLimit: false,
+  },
+};
+
+// Handle OPTIONS requests for CORS preflight
+export async function OPTIONS(req) {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
+      'Access-Control-Max-Age': '86400',
+    },
+  });
+}
+
 // This checks the status of a task - compatible with Vercel
 export async function GET(req) {
   console.log('GET request received to check task status');
+  
+  // Log request details for debugging
+  console.log('Request method:', req.method);
+  console.log('Request headers:', JSON.stringify(Object.fromEntries([...req.headers.entries()])));
   
   try {
     const url = new URL(req.url);
@@ -164,18 +188,4 @@ export async function GET(req) {
       }
     });
   }
-}
-
-// Handle OPTIONS preflight requests
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 204, // No content
-    headers: {
-      'Allow': 'GET, OPTIONS',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
-      'Access-Control-Max-Age': '86400', // 24 hours cache for preflight requests
-    },
-  });
 }

@@ -2,9 +2,7 @@
   "version": 2,
   "buildCommand": "npm run vercel-build",
   "devCommand": "npm run dev",
-  "cleanUrls": true,
   "public": true,
-  "trailingSlash": false,
   "images": {
     "sizes": [256, 640, 1200, 1920],
     "domains": ["aifilmacademy.io", "www.aifilmacademy.io"],
@@ -21,36 +19,31 @@
       "maxDuration": 10
     }
   },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Credentials", "value": "true" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization" }
-      ]
-    },
-    {
-      "source": "/images/social/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/images/support/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization"
+      },
+      "continue": true
+    },
+    {
+      "src": "/images/social/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "continue": true
+    },
+    {
+      "src": "/images/support/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "continue": true
+    },
     { "src": "/api/dulwich/create", "methods": ["POST", "OPTIONS"], "dest": "/api/dulwich/create" },
     { "src": "/api/dulwich/status", "methods": ["GET", "OPTIONS"], "dest": "/api/dulwich/status" },
     { "src": "/api/generate-animation", "methods": ["POST", "OPTIONS"], "dest": "/api/generate-animation" },

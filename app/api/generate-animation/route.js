@@ -3,46 +3,68 @@ import RunwayML from '@runwayml/sdk';
 
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
-// Increase the body size limit for this API route
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '10mb',
-    },
-    responseLimit: false,
-  },
-};
 
+// This is a fallback that will handle both FormData and JSON
 export async function POST(req) {
   console.log('POST request received to generate-animation endpoint');
   try {
-    // Parse the formData
-    const formData = await req.formData();
-    const image = formData.get('image');
-    const prompt = formData.get('prompt')?.toString();
-
-    if (!image || !prompt) {
-      console.error('Missing image or prompt');
-      return NextResponse.json({ error: "Missing image or prompt" }, { status: 400 });
-    }
-
-    // Convert the image to base64
-    const bytes = await image.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const base64Image = `data:image/jpeg;base64,${buffer.toString('base64')}`;
+    // Try to determine the content type
+    const contentType = req.headers.get('content-type') || '';
+    console.log('Content-Type:', contentType);
     
-    // Get file size for debugging
-    const fileSizeKB = Math.round(buffer.length / 1024);
-    console.log(`Image size: ${fileSizeKB}KB`);
+    let base64Image, promptText;
     
-    // Check if image is too large for data URI (5MB limit from RunwayML)
-    if (buffer.length > 5 * 1024 * 1024) {
-      console.error('Image too large for data URI (>5MB)');
-      return NextResponse.json({ 
-        error: "Image file too large. Please use an image smaller than 5MB." 
-      }, { status: 400 });
+    if (contentType.includes('multipart/form-data')) {
+      // Handle FormData (multipart/form-data)
+      try {
+        const formData = await req.formData();
+        const image = formData.get('image');
+        promptText = formData.get('prompt')?.toString();
+        
+        if (!image || !promptText) {
+          console.error('Missing image or prompt in FormData');
+          return NextResponse.json({ error: "Missing image or prompt" }, { status: 400 });
+        }
+        
+        // Convert the image to base64
+        const bytes = await image.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+        base64Image = `data:image/jpeg;base64,${buffer.toString('base64')}`;
+        
+        // Check file size
+        if (buffer.length > 5 * 1024 * 1024) {
+          console.error('Image too large for data URI (>5MB)');
+          return NextResponse.json({ 
+            error: "Image file too large. Please use an image smaller than 5MB." 
+          }, { status: 400 });
+        }
+      } catch (formDataError) {
+        console.error('FormData parsing error:', formDataError);
+        // If FormData parsing fails, we'll try JSON next
+      }
     }
-
+    
+    // If we couldn't get the data from FormData, try JSON
+    if (!base64Image || !promptText) {
+      try {
+        const jsonData = await req.json();
+        base64Image = jsonData.base64Image;
+        promptText = jsonData.promptText;
+        
+        if (!base64Image || !promptText) {
+          console.error('Missing base64Image or promptText in JSON');
+          return NextResponse.json({ error: "Missing required parameters" }, { status: 400 });
+        }
+      } catch (jsonError) {
+        console.error('JSON parsing error:', jsonError);
+        return NextResponse.json({ 
+          error: "Invalid request format. Expected FormData or JSON with required parameters." 
+        }, { status: 400 });
+      }
+    }
+    
+    // Now we have base64Image and promptText one way or another
+    
     // Get and verify API key
     let runwayApiKey = process.env.RUNWAY_API_KEY;
     if (!runwayApiKey) {
@@ -56,16 +78,15 @@ export async function POST(req) {
     console.log('API key starts with:', runwayApiKey.substring(0, 10) + '...');
     process.env.RUNWAYML_API_SECRET = runwayApiKey;
     const client = new RunwayML({ apiKey: runwayApiKey });
-
+    
     console.log('Creating image-to-video task');
     
     // Try to create a task with various approaches
     let task;
+    let success = false;
     
     // First try the SDK with different strategies
     try {
-      // We've seen that newer SDK versions may need to be initialized differently
-      // or may have different parameter structures
       console.log('Attempting SDK with nested structure...');
       
       // Create the task using the SDK
@@ -73,7 +94,7 @@ export async function POST(req) {
         model: 'gen4_turbo',
         input: {
           promptImage: base64Image,
-          promptText: prompt
+          promptText: promptText
         },
         parameters: {
           ratio: '1280:720',
@@ -82,8 +103,9 @@ export async function POST(req) {
       });
       
       console.log('Task created successfully with SDK and nested structure');
+      success = true;
     } catch (sdkNestedError) {
-      console.error('SDK nested structure error:', sdkNestedError);
+      console.error('SDK nested structure error:', sdkNestedError.message);
       
       // Try SDK with flat structure
       try {
@@ -92,14 +114,15 @@ export async function POST(req) {
         task = await client.imageToVideo.create({
           model: 'gen4_turbo',
           promptImage: base64Image,
-          promptText: prompt,
+          promptText: promptText,
           ratio: '1280:720',
           duration: 5
         });
         
         console.log('Task created successfully with SDK and flat structure');
+        success = true;
       } catch (sdkFlatError) {
-        console.error('SDK flat structure error:', sdkFlatError);
+        console.error('SDK flat structure error:', sdkFlatError.message);
         
         // Fall back to direct API calls with different version headers
         console.log('SDK approaches failed, trying direct API calls...');
@@ -107,16 +130,16 @@ export async function POST(req) {
         // Try multiple version headers
         const versionHeaders = [
           null,         // No version header
+          'latest',     // Latest version
+          '2023-09-26', // Known working version
           '2023-11-06', // Older version
-          '2024-06-27', // Latest possible current date
           '2024-11-06'  // From documentation
         ];
         
-        let apiSuccess = false;
         let lastError = null;
         
         for (const version of versionHeaders) {
-          if (apiSuccess) break;
+          if (success) break;
           
           const headers = {
             'Authorization': `Bearer ${runwayApiKey}`,
@@ -138,7 +161,7 @@ export async function POST(req) {
                 model: 'gen4_turbo',
                 input: {
                   promptImage: base64Image,
-                  promptText: prompt
+                  promptText: promptText
                 },
                 parameters: {
                   ratio: '1280:720',
@@ -150,7 +173,7 @@ export async function POST(req) {
             if (response.ok) {
               task = await response.json();
               console.log(`Task created with direct API call using${version ? ' version ' + version : ' no version header'}`);
-              apiSuccess = true;
+              success = true;
               break;
             } else {
               const errorText = await response.text();
@@ -158,42 +181,44 @@ export async function POST(req) {
               lastError = new Error(`API error: ${response.status} - ${errorText.substring(0, 200)}`);
             }
           } catch (apiError) {
-            console.error(`Direct API call error with${version ? ' version ' + version : ' no version header'}:`, apiError);
+            console.error(`Direct API call error with${version ? ' version ' + version : ' no version header'}:`, apiError.message);
             lastError = apiError;
           }
         }
         
-        if (!apiSuccess) {
+        if (!success) {
           console.error('All API approaches failed');
           throw lastError || new Error('Failed to create task with all API approaches');
         }
       }
     }
     
-    console.log(`Task created with ID: ${task.id}`);
-    
-    // Immediately return the task ID - we won't wait for completion in the serverless function
-    return NextResponse.json({
-      success: true,
-      taskId: task.id,
-      message: 'Task initiated successfully',
-    }, { 
-      status: 202, // Accepted
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      }
-    });
+    if (success && task && task.id) {
+      console.log(`Task created with ID: ${task.id}`);
+      
+      // Immediately return the task ID
+      return NextResponse.json({
+        success: true,
+        taskId: task.id,
+        message: 'Task initiated successfully',
+      }, { 
+        status: 202, // Accepted
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        }
+      });
+    } else {
+      throw new Error('Task creation failed or returned no ID');
+    }
   } catch (error) {
     console.error("Animation generation error:", error.message);
-    // Log full error details for debugging
-    console.error(error);
     
     return NextResponse.json({
       success: false,
       error: error.message || 'Unknown error occurred',
-      animationUrl: '/videos/demo.mp4', // Fallback for immediate viewing
+      demoUrl: '/videos/demo.mp4', // Fallback for immediate viewing
       isDemo: true,
       message: 'Error occurred during video generation',
     }, { 
@@ -237,56 +262,156 @@ export async function GET(req) {
     process.env.RUNWAYML_API_SECRET = runwayApiKey;
     const client = new RunwayML({ apiKey: runwayApiKey });
     
-    // Get task status
-    const status = await client.tasks.retrieve(taskId);
-    
-    if (status.status === 'SUCCEEDED') {
-      return NextResponse.json({
-        success: true,
-        completed: true,
-        status: status.status,
-        animationUrl: status.output[0],
-      }, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    try {
+      // Get task status
+      const status = await client.tasks.retrieve(taskId);
+      
+      if (status.status === 'SUCCEEDED') {
+        return NextResponse.json({
+          success: true,
+          completed: true,
+          status: status.status,
+          output: status.output,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+          }
+        });
+      } else if (status.status === 'FAILED') {
+        return NextResponse.json({
+          success: false,
+          completed: true,
+          status: status.status,
+          error: status.error || 'Task failed',
+          demoUrl: '/videos/demo.mp4',
+          isDemo: true,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+          }
+        });
+      } else {
+        // Still processing
+        return NextResponse.json({
+          success: true,
+          completed: false,
+          status: status.status,
+        }, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+          }
+        });
+      }
+    } catch (sdkError) {
+      console.error("SDK error checking task status:", sdkError.message);
+      
+      // Fall back to direct API calls
+      const apiEndpoints = [
+        `https://api.dev.runwayml.com/v1/tasks/${taskId}`,
+        `https://api.runwayml.com/v1/tasks/${taskId}`
+      ];
+      
+      const versionHeaders = [
+        null,
+        'latest',
+        '2023-09-26',
+        '2023-11-06',
+        '2024-11-06'
+      ];
+      
+      let statusData = null;
+      let lastError = sdkError;
+      
+      for (const endpoint of apiEndpoints) {
+        if (statusData) break;
+        
+        for (const version of versionHeaders) {
+          if (statusData) break;
+          
+          const headers = {
+            'Authorization': `Bearer ${runwayApiKey}`,
+            'Content-Type': 'application/json'
+          };
+          
+          if (version) {
+            headers['X-Runway-Version'] = version;
+          }
+          
+          try {
+            const response = await fetch(endpoint, {
+              method: 'GET',
+              headers: headers
+            });
+            
+            if (response.ok) {
+              statusData = await response.json();
+              break;
+            } else {
+              const errorText = await response.text();
+              lastError = new Error(`API error: ${response.status} - ${errorText.substring(0, 200)}`);
+            }
+          } catch (error) {
+            lastError = error;
+          }
         }
-      });
-    } else if (status.status === 'FAILED') {
-      return NextResponse.json({
-        success: false,
-        completed: true,
-        status: status.status,
-        error: status.error || 'Task failed',
-        animationUrl: '/videos/demo.mp4',
-        isDemo: true,
-      }, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+      
+      if (statusData) {
+        if (statusData.status === 'SUCCEEDED') {
+          return NextResponse.json({
+            success: true,
+            status: statusData.status,
+            output: statusData.output
+          }, {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET, OPTIONS',
+              'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            }
+          });
+        } else if (statusData.status === 'FAILED') {
+          return NextResponse.json({
+            success: false,
+            status: statusData.status,
+            error: statusData.error || 'Task failed',
+            demoUrl: '/videos/demo.mp4'
+          }, {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET, OPTIONS',
+              'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            }
+          });
+        } else {
+          return NextResponse.json({
+            success: true,
+            status: statusData.status
+          }, {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET, OPTIONS',
+              'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            }
+          });
         }
-      });
-    } else {
-      // Still processing
-      return NextResponse.json({
-        success: true,
-        completed: false,
-        status: status.status,
-      }, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      });
+      }
+      
+      // If all direct API calls fail, throw the last error
+      throw lastError;
     }
   } catch (error) {
     console.error("Error checking task status:", error);
     return NextResponse.json({
       success: false,
       error: error.message || 'Unknown error occurred',
+      demoUrl: '/videos/demo.mp4',
+      isDemo: true
     }, {
       status: 500,
       headers: {

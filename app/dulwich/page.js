@@ -37,7 +37,7 @@ export default function DulwichPage() {
     });
   };
 
-  // Generate animation using our server endpoint
+  // Generate animation using our API endpoints
   const generateAnimation = async (imageFile, promptText) => {
     try {
       console.log('Preparing to generate animation');
@@ -52,10 +52,7 @@ export default function DulwichPage() {
       // Prepare the payload for our server endpoint
       const payload = {
         base64Image: base64Image,
-        promptText: promptText,
-        model: "gen4_turbo",
-        ratio: "1280:720",
-        duration: 5
+        promptText: promptText
       };
       
       // Log the payload structure (without the full image data for brevity)
@@ -65,88 +62,138 @@ export default function DulwichPage() {
       }
       console.log('Sending payload to server:', JSON.stringify(payloadCopy, null, 2));
       
-      // Make request to our dedicated backend server
-      console.log('Sending request to backend server');
+      // Use our API for all environments - this will work in dev and production
+      console.log('Sending request to create task');
       
-      // Use the deployed backend URL - this should be set as an environment variable
-      // For local development, use http://localhost:3001
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://runway-api-backend.vercel.app';
+      // Try multiple API routes in sequence
+      const endpoints = [
+        // First try the new Dulwich-specific API routes
+        '/api/dulwich/create',
+        // Legacy API routes as fallbacks
+        '/api/generate-animation',
+        '/api/runway-wrapper',
+        '/api/runway-direct/create'
+      ];
       
-      const response = await fetch(`${backendUrl}/api/create`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
+      let response = null;
+      let data = null;
+      let success = false;
+      let lastError = null;
       
-      console.log('Server response status:', response.status);
+      // Try each endpoint until one works
+      for (const endpoint of endpoints) {
+        try {
+          console.log(`Trying endpoint: ${endpoint}`);
+          
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+          
+          console.log(`Response from ${endpoint}: ${response.status}`);
+          
+          // Parse the response
+          data = await response.json();
+          console.log(`Data from ${endpoint}:`, data);
+          
+          if (response.ok && (data.id || data.taskId || data.success)) {
+            success = true;
+            console.log(`Successfully created task with endpoint ${endpoint}`);
+            break;
+          } else {
+            console.error(`Endpoint ${endpoint} failed:`, data.error || 'Unknown error');
+            lastError = new Error(data.error || `Server error from ${endpoint}: ${response.status}`);
+          }
+        } catch (endpointError) {
+          console.error(`Error with endpoint ${endpoint}:`, endpointError);
+          lastError = endpointError;
+        }
+      }
       
-      // Parse the response
-      const data = await response.json();
-      console.log('Server response data:', data);
-      
-      // Handle errors
-      if (!response.ok) {
-        console.error('Server returned error:', response.status, data.error || 'Unknown error');
-        throw new Error(data.error || `Server error: ${response.status}`);
+      if (!success) {
+        throw lastError || new Error('All endpoints failed');
       }
       
       // Successfully created task
-      if (data.id) {
-        console.log('Successfully created task with ID:', data.id);
-        return { taskId: data.id };
-      } else {
-        console.error('Unexpected server response format:', data);
-        throw new Error('Unexpected server response format');
-      }
+      const taskId = data.id || data.taskId || data.task?.id;
+      console.log('Successfully created task with ID:', taskId);
+      return { taskId };
     } catch (error) {
       console.error('Error generating animation:', error);
       throw error;
     }
   };
   
-  // Check task status using server endpoint with improved error handling
+  // Check task status using our API endpoints
   const checkTaskStatus = async (taskId) => {
     try {
       console.log(`Checking status for task ${taskId}`);
       
-      // Use the deployed backend URL - this should be set as an environment variable
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://runway-api-backend.vercel.app';
+      // Try multiple status endpoints in sequence
+      const statusEndpoints = [
+        // First try the new Dulwich-specific API routes
+        `/api/dulwich/status?taskId=${taskId}`,
+        // Legacy API routes as fallbacks
+        `/api/generate-animation?taskId=${taskId}`,
+        `/api/runway-direct/status?taskId=${taskId}`
+      ];
       
-      // Send request to check task status
-      const response = await fetch(`${backendUrl}/api/status?taskId=${taskId}`, {
-        method: 'GET',
-        headers: {
-          'Cache-Control': 'no-cache, no-store',
-          'Pragma': 'no-cache'
-        }
-      });
+      let response = null;
+      let status = null;
+      let success = false;
+      let lastError = null;
       
-      console.log('Task status response status:', response.status);
-      
-      // Try to parse the response even if it's not ok (to get error details)
-      let status;
-      try {
-        const text = await response.text();
+      // Try each endpoint until one works
+      for (const endpoint of statusEndpoints) {
         try {
-          status = JSON.parse(text);
-        } catch (e) {
-          console.error('Failed to parse response as JSON:', text);
-          status = { error: `Invalid response: ${text.substring(0, 100)}...` };
+          console.log(`Trying status endpoint: ${endpoint}`);
+          
+          response = await fetch(endpoint, {
+            method: 'GET',
+            headers: {
+              'Cache-Control': 'no-cache, no-store',
+              'Pragma': 'no-cache'
+            }
+          });
+          
+          console.log(`Response from ${endpoint}: ${response.status}`);
+          
+          // Try to parse the response
+          try {
+            const text = await response.text();
+            try {
+              status = JSON.parse(text);
+              console.log(`Status from ${endpoint}:`, status);
+              
+              if (response.ok && status.status) {
+                success = true;
+                console.log(`Successfully retrieved status with endpoint ${endpoint}`);
+                break;
+              } else {
+                console.error(`Endpoint ${endpoint} failed:`, status.error || 'Unknown error');
+                lastError = new Error(status.error || `Server error from ${endpoint}: ${response.status}`);
+              }
+            } catch (e) {
+              console.error(`Failed to parse response as JSON from ${endpoint}:`, text);
+              lastError = new Error(`Invalid response from ${endpoint}: ${text.substring(0, 100)}...`);
+            }
+          } catch (readError) {
+            console.error(`Failed to read response text from ${endpoint}:`, readError);
+            lastError = readError;
+          }
+        } catch (endpointError) {
+          console.error(`Error with status endpoint ${endpoint}:`, endpointError);
+          lastError = endpointError;
         }
-      } catch (parseError) {
-        console.error('Failed to read response text:', parseError);
-        status = { error: 'Failed to read response' };
       }
       
-      console.log('Task status data:', status);
-      
-      if (!response.ok) {
-        console.error(`Task status check failed: ${response.status}`, status.error || 'Unknown error');
+      if (!success) {
         return {
           status: 'FAILED',
-          error: status.error || `Server error: ${response.status}`
+          error: lastError?.message || 'All status endpoints failed'
         };
       }
       
@@ -252,6 +299,11 @@ export default function DulwichPage() {
             if (status.output && status.output[0]) {
               setGeneratedReel(status.output[0]);
               setError(null); // Clear any previous errors
+            } else if (status.demoUrl) {
+              // Use the demo URL provided by the API
+              console.log('Using demo URL provided by API:', status.demoUrl);
+              setError('Animation generated successfully, but using demo video');
+              setGeneratedReel(status.demoUrl);
             } else {
               // Handle missing output URL
               console.error('Task succeeded but no output URL provided');
@@ -270,7 +322,11 @@ export default function DulwichPage() {
             setError(status.error || 'Animation generation failed');
             
             // Fall back to demo video if generation fails
-            setGeneratedReel(demoVideoPath);
+            if (status.demoUrl) {
+              setGeneratedReel(status.demoUrl);
+            } else {
+              setGeneratedReel(demoVideoPath);
+            }
             setStep(4);
             setIsLoading(false);
           } else if (status.error) {
@@ -338,11 +394,14 @@ export default function DulwichPage() {
       setError(`${userFriendlyMessage} - Using demo video instead`);
       
       // Fall back to demo video on error
-      setTimeout(() => {
+      // If there's a demo URL in the error response, use it
+      if (error.demoUrl) {
+        setGeneratedReel(error.demoUrl);
+      } else {
         setGeneratedReel(demoVideoPath);
-        setStep(4);
-        setIsLoading(false);
-      }, 2000);
+      }
+      setStep(4);
+      setIsLoading(false);
     }
   };
 

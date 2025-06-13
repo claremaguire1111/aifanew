@@ -3,6 +3,29 @@ import { NextResponse } from 'next/server';
 // Mark the route as dynamic to ensure it's not statically optimized
 export const dynamic = 'force-dynamic';
 
+// Explicitly define the allowed HTTP methods for Vercel
+export const runtime = 'nodejs';
+
+// Configure allowed request methods
+export const allowedMethods = ['GET', 'POST', 'OPTIONS'];
+
+// Helper function to handle method validation
+const methodNotAllowed = () => {
+  return new NextResponse(
+    JSON.stringify({ error: 'Method Not Allowed' }),
+    { 
+      status: 405, 
+      headers: {
+        'Content-Type': 'application/json',
+        'Allow': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+    }
+  );
+};
+
 // The hardcoded key that's known to work
 const FALLBACK_API_KEY = "key_a95f809ef7a01f67d9b386f870e685876d5077e3494e96890b193b3dfd5f85c876266b3489d4087f8bd1638f8f6b3220b91a2b9227e8b303bf3c21b72b63ec07";
 
@@ -92,8 +115,15 @@ async function makeRunwayRequest(url, httpMethod, headers, body = null) {
 }
 
 // Direct integration with RunwayML API based on official documentation
-export async function POST(req) {
+// Use export const to ensure proper declaration of API route handlers in Vercel
+export const POST = async (req) => {
   console.log('POST request received to runway-direct endpoint');
+  
+  // Check if method is allowed
+  if (req.method !== 'POST') {
+    console.error(`Method ${req.method} not allowed, expected POST`);
+    return methodNotAllowed();
+  }
   
   try {
     // Parse the request body
@@ -211,8 +241,14 @@ export async function POST(req) {
 }
 
 // Check task status endpoint
-export async function GET(req) {
+export const GET = async (req) => {
   console.log('GET request received to check task status');
+  
+  // Check if method is allowed
+  if (req.method !== 'GET') {
+    console.error(`Method ${req.method} not allowed, expected GET`);
+    return methodNotAllowed();
+  }
   
   try {
     const url = new URL(req.url);
@@ -286,7 +322,7 @@ export async function GET(req) {
 }
 
 // Handle OPTIONS preflight requests
-export async function OPTIONS() {
+export const OPTIONS = async () => {
   return new NextResponse(null, {
     status: 204, // No content
     headers: {

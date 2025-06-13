@@ -23,6 +23,14 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_DULWICH_PASSWORD: process.env.DULWICH_PASSWORD,
     RUNWAY_API_KEY: process.env.RUNWAY_API_KEY, // ✅ REQUIRED FOR BACKEND ROUTE
   },
+  // API configuration for handling larger payloads
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb', // Increase limit for image uploads
+    },
+    responseLimit: false, // No limit on response size
+    externalResolver: true, // Mark routes as being handled by external resolver to prevent conflicts
+  },
   async headers() {
     return [
       {

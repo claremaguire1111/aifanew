@@ -24,7 +24,7 @@ export default function JuryVoting2025() {
       filmmaker: "Leilanni Todd",
       year: "2024",
       description: "A short AI-generated film about a woman's surreal obsession with inflatable chairs—worn as both fashion and survival gear.",
-      image: "/images/placeholder1.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL01+Everyone+is+Chair.jpg"
     },
     {
       id: "film2",
@@ -32,7 +32,7 @@ export default function JuryVoting2025() {
       filmmaker: "Junie Lau",
       year: "2024",
       description: "After retirement, the former mathematical genius transformed into the creator of digital comics, becoming the god of this fictional universe.",
-      image: "/images/placeholder2.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL02+Junie+Lau.jpg"
     },
     {
       id: "film3",
@@ -40,7 +40,7 @@ export default function JuryVoting2025() {
       filmmaker: "S()fia Braga",
       year: "2025",
       description: "An AI-generated movie that explores the future of human and non-human collaboration through a quantum computer's emotional journey.",
-      image: "/images/placeholder3.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL03+third_impact.jpg"
     },
     {
       id: "film4",
@@ -48,7 +48,7 @@ export default function JuryVoting2025() {
       filmmaker: "Rachel Maclean",
       year: "2023",
       description: "A deepfake film taking place within a world of artifice, subterfuge and intrigue, raising questions about truth and power.",
-      image: "/images/placeholder4.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Duck.jpg"
     },
     {
       id: "film5",
@@ -56,7 +56,7 @@ export default function JuryVoting2025() {
       filmmaker: "Gabriel Aronson",
       year: "2024",
       description: "\"Found footage\" from the vault of The Fair, a massive international exposition that may or may not have happened.",
-      image: "/images/placeholder5.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Artomaton_Telezine.jpg"
     },
     {
       id: "film6",
@@ -80,7 +80,7 @@ export default function JuryVoting2025() {
       filmmaker: "Fouzi Louahem",
       year: "2024",
       description: "A metaphor for a world on the verge of submersion, staging a silent encounter between humanity and deep-sea beings.",
-      image: "/images/placeholder8.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+AQUA_ALTA.png"
     },
     {
       id: "film9",
@@ -88,7 +88,7 @@ export default function JuryVoting2025() {
       filmmaker: "Ariel Kotzer",
       year: "2024",
       description: "An experimental montage film exploring the psychological effects of societal programming through personal memory.",
-      image: "/images/placeholder9.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+PARALLAX.png"
     },
     {
       id: "film10",
@@ -96,7 +96,7 @@ export default function JuryVoting2025() {
       filmmaker: "Hussein Dembel Sow",
       year: "2024",
       description: "A groundbreaking AI-generated film revisiting the tragic events of the 1944 Thiaroye massacre.",
-      image: "/images/placeholder10.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Thiaroye+44.png"
     },
     {
       id: "film11",
@@ -104,7 +104,7 @@ export default function JuryVoting2025() {
       filmmaker: "Roxanne Ducharme",
       year: "2024",
       description: "A poetic exploration of humanity's impermanence and the traces we leave behind.",
-      image: "/images/placeholder11.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+FOSSiLS.png"
     },
     {
       id: "film12",
@@ -120,7 +120,7 @@ export default function JuryVoting2025() {
       filmmaker: "Simon Ball",
       year: "2024",
       description: "A man and a woman fall into an imaginary prison.",
-      image: "/images/placeholder13.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Future+Can+Be+Yours.jpg"
     },
     {
       id: "film14",

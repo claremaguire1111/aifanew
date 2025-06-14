@@ -160,7 +160,25 @@ export default function Awards2025() {
         <meta name="twitter:site" content="@aifaventures" />
         <link rel="canonical" href="https://aifilm.academy/awards/2025" />
         <script type="application/ld+json">
-          {JSON.stringify({"@context":"https://schema.org","@type":"Event","name":"AIFA Awards 2025","description":"World's #1 Global Film Awards for AI Innovation","startDate":"2025-06-03","location":{"@type":"Place","name":"NFC Lisbon","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"Portugal"}},"organizer":{"@type":"Organization","name":"AIFA Ventures","url":"https://aifilm.academy"}})}
+          {JSON.stringify({
+            "@context":"https://schema.org",
+            "@type":"Event",
+            "name":"AIFA Awards 2025",
+            "description":"World's #1 Global Film Awards for AI Innovation",
+            "startDate":"2025-06-03",
+            "endDate":"2025-07-19",
+            "subEvents": [
+              {
+                "@type":"Event",
+                "name":"AIFA Awards 2025 Ceremony",
+                "description":"AIFA Awards 2025 Ceremony featuring VIP screening, panel discussions and digital art experience",
+                "startDate":"2025-07-19",
+                "location":{"@type":"Place","name":"London","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"United Kingdom"}}
+              }
+            ],
+            "location":{"@type":"Place","name":"NFC Lisbon","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"Portugal"}},
+            "organizer":{"@type":"Organization","name":"AIFA Ventures","url":"https://aifilm.academy"}
+          })}
         </script>
       </Head>
       {/* HEADER */}
@@ -254,7 +272,7 @@ export default function Awards2025() {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <h3>Awards Ceremony</h3>
-                <p>On 22 July, we'll announce the AIFA Awards 2025 at a VIP event in London</p>
+                <p>On 19 July, we'll announce the AIFA Awards 2025 in London with events including a VIP screening, panel discussions and digital art experience</p>
               </div>
             </div>
           </div>

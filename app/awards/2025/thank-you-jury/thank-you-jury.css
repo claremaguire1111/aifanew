@@ -1,0 +1,121 @@
+/* Thank You Jury Page Specific Styles */
+
+.thank-you-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px 60px;
+  text-align: center;
+}
+
+.thank-you-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.thank-you-message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: var(--dark-grey);
+}
+
+.thank-you-highlight {
+  font-weight: 500;
+  color: var(--black);
+}
+
+.thank-you-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--medium-grey);
+  margin: 40px auto;
+}
+
+.thank-you-info {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--light-grey);
+  border-left: 3px solid var(--black);
+  text-align: left;
+  margin-top: 40px;
+}
+
+.thank-you-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.thank-you-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.thank-you-info ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.thank-you-info li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.london-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin: 30px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-signature {
+  font-style: italic;
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+.thank-you-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.thank-you-button:hover {
+  background-color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .thank-you-title {
+    font-size: 2rem;
+  }
+  
+  .thank-you-message {
+    font-size: 1.1rem;
+  }
+  
+  .london-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-title {
+    font-size: 1.8rem;
+  }
+  
+  .thank-you-info {
+    padding: 20px;
+  }
+}

@@ -216,6 +216,24 @@ export default function Finalists2025() {
         </div>
       </section>
 
+      {/* TRAILER SECTION */}
+      <section className="awards-trailer">
+        <div className="trailer-container">
+          <h2 className="trailer-title">Watch the Trailer for AIFA 2025 Finalist Films</h2>
+          <div className="trailer-video-container">
+            <video 
+              src="https://jurytrailer.s3.us-east-2.amazonaws.com/aifa_2025_trailer_v02_nfc.mp4" 
+              controls 
+              playsInline
+              style={{width: "100%", maxWidth: "100%"}}
+              className="trailer-video"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* INTRO SECTION */}
       <section className="awards-about">
         <div className="about-container">
@@ -226,9 +244,6 @@ export default function Finalists2025() {
             creativity, technical innovation, and powerful storytelling.
           </p>
           <div className="about-divider"></div>
-          <p className="about-instruction">
-            All films are displayed with full details below
-          </p>
         </div>
       </section>
 

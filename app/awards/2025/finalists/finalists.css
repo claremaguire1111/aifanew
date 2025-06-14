@@ -1,5 +1,34 @@
 /* Finalists Page Specific Styles */
 
+/* Trailer Section */
+.awards-trailer {
+  padding: 60px 20px;
+  background-color: var(--white);
+}
+
+.trailer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trailer-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.trailer-video-container {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.trailer-video {
+  width: 100%;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Gallery customization for finalists */
 .gallery-grid {
   display: grid;

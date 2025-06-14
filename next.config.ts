@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: ['aifilmacademy.io', 'www.aifilmacademy.io', 'myaifafinalists.s3.us-east-2.amazonaws.com'],
+    domains: ['aifilmacademy.io', 'www.aifilmacademy.io', 'myaifafinalists.s3.us-east-2.amazonaws.com', 'aifafilmstills.s3.us-east-2.amazonaws.com'],
   },
   distDir: '.next',
   publicRuntimeConfig: {

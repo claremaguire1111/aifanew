@@ -262,6 +262,20 @@ export default function Awards2025() {
         </div>
       </section>
 
+      {/* FINALISTS SECTION */}
+      <section className="finalists-section">
+        <div className="finalists-container">
+          <h2 className="finalists-title">Our 2025 Finalists</h2>
+          <p className="finalists-description">
+            Discover the 14 groundbreaking AI-generated films selected as finalists for the AIFA Awards 2025.
+            These innovative works push the boundaries of storytelling and visual artistry.
+          </p>
+          <Link href="/awards/2025/finalists" className="finalists-button">
+            View Finalists
+          </Link>
+        </div>
+      </section>
+
       {/* PARTNERS SECTION */}
       <section className="awards-partners">
         <div className="partners-container">

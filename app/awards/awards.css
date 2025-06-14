@@ -767,6 +767,49 @@
   margin: 0;
 }
 
+/* FINALISTS SECTION - 2025 */
+.finalists-section {
+  padding: 60px 20px;
+  background-color: var(--light-grey);
+  text-align: center;
+}
+
+.finalists-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.finalists-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.finalists-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--dark-grey);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.finalists-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.finalists-button:hover {
+  background-color: #333;
+}
+
 /* PARTNERS SECTION - 2025 */
 .awards-partners {
   padding: 80px 20px;

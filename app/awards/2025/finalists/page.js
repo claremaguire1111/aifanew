@@ -258,6 +258,26 @@ export default function Finalists2025() {
         </div>
       </section>
 
+      {/* SCREENER SECTION */}
+      <section className="screener-section">
+        <div className="screener-container">
+          <h2 className="screener-title">View Films</h2>
+          <p className="screener-description">
+            Watch all 14 finalist films in this official AIFA 2025 screener reel.
+          </p>
+          
+          <div className="video-container">
+            <iframe 
+              src="https://player.vimeo.com/video/1089628335?h=fae724ed12&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              title="AIFA 2025 Reel v03 vimeo 1080"
+            ></iframe>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+          </div>
+        </div>
+      </section>
+
       {/* PARTNERS SECTION */}
       <section className="awards-partners">
         <div className="partners-container">

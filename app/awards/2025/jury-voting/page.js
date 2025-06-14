@@ -349,12 +349,6 @@ export default function JuryVoting2025() {
               ></iframe>
               <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
-            
-            <div className="download-link">
-              <a href="https://player.vimeo.com/progressive_redirect/download/1089628335/container/7d56b9ce-abf0-4c1f-bafc-1bca709778fa/49b5d659-ea230f1e/aifa_2025_reel_v03_vimeo_1080%20%281080p%29.mp4?expires=1749760582&loc=external&signature=792ab37fcdd1f31b452e718f097cd6dbb9f1e31f88ade5e41f5479d335bb73ed&user_id=10595063" target="_blank" rel="noopener noreferrer">
-                Download Screener (MP4)
-              </a>
-            </div>
           </div>
           
           {/* VOTING FORM */}

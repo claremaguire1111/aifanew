@@ -85,14 +85,14 @@ export default function Finalists2025() {
       filmmaker: "Raaphaël Frydman",
       year: "2024",
       description: "Raphaël, a 10 years old boy, spends his day watching his ceilling, where he's mentally projecting a funny movie about the afterlife.",
-      image: "/images/placeholder6.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+La+Vie+Quand.png"
     },
     {
       title: "Stillness",
       filmmaker: "Nora Hase",
       year: "2024",
       description: "Instead of prominent and loud resistance, I'd like to be quiet today. Assert my existence by simply being, by staying still and being witnessed. An diasporic exploration of pan-african futurism from a black german point of view, in part inspired by the thoughts and curation of Ekow Eshun and the readings of Kevin E. Quashie's \"The Sovereignty of Quiet\".",
-      image: "/images/placeholder7.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Stillness.png"
     },
     {
       title: "Aqua Alta",
@@ -127,7 +127,7 @@ export default function Finalists2025() {
       filmmaker: "Diego Maclean",
       year: "2024",
       description: "Reflections on the nature of memory.",
-      image: "/images/placeholder12.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Remembering.jpg"
     },
     {
       title: "The Future Can Be Yours",
@@ -141,7 +141,7 @@ export default function Finalists2025() {
       filmmaker: "Aleem Hossain",
       year: "2024",
       description: "In this Desi-Futurist short film, a documentarian sneaks into the New Jersey exclusion zone to explore what the abandoned Bangladroids recall of their homeland.",
-      image: "/images/placeholder14.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Bangladdroids.jpg"
     }
   ];
 

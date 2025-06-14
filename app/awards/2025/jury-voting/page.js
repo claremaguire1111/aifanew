@@ -64,7 +64,7 @@ export default function JuryVoting2025() {
       filmmaker: "Raaphaël Frydman",
       year: "2024",
       description: "A 10-year-old boy spends his day watching his ceiling, mentally projecting a funny movie about the afterlife.",
-      image: "/images/placeholder6.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+La+Vie+Quand.png"
     },
     {
       id: "film7",
@@ -72,7 +72,7 @@ export default function JuryVoting2025() {
       filmmaker: "Nora Hase",
       year: "2024",
       description: "A diasporic exploration of pan-African futurism from a black German point of view, inspired by the concept of quiet resistance.",
-      image: "/images/placeholder7.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Stillness.png"
     },
     {
       id: "film8",
@@ -112,7 +112,7 @@ export default function JuryVoting2025() {
       filmmaker: "Diego Maclean",
       year: "2024",
       description: "Reflections on the nature of memory.",
-      image: "/images/placeholder12.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Remembering.jpg"
     },
     {
       id: "film13",
@@ -128,7 +128,7 @@ export default function JuryVoting2025() {
       filmmaker: "Aleem Hossain",
       year: "2024",
       description: "A documentarian explores what abandoned Bangladroids recall of their homeland in the New Jersey exclusion zone.",
-      image: "/images/placeholder14.jpg"
+      image: "https://myaifafinalists.s3.us-east-2.amazonaws.com/AIFA+2025+Film+Stills/STILL+Bangladdroids.jpg"
     }
   ];
   

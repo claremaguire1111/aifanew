@@ -354,9 +354,8 @@ export default function JuryVoting2025() {
             
             <div style={{ backgroundColor: "#f8f8f8", padding: "15px", border: "1px solid #ddd", marginBottom: "20px" }}>
               <p style={{ fontWeight: "bold", marginBottom: "8px" }}>NB: Important Instructions</p>
-              <p>Your votes are <strong>automatically saved</strong> as you complete each field (like Google Forms). A green "Autosaved" indicator will appear briefly after each change.</p>
-              <p>You may leave and return to this page at any time using the same device and browser. However, clearing your browser data or using a different device will reset your progress.</p>
-              <p>For the best experience, we still recommend completing your voting in one sitting when possible.</p>
+              <p>We advise you to complete your voting in one sitting. If this is not possible, please keep this window open on your laptop to come back and complete your voting later.</p>
+              <p>Your votes are automatically saved in this browser, but clearing browser data or using a different device will reset your progress.</p>
             </div>
             
             <p>We have 14 finalists presented here in a single showreel. Please view the films and assess each one for:</p>

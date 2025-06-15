@@ -16,6 +16,7 @@ export default function JuryVoting2025() {
   const [formStatus, setFormStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [jurorName, setJurorName] = useState("");
+  const [saveStatus, setSaveStatus] = useState("");
   
   const films = [
     {
@@ -214,6 +215,13 @@ export default function JuryVoting2025() {
     
     // Save votes to localStorage after each change
     localStorage.setItem("juryVotes2025", JSON.stringify(updatedFormData));
+    
+    // Show autosave indicator
+    setSaveStatus("Autosaved");
+    // Clear the indicator after 2 seconds
+    setTimeout(() => {
+      setSaveStatus("");
+    }, 2000);
   };
   
   // Handle form submission
@@ -346,8 +354,9 @@ export default function JuryVoting2025() {
             
             <div style={{ backgroundColor: "#f8f8f8", padding: "15px", border: "1px solid #ddd", marginBottom: "20px" }}>
               <p style={{ fontWeight: "bold", marginBottom: "8px" }}>NB: Important Instructions</p>
-              <p>We advise you to complete your voting in one sitting. If this is not possible, please keep this window open on your laptop to come back and complete your voting later.</p>
-              <p>Your votes are automatically saved in this browser, but clearing browser data or using a different device will reset your progress.</p>
+              <p>Your votes are <strong>automatically saved</strong> as you complete each field (like Google Forms). A green "Autosaved" indicator will appear briefly after each change.</p>
+              <p>You may leave and return to this page at any time using the same device and browser. However, clearing your browser data or using a different device will reset your progress.</p>
+              <p>For the best experience, we still recommend completing your voting in one sitting when possible.</p>
             </div>
             
             <p>We have 14 finalists presented here in a single showreel. Please view the films and assess each one for:</p>
@@ -396,7 +405,19 @@ export default function JuryVoting2025() {
             )}
             
             <div className="form-group">
-              <label className="form-label">Your Name</label>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <label className="form-label">Your Name</label>
+                {saveStatus && (
+                  <span style={{ 
+                    color: "#4CAF50", 
+                    fontSize: "14px", 
+                    fontStyle: "italic",
+                    animation: "fadeIn 0.3s"
+                  }}>
+                    ✓ {saveStatus}
+                  </span>
+                )}
+              </div>
               <input 
                 type="text" 
                 name="jurorName"
@@ -405,6 +426,12 @@ export default function JuryVoting2025() {
                 placeholder="Enter your full name"
                 required
               />
+              <style jsx>{`
+                @keyframes fadeIn {
+                  from { opacity: 0; }
+                  to { opacity: 1; }
+                }
+              `}</style>
             </div>
             
             {/* Films voting sections */}

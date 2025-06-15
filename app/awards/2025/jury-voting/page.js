@@ -148,14 +148,22 @@ export default function JuryVoting2025() {
     return initialData;
   });
   
-  // Check if user has previously authenticated in this session and load saved votes
+  // Handle initial auth check and saved votes loading
   useEffect(() => {
+    // First check if there are saved votes in localStorage regardless of auth status
+    const savedVotes = localStorage.getItem("juryVotes2025");
+    const hasVotes = savedVotes ? true : false;
+    
+    // Then check authentication status
     const isAuth = sessionStorage.getItem("juryAuthenticated") === "true";
-    if (isAuth) {
+    
+    // If user has previously authenticated or has saved votes, set authenticated
+    if (isAuth || hasVotes) {
+      // Store authentication status in localStorage (more persistent than sessionStorage)
+      localStorage.setItem("juryAuthenticated2025", "true");
       setAuthenticated(true);
       
       // Load saved votes from localStorage if available
-      const savedVotes = localStorage.getItem("juryVotes2025");
       if (savedVotes) {
         try {
           const parsedVotes = JSON.parse(savedVotes);
@@ -192,7 +200,9 @@ export default function JuryVoting2025() {
     
     if (password === JURY_VOTING_PASSWORD) {
       setAuthenticated(true);
+      // Store in both sessionStorage (for current session) and localStorage (for persistence across windows)
       sessionStorage.setItem("juryAuthenticated", "true");
+      localStorage.setItem("juryAuthenticated2025", "true");
       setPasswordError("");
     } else {
       setPasswordError("Incorrect password. Please try again.");
@@ -265,6 +275,28 @@ export default function JuryVoting2025() {
     
     setIsSubmitting(false);
   };
+  
+  // Check for authentication in localStorage when rendering
+  useEffect(() => {
+    const hasLocalAuth = localStorage.getItem("juryAuthenticated2025") === "true";
+    if (hasLocalAuth && !authenticated) {
+      setAuthenticated(true);
+      
+      // Also load saved votes again
+      const savedVotes = localStorage.getItem("juryVotes2025");
+      if (savedVotes) {
+        try {
+          const parsedVotes = JSON.parse(savedVotes);
+          setFormData(parsedVotes);
+          if (parsedVotes.jurorName) {
+            setJurorName(parsedVotes.jurorName);
+          }
+        } catch (error) {
+          console.error("Error parsing saved votes:", error);
+        }
+      }
+    }
+  }, [authenticated]);
   
   // Render password screen if not authenticated
   if (!authenticated) {

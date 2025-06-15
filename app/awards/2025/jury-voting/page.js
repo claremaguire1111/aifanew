@@ -147,11 +147,25 @@ export default function JuryVoting2025() {
     return initialData;
   });
   
-  // Check if user has previously authenticated in this session
+  // Check if user has previously authenticated in this session and load saved votes
   useEffect(() => {
     const isAuth = sessionStorage.getItem("juryAuthenticated") === "true";
     if (isAuth) {
       setAuthenticated(true);
+      
+      // Load saved votes from localStorage if available
+      const savedVotes = localStorage.getItem("juryVotes2025");
+      if (savedVotes) {
+        try {
+          const parsedVotes = JSON.parse(savedVotes);
+          setFormData(parsedVotes);
+          if (parsedVotes.jurorName) {
+            setJurorName(parsedVotes.jurorName);
+          }
+        } catch (error) {
+          console.error("Error parsing saved votes:", error);
+        }
+      }
     }
   }, []);
   
@@ -187,14 +201,19 @@ export default function JuryVoting2025() {
   // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
+    const updatedFormData = {
       ...formData,
       [name]: value
-    });
+    };
+    
+    setFormData(updatedFormData);
     
     if (name === "jurorName") {
       setJurorName(value);
     }
+    
+    // Save votes to localStorage after each change
+    localStorage.setItem("juryVotes2025", JSON.stringify(updatedFormData));
   };
   
   // Handle form submission
@@ -223,7 +242,11 @@ export default function JuryVoting2025() {
       
       if (response.ok) {
         setFormStatus("Thank you for your votes! Your submission has been received.");
-        // Optionally reset form or provide next steps
+        // Save completed submission state to localStorage
+        localStorage.setItem("juryVotes2025", JSON.stringify(formData));
+        localStorage.setItem("juryVotesSubmitted2025", "true");
+        // Redirect to thank you page
+        window.location.href = "/awards/2025/thank-you-jury";
       } else {
         setFormStatus("There was an error submitting your votes. Please try again.");
       }
@@ -321,6 +344,12 @@ export default function JuryVoting2025() {
           <div className="jury-instructions">
             <p>Thank you for joining the Grand Jury for the AIFA Awards 2025. We sincerely appreciate your time and expertise.</p>
             
+            <div style={{ backgroundColor: "#f8f8f8", padding: "15px", border: "1px solid #ddd", marginBottom: "20px" }}>
+              <p style={{ fontWeight: "bold", marginBottom: "8px" }}>NB: Important Instructions</p>
+              <p>We advise you to complete your voting in one sitting. If this is not possible, please keep this window open on your laptop to come back and complete your voting later.</p>
+              <p>Your votes are automatically saved in this browser, but clearing browser data or using a different device will reset your progress.</p>
+            </div>
+            
             <p>We have 14 finalists presented here in a single showreel. Please view the films and assess each one for:</p>
             
             <ul>
@@ -358,6 +387,11 @@ export default function JuryVoting2025() {
             {formStatus && (
               <div className={`form-message ${formStatus.includes("Thank you") ? "success-message" : "error-message"}`}>
                 {formStatus}
+              </div>
+            )}
+            {localStorage.getItem("juryVotesSubmitted2025") === "true" && (
+              <div className="success-message" style={{ marginTop: "10px" }}>
+                Your votes have been previously submitted. You can make changes and submit again if needed.
               </div>
             )}
             
@@ -460,8 +494,7 @@ export default function JuryVoting2025() {
                     name={`${film.id}_comment`}
                     value={formData[`${film.id}_comment`]}
                     onChange={handleInputChange}
-                    placeholder="Please provide a brief comment about this film (1-2 sentences)"
-                    required
+                    placeholder="Optional: Provide a brief comment about this film (1-2 sentences)"
                   ></textarea>
                 </div>
               </div>
@@ -473,7 +506,7 @@ export default function JuryVoting2025() {
                 className="submit-button"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Submitting..." : "Submit Your Votes"}
+                {isSubmitting ? "Submitting..." : localStorage.getItem("juryVotesSubmitted2025") === "true" ? "Update Your Votes" : "Submit Your Votes"}
               </button>
             </div>
           </form>

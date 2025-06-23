@@ -929,7 +929,7 @@ export default function SocialMapsForever() {
 
           {/* Asprey Studios Invite */}
           <div className="event-invite-item">
-            <AIFAImage src="/images/Tartan_Asprey.png" alt="Asprey Studios Tartan" className="event-invite-bg" />
+            <AIFAImage src="/images/Tartan_Lords.png" alt="Asprey Studios Tartan" className="event-invite-bg" />
             <div className="event-invite-content">
               <h3 className="event-invite-name">Asprey Studios</h3>
               <div className="event-invite-details">

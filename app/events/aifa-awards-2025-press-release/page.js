@@ -91,7 +91,7 @@ export default function PressRelease() {
 
   const eventDetails = [
     { label: "When", value: "Saturday 19 July, 5-11pm" },
-    { label: "Where", value: "Art'otel Hoxton, 1-3 Rivington St, London EC2A 3DT" },
+    { label: "Where", value: "Art'otel London Hoxton, 1-3 Rivington St, London EC2A 3DT" },
     { label: "What", value: "The Award of Awards for AI Film" },
     { label: "", value: "Screening, panel, awards and party ", valueLink: "/events/artotel-awards-2025", valueLinkText: "(full schedule)" },
     { label: "", value: "Digital art displays curated by Factory 4 and Nasty Magazine" },
@@ -208,7 +208,7 @@ export default function PressRelease() {
             </div>
             
             <p className="press-paragraph">
-              The AIFA Awards will be announced at a VIP event at Art'otel Hoxton on 19 July. After scouring films at over 30 AIFA-qualifying festivals, three themes have emerged: Digital Futures, War & Conflict, and Memory & Afterlife. 14 Finalists have been selected to showcase these themes, representing talent from Asia, the Middle East, Africa, Europe and North America (<Link href="/awards/2025/finalists">full list of finalists</Link>).
+              The AIFA Awards will be announced at a VIP event at Art'otel London Hoxton on 19 July. After scouring films at over 30 AIFA-qualifying festivals, three themes have emerged: Digital Futures, War & Conflict, and Memory & Afterlife. 14 Finalists have been selected to showcase these themes, representing talent from Asia, the Middle East, Africa, Europe and North America (<Link href="/awards/2025/finalists">full list of finalists</Link>).
             </p>
             
             <p className="press-paragraph">
@@ -270,7 +270,7 @@ export default function PressRelease() {
           <h2 className="notes-title">Notes to Editors</h2>
           
           <div className="note-item">
-            <p>For full details on the AIFA Awards 2025 event, including finalists and featured artists, please visit: <a href="https://www.aifaventures.com/events/artotel-awards-2025" target="_blank" rel="noopener noreferrer">www.aifaventures.com/events/artotel-awards-2025</a></p>
+            <p>For full details on the AIFA Awards 2025 event, including finalists and featured artists, please visit: <a href="https://www.aifaventures.com/events/art'otel-awards-2025" target="_blank" rel="noopener noreferrer">www.aifaventures.com/events/art'otel-awards-2025</a></p>
           </div>
           
           <div className="note-item" id="images-section">
@@ -311,7 +311,7 @@ export default function PressRelease() {
           <div className="note-item">
             <h3 className="note-subtitle">About Art'otel</h3>
             <p>Art'otel London Hoxton is a contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district. This stunning venue combines modern design with artistic flair, providing the perfect backdrop for the celebration of innovation in AI-generated filmmaking and digital art.</p>
-            <p><a href="https://artotellondonhoxton.com" target="_blank" rel="noopener noreferrer">artotellondonhoxton.com</a></p>
+            <p><a href="https://www.artotellondonhoxton.com" target="_blank" rel="noopener noreferrer">artotellondonhoxton.com</a></p>
           </div>
           
           <div className="note-item">

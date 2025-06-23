@@ -913,7 +913,7 @@ export default function SocialMapsForever() {
         <div className="event-invites-grid fade-in">
           {/* House of Lords Invite */}
           <div className="event-invite-item">
-            <img src="/images/Tartan_Asprey.png" alt="House of Lords Tartan" className="event-invite-bg" />
+            <img src="/images/Tartan_Lords.png" alt="House of Lords Tartan" className="event-invite-bg" />
             <div className="event-invite-content">
               <h3 className="event-invite-name">House of Lords</h3>
               <div className="event-invite-details">

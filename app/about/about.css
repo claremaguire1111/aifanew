@@ -723,6 +723,7 @@
 .support-logo img {
   height: 20px;
   width: auto;
+  max-height: 20px; /* Ensure maximum height is constrained */
 }
 
 .copyright-text {

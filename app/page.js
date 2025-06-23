@@ -421,7 +421,11 @@ export default function HomePage() {
         <div className="copyright-container">
           <div className="support-logo">
             <span>Supported by</span>
-            <img src="/images/support/innovateuk.jpg" alt="Innovate UK" />
+            <img 
+              src="/images/support/innovateuk.jpg" 
+              alt="Innovate UK" 
+              style={{ height: "20px", maxHeight: "20px", width: "auto" }}
+            />
           </div>
           <p className="copyright-text">© {new Date().getFullYear()} AIFA Ventures. All rights reserved.</p>
         </div>

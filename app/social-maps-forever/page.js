@@ -913,48 +913,45 @@ export default function SocialMapsForever() {
         <div className="event-invites-grid fade-in">
           {/* House of Lords Invite */}
           <div className="event-invite-item">
-            <div className="event-invite-image" style={{ backgroundImage: "url('/images/Tartan_Asprey.png')" }}>
-              <div className="event-invite-overlay">
-                <h3 className="event-invite-name">House of Lords</h3>
-                <div className="event-invite-details">
-                  <p className="event-invite-date">July 22, 2025</p>
-                  <p className="event-invite-time">8:00 AM</p>
-                  <p className="event-invite-location">House of Lords, London</p>
-                  <p className="event-invite-desc">AIFA Awards 2025 Morning Breakfast</p>
-                  <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
-                </div>
+            <img src="/images/Tartan_Asprey.png" alt="House of Lords Tartan" className="event-invite-bg" />
+            <div className="event-invite-content">
+              <h3 className="event-invite-name">House of Lords</h3>
+              <div className="event-invite-details">
+                <p className="event-invite-date">July 22, 2025</p>
+                <p className="event-invite-time">8:00 AM</p>
+                <p className="event-invite-location">House of Lords, London</p>
+                <p className="event-invite-desc">AIFA Awards 2025 Morning Breakfast</p>
+                <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
           </div>
 
           {/* Asprey Studios Invite */}
           <div className="event-invite-item">
-            <div className="event-invite-image" style={{ backgroundImage: "url('/images/Tartan_Asprey.png')" }}>
-              <div className="event-invite-overlay">
-                <h3 className="event-invite-name">Asprey Studios</h3>
-                <div className="event-invite-details">
-                  <p className="event-invite-date">July 22, 2025</p>
-                  <p className="event-invite-time">11:00 AM - 1:00 PM</p>
-                  <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
-                  <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
-                  <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
-                </div>
+            <img src="/images/Tartan_Asprey.png" alt="Asprey Studios Tartan" className="event-invite-bg" />
+            <div className="event-invite-content">
+              <h3 className="event-invite-name">Asprey Studios</h3>
+              <div className="event-invite-details">
+                <p className="event-invite-date">July 22, 2025</p>
+                <p className="event-invite-time">11:00 AM - 1:00 PM</p>
+                <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
+                <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
+                <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
           </div>
 
           {/* art'otel Invite */}
           <div className="event-invite-item">
-            <div className="event-invite-image" style={{ backgroundImage: "url('/images/tartan_hotel.png')" }}>
-              <div className="event-invite-overlay">
-                <h3 className="event-invite-name">art'otel</h3>
-                <div className="event-invite-details">
-                  <p className="event-invite-date">July 19, 2025</p>
-                  <p className="event-invite-time">7:00 PM - 10:00 PM</p>
-                  <p className="event-invite-location">1-3 Rivington St, London EC2A 3DT</p>
-                  <p className="event-invite-desc">AIFA Awards 2025 Ceremony</p>
-                  <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
-                </div>
+            <img src="/images/tartan_hotel.png" alt="Art'otel Tartan" className="event-invite-bg" />
+            <div className="event-invite-content">
+              <h3 className="event-invite-name">art'otel</h3>
+              <div className="event-invite-details">
+                <p className="event-invite-date">July 19, 2025</p>
+                <p className="event-invite-time">7:00 PM - 10:00 PM</p>
+                <p className="event-invite-location">1-3 Rivington St, London EC2A 3DT</p>
+                <p className="event-invite-desc">AIFA Awards 2025 Ceremony</p>
+                <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
           </div>

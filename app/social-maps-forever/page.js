@@ -923,6 +923,7 @@ export default function SocialMapsForever() {
                 <p className="event-invite-location">House of Lords, London</p>
                 <p className="event-invite-desc">AIFA Awards 2025 Morning Breakfast</p>
                 <p className="event-invite-invitation">Invitation Only</p>
+                <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
           </div>
@@ -938,6 +939,7 @@ export default function SocialMapsForever() {
                 <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
                 <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
                 <p className="event-invite-invitation">Invitation Only</p>
+                <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
           </div>

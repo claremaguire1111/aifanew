@@ -1011,6 +1011,13 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
+.aifa-prefix {
+  font-weight: 500;
+  font-style: italic;
+  color: #fff;
+  display: inline-block;
+}
+
 .event-invite-details {
   display: flex;
   flex-direction: column;

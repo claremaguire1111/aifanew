@@ -915,8 +915,8 @@ export default function SocialMapsForever() {
           {/* House of Lords Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover" }}>
             <div className="event-invite-content">
-              <h3 className="event-invite-name">
-                <span className="aifa-prefix">AIFA x</span> House of Lords
+              <h3 className="event-invite-name" style={{ fontWeight: 'bold', color: 'white' }}>
+                AIFA x House of Lords
               </h3>
               <div className="event-invite-details">
                 <p className="event-invite-date">July 22, 2025</p>
@@ -931,8 +931,8 @@ export default function SocialMapsForever() {
           {/* Asprey Studios Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover" }}>
             <div className="event-invite-content">
-              <h3 className="event-invite-name">
-                <span className="aifa-prefix">AIFA x</span> Asprey Studios
+              <h3 className="event-invite-name" style={{ fontWeight: 'bold', color: 'white' }}>
+                AIFA x Asprey Studios
               </h3>
               <div className="event-invite-details">
                 <p className="event-invite-date">July 22, 2025</p>
@@ -947,8 +947,8 @@ export default function SocialMapsForever() {
           {/* art'otel Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover" }}>
             <div className="event-invite-content">
-              <h3 className="event-invite-name">
-                <span className="aifa-prefix">AIFA x</span> art'otel
+              <h3 className="event-invite-name" style={{ fontWeight: 'bold', color: 'white' }}>
+                AIFA x art'otel
               </h3>
               <div className="event-invite-details">
                 <p className="event-invite-date">July 19, 2025</p>

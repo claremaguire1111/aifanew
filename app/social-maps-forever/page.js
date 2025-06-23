@@ -908,7 +908,7 @@ export default function SocialMapsForever() {
         </div>
       </section>
       
-      {/* EVENT INVITES SECTION - Updated */}
+      {/* EVENT INVITES SECTION - Updated June 23 2025 */}
       <section className="event-invites-section">
         <h2 className="event-invites-title fade-in">Event Invites</h2>
         <div className="event-invites-grid fade-in">

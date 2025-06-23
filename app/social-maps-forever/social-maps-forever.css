@@ -986,10 +986,10 @@
 .event-invite-image {
   position: relative;
   width: 100%;
-  padding-bottom: 140%; /* Taller aspect ratio for invite format */
+  padding-bottom: 100%; /* Square aspect ratio */
   background-size: cover;
   background-position: center;
-  filter: brightness(0.7);
+  filter: brightness(1); /* No darkening */
 }
 
 .event-invite-overlay {
@@ -1002,18 +1002,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2); /* Much lighter overlay */
   color: white;
-  padding: 40px 20px;
+  padding: 30px 20px;
   text-align: center;
 }
 
 .event-invite-name {
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 10px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
 }
 
 .event-invite-details {
@@ -1021,28 +1022,36 @@
   flex-direction: column;
   gap: 10px;
   margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Add dark background for better text readability */
+  padding: 15px;
+  border-radius: 4px;
+  width: 80%;
 }
 
 .event-invite-date {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .event-invite-time {
   font-size: 1rem;
   margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .event-invite-location {
   font-size: 0.9rem;
   margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .event-invite-desc {
   font-size: 0.9rem;
   font-style: italic;
   margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .event-invite-rsvp {
@@ -1051,6 +1060,12 @@
   padding: 8px 15px;
   display: inline-block;
   letter-spacing: 0.05em;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.event-invite-rsvp:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 992px) {

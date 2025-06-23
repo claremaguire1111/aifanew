@@ -935,7 +935,7 @@ export default function SocialMapsForever() {
                 <div className="event-invite-details">
                   <p className="event-invite-date">July 22, 2025</p>
                   <p className="event-invite-time">11:00 AM - 1:00 PM</p>
-                  <p className="event-invite-location">Asprey Studios, London</p>
+                  <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
                   <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
                   <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
                 </div>
@@ -951,7 +951,7 @@ export default function SocialMapsForever() {
                 <div className="event-invite-details">
                   <p className="event-invite-date">July 19, 2025</p>
                   <p className="event-invite-time">7:00 PM - 10:00 PM</p>
-                  <p className="event-invite-location">art'otel London Battersea Power Station</p>
+                  <p className="event-invite-location">1-3 Rivington St, London EC2A 3DT</p>
                   <p className="event-invite-desc">AIFA Awards 2025 Ceremony</p>
                   <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
                 </div>

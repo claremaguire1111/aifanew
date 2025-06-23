@@ -1050,14 +1050,16 @@
 }
 
 .event-invite-invitation {
-  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 15px;
-  font-weight: 400;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.15em;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   display: inline-block;
-  padding: 3px 10px;
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .event-invite-rsvp {

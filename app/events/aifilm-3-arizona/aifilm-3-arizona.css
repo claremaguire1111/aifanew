@@ -1,0 +1,39 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* AIFILM 3 ARIZONA-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/IMG_6970.jpg');
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #0072b1;
+  font-weight: 500;
+}
+
+.event-quote {
+  border-left-color: #0072b1;
+}
+
+.event-cta {
+  background-color: #e6f7ff;
+  border-color: #b3e0ff;
+}
+
+.event-button {
+  background-color: #0072b1;
+  border-color: #0072b1;
+}
+
+.event-button:hover {
+  color: #0072b1;
+}
+
+.event-button.secondary {
+  color: #0072b1;
+}
+
+.event-button.secondary:hover {
+  background-color: #0072b1;
+}

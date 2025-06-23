@@ -1,0 +1,40 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* ASPREY-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/asprey_24_events.jpg');
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #b8860b;
+  font-weight: 500;
+}
+
+.event-quote {
+  border-left-color: #b8860b;
+  background-color: #f8f4e8;
+}
+
+.event-cta {
+  background-color: #f8f4e8;
+  border-color: #e6dcc3;
+}
+
+.event-button {
+  background-color: #b8860b;
+  border-color: #b8860b;
+}
+
+.event-button:hover {
+  color: #b8860b;
+}
+
+.event-button.secondary {
+  color: #b8860b;
+}
+
+.event-button.secondary:hover {
+  background-color: #b8860b;
+}

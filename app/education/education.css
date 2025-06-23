@@ -1,0 +1,563 @@
+/* Import global styling */
+@import '../home.css';
+
+/* EDUCATION SPECIFIC STYLES */
+.education-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-color: var(--black);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/aifa-web-13.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.education-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--white);
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.education-hero-title {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.education-hero-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+  font-weight: 300;
+}
+
+/* MISSION SECTION */
+.mission-section {
+  background-color: var(--light-grey);
+  color: var(--black);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.mission-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.01em;
+}
+
+/* AIFA LONDON SECTION */
+.aifa-london-section {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 80px 0;
+  border-top: 1px solid var(--light-grey);
+}
+
+.aifa-london-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.aifa-london-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.aifa-london-text h2 {
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.aifa-london-text p {
+  margin-bottom: 25px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: #333;
+}
+
+.aifa-london-image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+
+.aifa-london-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.aifa-london-image:hover img {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .aifa-london-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .aifa-london-text h2 {
+    text-align: center;
+  }
+}
+
+/* PILLARS SECTION */
+.pillars-section {
+  background-color: var(--white);
+  padding: 80px 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.pillar-item {
+  text-align: center;
+  padding: 40px 25px;
+  background-color: var(--white);
+  transition: transform 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.pillar-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.pillar-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-icon img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+
+.pillar-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pillar-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  font-weight: 300;
+}
+
+/* VISION SECTION */
+.vision-section {
+  background-color: var(--light-grey);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.vision-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.vision-item {
+  background-color: var(--white);
+  padding: 40px 30px;
+  text-align: left;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease;
+}
+
+.vision-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.vision-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vision-item p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  font-weight: 300;
+}
+
+/* FUN SECTION */
+.fun-section {
+  background-color: var(--white);
+  padding: 80px 0;
+  border-top: 1px solid var(--light-grey);
+}
+
+.fun-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.fun-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.fun-text {
+  flex: 1;
+  text-align: left;
+}
+
+.fun-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.fun-link-container {
+  margin-top: 30px;
+}
+
+.fun-link {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid var(--black);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.fun-link:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.fun-image {
+  flex: 1;
+  max-width: 350px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+
+.fun-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.fun-image:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .fun-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .fun-text {
+    text-align: center;
+  }
+  
+  .fun-image {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+/* MEMBERSHIP SECTION */
+.membership-section {
+  background-color: var(--light-grey);
+  color: var(--black);
+  padding: 100px 0;
+}
+
+.membership-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.membership-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.membership-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.membership-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.membership-form input,
+.membership-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--medium-grey);
+  background: var(--white);
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 300;
+}
+
+.membership-form textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.membership-form button {
+  grid-column: span 2;
+  padding: 10px 15px;
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.membership-form button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* CONTACT SECTION STYLING */
+.contact-us-section {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  border-top: 1px solid var(--light-grey);
+}
+
+.footer-column h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-column ul li {
+  margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+  font-size: 0.85rem;
+  color: var(--dark-grey);
+  transition: color 0.3s;
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.footer-column ul li a:hover {
+  color: var(--black);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 992px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .education-hero {
+    height: 70vh;
+  }
+  
+  .education-hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .education-hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .mission-text {
+    font-size: 1rem;
+  }
+  
+  .pillars-grid {
+    gap: 20px;
+  }
+  
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .membership-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .membership-form textarea {
+    grid-column: span 1;
+  }
+  
+  .membership-form button {
+    grid-column: span 1;
+  }
+  
+  .contact-us-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pillar-item {
+    padding: 30px 20px;
+  }
+}
+
+/* COPYRIGHT FOOTER */
+.copyright-footer {
+  padding: 20px 0;
+  border-top: 1px solid var(--light-grey);
+  position: relative;
+  background-color: var(--white);
+}
+
+.copyright-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.support-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.support-logo span {
+  font-size: 11px;
+  color: var(--dark-grey);
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 300;
+}
+
+.support-logo img {
+  height: 20px;
+  width: auto;
+}
+
+.copyright-text {
+  font-size: 12px;
+  color: var(--dark-grey);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}

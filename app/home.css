@@ -153,6 +153,8 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .video-wrapper {
@@ -272,9 +274,10 @@
 .about-description-section {
   background-color: var(--light-grey);
   color: var(--black);
-  padding: 70px 0;
+  padding: 30px 0 50px 0;
   text-align: left;
   position: relative;
+  margin-top: -1px;
 }
 
 /* Removed border lines */
@@ -733,8 +736,10 @@
 ---------------------------- */
 .brands-section {
   background-color: var(--white);
-  padding: 80px 0;
+  padding: 30px 0 0 0;
   overflow: hidden;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .brands-container {
@@ -746,7 +751,9 @@
 .moving-brands {
   width: 100%;
   overflow: hidden;
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 30px;
 }
 
 .brand-row {
@@ -779,7 +786,7 @@
 .contact-us-section {
   background-color: var(--white);
   color: var(--black);
-  padding: 80px 40px;
+  padding: 40px 40px;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -849,7 +856,8 @@
 .signup-section {
   background-color: var(--light-grey);
   color: var(--black);
-  padding: 120px 0 100px;
+  padding: 0 0 60px;
+  margin-top: -1px;
 }
 
 .signup-box {
@@ -861,7 +869,8 @@
 
 .signup-box h1 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-top: 30px;
 }
 
 .signup-box p {

@@ -67,7 +67,9 @@ export default function DulwichPage() {
       
       // Try multiple API routes in sequence
       const endpoints = [
-        // First try the new Dulwich-specific API routes
+        // First try the new Google Gemini video endpoint
+        '/api/gemini-video',
+        // Then try the Dulwich-specific API routes
         '/api/dulwich/create',
         // Legacy API routes as fallbacks
         '/api/generate-animation',
@@ -134,7 +136,9 @@ export default function DulwichPage() {
       
       // Try multiple status endpoints in sequence
       const statusEndpoints = [
-        // First try the new Dulwich-specific API routes
+        // First try the new Google Gemini video endpoint
+        `/api/gemini-video?taskId=${taskId}`,
+        // Then try the Dulwich-specific API routes
         `/api/dulwich/status?taskId=${taskId}`,
         // Legacy API routes as fallbacks
         `/api/generate-animation?taskId=${taskId}`,
@@ -260,6 +264,152 @@ export default function DulwichPage() {
 
   const handlePromptChange = (e) => setPrompt(e.target.value);
 
+  const handleTextOnlySubmit = async (e) => {
+    e.preventDefault();
+    if (!prompt.trim()) return setError("Please enter a description of your sculpture");
+
+    setError(null);
+    setIsLoading(true);
+    setStep(3);
+
+    try {
+      // Call the Gemini API directly with text only (no image)
+      console.log('Processing text-only prompt:', prompt);
+      
+      // Make a direct request to the Gemini API endpoint with text-only data
+      const response = await fetch('/api/gemini-video', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          textOnlyPrompt: prompt,
+          promptText: prompt
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('Text-only task started with response:', data);
+      
+      if (data.taskId) {
+        setTaskId(data.taskId);
+        
+        // Start polling for task status
+        let errorCount = 0;
+        const maxErrors = 3;
+        
+        const interval = setInterval(async () => {
+          try {
+            const status = await checkTaskStatus(data.taskId);
+            console.log('Text-only task status:', status.status);
+            
+            if (status.status === 'SUCCEEDED') {
+              clearInterval(interval);
+              setTaskCheckInterval(null);
+              
+              // Handle success the same way as image-based generation
+              if (status.output && status.output.videoUrl) {
+                console.log('Setting video URL to:', status.output.videoUrl);
+                setGeneratedReel(status.output.videoUrl);
+                
+                // Handle Gemini description if available
+                if (status.isGemini && status.geminiDescription) {
+                  console.log('Gemini description found, preparing to display');
+                  window.geminiDescription = status.geminiDescription;
+                  
+                  setTimeout(() => {
+                    const descriptionElement = document.getElementById('gemini-description');
+                    const previewElement = document.getElementById('gemini-text-preview');
+                    const viewButton = document.getElementById('view-full-description');
+                    
+                    if (descriptionElement && previewElement && viewButton) {
+                      console.log('Found description elements, displaying description');
+                      descriptionElement.style.display = 'block';
+                      const previewText = window.geminiDescription.substring(0, 300) + '...';
+                      previewElement.textContent = previewText;
+                      
+                      viewButton.onclick = () => {
+                        alert(window.geminiDescription);
+                      };
+                    } else {
+                      console.error('Could not find description elements in DOM');
+                    }
+                  }, 1000);
+                } else {
+                  console.log('No Gemini description found in status');
+                }
+                
+                // Force display of result section
+                setStep(4);
+                setIsLoading(false);
+                
+                // Ensure the video is shown by directly manipulating DOM if needed
+                setTimeout(() => {
+                  const videoElement = document.querySelector('.result-video');
+                  if (videoElement) {
+                    console.log('Found video element, ensuring it is visible');
+                    videoElement.style.display = 'block';
+                    videoElement.src = status.output.videoUrl;
+                    videoElement.load();
+                    videoElement.play().catch(e => console.error('Video autoplay failed:', e));
+                  } else {
+                    console.error('Could not find video element in DOM');
+                  }
+                }, 1000);
+              } else {
+                // Handle missing output URL
+                console.error('Task succeeded but no output URL provided');
+                setError('Generation completed, but the output is missing');
+                setGeneratedReel(demoVideoPath);
+                setStep(4);
+                setIsLoading(false);
+              }
+            } else if (status.status === 'FAILED') {
+              clearInterval(interval);
+              setTaskCheckInterval(null);
+              
+              setError(status.error || 'Generation failed');
+              setGeneratedReel(demoVideoPath);
+              setStep(4);
+              setIsLoading(false);
+            }
+            
+            // Reset error count on successful status check
+            errorCount = 0;
+          } catch (error) {
+            errorCount++;
+            console.error(`Polling error (${errorCount}/${maxErrors}):`, error.message);
+            
+            if (errorCount >= maxErrors) {
+              clearInterval(interval);
+              setTaskCheckInterval(null);
+              
+              setError(`Unable to check task status - using demo video instead`);
+              setGeneratedReel(demoVideoPath);
+              setStep(4);
+              setIsLoading(false);
+            }
+          }
+        }, 5000);
+        
+        setTaskCheckInterval(interval);
+      } else {
+        throw new Error('No task ID returned from API');
+      }
+    } catch (error) {
+      console.error('Error in text-only processing:', error);
+      
+      setError(`Error: ${error.message} - Using demo video instead`);
+      setGeneratedReel(demoVideoPath);
+      setStep(4);
+      setIsLoading(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!file) return setError("Please upload an image first");
@@ -299,6 +449,39 @@ export default function DulwichPage() {
             if (status.output && status.output[0]) {
               setGeneratedReel(status.output[0]);
               setError(null); // Clear any previous errors
+            } else if (status.output && status.output.videoUrl) {
+              // Handle Gemini API response
+              setGeneratedReel(status.output.videoUrl);
+              
+              // Check if this is a Gemini response with description
+              if (status.isGemini && status.geminiDescription) {
+                console.log('Gemini description available, will display it after rendering');
+                // Store the Gemini description to be displayed after rendering
+                window.geminiDescription = status.geminiDescription;
+                
+                // Add code to display the description after component renders
+                setTimeout(() => {
+                  const descriptionElement = document.getElementById('gemini-description');
+                  const previewElement = document.getElementById('gemini-text-preview');
+                  const viewButton = document.getElementById('view-full-description');
+                  
+                  if (descriptionElement && previewElement && viewButton) {
+                    // Show the description container
+                    descriptionElement.style.display = 'block';
+                    
+                    // Set the preview text (first 300 characters)
+                    const previewText = window.geminiDescription.substring(0, 300) + '...';
+                    previewElement.textContent = previewText;
+                    
+                    // Add click handler for the view button
+                    viewButton.onclick = () => {
+                      alert(window.geminiDescription);
+                    };
+                  }
+                }, 500);
+              }
+              
+              setError(null);
             } else if (status.demoUrl) {
               // Use the demo URL provided by the API
               console.log('Using demo URL provided by API:', status.demoUrl);
@@ -501,7 +684,90 @@ export default function DulwichPage() {
           ))}
         </div>
 
+        {/* Educational section about sculpture */}
+        <div className="sculpture-education fade-in">
+          <h2>Understanding Sculpture: An Art Form</h2>
+          <div className="education-content" style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "40px" }}>
+            <div className="education-text">
+              <p>
+                Sculpture is a three-dimensional art form that has been practiced for thousands of years. 
+                It involves creating forms by shaping materials like stone, metal, clay, or wood. 
+                Unlike two-dimensional art, sculpture invites viewers to experience it from multiple perspectives 
+                and often engages with the space around it.
+              </p>
+              <p>
+                The art of sculpture connects us to our earliest ancestors who carved figurines from ivory and stone, 
+                and continues to evolve with contemporary artists exploring new materials and concepts, including digital media.
+              </p>
+            </div>
+            
+            <div className="sculpture-techniques" style={{ backgroundColor: "#f8f9fa", padding: "20px", borderRadius: "8px" }}>
+              <h3>Traditional Sculpture Techniques</h3>
+              <ul style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", listStyleType: "none", padding: 0 }}>
+                <li><strong>Carving:</strong> Removing material from a solid block</li>
+                <li><strong>Modeling:</strong> Building up forms with malleable materials</li>
+                <li><strong>Casting:</strong> Pouring liquid material into a mold</li>
+                <li><strong>Assembling:</strong> Joining different pieces together</li>
+                <li><strong>Welding:</strong> Fusing metal components</li>
+                <li><strong>3D Printing:</strong> Creating objects layer by layer</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="digital-sculpture-intro" style={{ backgroundColor: "#f0f8ff", padding: "25px", borderRadius: "10px", marginBottom: "30px" }}>
+            <h3>From Physical to Digital</h3>
+            <p>
+              Today, sculpture transcends physical boundaries. Digital technologies allow artists to create virtual sculptures 
+              that could never exist in the physical world, defying gravity, using impossible materials, 
+              or existing in augmented reality.
+            </p>
+            <p>
+              With AI, we can translate your ideas into visual forms, helping you explore concepts and imagine 
+              new possibilities without the constraints of physical materials.
+            </p>
+          </div>
+        </div>
+
         <div className="dulwich-animation-creator fade-in">
+          <h2>Create Your Vision</h2>
+          <p style={{ marginBottom: "30px" }}>
+            Now it's your turn to bring your artistic vision to life. You can either upload a photo of an existing sculpture 
+            to animate it, or simply describe your sculptural concept with words and let AI help visualize it.
+          </p>
+          
+          <div className="creation-options" style={{ display: "flex", gap: "20px", marginBottom: "30px" }}>
+            <button 
+              onClick={() => setStep(1)} 
+              className="option-button" 
+              style={{ 
+                flex: 1, 
+                padding: "20px", 
+                backgroundColor: step === 1 ? "#444" : "#777", 
+                color: "white", 
+                border: "none", 
+                borderRadius: "8px",
+                cursor: "pointer"
+              }}
+            >
+              Upload Image
+            </button>
+            <button 
+              onClick={() => setStep(5)} 
+              className="option-button" 
+              style={{ 
+                flex: 1, 
+                padding: "20px", 
+                backgroundColor: step === 5 ? "#444" : "#777", 
+                color: "white", 
+                border: "none", 
+                borderRadius: "8px",
+                cursor: "pointer"
+              }}
+            >
+              Text Description Only
+            </button>
+          </div>
+          
           {step === 1 && (
             <div className="upload-section">
               <h3>Upload Your Sculpture Photo</h3>
@@ -521,6 +787,70 @@ export default function DulwichPage() {
                 <label htmlFor="sculpture-upload" className="upload-button">Upload Image</label>
                 <p className="upload-help">or take a photo directly with your camera</p>
                 <p className="upload-limit">(Maximum image size: 5MB)</p>
+              </div>
+            </div>
+          )}
+          
+          {step === 5 && (
+            <div className="text-only-section">
+              <h3>Describe Your Sculptural Vision</h3>
+              <p className="prompt-help">
+                Let your imagination flow. Describe the sculpture you envision - its form, materials, 
+                meaning, and how it might move or transform. Be as detailed or abstract as you wish.
+              </p>
+              <form onSubmit={handleTextOnlySubmit} className="text-prompt-form">
+                <textarea
+                  id="sculpture-description"
+                  value={prompt}
+                  onChange={handlePromptChange}
+                  placeholder="Describe your sculptural concept... (e.g., 'A flowing figure made of liquid metal, reaching upward toward the sky, with ribbons of light emanating from within')"
+                  rows={6}
+                  required
+                  style={{ width: "100%", padding: "15px", marginBottom: "20px", borderRadius: "5px", border: "1px solid #ccc" }}
+                />
+                <button 
+                  type="submit" 
+                  className="generate-button"
+                  style={{ 
+                    backgroundColor: "#444", 
+                    color: "white", 
+                    border: "none", 
+                    padding: "12px 25px", 
+                    borderRadius: "5px", 
+                    cursor: "pointer",
+                    fontSize: "16px"
+                  }}
+                >
+                  Generate Digital Sculpture
+                </button>
+              </form>
+              
+              <div className="examples-section" style={{ marginTop: "30px" }}>
+                <h4>Inspiration Prompts:</h4>
+                <div className="example-prompts" style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                  {[
+                    "A figure emerging from a block of stone, half-formed and straining to break free",
+                    "Intertwined ribbons of colored glass that catch and refract light",
+                    "A kinetic sculpture with parts that move in the wind like a living organism",
+                    "An abstract form representing the concept of hope, made of translucent materials",
+                    "A digital sculpture showing the transformation from human to nature"
+                  ].map((examplePrompt, i) => (
+                    <button 
+                      key={i}
+                      onClick={() => setPrompt(examplePrompt)}
+                      style={{ 
+                        padding: "8px 15px", 
+                        backgroundColor: "#f0f0f0", 
+                        border: "1px solid #ddd", 
+                        borderRadius: "20px",
+                        fontSize: "14px",
+                        cursor: "pointer"
+                      }}
+                    >
+                      {examplePrompt.substring(0, 30)}...
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}
@@ -592,6 +922,38 @@ export default function DulwichPage() {
                     )}
                   </div>
                 )}
+              </div>
+              
+              {/* Gemini description section - will be shown if geminiDescription is available */}
+              <div 
+                id="gemini-description"
+                className="gemini-description" 
+                style={{ 
+                  display: 'none',
+                  margin: '20px 0',
+                  padding: '15px',
+                  backgroundColor: '#f8f9fa',
+                  borderRadius: '5px',
+                  border: '1px solid #dee2e6'
+                }}
+              >
+                <h4 style={{ marginTop: '0' }}>AI-Generated Video Description:</h4>
+                <div className="description-text" style={{ maxHeight: '150px', overflow: 'auto', marginBottom: '10px' }}>
+                  <p id="gemini-text-preview"></p>
+                </div>
+                <button 
+                  id="view-full-description"
+                  style={{
+                    backgroundColor: '#444',
+                    color: 'white',
+                    border: 'none',
+                    padding: '8px 15px',
+                    borderRadius: '4px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  View Full Description
+                </button>
               </div>
 
               <div className="sharing-instructions">

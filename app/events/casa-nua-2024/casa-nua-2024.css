@@ -1,0 +1,40 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* CASA NUA-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/casanua_events.jpg');
+  background-position: center 30%;
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #389e0d;
+  font-weight: 500;
+}
+
+.event-quote {
+  border-left-color: #389e0d;
+}
+
+.event-cta {
+  background-color: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+.event-button {
+  background-color: #389e0d;
+  border-color: #389e0d;
+}
+
+.event-button:hover {
+  color: #389e0d;
+}
+
+.event-button.secondary {
+  color: #389e0d;
+}
+
+.event-button.secondary:hover {
+  background-color: #389e0d;
+}

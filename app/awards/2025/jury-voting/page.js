@@ -366,8 +366,11 @@ export default function JuryVoting2025() {
           <Link href="/awards/2024" onClick={toggleMenu}>
             Awards 2024
           </Link>
-          <Link href="/film-chat" onClick={toggleMenu}>
-            Chat
+          <Link href="/education" onClick={toggleMenu}>
+            Education
+          </Link>
+          <Link href="/events" onClick={toggleMenu}>
+            Events
           </Link>
         </nav>
       </header>
@@ -637,7 +640,10 @@ export default function JuryVoting2025() {
               <Link href="/awards/2024">Awards 2024</Link>
             </li>
             <li>
-              <Link href="/film-chat">Chat</Link>
+              <Link href="/education">Education</Link>
+            </li>
+            <li>
+              <Link href="/events">Events</Link>
             </li>
           </ul>
         </div>

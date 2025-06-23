@@ -1,0 +1,40 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* MORNING BREAKFAST-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/private_events.jpg');
+  background-position: center 40%;
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #b8860b;
+  font-weight: 500;
+}
+
+.event-quote {
+  border-left-color: #b8860b;
+}
+
+.event-cta {
+  background-color: #f8f4e8;
+  border-color: #f0e6c8;
+}
+
+.event-button {
+  background-color: #b8860b;
+  border-color: #b8860b;
+}
+
+.event-button:hover {
+  color: #b8860b;
+}
+
+.event-button.secondary {
+  color: #b8860b;
+}
+
+.event-button.secondary:hover {
+  background-color: #b8860b;
+}

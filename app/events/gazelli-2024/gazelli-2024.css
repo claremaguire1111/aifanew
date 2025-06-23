@@ -1,0 +1,18 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* GAZELLI-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/gazelli_events.jpg');
+}
+
+.event-quote {
+  background-color: #f9f0ff;
+  border-left: 3px solid #722ed1;
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #722ed1;
+  font-weight: 500;
+}

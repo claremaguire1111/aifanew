@@ -1,0 +1,39 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* COOPERS YARD-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/copperyard_events.jpg');
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #0b6bb8;
+  font-weight: 500;
+}
+
+.event-quote {
+  border-left-color: #0b6bb8;
+}
+
+.event-cta {
+  background-color: #f0f7ff;
+  border-color: #d0e5ff;
+}
+
+.event-button {
+  background-color: #0b6bb8;
+  border-color: #0b6bb8;
+}
+
+.event-button:hover {
+  color: #0b6bb8;
+}
+
+.event-button.secondary {
+  color: #0b6bb8;
+}
+
+.event-button.secondary:hover {
+  background-color: #0b6bb8;
+}

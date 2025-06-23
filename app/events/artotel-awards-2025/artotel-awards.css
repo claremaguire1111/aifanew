@@ -1,0 +1,1038 @@
+/* Import global styling */
+@import '../../home.css';
+
+/* ARTOTEL AWARDS SPECIFIC STYLES */
+.artotel-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-color: var(--black);
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/aifa-event.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.artotel-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--white);
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.artotel-hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.artotel-hero-subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.artotel-hero-date {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.artotel-hero-location {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.artotel-hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.artotel-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.artotel-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ABOUT SECTION */
+.about-section {
+  background-color: var(--black);
+  padding: 80px 0;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.about-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-family: var(--font-family);
+}
+
+.about-description {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-text-white {
+  color: var(--white);
+}
+
+/* SCHEDULE SECTION */
+.schedule-section {
+  background-color: var(--white);
+  padding: 80px 0 100px 0;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.schedule-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background-color: var(--light-grey);
+}
+
+.schedule-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.schedule-simple {
+  margin: 40px auto;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-row {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-row:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.schedule-time {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--black);
+  font-family: var(--font-family);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.schedule-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 20px;
+}
+
+.schedule-event {
+  font-size: 1rem;
+  font-family: var(--font-family);
+  color: var(--dark-grey);
+  flex-grow: 1;
+}
+
+/* PARTNERS SECTION */
+.partners-section {
+  background-color: var(--light-grey);
+  padding: 80px 0 50px 0;
+  position: relative;
+  margin-top: -1px;
+}
+
+.partners-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.partners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin: 0 0 30px;
+  font-weight: 400;
+  font-family: var(--font-family);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: var(--black);
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--medium-grey);
+}
+
+.section-subtitle {
+  font-size: 1.8rem;
+  margin: 40px 0 25px;
+  font-weight: 400;
+  font-family: var(--font-family);
+  position: relative;
+  text-align: center;
+  color: var(--black);
+  display: inline-block;
+  width: 100%;
+}
+
+.section-subtitle:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: var(--medium-grey);
+}
+
+.partner-item {
+  margin-bottom: 60px;
+}
+
+.partner-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.partner-name {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.partner-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-family: var(--font-family);
+  color: var(--dark-grey);
+}
+
+.partner-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--black);
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.main-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 15px;
+  max-width: 900px;
+  margin: 25px auto 40px;
+}
+
+.sponsor-item {
+  background-color: var(--white);
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.sponsor-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,0.1);
+}
+
+.sponsors-section {
+  margin: 50px 0 30px;
+  text-align: center;
+}
+
+.sponsor-link {
+  color: var(--black);
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  font-family: var(--font-family);
+  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sponsor-link:hover {
+  color: #555;
+}
+
+.sponsor-logo-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.sponsor-logo-container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.sponsor-logo {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  padding: 5px;
+}
+
+.sponsor-logo-dark {
+  filter: brightness(0);
+}
+
+.sponsor-logo-dark:hover {
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.sponsor-logo-container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.sponsor-logo-placeholder {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--black);
+  text-align: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sponsor-logo-placeholder:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* MOVING BRANDS */
+.moving-brands {
+  width: 100%;
+  overflow: hidden;
+  padding: 30px 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.brand-row {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+  animation-play-state: running;
+}
+
+.brand-row:hover {
+  animation-play-state: paused;
+}
+
+.brand-name {
+  display: inline-block;
+  padding: 10px 25px;
+  margin: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dark-grey);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.brand-name:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.brand-logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 30px;
+  height: 60px;
+  position: relative;
+}
+
+.brand-logo {
+  max-height: 100%;
+  max-width: 120px;
+  opacity: 0.8;
+  filter: brightness(0);
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ARTISTS SECTION */
+.artists-section {
+  background-color: var(--light-grey);
+  padding: 120px 0;
+  position: relative;
+}
+
+.artists-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.artists-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.artists-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.artist-item {
+  background-color: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.artist-item:hover {
+  transform: translateY(-10px);
+  border: 1px solid var(--medium-grey);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.artist-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.artist-item:hover .artist-image {
+  filter: grayscale(40%);
+  transform: scale(1.02);
+}
+
+.artist-info {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.artist-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.artist-role {
+  font-size: 1rem;
+  color: var(--dark-grey);
+  margin: 0;
+  font-style: italic;
+}
+
+.artist-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark-grey);
+  margin: 0;
+}
+
+.artist-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid var(--black);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.artist-link:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* JURY SECTION */
+.jury-section {
+  background-color: var(--white);
+  padding: 80px 0 120px 0;
+  position: relative;
+  margin-top: -1px;
+}
+
+.jury-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: var(--light-grey);
+}
+
+.jury-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.jury-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.jury-description {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dark-grey);
+}
+
+.jury-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.jury-member {
+  text-align: center;
+}
+
+.jury-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--white);
+}
+
+.jury-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.jury-image:hover img {
+  filter: grayscale(40%);
+  transform: scale(1.05);
+}
+
+.jury-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--white);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.jury-image:hover .jury-image-overlay {
+  opacity: 1;
+}
+
+.jury-info h3 {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.jury-role {
+  font-size: 0.8rem;
+  color: var(--dark-grey);
+  font-style: italic;
+}
+
+.jury-bio-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.jury-bio-content {
+  background-color: var(--white);
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.jury-bio-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.jury-bio-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.jury-bio-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-grey);
+}
+
+/* VENUE SECTION */
+.venue-section {
+  background-color: var(--white);
+  padding: 80px 0 100px 0;
+  position: relative;
+  margin-top: -1px;
+}
+
+.venue-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background-color: var(--light-grey);
+}
+
+.venue-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.venue-info {
+  padding-right: 20px;
+}
+
+.venue-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.venue-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.venue-address {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.venue-map {
+  width: 100%;
+  height: 400px;
+  background-color: var(--medium-grey);
+}
+
+/* REGISTER SECTION */
+.register-section {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/aifa-event.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  margin-top: -1px;
+}
+
+.register-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.register-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.register-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.register-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: transparent;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--white);
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+.register-button:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+.collaborators-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.collaborators-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0 50px;
+}
+
+.collaborator-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--black);
+  transition: all 0.3s ease;
+  font-weight: 300;
+  font-family: var(--font-family);
+  margin-right: 12px;
+}
+
+.collaborator-button:hover {
+  background-color: var(--black);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.artotel-button {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: transparent;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--white);
+  transition: all 0.3s ease;
+  font-weight: 300;
+  margin: 5px;
+  min-width: 150px;
+}
+
+.artotel-button:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .venue-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .venue-info {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .artotel-hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .artotel-hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .artotel-hero-date {
+    font-size: 1.5rem;
+  }
+  
+  .about-title, .section-title, 
+  .artists-title, .jury-title, .venue-title, .register-title {
+    font-size: 2rem;
+  }
+  
+  .main-sponsors-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  
+  .schedule-simple {
+    margin: 35px auto;
+  }
+  
+  .schedule-row {
+    padding: 14px 15px;
+  }
+  
+  .schedule-time {
+    font-size: 0.9rem;
+    min-width: 65px;
+  }
+  
+  .schedule-divider {
+    margin: 0 15px;
+  }
+  
+  .jury-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .jury-image {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .collaborator-button {
+    font-size: 0.7rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .artotel-hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .artotel-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .artotel-hero-date {
+    font-size: 1.2rem;
+  }
+  
+  .artotel-hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .artists-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .jury-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .jury-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .main-sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sponsor-link {
+    font-size: 0.9rem;
+  }
+  
+  .schedule-simple {
+    margin: 30px auto;
+  }
+  
+  .schedule-row {
+    padding: 12px 15px;
+  }
+  
+  .schedule-time {
+    font-size: 0.85rem;
+    min-width: 60px;
+  }
+  
+  .schedule-divider {
+    margin: 0 15px;
+  }
+  
+  .schedule-event {
+    font-size: 0.95rem;
+  }
+  
+  .collaborators-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .collaborator-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}

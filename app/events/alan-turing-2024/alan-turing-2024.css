@@ -1,0 +1,51 @@
+/* Import global styling */
+@import '../../home.css';
+@import '../asvoff-2024/asvoff-2024.css';
+
+/* ALAN TURING-SPECIFIC OVERRIDES */
+.event-hero {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/founders/leo_founder.jpg');
+  background-position: center 25%;
+}
+
+.event-meta-item:nth-child(4) .event-meta-value {
+  color: #0b6bb8;
+  font-weight: 500;
+}
+
+.event-quote {
+  border-left-color: #0b6bb8;
+}
+
+.event-cta {
+  background-color: #f0f7ff;
+  border-color: #d0e5ff;
+}
+
+.event-button {
+  background-color: #0b6bb8;
+  border-color: #0b6bb8;
+}
+
+.event-button:hover {
+  color: #0b6bb8;
+}
+
+.event-button.secondary {
+  color: #0b6bb8;
+}
+
+.event-button.secondary:hover {
+  background-color: #0b6bb8;
+}
+
+/* Customize image container for this page */
+.event-image-container {
+  max-width: 500px;
+  margin: 30px auto 40px;
+}
+
+.event-image {
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}

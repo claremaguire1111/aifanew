@@ -938,6 +938,139 @@
   font-weight: 500;
 }
 
+/* EVENT INVITES SECTION */
+.event-invites-section {
+  padding: 60px 20px;
+  background-color: var(--white);
+}
+
+.event-invites-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 400;
+  position: relative;
+}
+
+.event-invites-title:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--black);
+  margin: 15px auto 0;
+}
+
+.event-invites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.event-invite-item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: var(--black);
+}
+
+.event-invite-item:hover {
+  transform: translateY(-5px);
+}
+
+.event-invite-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 140%; /* Taller aspect ratio for invite format */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+}
+
+.event-invite-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.event-invite-name {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.event-invite-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.event-invite-date {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.event-invite-time {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.event-invite-location {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.event-invite-desc {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.event-invite-rsvp {
+  font-size: 0.8rem;
+  border: 1px solid white;
+  padding: 8px 15px;
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 992px) {
+  .event-invites-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .event-invites-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+  }
+  
+  .event-invite-image {
+    padding-bottom: 150%; /* Slightly taller on mobile */
+  }
+}
+
 /* ANIMATION */
 .fade-in {
   opacity: 0;

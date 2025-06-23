@@ -908,20 +908,21 @@ export default function SocialMapsForever() {
         </div>
       </section>
       
-      {/* EVENT INVITES SECTION */}
+      {/* EVENT INVITES SECTION - Updated */}
       <section className="event-invites-section">
         <h2 className="event-invites-title fade-in">Event Invites</h2>
         <div className="event-invites-grid fade-in">
           {/* House of Lords Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover" }}>
             <div className="event-invite-content">
-              <h3 className="event-invite-name">House of Lords</h3>
+              <h3 className="event-invite-name">AIFA x House of Lords</h3>
               <div className="event-invite-details">
                 <p className="event-invite-date">July 22, 2025</p>
                 <p className="event-invite-time">8:00 AM</p>
                 <p className="event-invite-location">House of Lords, London</p>
                 <p className="event-invite-desc">AIFA Awards 2025 Morning Breakfast</p>
                 <p className="event-invite-invitation">Invitation Only</p>
+                {/* No RSVP information for this invite */}
               </div>
             </div>
           </div>
@@ -929,13 +930,14 @@ export default function SocialMapsForever() {
           {/* Asprey Studios Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover" }}>
             <div className="event-invite-content">
-              <h3 className="event-invite-name">Asprey Studios</h3>
+              <h3 className="event-invite-name">AIFA x Asprey Studios</h3>
               <div className="event-invite-details">
                 <p className="event-invite-date">July 22, 2025</p>
                 <p className="event-invite-time">11:00 AM - 1:00 PM</p>
                 <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
                 <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
                 <p className="event-invite-invitation">Invitation Only</p>
+                {/* No RSVP information for this invite */}
               </div>
             </div>
           </div>
@@ -943,7 +945,7 @@ export default function SocialMapsForever() {
           {/* art'otel Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover" }}>
             <div className="event-invite-content">
-              <h3 className="event-invite-name">art'otel</h3>
+              <h3 className="event-invite-name">AIFA x art'otel</h3>
               <div className="event-invite-details">
                 <p className="event-invite-date">July 19, 2025</p>
                 <p className="event-invite-time">7:00 PM - 10:00 PM</p>

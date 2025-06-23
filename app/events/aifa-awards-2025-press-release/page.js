@@ -298,7 +298,7 @@ export default function PressRelease() {
             <div className="download-media-section">
               <a href="/images/filmstills/STILL01 Everyone is Chair.jpg" download="Everyone_is_Chair.jpg" className="media-kit-button">Everyone is Chair</a>
               <a href="/images/filmstills/STILL03 third_impact.jpg" download="Third_Impact.jpg" className="media-kit-button">Third Impact</a>
-              <a href="#" download className="media-kit-button">All Images (ZIP)</a>
+              <a href="https://drive.google.com/drive/folders/1BMGgnzfr4ejwsY4oeklJpx0fXDIIFsYP" target="_blank" rel="noopener noreferrer" className="media-kit-button">All Images (Google Drive)</a>
             </div>
           </div>
           

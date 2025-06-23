@@ -5,6 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import "./social-maps-forever.css";
 import AIFAImage from "../components/AIFAImage";
+import Image from "next/image";
 
 // Special component just for the Innovate UK image to ensure it loads correctly
 function InnovateUKImage() {
@@ -913,7 +914,7 @@ export default function SocialMapsForever() {
         <div className="event-invites-grid fade-in">
           {/* House of Lords Invite */}
           <div className="event-invite-item">
-            <img src="/images/Tartan_Lords.png" alt="House of Lords Tartan" className="event-invite-bg" />
+            <AIFAImage src="/images/Tartan_Lords.png" alt="House of Lords Tartan" className="event-invite-bg" />
             <div className="event-invite-content">
               <h3 className="event-invite-name">House of Lords</h3>
               <div className="event-invite-details">
@@ -921,6 +922,7 @@ export default function SocialMapsForever() {
                 <p className="event-invite-time">8:00 AM</p>
                 <p className="event-invite-location">House of Lords, London</p>
                 <p className="event-invite-desc">AIFA Awards 2025 Morning Breakfast</p>
+                <p className="event-invite-invitation">Invitation Only</p>
                 <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
@@ -928,7 +930,7 @@ export default function SocialMapsForever() {
 
           {/* Asprey Studios Invite */}
           <div className="event-invite-item">
-            <img src="/images/Tartan_Asprey.png" alt="Asprey Studios Tartan" className="event-invite-bg" />
+            <AIFAImage src="/images/Tartan_Asprey.png" alt="Asprey Studios Tartan" className="event-invite-bg" />
             <div className="event-invite-content">
               <h3 className="event-invite-name">Asprey Studios</h3>
               <div className="event-invite-details">
@@ -936,6 +938,7 @@ export default function SocialMapsForever() {
                 <p className="event-invite-time">11:00 AM - 1:00 PM</p>
                 <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
                 <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
+                <p className="event-invite-invitation">Invitation Only</p>
                 <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
               </div>
             </div>
@@ -943,7 +946,7 @@ export default function SocialMapsForever() {
 
           {/* art'otel Invite */}
           <div className="event-invite-item">
-            <img src="/images/tartan_hotel.png" alt="Art'otel Tartan" className="event-invite-bg" />
+            <AIFAImage src="/images/tartan_hotel.png" alt="Art'otel Tartan" className="event-invite-bg" />
             <div className="event-invite-content">
               <h3 className="event-invite-name">art'otel</h3>
               <div className="event-invite-details">

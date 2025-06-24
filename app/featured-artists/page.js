@@ -98,10 +98,8 @@ export default function FeaturedArtists() {
         </div>
         <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
           <Link href="/" onClick={toggleMenu}>Home</Link>
-          <Link href="/awards/2025" onClick={toggleMenu}>Awards 2025</Link>
-          <Link href="/awards/2024" onClick={toggleMenu}>Awards 2024</Link>
-          <Link href="/education" onClick={toggleMenu}>Education</Link>
-          <Link href="/events" onClick={toggleMenu}>Events</Link>
+          <Link href="/awards" onClick={toggleMenu}>Awards</Link>
+          <Link href="/about" onClick={toggleMenu}>About</Link>
         </nav>
       </header>
 
@@ -211,91 +209,43 @@ export default function FeaturedArtists() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="contact-us-section" id="contact">
+      <section className="contact-us-section">
         <div className="footer-column">
-          <h3>Get in Touch</h3>
+          <h3>Contact</h3>
           <ul>
-            <li>
-              <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
-            </li>
+            <li><a href="mailto:aifa@aifilm.academy">Email Us</a></li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Navigate</h3>
           <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/awards/2025">Awards 2025</Link>
-            </li>
-            <li>
-              <Link href="/awards/2024">Awards 2024</Link>
-            </li>
-            <li>
-              <Link href="/education">Education</Link>
-            </li>
-            <li>
-              <Link href="/events">Events</Link>
-            </li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/awards/2025">Awards 2025</Link></li>
+            <li><Link href="/awards/2024">Awards 2024</Link></li>
+            <li><Link href="/about">About</Link></li>
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Follow</h3>
+          <h3>Connect</h3>
           <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/aifa_ventures/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://x.com/aifaventures"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                X (Twitter)
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/aifa-ventures"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
+            <li><a href="https://instagram.com/aifa_ventures/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://x.com/aifaventures" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/aifilm-academy/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
       </section>
 
-      <div style={{ 
-        padding: "20px 0", 
-        borderTop: "1px solid var(--medium-grey)",
-        position: "relative"
-      }}>
-        <div style={{ 
-          display: "flex", 
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100%",
-          marginBottom: "15px"
-        }}>
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "15px"
-          }}>
-            <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
-            <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
+      <div className="copyright-footer">
+        <div className="copyright-container">
+          <div className="support-logo">
+            <span>Supported by</span>
+            <img 
+              src="/images/support/innovateuk.jpg" 
+              alt="Innovate UK" 
+              style={{ height: "20px", maxHeight: "20px", width: "auto" }}
+            />
           </div>
-          <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
+          <p className="copyright-text">© {new Date().getFullYear()} AIFA Ventures. All rights reserved.</p>
         </div>
       </div>
     </div>

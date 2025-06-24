@@ -62,33 +62,33 @@ export default function Events() {
       date: "19",
       month: "JUL",
       year: "2025",
-      title: "AIFA Awards 2025",
+      title: "AIFA x art'otel London Hoxton",
       time: "7:00 PM - 10:00 PM",
-      location: "art'otel London Hoxton, Powered by Radisson Hotels, 1-3 Rivington St, London EC2A 3DT, UK",
-      description: "The main ceremony for the AIFA Awards 2025, celebrating excellence in AI-generated filmmaking with VIP screenings and exclusive presentations.",
-      tags: ["Public", "WIRED Summer Labs"]
+      location: "art'otel London Hoxton, 1-3 Rivington St, London EC2A 3DT, UK",
+      description: "AIFA Awards 2025 Ceremony - The main ceremony for the AIFA Awards 2025, celebrating excellence in AI-generated filmmaking with VIP screenings and exclusive presentations.",
+      tags: ["Invitation Only", "WIRED Summer Labs"]
     },
     {
       id: 3,
       date: "22",
       month: "JUL",
       year: "2025",
-      title: "Invite Only Morning Breakfast",
-      time: "8:00 AM - 10:00 AM",
-      location: "Private location",
-      description: "AIFA will be hosting an invite-only breakfast in London to hold a discussion regarding the future of technology within the creative industries.",
-      tags: ["Private", "WIRED Summer Labs"]
+      title: "AIFA Private Breakfast",
+      time: "8:00 AM",
+      location: "Private Location, London",
+      description: "AIFA Awards 2025 Morning Breakfast - An invite-only breakfast in London to hold a discussion regarding the future of technology within the creative industries.",
+      tags: ["Invitation Only", "WIRED Summer Labs"]
     },
     {
       id: 4,
       date: "22",
       month: "JUL",
       year: "2025",
-      title: "Asprey Studios Event",
+      title: "AIFA x Asprey Studios",
       time: "11:00 AM - 1:00 PM",
-      location: "Asprey Studios, London",
-      description: "An invitation-only gathering at Asprey Studios to celebrate the future of creativity and technology, bringing together innovators and thought leaders.",
-      tags: ["Invite Only", "WIRED Summer Labs"]
+      location: "11 Bruton Pl, London W1J 6LT",
+      description: "AIFA Awards 2025 Exhibition - An invitation-only gathering at Asprey Studios to celebrate the future of creativity and technology, bringing together innovators and thought leaders.",
+      tags: ["Invitation Only", "WIRED Summer Labs"]
     }
   ];
   
@@ -211,6 +211,7 @@ export default function Events() {
       <Head>
         <title>Events | AIFA</title>
         <meta name="description" content="Discover upcoming AIFA events, including the AIFA Awards 2025 ceremony, workshops, lectures, and exclusive gatherings." />
+        <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js" async></script>
       </Head>
       
       {/* HEADER */}
@@ -297,18 +298,34 @@ export default function Events() {
                     <span key={index} className={`event-tag ${tag.toLowerCase().replace(' ', '-')}-tag`}>{tag}</span>
                   ))}
                   <div className="event-buttons">
-                    {event.title === "AIFA Awards 2025" ? (
+                    {event.title === "AIFA x art'otel London Hoxton" ? (
                       <Link href="/events/artotel-awards-2025" className="event-button">Event Page</Link>
-                    ) : event.title === "Invite Only Morning Breakfast" ? (
+                    ) : event.title === "AIFA Private Breakfast" ? (
                       <Link href="/events/morning-breakfast-2025" className="event-button">Event Page</Link>
                     ) : event.title === "AIFA Co-Founders Guest Lecture At Sotheby's Institute" ? (
                       <Link href="/events/sothebys-2025" className="event-button">Event Page</Link>
-                    ) : event.title === "Asprey Studios Event" ? (
+                    ) : event.title === "AIFA x Asprey Studios" ? (
                       <Link href="/events/asprey-2025" className="event-button">Event Page</Link>
                     ) : (
                       <Link href="#" className="event-button">Event Page</Link>
                     )}
-                    <a href="#" className="event-button secondary">Request Invitation</a>
+                    {event.title === "AIFA x art'otel London Hoxton" ? (
+                      <a 
+                        href="https://lu.ma/event/evt-RqYMwDBNqf0Xuvb" 
+                        className="event-button secondary"
+                      >
+                        Register Now
+                      </a>
+                    ) : event.title === "AIFA x Asprey Studios" ? (
+                      <a 
+                        href="https://lu.ma/event/evt-ycbJMAMjVtMwuM4" 
+                        className="event-button secondary"
+                      >
+                        Register Now
+                      </a>
+                    ) : (
+                      <a href="#" className="event-button secondary">Request Invitation</a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -412,6 +429,21 @@ export default function Events() {
           <div className="press-buttons">
             <Link href="/events/media-pass" className="press-button">Apply for Media Pass</Link>
             <Link href="/events/aifa-awards-2025-press-release" className="press-button secondary">View Press Release</Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* SPONSORSHIP SECTION */}
+      <section className="press-section" style={{ backgroundColor: "var(--light-grey)" }}>
+        <div className="press-container fade-in">
+          <h2 className="section-header">Sponsorship Opportunities</h2>
+          <p className="press-description">
+            Partner with AIFA to connect your brand with innovation and creativity. Our sponsorship packages offer
+            exclusive benefits including named award sponsorship, brand visibility, and access to our creative community.
+          </p>
+          <div className="press-buttons">
+            <Link href="/events/very-nice-sponsor-package" className="press-button">Vultr Sponsorship Package</Link>
+            <a href="mailto:aifa@aifilm.academy?subject=Sponsorship%20Inquiry" className="press-button secondary">Contact for Sponsorship</a>
           </div>
         </div>
       </section>

@@ -1,0 +1,648 @@
+/* Import global styling */
+@import '../../home.css';
+
+/* SPONSOR PACKAGE SPECIFIC STYLES */
+.sponsor-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sponsor-content {
+  flex: 1;
+}
+
+.sponsor-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  background-color: var(--black);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/aifa_palace.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sponsor-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--white);
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.sponsor-hero-title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sponsor-hero-subtitle {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.sponsor-hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 30px auto 0;
+  max-width: 700px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.sponsor-wrapper {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.luxury-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.luxury-image {
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  height: 220px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.luxury-image:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.luxury-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.luxury-image:hover img {
+  transform: scale(1.05);
+}
+
+.benefits-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.benefits-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.benefits-intro h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: var(--black);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  position: relative;
+  padding: 30px;
+  background-color: var(--white);
+  border: 1px solid var(--light-grey);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  text-align: left;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border-color: var(--medium-grey);
+}
+
+.benefit-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.benefit-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--dark-grey);
+}
+
+.section-divider {
+  height: 1px;
+  background-color: var(--light-grey);
+  margin: 80px auto;
+  width: 60%;
+  opacity: 0.7;
+}
+
+.award-showcase {
+  margin: 60px 0 80px;
+}
+
+.award-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.award-image {
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  height: 300px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.award-image:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.award-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.award-image:hover img {
+  transform: scale(1.05);
+}
+
+.artists-section {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.artists-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.artists-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: var(--dark-grey);
+  line-height: 1.6;
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.artists-grid-featured {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.artist-card {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.artist-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.artist-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-image {
+  transform: scale(1.05);
+}
+
+.artist-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.artist-name {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.artist-bio {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.testimonial-section {
+  margin: 80px 0;
+  text-align: center;
+}
+
+.testimonial-quote {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--light-grey);
+  border-radius: 2px;
+  position: relative;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  font-size: 6rem;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  color: rgba(0,0,0,0.1);
+  font-family: Georgia, serif;
+}
+
+.testimonial-quote p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.quote-author {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-grey);
+}
+
+.gallery-showcase {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.gallery-showcase h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.gallery-showcase h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: var(--black);
+}
+
+.featured-artists-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.featured-artist-image {
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.featured-artist-image:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.featured-artist-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.featured-artist-image:hover img {
+  transform: scale(1.05);
+}
+
+.award-images-horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.award-image-large {
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.award-image-large:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.award-image-large img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.award-image-large:hover img {
+  transform: scale(1.05);
+}
+
+.final-image-showcase {
+  margin: 80px 0 40px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.final-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.final-image-showcase:hover .final-image {
+  transform: scale(1.03);
+}
+
+.cta-section {
+  text-align: center;
+  margin: 80px 0 40px;
+  padding: 60px 20px;
+  background-color: var(--light-grey);
+  border-radius: 2px;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: var(--dark-grey);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.sponsor-footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: var(--white);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* AIFA Awards Grid */
+.aifa-awards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 30px auto;
+}
+
+.award-grid-item {
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 150px;
+}
+
+.award-grid-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.award-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.award-grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .luxury-image-grid, 
+  .award-images, 
+  .featured-artists-showcase, 
+  .award-images-horizontal,
+  .aifa-awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsor-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .sponsor-hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .artists-grid,
+  .artists-grid-featured {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-hero-title {
+    font-size: 2rem;
+  }
+  
+  .sponsor-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .luxury-image-grid, 
+  .award-images, 
+  .featured-artists-showcase, 
+  .award-images-horizontal {
+    grid-template-columns: 1fr;
+  }
+  
+  .aifa-awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .award-grid-item {
+    height: 120px;
+  }
+  
+  .benefit-item {
+    padding: 20px;
+  }
+  
+  .testimonial-quote {
+    padding: 30px 20px;
+  }
+}

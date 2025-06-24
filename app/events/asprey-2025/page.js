@@ -50,6 +50,7 @@ export default function Asprey2025Event() {
       <Head>
         <title>Asprey Studios Event 2025 | AIFA Events</title>
         <meta name="description" content="An invitation-only gathering at Asprey Studios to celebrate the future of creativity and technology, bringing together innovators and thought leaders." />
+        <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js" async></script>
       </Head>
       
       {/* HEADER */}
@@ -83,6 +84,31 @@ export default function Asprey2025Event() {
         <div className="event-hero-content">
           <h1 className="event-hero-title">Asprey Studios Event</h1>
           <p className="event-hero-subtitle">Celebrating the Future of Creativity and Technology</p>
+          <div className="event-hero-buttons" style={{ marginTop: "20px" }}>
+            <a
+              href="https://lu.ma/event/evt-ycbJMAMjVtMwuM4"
+              className="luma-checkout--button event-button"
+              data-luma-action="checkout"
+              data-luma-event-id="evt-ycbJMAMjVtMwuM4"
+              style={{ 
+                display: "inline-block", 
+                padding: "8px 20px", 
+                backgroundColor: "#000", 
+                color: "#fff", 
+                textDecoration: "none", 
+                marginTop: "10px", 
+                fontSize: "0.9rem",
+                fontWeight: "300", 
+                textTransform: "uppercase", 
+                letterSpacing: "1px",
+                borderRadius: "2px",
+                boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                transition: "all 0.3s ease"
+              }}
+            >
+              Register
+            </a>
+          </div>
         </div>
       </section>
 

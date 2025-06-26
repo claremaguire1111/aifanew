@@ -947,21 +947,74 @@ export default function SocialMapsForever() {
           {/* art'otel Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
             <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
-                AIFA x art'otel London Hoxton
-              </h3>
-              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '20px', boxSizing: 'border-box' }}>
-                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 15px 0', textAlign: 'center', textTransform: 'uppercase', letterSpacing: '1px' }}>AIFA Awards 2025 Ceremony</p>
-                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0', textAlign: 'center' }}>July 19, 2025</p>
-                <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0', textAlign: 'center' }}>5:00 PM - 11:00 PM</p>
-                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 15px 0', textAlign: 'center' }}>1-3 Rivington St, London EC2A 3DT</p>
-                <p className="event-invite-invitation" style={{ fontWeight: '300', margin: '0 0 20px 0', textAlign: 'center' }}>Invitation Only</p>
-                <div style={{ textAlign: 'center' }}>
-                  <img 
-                    src="/images/arthotel_London Hoxton_White.png" 
-                    alt="art'otel London Hoxton Logo" 
-                    style={{ height: '18px', objectFit: 'contain' }}
-                  />
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <div style={{ fontSize: '18px', color: 'white', margin: '0 5px' }}>×</div>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel London Hoxton Logo" 
+                  style={{ height: '18px', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>AIFA Awards 2025 Ceremony</p>
+                
+                <div style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  maxWidth: '200px',
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  padding: '8px 0 0'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>July 19, 2025</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>5:00 PM - 11:00 PM</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 8px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>1-3 Rivington St, London EC2A 3DT</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0',
+                    textAlign: 'center',
+                    fontSize: '11px',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                    borderTop: '1px solid rgba(255,255,255,0.2)',
+                    paddingTop: '8px'
+                  }}>Invitation Only</p>
                 </div>
               </div>
             </div>

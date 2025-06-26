@@ -234,7 +234,14 @@ export default function ArtotelAwards() {
           <h1 className="artotel-hero-title">AIFA Awards 2025</h1>
           <p className="artotel-hero-subtitle">In collaboration with Factory 4</p>
           <p className="artotel-hero-date">July 19, 2025</p>
-          <p className="artotel-hero-location">art'otel London Hoxton, 1-3 Rivington St, London EC2A 3DT</p>
+          <p className="artotel-hero-location" style={{ marginBottom: '20px' }}>
+            <img
+              src="/images/arthotel_London Hoxton_White.png"
+              alt="art'otel London Hoxton Logo"
+              style={{ height: '25px', width: 'auto', display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }}
+            />
+            <span style={{ verticalAlign: 'middle' }}>1-3 Rivington St, London EC2A 3DT</span>
+          </p>
           <div className="artotel-hero-buttons">
             <a
               href="https://lu.ma/event/evt-RqYMwDBNqf0Xuvb"
@@ -378,8 +385,17 @@ export default function ArtotelAwards() {
         <div className="venue-container">
           <div className="venue-info fade-in">
             <h2 className="venue-title">Event Venue</h2>
+            
+            <div style={{ marginBottom: '15px' }}>
+              <img 
+                src="/images/arthotel_London Hoxton_Black.jpg" 
+                alt="art'otel London Hoxton Logo" 
+                style={{ height: '30px', width: 'auto' }}
+              />
+            </div>
+            
             <p className="venue-description">
-              art'otel London Hoxton is a contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district.
+              A contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district.
               This stunning venue combines modern design with artistic flair, providing the perfect backdrop for our celebration
               of innovation in AI-generated filmmaking and digital art.
             </p>

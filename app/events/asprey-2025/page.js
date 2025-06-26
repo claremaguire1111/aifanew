@@ -48,8 +48,8 @@ export default function Asprey2025Event() {
   return (
     <div className="event-page">
       <Head>
-        <title>Asprey Studios Event 2025 | AIFA Events</title>
-        <meta name="description" content="An invitation-only gathering at Asprey Studios to celebrate the future of creativity and technology, bringing together innovators and thought leaders." />
+        <title>Asprey Studio Event 2025 | AIFA Events</title>
+        <meta name="description" content="An invitation-only gathering at Asprey Studio to celebrate the future of creativity and technology, bringing together innovators and thought leaders." />
         <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js" async></script>
       </Head>
       
@@ -82,7 +82,7 @@ export default function Asprey2025Event() {
       {/* HERO SECTION */}
       <section className="event-hero">
         <div className="event-hero-content">
-          <h1 className="event-hero-title">Asprey Studios Event</h1>
+          <h1 className="event-hero-title">Asprey Studio Event</h1>
           <p className="event-hero-subtitle">Celebrating the Future of Creativity and Technology</p>
           <div className="event-hero-buttons" style={{ marginTop: "20px" }}>
             <a
@@ -117,7 +117,7 @@ export default function Asprey2025Event() {
         <div className="event-container">
           <h2 className="event-title fade-in">Exclusive Gathering of Creative Innovators</h2>
           <p className="event-description fade-in">
-            An invitation-only gathering at the prestigious Asprey Studios to celebrate the future of creativity and technology, bringing together thought leaders, innovators, and visionaries from across creative industries.
+            An invitation-only gathering at the prestigious Asprey Studio to celebrate the future of creativity and technology, bringing together thought leaders, innovators, and visionaries from across creative industries.
           </p>
           
           {/* EVENT META */}
@@ -132,7 +132,7 @@ export default function Asprey2025Event() {
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Location</span>
-              <span className="event-meta-value">Asprey Studios, London</span>
+              <span className="event-meta-value">Asprey Studio</span>
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Category</span>
@@ -142,17 +142,17 @@ export default function Asprey2025Event() {
           
           {/* EVENT IMAGE */}
           <div className="event-image-container fade-in">
-            <img src="/images/aspreystudios_events.png" alt="Asprey Studios Event" className="event-image" />
+            <img src="/images/aspreystudios_events.png" alt="Asprey Studio Event" className="event-image" />
           </div>
           
           {/* EVENT DETAILS */}
           <div className="event-details">
             <h3 className="fade-in">About the Event</h3>
             <p className="fade-in">
-              Following the success of the Morning Breakfast discussion, AIFA will host an exclusive gathering at the prestigious Asprey Studios. This curated event brings together a select group of creative professionals, technologists, and industry leaders for a celebration of innovation and exchange of forward-thinking ideas.
+              Following the success of the Morning Breakfast discussion, AIFA will host an exclusive gathering at the prestigious Asprey Studio. This curated event brings together a select group of creative professionals, technologists, and industry leaders for a celebration of innovation and exchange of forward-thinking ideas.
             </p>
             <p className="fade-in">
-              Asprey Studios, with its rich heritage in luxury craftsmanship and commitment to excellence, provides the perfect setting for this high-level conversation about the future of creativity and technology. The intimate venue allows for meaningful connections and conversations that wouldn't be possible in larger settings.
+              Asprey Studio, with its rich heritage in luxury craftsmanship and commitment to excellence, provides the perfect setting for this high-level conversation about the future of creativity and technology. The intimate venue allows for meaningful connections and conversations that wouldn't be possible in larger settings.
             </p>
             
             <h3 className="fade-in">Event Format</h3>
@@ -165,13 +165,13 @@ export default function Asprey2025Event() {
             </ul>
             
             <div className="event-quote fade-in">
-              <p>"Asprey Studios represents a perfect blend of heritage craftsmanship and forward-thinking innovation—qualities that mirror our own approach at AIFA. This gathering is designed to create the kind of intimate, high-quality connections that truly drive creative innovation forward."</p>
+              <p>"Asprey Studio represents a perfect blend of heritage craftsmanship and forward-thinking innovation—qualities that mirror our own approach at AIFA. This gathering is designed to create the kind of intimate, high-quality connections that truly drive creative innovation forward."</p>
               <cite>— AIFA Co-Founders</cite>
             </div>
             
-            <h3 className="fade-in">About Asprey Studios</h3>
+            <h3 className="fade-in">About Asprey Studio</h3>
             <p className="fade-in">
-              Asprey, established in 1781, has a rich heritage in luxury craftsmanship. Asprey Studios continues this tradition while embracing innovation, creating a unique space where heritage meets contemporary creative practice. The Studios serve as a hub for creative excellence, making it an ideal venue for conversations about the future of creativity.
+              Asprey, established in 1781, has a rich heritage in luxury craftsmanship. Asprey Studio continues this tradition while embracing innovation, creating a unique space where heritage meets contemporary creative practice. The Studio serves as a hub for creative excellence, making it an ideal venue for conversations about the future of creativity.
             </p>
             <p className="fade-in">
               The venue's elegant environment and commitment to the highest standards of quality align perfectly with AIFA's mission to champion excellence in creative expression enhanced by technology.

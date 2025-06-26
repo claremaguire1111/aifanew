@@ -84,10 +84,10 @@ export default function Events() {
       date: "22",
       month: "JUL",
       year: "2025",
-      title: "AIFA x Asprey Studios",
+      title: "AIFA x Asprey Studio",
       time: "11:00 AM - 1:00 PM",
-      location: "11 Bruton Pl, London W1J 6LT",
-      description: "AIFA Awards 2025 Exhibition - An invitation-only gathering at Asprey Studios to celebrate the future of creativity and technology, bringing together innovators and thought leaders.",
+      location: "1st floor, 34-36 Bruton Street, London W1J 6QX",
+      description: "AIFA Awards 2025 Exhibition - An invitation-only gathering at Asprey Studio to celebrate the future of creativity and technology, bringing together innovators and thought leaders.",
       tags: ["Invitation Only", "WIRED Summer Labs"]
     }
   ];
@@ -167,7 +167,7 @@ export default function Events() {
       year: "2024",
       title: "AIFA x Sotheby's Institute Panel",
       time: "6:30 PM - 8:30 PM",
-      location: "Asprey Studios, London",
+      location: "Asprey Studio, London",
       description: "A collaborative panel discussion between AIFA and Sotheby's Institute exploring the intersection of fine art, luxury, and AI-generated content.",
       tags: ["Public"]
     },
@@ -304,7 +304,7 @@ export default function Events() {
                       <Link href="/events/morning-breakfast-2025" className="event-button">Event Page</Link>
                     ) : event.title === "AIFA Co-Founders Guest Lecture At Sotheby's Institute" ? (
                       <Link href="/events/sothebys-2025" className="event-button">Event Page</Link>
-                    ) : event.title === "AIFA x Asprey Studios" ? (
+                    ) : event.title === "AIFA x Asprey Studio" ? (
                       <Link href="/events/asprey-2025" className="event-button">Event Page</Link>
                     ) : (
                       <Link href="#" className="event-button">Event Page</Link>
@@ -316,7 +316,7 @@ export default function Events() {
                       >
                         Register Now
                       </a>
-                    ) : event.title === "AIFA x Asprey Studios" ? (
+                    ) : event.title === "AIFA x Asprey Studio" ? (
                       <a 
                         href="https://lu.ma/event/evt-ycbJMAMjVtMwuM4" 
                         className="event-button secondary"

@@ -47,8 +47,8 @@ export default function AspreyEvent() {
   return (
     <div className="event-page">
       <Head>
-        <title>AIFA x Sotheby's at Asprey Studios | AIFA Events</title>
-        <meta name="description" content="A collaborative panel discussion between AIFA and Sotheby's Institute exploring the intersection of fine art, luxury, and AI-generated content at Asprey Studios, London." />
+        <title>AIFA x Sotheby's at Asprey Studio | AIFA Events</title>
+        <meta name="description" content="A collaborative panel discussion between AIFA and Sotheby's Institute exploring the intersection of fine art, luxury, and AI-generated content at Asprey Studio, London." />
       </Head>
       
       {/* HEADER */}
@@ -80,7 +80,7 @@ export default function AspreyEvent() {
       {/* HERO SECTION */}
       <section className="event-hero">
         <div className="event-hero-content">
-          <h1 className="event-hero-title">Asprey Studios Event</h1>
+          <h1 className="event-hero-title">Asprey Studio Event</h1>
           <p className="event-hero-subtitle">AIFA x Sotheby's Institute Panel</p>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function AspreyEvent() {
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Location</span>
-              <span className="event-meta-value">Asprey Studios, London</span>
+              <span className="event-meta-value">Asprey Studio, 1st floor, 34-36 Bruton Street, London W1J 6QX</span>
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Category</span>
@@ -115,17 +115,17 @@ export default function AspreyEvent() {
           
           {/* EVENT IMAGE */}
           <div className="event-image-container fade-in">
-            <img src="/images/asprey_24_events.jpg" alt="AIFA x Sotheby's at Asprey Studios" className="event-image" />
+            <img src="/images/asprey_24_events.jpg" alt="AIFA x Sotheby's at Asprey Studio" className="event-image" />
           </div>
           
           {/* EVENT DETAILS */}
           <div className="event-details">
             <h3 className="fade-in">About the Event</h3>
             <p className="fade-in">
-              Hosted in the elegant surroundings of Asprey Studios, this invitation-only event brought together a select audience of art collectors, luxury brand representatives, gallerists, and technology innovators. The panel discussion created a platform for meaningful dialogue about how AI is reshaping traditional notions of art creation, valuation, and collection in the luxury sector.
+              Hosted in the elegant surroundings of Asprey Studio, this invitation-only event brought together a select audience of art collectors, luxury brand representatives, gallerists, and technology innovators. The panel discussion created a platform for meaningful dialogue about how AI is reshaping traditional notions of art creation, valuation, and collection in the luxury sector.
             </p>
             <p className="fade-in">
-              Asprey Studios, known for its rich heritage in luxury craftsmanship, provided the perfect setting for this conversation about the intersection of tradition and innovation. The venue's commitment to excellence in artistry resonated with the event's exploration of how AI tools are being integrated into high-end creative processes.
+              Asprey Studio, known for its rich heritage in luxury craftsmanship, provided the perfect setting for this conversation about the intersection of tradition and innovation. The venue's commitment to excellence in artistry resonated with the event's exploration of how AI tools are being integrated into high-end creative processes.
             </p>
             
             <h3 className="fade-in">Panel Discussion Topics</h3>
@@ -138,13 +138,13 @@ export default function AspreyEvent() {
             </ul>
             
             <div className="event-quote fade-in">
-              <p>"The Asprey Studios event represented a significant milestone in the ongoing dialogue between traditional art institutions and AI innovators. By bringing together Sotheby's Institute and AIFA, we created a unique opportunity to explore how AI is being embraced by the luxury sector while respecting the rich traditions of fine art."</p>
+              <p>"The Asprey Studio event represented a significant milestone in the ongoing dialogue between traditional art institutions and AI innovators. By bringing together Sotheby's Institute and AIFA, we created a unique opportunity to explore how AI is being embraced by the luxury sector while respecting the rich traditions of fine art."</p>
               <cite>— Leo Crane, Co-Founder, AIFA</cite>
             </div>
             
             <h3 className="fade-in">Cultural Significance</h3>
             <p className="fade-in">
-              This collaboration between AIFA and Sotheby's Institute marks an important step in bridging the worlds of traditional art education and emerging AI creativity. By hosting the event at Asprey Studios, a name synonymous with luxury craftsmanship, the discussion was grounded in a context that values both heritage and innovation.
+              This collaboration between AIFA and Sotheby's Institute marks an important step in bridging the worlds of traditional art education and emerging AI creativity. By hosting the event at Asprey Studio, a name synonymous with luxury craftsmanship, the discussion was grounded in a context that values both heritage and innovation.
             </p>
             <p className="fade-in">
               The exclusive nature of the event allowed for candid conversations about the challenges and opportunities presented by AI in luxury contexts, fostering connections between established institutions and forward-thinking creators that will continue to shape how AI is integrated into high-end creative sectors.

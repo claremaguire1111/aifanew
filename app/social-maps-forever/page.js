@@ -913,49 +913,575 @@ export default function SocialMapsForever() {
         <h2 className="event-invites-title fade-in">Event Invites</h2>
         <div className="event-invites-grid fade-in">
           {/* House of Lords Invite */}
-          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover" }}>
-            <div className="event-invite-content">
-              <h3 className="event-invite-name" style={{ fontWeight: 'bold', color: 'white' }}>
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
                 AIFA x House of Lords
               </h3>
-              <div className="event-invite-details">
-                <p className="event-invite-date">July 22, 2025</p>
-                <p className="event-invite-time">8:00 AM</p>
-                <p className="event-invite-location">House of Lords, London</p>
-                <p className="event-invite-desc">AIFA Awards 2025 Morning Breakfast</p>
-                <p className="event-invite-invitation">Invitation Only</p>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 22, 2025</p>
+                <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>8:30 - 10:00 AM</p>
+                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>House of Lords, London</p>
+                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Morning Breakfast</p>
+                <p className="event-invite-invitation" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>Invitation Only</p>
               </div>
             </div>
           </div>
 
-          {/* Asprey Studios Invite */}
-          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover" }}>
-            <div className="event-invite-content">
-              <h3 className="event-invite-name" style={{ fontWeight: 'bold', color: 'white' }}>
-                AIFA x Asprey Studios
+          {/* Asprey Studio Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
+                AIFA x Asprey Studio
               </h3>
-              <div className="event-invite-details">
-                <p className="event-invite-date">July 22, 2025</p>
-                <p className="event-invite-time">11:00 AM - 1:00 PM</p>
-                <p className="event-invite-location">11 Bruton Pl, London W1J 6LT</p>
-                <p className="event-invite-desc">AIFA Awards 2025 Exhibition</p>
-                <p className="event-invite-invitation">Invitation Only</p>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 22, 2025</p>
+                <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>10:30 AM - 12:30 PM</p>
+                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>1st floor, 34-36 Bruton Street, London W1J 6QX</p>
+                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Exhibition</p>
+                <p className="event-invite-invitation" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>Invitation Only</p>
               </div>
             </div>
           </div>
 
           {/* art'otel Invite */}
-          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover" }}>
-            <div className="event-invite-content">
-              <h3 className="event-invite-name" style={{ fontWeight: 'bold', color: 'white' }}>
-                AIFA x art'otel
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
+                AIFA x art'otel London Hoxton
               </h3>
-              <div className="event-invite-details">
-                <p className="event-invite-date">July 19, 2025</p>
-                <p className="event-invite-time">7:00 PM - 10:00 PM</p>
-                <p className="event-invite-location">1-3 Rivington St, London EC2A 3DT</p>
-                <p className="event-invite-desc">AIFA Awards 2025 Ceremony</p>
-                <p className="event-invite-rsvp">RSVP: aifa@aifilm.academy</p>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 19, 2025</p>
+                <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>5:00 PM - 11:00 PM</p>
+                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>1-3 Rivington St, London EC2A 3DT</p>
+                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Ceremony</p>
+                <p className="event-invite-invitation" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>Invitation Only</p>
+                <p className="event-invite-rsvp" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>RSVP: aifa@aifilm.academy</p>
+                <div style={{ marginTop: '15px', textAlign: 'center' }}>
+                  <img 
+                    src="/images/arthotel_London Hoxton_White.png" 
+                    alt="art'otel London Hoxton Logo" 
+                    style={{ height: '30px', maxWidth: '100%' }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* ELEGANT INVITE SECTION */}
+      <section className="elegant-invites-section" style={{ padding: '40px 20px', backgroundColor: 'black', marginTop: '20px' }}>
+        <h2 className="section-title fade-in" style={{ color: 'white', textAlign: 'center', marginBottom: '30px', fontSize: '1.5rem', fontWeight: '300' }}>Elegant Invitation Designs</h2>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
+          {/* Tartan Envelope */}
+          <div style={{ width: '350px', marginBottom: '30px' }}>
+            <div style={{ 
+              width: '100%', 
+              height: '200px', 
+              backgroundColor: '#837563', 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center',
+              position: 'relative',
+              borderRadius: '2px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }}>
+              <div style={{ 
+                position: 'absolute', 
+                top: 0, 
+                left: 0, 
+                width: '100%', 
+                height: '100%', 
+                backgroundImage: "url('/images/Tartan_Lords.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                opacity: 0.5
+              }}></div>
+              <div style={{ zIndex: 2, textAlign: 'center' }}>
+                <AIFAImage
+                  src="/images/AIFAlogo.png"
+                  alt="AIFA Logo"
+                  style={{ 
+                    filter: "brightness(0) invert(1)",
+                    height: '50px',
+                    width: 'auto',
+                    marginBottom: '15px'
+                  }}
+                />
+                <div style={{ 
+                  color: 'white', 
+                  fontSize: '18px', 
+                  fontWeight: '300', 
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase'
+                }}>
+                  JULY 2025
+                </div>
+              </div>
+            </div>
+            <p style={{ color: 'white', fontSize: '14px', textAlign: 'center', marginTop: '15px', fontWeight: '300' }}>
+              Front envelope with tartan pattern and AIFA logo
+            </p>
+          </div>
+          
+          {/* Plain Color Envelope */}
+          <div style={{ width: '350px', marginBottom: '30px' }}>
+            <div style={{ 
+              width: '100%', 
+              height: '200px', 
+              backgroundColor: '#3D5A80', 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center',
+              position: 'relative',
+              borderRadius: '2px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }}>
+              <div style={{ zIndex: 2, textAlign: 'center' }}>
+                <div style={{ 
+                  color: 'white', 
+                  fontSize: '22px', 
+                  fontWeight: '300', 
+                  letterSpacing: '3px',
+                  textTransform: 'uppercase',
+                  marginBottom: '10px'
+                }}>
+                  YOU'RE INVITED
+                </div>
+                <div style={{ 
+                  width: '40px', 
+                  height: '1px', 
+                  backgroundColor: 'white', 
+                  margin: '0 auto 10px' 
+                }}></div>
+                <div style={{ 
+                  color: 'white', 
+                  fontSize: '16px', 
+                  fontWeight: '300', 
+                  letterSpacing: '1px'
+                }}>
+                  AIFA AWARDS 2025
+                </div>
+              </div>
+            </div>
+            <p style={{ color: 'white', fontSize: '14px', textAlign: 'center', marginTop: '15px', fontWeight: '300' }}>
+              Back envelope with "You're Invited" text
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL MEDIA POST TEMPLATES */}
+      <section className="social-templates-section" style={{ padding: '40px 20px', backgroundColor: 'black', marginTop: '20px' }}>
+        <h2 className="section-title fade-in" style={{ color: 'white', textAlign: 'center', marginBottom: '30px', fontSize: '1.5rem', fontWeight: '300' }}>Social Media Post Templates</h2>
+        
+        {/* Post Type: Jury Announcement */}
+        <div style={{ maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}>
+          <h3 style={{ color: 'white', fontSize: '1.2rem', fontWeight: '300', marginBottom: '20px', letterSpacing: '1px' }}>AIFA Jury Thread Posts</h3>
+          
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
+            {/* Diane Pernet Post Template */}
+            <div style={{ width: '300px', backgroundColor: '#111', padding: '15px', borderRadius: '4px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/diane_pernet.jpg" 
+                  alt="Diane Pernet" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '18px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '24px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  DIANE<br />PERNET
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '12px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  FASHION FILM<br />PIONEER
+                </div>
+              </div>
+              <div style={{ color: 'white', textAlign: 'left', padding: '0 5px' }}>
+                <p style={{ fontSize: '14px', marginBottom: '10px', fontWeight: '400' }}>
+                  Diane Pernet
+                </p>
+                <p style={{ fontSize: '14px', color: '#aaa', lineHeight: '1.4', fontWeight: '300' }}>
+                  A visionary fashion critic and filmmaker, based in Paris<br/><br/>
+                  She pioneered the world's first fashion film festival, elevating the genre globally
+                </p>
+              </div>
+            </div>
+            
+            {/* David Sheldrick Post Template */}
+            <div style={{ width: '300px', backgroundColor: '#111', padding: '15px', borderRadius: '4px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/david_sheldrick.PNG" 
+                  alt="David Sheldrick" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '18px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '24px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  DAVID<br />SHELDRICK
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '12px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  ARTIST
+                </div>
+              </div>
+              <div style={{ color: 'white', textAlign: 'left', padding: '0 5px' }}>
+                <p style={{ fontSize: '14px', marginBottom: '10px', fontWeight: '400' }}>
+                  David Sheldrick
+                </p>
+                <p style={{ fontSize: '14px', color: '#aaa', lineHeight: '1.4', fontWeight: '300' }}>
+                  A British-Korean artist merging AI pipelines with experimental fine art<br/><br/>
+                  His collections often sell out, reflecting his innovative approach to technology and nature
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Featured Artist Post */}
+        <div style={{ maxWidth: '800px', margin: '40px auto', textAlign: 'center' }}>
+          <h3 style={{ color: 'white', fontSize: '1.2rem', fontWeight: '300', marginBottom: '20px', letterSpacing: '1px' }}>Featured Artist Post</h3>
+          
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ width: '350px', backgroundColor: '#111', padding: '15px', borderRadius: '4px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/social/Sheldrick_feature.png" 
+                  alt="David Sheldrick" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '22px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA AWARDS<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '28px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  DAVID<br />SHELDRICK
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '14px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  FEATURED<br />ARTIST
+                </div>
+              </div>
+              <div style={{ color: 'white', textAlign: 'left', padding: '0 5px' }}>
+                <p style={{ fontSize: '14px', marginBottom: '10px', fontWeight: '400' }}>
+                  🎥 Featured Artist – David Sheldrick
+                </p>
+                <p style={{ fontSize: '14px', color: '#aaa', lineHeight: '1.4', fontWeight: '300' }}>
+                  ⟡ We're shining a light on his bold fusion of AI-driven imagery, nature, and fashion.<br/><br/>
+                  ⟡ His award-winning approach truly exemplifies the spirit of AIFA 2025.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* All Jury Posts */}
+        <div style={{ maxWidth: '800px', margin: '40px auto 20px', textAlign: 'center' }}>
+          <h3 style={{ color: 'white', fontSize: '1.2rem', fontWeight: '300', marginBottom: '20px', letterSpacing: '1px' }}>All Jury Post Templates</h3>
+          
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
+            {/* Ethereal Moon */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/Ethereal_Moon.jpg" 
+                  alt="Ethereal Moon" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  ETHEREAL<br />MOON
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  ARTIST
+                </div>
+              </div>
+            </div>
+            
+            {/* Clare Maguire */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/Clare_Maguire.jpg" 
+                  alt="Clare Maguire" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  CLARE<br />MAGUIRE
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  NOPRBLM
+                </div>
+              </div>
+            </div>
+            
+            {/* Leo Crane */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/leo_crane.jpg" 
+                  alt="Leo Crane" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  LEO<br />CRANE
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  PRODUCER
+                </div>
+              </div>
+            </div>
+            
+            {/* Roy Joseph Butler */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/Roy_Joseph_Butler.jpg" 
+                  alt="Roy Joseph Butler" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  ROY JOSEPH<br />BUTLER
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  LOCO FESTIVAL
+                </div>
+              </div>
+            </div>
+            
+            {/* GLITCHOFMIND */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/glitch_of_mind.jpg" 
+                  alt="GLITCHOFMIND" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  GLITCH<br />OF MIND
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  ARTIST
+                </div>
+              </div>
+            </div>
+            
+            {/* Pinny Grylls */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/Pinny_Grylls.png" 
+                  alt="Pinny Grylls" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  PINNY<br />GRYLLS
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  FILMMAKER
+                </div>
+              </div>
+            </div>
+            
+            {/* Pedro Guez */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/pedroguez_portrait.png" 
+                  alt="Pedro Guez" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  PEDRO<br />GUEZ
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  ASVOFF
+                </div>
+              </div>
+            </div>
+            
+            {/* Dyl Blaquiere */}
+            <div style={{ width: '250px', backgroundColor: '#111', padding: '15px', borderRadius: '4px', marginBottom: '20px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <img 
+                  src="/images/jury2025/Dyl.jpg" 
+                  alt="Dyl Blaquiere" 
+                  style={{ 
+                    position: 'absolute', 
+                    top: 0, 
+                    left: 0, 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) brightness(0.9) contrast(1.1)'
+                  }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}></div>
+                <div style={{ position: 'absolute', top: '20px', left: '20px', color: 'white', fontSize: '16px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                  AIFA JURY<br />2025
+                </div>
+                <div style={{ position: 'absolute', bottom: '70px', right: '20px', color: 'white', fontSize: '20px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.2', textAlign: 'right', textTransform: 'uppercase' }}>
+                  DYL<br />BLAQUIERE
+                </div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', color: 'white', fontSize: '11px', fontWeight: '300', letterSpacing: '1px', lineHeight: '1.5', textTransform: 'uppercase' }}>
+                  SEDITION
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Thread Start and End */}
+        <div style={{ maxWidth: '800px', margin: '30px auto', textAlign: 'center' }}>
+          <h3 style={{ color: 'white', fontSize: '1.2rem', fontWeight: '300', marginBottom: '20px', letterSpacing: '1px' }}>Thread Start & End</h3>
+          
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
+            {/* Thread Start */}
+            <div style={{ width: '350px', backgroundColor: '#111', padding: '15px', borderRadius: '4px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'black' }}></div>
+                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '28px', fontWeight: '300', letterSpacing: '2px', lineHeight: '1.4', textTransform: 'uppercase', textAlign: 'center', width: '80%' }}>
+                  AIFA AWARDS<br />JURY 2025
+                </div>
+              </div>
+              <div style={{ color: 'white', textAlign: 'left', padding: '0 5px' }}>
+                <p style={{ fontSize: '14px', marginBottom: '10px', fontWeight: '400' }}>
+                  🎥 AIFA AWARDS 2025 JURY
+                </p>
+                <p style={{ fontSize: '14px', color: '#aaa', lineHeight: '1.4', fontWeight: '300' }}>
+                  ⟡ We're honored to work with these remarkable individuals.<br/><br/>
+                  ⟡ Each jury member brings a wealth of expertise in fashion, film, art, and AI. ↴
+                </p>
+              </div>
+            </div>
+            
+            {/* Thread End */}
+            <div style={{ width: '350px', backgroundColor: '#111', padding: '15px', borderRadius: '4px' }}>
+              <div style={{ position: 'relative', width: '100%', paddingBottom: '100%', overflow: 'hidden', marginBottom: '15px' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'black' }}></div>
+                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '28px', fontWeight: '300', letterSpacing: '2px', lineHeight: '1.4', textTransform: 'uppercase', textAlign: 'center', width: '80%' }}>
+                  END OF<br />THREAD
+                </div>
+              </div>
+              <div style={{ color: 'white', textAlign: 'left', padding: '0 5px' }}>
+                <p style={{ fontSize: '14px', marginBottom: '10px', fontWeight: '400' }}>
+                  🎥 AIFA AWARDS 2025 JURY
+                </p>
+                <p style={{ fontSize: '14px', color: '#aaa', lineHeight: '1.4', fontWeight: '300' }}>
+                  ⟡ We couldn't be prouder to have them on board.<br/><br/>
+                  ⟡ Join us on June 3 at NFC Lisbon to find out who they've selected!
+                </p>
               </div>
             </div>
           </div>

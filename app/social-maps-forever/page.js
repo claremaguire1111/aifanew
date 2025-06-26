@@ -947,22 +947,30 @@ export default function SocialMapsForever() {
           {/* art'otel Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
             <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
-                AIFA x art'otel London Hoxton
-              </h3>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em', marginBottom: '0' }}>
+                  AIFA x art'otel London Hoxton
+                </h3>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel London Hoxton Logo" 
+                  style={{ height: '20px', objectFit: 'contain', marginRight: '5px' }}
+                />
+              </div>
               <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
-                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 19, 2025</p>
-                <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>5:00 PM - 11:00 PM</p>
-                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>1-3 Rivington St, London EC2A 3DT</p>
-                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Ceremony</p>
-                <p className="event-invite-invitation" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>Invitation Only</p>
-                <p className="event-invite-rsvp" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>RSVP: aifa@aifilm.academy</p>
-                <div style={{ marginTop: '15px', textAlign: 'center' }}>
-                  <img 
-                    src="/images/arthotel_London Hoxton_White.png" 
-                    alt="art'otel London Hoxton Logo" 
-                    style={{ height: '30px', maxWidth: '100%' }}
-                  />
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div>
+                    <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 19, 2025</p>
+                    <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>5:00 PM - 11:00 PM</p>
+                    <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>1-3 Rivington St, London EC2A 3DT</p>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Ceremony</p>
+                    <p className="event-invite-invitation" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>Invitation Only</p>
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                  <p className="event-invite-rsvp" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>RSVP: aifa@aifilm.academy</p>
                 </div>
               </div>
             </div>

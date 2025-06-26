@@ -931,15 +931,75 @@ export default function SocialMapsForever() {
           {/* Asprey Studio Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
             <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
-                AIFA x Asprey Studio
-              </h3>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <div style={{ fontSize: '18px', color: 'white', margin: '0 5px' }}>×</div>
+                <img 
+                  src="/images/Asprey_Studio_logo.webp" 
+                  alt="Asprey Studio Logo" 
+                  style={{ height: '20px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
               <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
-                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 22, 2025</p>
-                <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>10:30 AM - 12:30 PM</p>
-                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>1st floor, 34-36 Bruton Street, London W1J 6QX</p>
-                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Exhibition</p>
-                <p className="event-invite-invitation" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>Invitation Only</p>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>AIFA Awards 2025 Exhibition</p>
+                
+                <div style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  maxWidth: '200px',
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  padding: '8px 0 0'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>July 22, 2025</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>10:30 AM - 12:30 PM</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 8px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>1st floor, 34-36 Bruton Street, London W1J 6QX</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0',
+                    textAlign: 'center',
+                    fontSize: '11px',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                    borderTop: '1px solid rgba(255,255,255,0.2)',
+                    paddingTop: '8px'
+                  }}>Invitation Only</p>
+                </div>
               </div>
             </div>
           </div>

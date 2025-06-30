@@ -128,7 +128,7 @@ export default function Asprey2025Event() {
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Time</span>
-              <span className="event-meta-value">11:00 AM - 1:00 PM</span>
+              <span className="event-meta-value">10:30 AM - 12:30 PM</span>
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Location</span>
@@ -157,12 +157,13 @@ export default function Asprey2025Event() {
             
             <h3 className="fade-in">Event Format</h3>
             <ul className="fade-in">
-              <li>Welcome reception with introduction by AIFA Co-Founders</li>
-              <li>Curated panel discussion with industry leaders</li>
-              <li>Interactive showcase of innovative creative technologies</li>
-              <li>Networking session with guided conversation prompts</li>
-              <li>Exclusive preview of upcoming AIFA initiatives</li>
+              <li>10:30 AM – Arrival and welcome drinks</li>
+              <li>10:45 AM – Introduction from AIFA Ventures and Asprey Studio</li>
+              <li>11:00 AM – Showcase of the AIFA Awards 2025 and Asprey Studio's curated artworks</li>
+              <li>11:45 AM – Networking session with guided conversation prompts and an exclusive preview of upcoming AIFA initiatives</li>
+              <li>12:30 PM – Event ends</li>
             </ul>
+            <p className="fade-in">Entrance via: Asprey, 34–36 Bruton Street, W1J 6QX, London</p>
             
             <div className="event-quote fade-in">
               <p>"Asprey Studio represents a perfect blend of heritage craftsmanship and forward-thinking innovation—qualities that mirror our own approach at AIFA. This gathering is designed to create the kind of intimate, high-quality connections that truly drive creative innovation forward."</p>
@@ -171,10 +172,16 @@ export default function Asprey2025Event() {
             
             <h3 className="fade-in">About Asprey Studio</h3>
             <p className="fade-in">
-              Asprey, established in 1781, has a rich heritage in luxury craftsmanship. Asprey Studio continues this tradition while embracing innovation, creating a unique space where heritage meets contemporary creative practice. The Studio serves as a hub for creative excellence, making it an ideal venue for conversations about the future of creativity.
+              Asprey Studio is a digital and contemporary art gallery, workshop, and members' club specialising in the intersection of digital and physical mediums. Representing a new frontier for Asprey, the 244-year-old British luxury house, Asprey Studio was founded in 2021 to explore the future of art and design building on time-honoured craftsmanship while advancing state-of-the-art technological innovation.
             </p>
             <p className="fade-in">
-              The venue's elegant environment and commitment to the highest standards of quality align perfectly with AIFA's mission to champion excellence in creative expression enhanced by technology.
+              Asprey, established in 1781, has a rich heritage in luxury craftsmanship. Asprey Studio continues this tradition while embracing new ideas, creating a unique space where legacy meets contemporary creative practice. The Studio serves as a hub for creative excellence, with a gallery in Mayfair and a workshop in Kent.
+            </p>
+            <p className="fade-in">
+              Guided by Chief Creative Officer and artist Alastair Walker, Asprey Studio champions both established and emerging artists working with technology. It has released unique collections through standout partnerships, including collaborations with Bugatti and the British Museum. Asprey Studio's mission is to continue pushing the boundaries of art, luxury, and technology into a bold and unbounded future.
+            </p>
+            <p className="fade-in">
+              The Asprey Studio gallery in Mayfair provides a refined yet intimate setting for focused and thought-provoking conversations, offering the ideal space and atmosphere for meaningful exchange about creative technologies.
             </p>
           </div>
           

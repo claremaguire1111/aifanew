@@ -931,17 +931,27 @@ export default function SocialMapsForever() {
           {/* Asprey Studio Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
             <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px' }}>
                 <img 
                   src="/images/AIFAlogo.png" 
                   alt="AIFA Logo" 
-                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                  style={{ 
+                    height: '45px', 
+                    objectFit: 'contain', 
+                    filter: 'brightness(0) invert(1)',
+                    marginRight: '15px'
+                  }}
                 />
-                <div style={{ fontSize: '18px', color: 'white', margin: '0 5px' }}>×</div>
+                <div style={{ fontSize: '18px', color: 'white', margin: '0 15px' }}>×</div>
                 <img 
                   src="/images/Asprey_Studio_logo.webp" 
                   alt="Asprey Studio Logo" 
-                  style={{ height: '20px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                  style={{ 
+                    height: '45px', 
+                    objectFit: 'contain', 
+                    filter: 'brightness(0) invert(1)',
+                    marginLeft: '15px'
+                  }}
                 />
               </div>
               <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
@@ -953,7 +963,7 @@ export default function SocialMapsForever() {
                   letterSpacing: '1px',
                   fontSize: '13px',
                   lineHeight: '1.2'
-                }}>AIFA Awards 2025 Exhibition</p>
+                }}>AIFA Awards 2025</p>
                 
                 <div style={{ 
                   display: 'flex', 
@@ -979,7 +989,7 @@ export default function SocialMapsForever() {
                     textAlign: 'center',
                     fontSize: '12px',
                     lineHeight: '1.2'
-                  }}>10:30 AM - 12:30 PM</p>
+                  }}>10:30 AM – 12:30 PM</p>
                   
                   <p style={{ 
                     fontWeight: '300', 

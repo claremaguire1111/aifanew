@@ -85,9 +85,9 @@ export default function Events() {
       month: "JUL",
       year: "2025",
       title: "AIFA x Asprey Studio",
-      time: "11:00 AM - 1:00 PM",
+      time: "10:30 AM - 12:30 PM",
       location: "1st floor, 34-36 Bruton Street, London W1J 6QX",
-      description: "AIFA Awards 2025 Exhibition - An invitation-only gathering at Asprey Studio to celebrate the future of creativity and technology, bringing together innovators and thought leaders.",
+      description: "AIFA Awards 2025 - An invitation-only gathering at Asprey Studio to celebrate the future of creativity and technology, bringing together innovators and thought leaders.",
       tags: ["Invitation Only", "WIRED Summer Labs"]
     }
   ];

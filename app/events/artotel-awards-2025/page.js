@@ -243,14 +243,6 @@ export default function ArtotelAwards() {
             <span style={{ verticalAlign: 'middle' }}>1-3 Rivington St, London EC2A 3DT</span>
           </p>
           <div className="artotel-hero-buttons">
-            <a
-              href="https://lu.ma/event/evt-RqYMwDBNqf0Xuvb"
-              className="luma-checkout--button artotel-button"
-              data-luma-action="checkout"
-              data-luma-event-id="evt-RqYMwDBNqf0Xuvb"
-            >
-              Register Now
-            </a>
             <a href="#schedule" className="artotel-button">View Schedule</a>
           </div>
         </div>
@@ -418,17 +410,9 @@ export default function ArtotelAwards() {
         <div className="register-container">
           <h2 className="register-title fade-in">Join Us on July 19</h2>
           <p className="register-description fade-in">
-            Don't miss this celebration of innovation, creativity, and the future of AI in the arts. Register now to secure your place
-            at the AIFA Awards 2025 ceremony and be part of this groundbreaking event.
+            Don't miss this celebration of innovation, creativity, and the future of AI in the arts. This invitation-only event
+            will showcase the AIFA Awards 2025 ceremony and groundbreaking AI-generated works.
           </p>
-          <a
-            href="https://lu.ma/event/evt-RqYMwDBNqf0Xuvb"
-            className="luma-checkout--button register-button fade-in"
-            data-luma-action="checkout"
-            data-luma-event-id="evt-RqYMwDBNqf0Xuvb"
-          >
-            Register Now
-          </a>
         </div>
       </section>
 

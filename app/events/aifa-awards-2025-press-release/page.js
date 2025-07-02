@@ -258,8 +258,8 @@ export default function PressRelease() {
           <h2 className="media-contact-title">Contact for media enquiries</h2>
           <p className="media-contact-info">
             Clare Maguire, NOPRBLM<br />
-            <a href="mailto:clare@noprblm.com">clare@noprblm.com</a><br />
-            cc <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
+            <a href="mailto:clare@aifaventures.com">clare@aifaventures.com</a><br />
+            <a href="mailto:leo@aifaventures.com">leo@aifaventures.com</a>
           </p>
         </div>
       </section>

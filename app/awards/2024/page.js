@@ -11,8 +11,17 @@ export default function Awards2024() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [activeBio, setActiveBio] = useState(null);
   
   const toggleMenu = () => setMenuOpen((prev) => !prev);
+  
+  const toggleBio = (index) => {
+    if (activeBio === index) {
+      setActiveBio(null);
+    } else {
+      setActiveBio(index);
+    }
+  };
 
   // Header scroll effect
   useEffect(() => {
@@ -138,6 +147,58 @@ export default function Awards2024() {
     { quote: "a new wave of artists' film", source: "Sotheby's Institute" },
     { quote: "a grand web3 Oscars", source: "L'Officiel" },
     { quote: "recognition of extraordinary storytelling", source: "Blockster" }
+  ];
+  
+  // Jury members with bios
+  const juryMembers = [
+    {
+      name: "Claire Silver",
+      role: "AI Artist & Creator",
+      image: "/images/jury2024/claire_silver.jpg",
+      bio: "Claire Silver is a leading AI collaborative artist whose groundbreaking work has been exhibited at the Louvre, Art Basel Miami, and SXSW. As a pioneer in the field, she combines traditional art concepts with artificial intelligence to create thought-provoking pieces that explore the intersection of humanity and technology."
+    },
+    {
+      name: "Vincent D'Onofrio",
+      role: "Actor & Director",
+      image: "/images/jury2024/vincent_donofrio.jpg",
+      bio: "Vincent D'Onofrio is an Emmy-nominated actor, producer, writer, and director known for his versatile performances across film and television. With iconic roles in 'Full Metal Jacket,' 'Law & Order: Criminal Intent,' and 'Daredevil,' he brings a unique artistic perspective to evaluating AI-generated filmmaking."
+    },
+    {
+      name: "Ingrid Mery Haziot",
+      role: "Art Director",
+      image: "/images/jury2024/ingrid_mery_haziot.jpg",
+      bio: "Ingrid Mery Haziot is an accomplished art director and creative strategist with extensive experience bridging traditional and digital art forms. Her expertise in visual storytelling and brand development has made her a sought-after consultant for innovative projects at the intersection of art and technology."
+    },
+    {
+      name: "Alejandro Cartagena",
+      role: "Photographer & Artist",
+      image: "/images/jury2024/alejandro_cartagena.jpg",
+      bio: "Alejandro Cartagena is an internationally acclaimed photographer whose work explores social, urban and environmental issues. His photography has been exhibited in over 50 group and individual exhibitions worldwide, including at the MOMA in New York and the FOAM Museum in Amsterdam."
+    },
+    {
+      name: "Laurence Fuller",
+      role: "Actor & Art Historian",
+      image: "/images/jury2024/laurence_fuller.jpg",
+      bio: "Laurence Fuller is a distinguished actor and art historian who has dedicated his career to the intersection of performance and visual arts. Son of renowned art critic Peter Fuller, Laurence brings a unique perspective on contemporary art movements while maintaining an active career in film and television."
+    },
+    {
+      name: "Justin Trimble",
+      role: "Digital Artist",
+      image: "/images/jury2024/justin_trimble.jpg",
+      bio: "Justin Trimble is an innovative digital artist pushing the boundaries of AI-generated art. His unique approach combines technical expertise with creative vision, producing captivating visual narratives that challenge conventional artistic paradigms and explore new aesthetic territories."
+    },
+    {
+      name: "Nygilia",
+      role: "Digital Creator",
+      image: "/images/jury2024/nygilia.jpg",
+      bio: "Nygilia is a pioneering digital creator whose work spans multiple disciplines including AI art, animation, and interactive experiences. Their forward-thinking approach to digital creativity has garnered international recognition and established them as a significant voice in emerging art technologies."
+    },
+    {
+      name: "Chikai",
+      role: "Artist & Animator",
+      image: "/images/jury2024/Chikai.jpg",
+      bio: "Chikai is a visionary artist and animator whose distinctive style blends traditional Japanese influences with cutting-edge digital techniques. Their work has been featured in major international exhibitions and digital showcases, demonstrating a unique ability to bridge cultural traditions with technological innovation."
+    }
   ];
 
   const brandNames = [
@@ -346,6 +407,39 @@ export default function Awards2024() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+      
+      {/* JURY SECTION */}
+      <section className="awards-jury">
+        <div className="jury-container">
+          <h2 className="jury-title">2024 Jury</h2>
+          
+          <div className="jury-grid fade-in">
+            {juryMembers.map((member, index) => (
+              <div className="jury-member" key={index}>
+                <div className="jury-image" onClick={() => toggleBio(index)}>
+                  <img src={member.image} alt={`${member.name} - ${member.role} - AIFA Awards 2024 Jury Member`} />
+                  <div className="jury-image-overlay">
+                    <span>View Bio</span>
+                  </div>
+                </div>
+                <div className="jury-info">
+                  <h3>{member.name}</h3>
+                  <p className="jury-role">{member.role}</p>
+                </div>
+                {activeBio === index && (
+                  <div className="jury-bio-modal">
+                    <div className="jury-bio-content">
+                      <h3>{member.name}</h3>
+                      <p>{member.bio}</p>
+                      <button className="jury-bio-close" onClick={() => toggleBio(index)}>Close</button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

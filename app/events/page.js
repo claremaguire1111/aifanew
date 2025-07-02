@@ -48,17 +48,6 @@ export default function Events() {
   const upcomingEvents = [
     {
       id: 1,
-      date: "17",
-      month: "JUN",
-      year: "2025",
-      title: "AIFA Co-Founders Guest Lecture At Sotheby's Institute",
-      time: "6:00 PM - 8:00 PM",
-      location: "Sotheby's Institute",
-      description: "Leo Crane will be hosting a Sotheby's Institute event as lecturer, with Clare Maguire guest lecturing to discuss entrepreneurship in creative industries and how technology plays a role.",
-      tags: ["Private", "WIRED Summer Labs"]
-    },
-    {
-      id: 2,
       date: "19",
       month: "JUL",
       year: "2025",
@@ -69,7 +58,7 @@ export default function Events() {
       tags: ["Invitation Only", "WIRED Summer Labs"]
     },
     {
-      id: 3,
+      id: 2,
       date: "22",
       month: "JUL",
       year: "2025",
@@ -80,7 +69,7 @@ export default function Events() {
       tags: ["Invitation Only", "WIRED Summer Labs"]
     },
     {
-      id: 4,
+      id: 3,
       date: "22",
       month: "JUL",
       year: "2025",
@@ -302,29 +291,10 @@ export default function Events() {
                       <Link href="/events/artotel-awards-2025" className="event-button">Event Page</Link>
                     ) : event.title === "AIFA Private Breakfast" ? (
                       <Link href="/events/morning-breakfast-2025" className="event-button">Event Page</Link>
-                    ) : event.title === "AIFA Co-Founders Guest Lecture At Sotheby's Institute" ? (
-                      <Link href="/events/sothebys-2025" className="event-button">Event Page</Link>
                     ) : event.title === "AIFA x Asprey Studio" ? (
                       <Link href="/events/asprey-2025" className="event-button">Event Page</Link>
                     ) : (
                       <Link href="#" className="event-button">Event Page</Link>
-                    )}
-                    {event.title === "AIFA x art'otel London Hoxton" ? (
-                      <a 
-                        href="https://lu.ma/event/evt-RqYMwDBNqf0Xuvb" 
-                        className="event-button secondary"
-                      >
-                        Register Now
-                      </a>
-                    ) : event.title === "AIFA x Asprey Studio" ? (
-                      <a 
-                        href="https://lu.ma/event/evt-ycbJMAMjVtMwuM4" 
-                        className="event-button secondary"
-                      >
-                        Register Now
-                      </a>
-                    ) : (
-                      <a href="#" className="event-button secondary">Request Invitation</a>
                     )}
                   </div>
                 </div>

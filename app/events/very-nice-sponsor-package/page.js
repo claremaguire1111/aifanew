@@ -71,7 +71,7 @@ export default function VeryNiceSponsorPackage() {
       description: "Social media announcement across LinkedIn, Instagram, X (AIFA) and a second social media post after the event (thank you)."
     },
     {
-      title: "Artist Access",
+      title: "Artist Introductions",
       description: "Exclusive access to AIFA artists for interviews and features to create branded content highlighting your support."
     }
   ];
@@ -124,7 +124,7 @@ export default function VeryNiceSponsorPackage() {
             <h1 className="sponsor-hero-title">Vultr Sponsorship Package</h1>
             <p className="sponsor-hero-subtitle">Connect your brand with innovation and creativity</p>
             <p className="sponsor-hero-description">
-              We're delighted to present this sponsorship package for Vultr, offering a unique opportunity to connect your cloud computing expertise with the world's most innovative AI-generated filmmaking community at the AIFA Awards 2025.
+              We're delighted to present this sponsorship package for Vultr, offering a unique opportunity to connect your cloud computing expertise with the world's most innovative AI-generated filmmaking community at the AIFA Awards 2025 on 19th July at art'otel London Hoxton.
             </p>
           </div>
         </section>

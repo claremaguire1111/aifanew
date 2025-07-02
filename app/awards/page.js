@@ -190,7 +190,7 @@ export default function Awards() {
               </div>
               <div className="edition-content">
                 <h3>AIFA Awards 2025</h3>
-                <p>Launching June 3 at NFC. The upcoming AIFA Awards 2025 will take place on July 19, 2025, celebrating the most innovative AI-generated films and artworks of the year. View our distinguished jury, submission process, and preliminary events.</p>
+                <p style={{ minHeight: "105px" }}>Launching June 3 at NFC. The upcoming AIFA Awards 2025 will take place on July 19, 2025, celebrating the most innovative AI-generated films and artworks of the year. View our distinguished jury, submission process, and preliminary events.</p>
                 <p style={{ marginTop: "15px", fontSize: "0.85rem", color: "#777" }}>Film extract by <a href="https://www.sheldrick.ai/" target="_blank" rel="noopener noreferrer" style={{ color: '#777' }}>David Sheldrick</a></p>
                 <Link href="/awards/2025" className="edition-button">Explore 2025 Awards</Link>
               </div>
@@ -203,7 +203,7 @@ export default function Awards() {
               </div>
               <div className="edition-content">
                 <h3>AIFA Awards 2024</h3>
-                <p>Our inaugural AIFA Awards ceremony celebrated groundbreaking achievements in AI filmmaking. View the winners, finalists, and memorable moments from our historic first awards celebration.</p>
+                <p style={{ minHeight: "105px" }}>Our inaugural AIFA Awards ceremony celebrated groundbreaking achievements in AI filmmaking. View the winners, finalists, and memorable moments from our historic first awards celebration.</p>
                 <p style={{ marginTop: "15px", fontSize: "0.85rem", color: "#777" }}>The Silver Mirror by <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/silver-mirror-48191" target="_blank" rel="noopener noreferrer" style={{ color: '#777' }}>Fantastic Planet</a></p>
                 <Link href="/awards/2024" className="edition-button">View 2024 Results</Link>
               </div>

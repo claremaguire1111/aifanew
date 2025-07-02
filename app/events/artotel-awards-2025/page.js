@@ -256,7 +256,7 @@ export default function ArtotelAwards() {
             The prestigious AIFA Awards returns with a VIP ceremony and party at art'otel London Hoxton. At a time when AI poses a very real threat to creativity and livelihoods in film and entertainment, AIFA champions those who use the same technologies to fight back. This special event brings together the best of AI innovation in the creative industries, featuring film screenings, artist panels, and the announcement of this year's award winners.
           </p>
           <p className="about-description fade-in about-text-white">
-            In collaboration with Factory4 and Nasty Magazine, we're proud to present a display of cutting-edge AI art alongside our film screenings. The event will showcase the work of some of the most innovative artists working at the intersection of technology and creativity today.
+            In collaboration with Factory4, we're proud to present a display of cutting-edge AI art alongside our film screenings. The event will showcase the work of some of the most innovative artists working at the intersection of technology and creativity today.
           </p>
           <p className="about-description fade-in about-text-white">
             Please note this event is invitation only
@@ -324,9 +324,6 @@ export default function ArtotelAwards() {
               </div>
               <div className="sponsor-item">
                 <a href="https://seditionart.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Sedition</a>
-              </div>
-              <div className="sponsor-item">
-                <a href="https://nastymagazine.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Nasty Magazine</a>
               </div>
               <div className="sponsor-item">
                 <a href="https://museframe.io" target="_blank" rel="noopener noreferrer" className="sponsor-link">Muse Frame</a>

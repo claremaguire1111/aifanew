@@ -232,7 +232,7 @@ export default function ArtotelAwards() {
       <section className="artotel-hero">
         <div className="artotel-hero-content">
           <h1 className="artotel-hero-title">AIFA Awards 2025</h1>
-          <p className="artotel-hero-subtitle">In collaboration with Factory 4</p>
+          <p className="artotel-hero-subtitle">In collaboration with Factory4</p>
           <p className="artotel-hero-date">July 19, 2025</p>
           <p className="artotel-hero-location" style={{ marginBottom: '20px' }}>
             <img
@@ -253,14 +253,13 @@ export default function ArtotelAwards() {
         <div className="about-container">
           <h2 className="about-title fade-in about-text-white">AIFA Awards 2025</h2>
           <p className="about-description fade-in about-text-white">
-            Join us for the prestigious AIFA Awards 2025 ceremony at the art'otel London Hoxton, celebrating excellence in 
-            AI-generated filmmaking and digital art. This special event brings together the best of AI innovation in the creative 
-            industries, featuring film screenings, artist panels, and the announcement of this year's award winners.
+            The prestigious AIFA Awards returns with a VIP ceremony and party at art'otel London Hoxton. At a time when AI poses a very real threat to creativity and livelihoods in film and entertainment, AIFA champions those who use the same technologies to fight back. This special event brings together the best of AI innovation in the creative industries, featuring film screenings, artist panels, and the announcement of this year's award winners.
           </p>
           <p className="about-description fade-in about-text-white">
-            In collaboration with Factory 4, we're proud to present an exclusive exhibition of cutting-edge AI art alongside our 
-            film screenings. The event will showcase the work of some of the most innovative artists working at the intersection 
-            of technology and creativity today.
+            In collaboration with Factory4 and Nasty Magazine, we're proud to present a display of cutting-edge AI art alongside our film screenings. The event will showcase the work of some of the most innovative artists working at the intersection of technology and creativity today.
+          </p>
+          <p className="about-description fade-in about-text-white">
+            Please note this event is invitation only
           </p>
         </div>
       </section>
@@ -293,14 +292,17 @@ export default function ArtotelAwards() {
           <div className="collaborators-section fade-in">
             <h3 className="section-subtitle">Our Collaborators</h3>
             <div className="collaborators-buttons">
+              <Link href="/events/aifa-awards-2025-press-release" className="collaborator-button">
+                Press Release
+              </Link>
               <Link href="/awards/2025/finalists" className="collaborator-button">
-                View Finalists
+                Finalists
               </Link>
               <Link href="/featured-artists" className="collaborator-button">
-                View Featured Artists
+                Featured Artists
               </Link>
               <Link href="/factory-four-artists" className="collaborator-button">
-                View Factory Four
+                Factory4 Artists
               </Link>
             </div>
           </div>
@@ -312,22 +314,28 @@ export default function ArtotelAwards() {
                 <a href="https://wirededucation.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">WIRED Summer Lab</a>
               </div>
               <div className="sponsor-item">
-                <a href="https://nastymagazine.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Nasty Magazine</a>
-              </div>
-              <div className="sponsor-item">
-                <a href="https://noprblm.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">NOPRBLM</a>
-              </div>
-              <div className="sponsor-item">
-                <a href="https://seditionart.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Sedition</a>
-              </div>
-              <div className="sponsor-item">
-                <a href="https://museframe.io" target="_blank" rel="noopener noreferrer" className="sponsor-link">Muse Frame</a>
+                <a href="https://factory4.art" target="_blank" rel="noopener noreferrer" className="sponsor-link">Factory4</a>
               </div>
               <div className="sponsor-item">
                 <a href="https://vultr.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Vultr</a>
               </div>
               <div className="sponsor-item">
-                <a href="https://ariaprotocol.xyz" target="_blank" rel="noopener noreferrer" className="sponsor-link">Aria</a>
+                <a href="https://ariaprotocol.xyz" target="_blank" rel="noopener noreferrer" className="sponsor-link">Aria Protocol</a>
+              </div>
+              <div className="sponsor-item">
+                <a href="https://seditionart.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Sedition</a>
+              </div>
+              <div className="sponsor-item">
+                <a href="https://nastymagazine.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">Nasty Magazine</a>
+              </div>
+              <div className="sponsor-item">
+                <a href="https://museframe.io" target="_blank" rel="noopener noreferrer" className="sponsor-link">Muse Frame</a>
+              </div>
+              <div className="sponsor-item">
+                <a href="https://www.mysmash.media/" target="_blank" rel="noopener noreferrer" className="sponsor-link">SMASH Media</a>
+              </div>
+              <div className="sponsor-item">
+                <a href="https://noprblm.com" target="_blank" rel="noopener noreferrer" className="sponsor-link">NOPRBLM</a>
               </div>
             </div>
           </div>

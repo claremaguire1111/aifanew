@@ -1089,6 +1089,414 @@ export default function SocialMapsForever() {
               </div>
             </div>
           </div>
+          {/* AIFA Awards VIP Screening Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <div style={{ fontSize: '18px', color: 'white', margin: '0 5px' }}>×</div>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel London Hoxton Logo" 
+                  style={{ height: '18px', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 5px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>AIFA Awards 2025</p>
+                
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '12px',
+                  lineHeight: '1.2'
+                }}>VIP Screening</p>
+                
+                <div style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  maxWidth: '200px',
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  padding: '8px 0 0'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>July 19, 2025</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>5:30 PM – 7:30 PM</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 8px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>1-3 Rivington St, London EC2A 3DT</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0',
+                    textAlign: 'center',
+                    fontSize: '11px',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                    borderTop: '1px solid rgba(255,255,255,0.2)',
+                    paddingTop: '8px'
+                  }}>Invitation Only</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* AIFA Awards with Factory4 Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <div style={{ fontSize: '18px', color: 'white', margin: '0 5px' }}>×</div>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel London Hoxton Logo" 
+                  style={{ height: '18px', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 5px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>AIFA Awards 2025</p>
+                
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '12px',
+                  lineHeight: '1.2'
+                }}>with Factory4</p>
+                
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center',
+                  fontSize: '12px',
+                  lineHeight: '1.2'
+                }}>Showcase and Party</p>
+                
+                <div style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  maxWidth: '200px',
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  padding: '8px 0 0'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>July 19, 2025</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 4px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>7:30 PM – 11:00 PM</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 8px 0', 
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    lineHeight: '1.2'
+                  }}>1-3 Rivington St, London EC2A 3DT</p>
+                  
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0',
+                    textAlign: 'center',
+                    fontSize: '11px',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                    borderTop: '1px solid rgba(255,255,255,0.2)',
+                    paddingTop: '8px'
+                  }}>Invitation Only</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Simple AIFA Awards Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <div style={{ fontSize: '18px', color: 'white', margin: '0 5px' }}>×</div>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel London Hoxton Logo" 
+                  style={{ height: '18px', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '15px',
+                  lineHeight: '1.3'
+                }}>AIFA Awards 2025</p>
+                
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 15px 0', 
+                  textAlign: 'center',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>Screening and Party</p>
+                
+                <p style={{ 
+                  fontWeight: '300', 
+                  margin: '0 0 15px 0', 
+                  textAlign: 'center',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>19th July 2025</p>
+                
+                <p style={{ 
+                  fontWeight: '300', 
+                  margin: '0',
+                  textAlign: 'center',
+                  fontSize: '11px',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  paddingTop: '12px'
+                }}>Invitation Only</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA Awards with Partners Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px 5px', gap: '5px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '22px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <div style={{ fontSize: '15px', color: 'white', margin: '0 3px' }}>×</div>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel London Hoxton Logo" 
+                  style={{ height: '16px', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 10px', padding: '10px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 5px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>AIFA Awards 2025</p>
+                
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '12px',
+                  lineHeight: '1.2'
+                }}>Screening and Party</p>
+                
+                <p style={{ 
+                  fontWeight: '300', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center',
+                  fontSize: '12px',
+                  lineHeight: '1.2'
+                }}>19th July 2025</p>
+                
+                <div style={{
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  borderBottom: '1px solid rgba(255,255,255,0.2)',
+                  padding: '5px 0',
+                  margin: '0 0 8px 0'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 2px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>Art o'tel</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 2px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>Factory4</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 2px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>ARIA Protocol</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 2px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>Vultr</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>Sedition</p>
+                </div>
+                
+                <p style={{ 
+                  fontWeight: '300', 
+                  margin: '0',
+                  textAlign: 'center',
+                  fontSize: '10px',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase'
+                }}>Invitation Only</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* AI and Creative Industries Event Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px', gap: '10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 10px', padding: '12px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 10px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '13px',
+                  lineHeight: '1.2'
+                }}>AI and Creative Industries</p>
+                
+                <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 10px 0', fontSize: '13px', textAlign: 'center' }}>22nd July, 2025</p>
+                
+                <div style={{
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  borderBottom: '1px solid rgba(255,255,255,0.2)',
+                  padding: '6px 0',
+                  margin: '0 0 10px 0'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 3px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>WIRED Summer Lab</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 3px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>House of Lords</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 3px 0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>Asprey Studio</p>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0', 
+                    textAlign: 'center',
+                    fontSize: '10px',
+                    lineHeight: '1.3'
+                  }}>ARIA Protocol</p>
+                </div>
+                
+                <p style={{ 
+                  fontWeight: '300', 
+                  margin: '0',
+                  textAlign: 'center',
+                  fontSize: '11px',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase',
+                  paddingTop: '8px'
+                }}>Invitation Only</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       

@@ -84,31 +84,6 @@ export default function Asprey2025Event() {
         <div className="event-hero-content">
           <h1 className="event-hero-title">Asprey Studio Event</h1>
           <p className="event-hero-subtitle">Celebrating the Future of Creativity and Technology</p>
-          <div className="event-hero-buttons" style={{ marginTop: "20px" }}>
-            <a
-              href="https://lu.ma/event/evt-ycbJMAMjVtMwuM4"
-              className="luma-checkout--button event-button"
-              data-luma-action="checkout"
-              data-luma-event-id="evt-ycbJMAMjVtMwuM4"
-              style={{ 
-                display: "inline-block", 
-                padding: "8px 20px", 
-                backgroundColor: "#000", 
-                color: "#fff", 
-                textDecoration: "none", 
-                marginTop: "10px", 
-                fontSize: "0.9rem",
-                fontWeight: "300", 
-                textTransform: "uppercase", 
-                letterSpacing: "1px",
-                borderRadius: "2px",
-                boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                transition: "all 0.3s ease"
-              }}
-            >
-              Register
-            </a>
-          </div>
         </div>
       </section>
 
@@ -125,10 +100,6 @@ export default function Asprey2025Event() {
             <div className="event-meta-item">
               <span className="event-meta-label">Date</span>
               <span className="event-meta-value">July 22, 2025</span>
-            </div>
-            <div className="event-meta-item">
-              <span className="event-meta-label">Time</span>
-              <span className="event-meta-value">10:30 AM - 12:30 PM</span>
             </div>
             <div className="event-meta-item">
               <span className="event-meta-label">Location</span>
@@ -156,13 +127,9 @@ export default function Asprey2025Event() {
             </p>
             
             <h3 className="fade-in">Event Format</h3>
-            <ul className="fade-in">
-              <li>10:30 AM – Arrival and welcome drinks</li>
-              <li>10:45 AM – Introduction from AIFA Ventures and Asprey Studio</li>
-              <li>11:00 AM – Showcase of the AIFA Awards 2025 and Asprey Studio's curated artworks</li>
-              <li>11:45 AM – Networking session with guided conversation prompts and an exclusive preview of upcoming AIFA initiatives</li>
-              <li>12:30 PM – Event ends</li>
-            </ul>
+            <p className="fade-in">
+              This exclusive event includes welcome drinks, an introduction from AIFA Ventures and Asprey Studio, a showcase of the AIFA Awards 2025 and Asprey Studio's curated artworks, followed by a networking session with guided conversation prompts and an exclusive preview of upcoming AIFA initiatives.
+            </p>
             <p className="fade-in">Entrance via: Asprey, 34–36 Bruton Street, W1J 6QX, London</p>
             
             <div className="event-quote fade-in">

@@ -174,19 +174,7 @@ export default function ArtotelAwards() {
   ];
   
 
-  // Schedule data
-  const scheduleItems = [
-    { time: "5:00 PM", event: "Doors Open" },
-    { time: "5:30 PM", event: "Welcome from AIFA" },
-    { time: "5:35 PM", event: "Factory 4 & Nasty Magazine Introduction" },
-    { time: "5:45 PM", event: "Invite to Film Screening" },
-    { time: "5:50 PM", event: "Screening Starts" },
-    { time: "7:10 PM", event: "Panel with Artists" },
-    { time: "7:30 PM", event: "Move to Bar" },
-    { time: "7:45 PM", event: "AIFA Awards Announced" },
-    { time: "8:00 PM", event: "Drinks & Party!" },
-    { time: "11:00 PM", event: "Event Concludes" }
-  ];
+  // No public schedule
 
   return (
     <div className="awards-page">
@@ -242,9 +230,6 @@ export default function ArtotelAwards() {
             />
             <span style={{ verticalAlign: 'middle' }}>1-3 Rivington St, London EC2A 3DT</span>
           </p>
-          <div className="artotel-hero-buttons">
-            <a href="#schedule" className="artotel-button">View Schedule</a>
-          </div>
         </div>
       </section>
 
@@ -264,21 +249,6 @@ export default function ArtotelAwards() {
         </div>
       </section>
 
-      {/* SCHEDULE SECTION */}
-      <section id="schedule" className="schedule-section">
-        <div className="schedule-container">
-          <h2 className="section-title fade-in">Event Schedule</h2>
-          <div className="schedule-simple fade-in">
-            {scheduleItems.map((item, index) => (
-              <div className="schedule-row" key={index}>
-                <div className="schedule-time">{item.time}</div>
-                <div className="schedule-divider"></div>
-                <div className="schedule-event">{item.event}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ARTISTS AND PARTNERS SECTION */}
       <section className="partners-section">

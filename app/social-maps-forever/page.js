@@ -915,14 +915,15 @@ export default function SocialMapsForever() {
           {/* House of Lords Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
             <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em' }}>
-                AIFA x House of Lords
+              <h3 className="event-invite-name" style={{ fontWeight: '300', color: 'white', letterSpacing: '0.08em', fontSize: '14px' }}>
+                AIFA x WIRED SUMMER LAB
               </h3>
               <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.7)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
                 <p className="event-invite-date" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>July 22, 2025</p>
                 <p className="event-invite-time" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>8:30 - 10:00 AM</p>
-                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>House of Lords, London</p>
-                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>AIFA Awards 2025 Morning Breakfast</p>
+                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>AI and Creative Industries</p>
+                <p className="event-invite-desc" style={{ fontWeight: '300', margin: '0 0 5px 0' }}>Breakfast, Panel and Networking</p>
+                <p className="event-invite-location" style={{ fontWeight: '300', margin: '0 0 10px 0' }}>House of Lords, London</p>
                 <p className="event-invite-invitation" style={{ fontWeight: '300', border: '1px solid rgba(255, 255, 255, 0.7)', padding: '4px 12px', margin: '0', display: 'inline-block' }}>Invitation Only</p>
               </div>
             </div>

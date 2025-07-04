@@ -151,7 +151,7 @@ export default function PressRelease() {
             flexWrap: 'wrap'
           }}>
             <img 
-              src="/images/VULTR_PrimaryLogo-FC (2) (1).jpg" 
+              src="/images/vultr wh tr.png" 
               alt="Vultr Logo" 
               style={{ 
                 height: '35px', 

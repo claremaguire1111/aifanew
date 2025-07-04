@@ -91,10 +91,10 @@ export default function PressRelease() {
 
   const eventDetails = [
     { label: "When", value: "Saturday 19 July, 5-11pm" },
-    { label: "Where", value: "Art'otel London Hoxton, 1-3 Rivington St, London EC2A 3DT" },
+    { label: "Where", value: "art'otel London Hoxton, 1-3 Rivington St, London EC2A 3DT" },
     { label: "What", value: "The Award of Awards for AI Film" },
-    { label: "", value: "Screening, panel, awards and party ", valueLink: "/events/artotel-awards-2025", valueLinkText: "(full schedule)" },
-    { label: "", value: "Digital art displays curated by Factory 4 and Nasty Magazine" },
+    { label: "", value: "Screening, panel, awards and party ", valueLink: "/events/artotel-awards-2025", valueLinkText: "(event page)" },
+    { label: "", value: "Digital art displays curated by Factory 4" },
     { label: "Join", value: "Invitation only - register here for media pass" }
   ];
 
@@ -140,6 +140,42 @@ export default function PressRelease() {
           <p className="press-hero-subtitle">
             Honouring pioneering filmmakers using AI to reshape the global film industry
           </p>
+          
+          {/* Sponsor Logos */}
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            gap: '30px', 
+            marginTop: '40px',
+            flexWrap: 'wrap'
+          }}>
+            <img 
+              src="/images/VULTR_PrimaryLogo-FC (2) (1).jpg" 
+              alt="Vultr Logo" 
+              style={{ 
+                height: '35px', 
+                objectFit: 'contain',
+                backgroundColor: 'transparent'
+              }}
+            />
+            <img 
+              src="/partners/sedition logo wh long.png" 
+              alt="Sedition Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain' 
+              }}
+            />
+            <img 
+              src="/partners/Muse Frame wh text.png" 
+              alt="Muse Frame Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain' 
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -208,11 +244,11 @@ export default function PressRelease() {
             </div>
             
             <p className="press-paragraph">
-              The AIFA Awards will be announced at a VIP event at Art'otel London Hoxton on 19 July. After scouring films at over 30 AIFA-qualifying festivals, three themes have emerged: Digital Futures, War & Conflict, and Memory & Afterlife. 14 Finalists have been selected to showcase these themes, representing talent from Asia, the Middle East, Africa, Europe and North America (<Link href="/awards/2025/finalists">full list of finalists</Link>).
+              The AIFA Awards will be announced at a VIP event at art'otel London Hoxton on 19 July. After scouring films at over 30 AIFA-qualifying festivals, three themes have emerged: Digital Futures, War & Conflict, and Memory & Afterlife. 14 Finalists have been selected to showcase these themes, representing talent from Asia, the Middle East, Africa, Europe and North America (<Link href="/awards/2025/finalists">full list of finalists</Link>).
             </p>
             
             <p className="press-paragraph">
-              Awards for Best Film, Innovation, Narrative, Visuals and Sound are determined by a jury of industry experts, including SXSW Winner Pinny Grylls and fashion film pioneer Diane Pernet (<Link href="/awards/2025">full jury</Link>). Winners will be supported in financing, distribution and community building through partnerships with Sedition (seditionart.com) and Smash (mysmash.media).
+              Awards for Best Film, Innovation, Narrative, Visuals and Sound are determined by a jury of industry experts, including SXSW Winner Pinny Grylls and fashion film pioneer Diane Pernet (<Link href="/awards/2025">full jury</Link>). Winners will be supported in financing, distribution and community building through partnerships with Sedition (<a href="https://www.seditionart.com/" target="_blank" rel="noopener noreferrer">seditionart.com</a>) and SMASH Media (<a href="https://www.mysmash.media/" target="_blank" rel="noopener noreferrer">mysmash.media</a>).
             </p>
             
             <div className="press-quote">
@@ -221,7 +257,7 @@ export default function PressRelease() {
             </div>
             
             <p className="press-paragraph">
-              As well as a screening and panel discussion, the event will feature digital art displays curated by Factory 4 and Nasty Magazine. Using Art'otel's immersive projections and Muse Frame's fine art screens, guests will experience experimental new work, exploring the themes of the awards in greater depth. Artists include Zhannet Popobed, Akane Hiraoka and Flux (<Link href="/factory-four-artists">more info on digital art displays</Link>).
+              As well as a screening and panel discussion, the event will feature digital art displays curated by Factory 4. Using art'otel's immersive projections and Muse Frame's fine art screens, guests will experience experimental new work, exploring the themes of the awards in greater depth. Artists include Zhannet Popobed, Akane Hiraoka and Flux the Artist (<Link href="/factory-four-artists">more info on digital art displays</Link>).
             </p>
           </div>
         </div>
@@ -270,7 +306,7 @@ export default function PressRelease() {
           <h2 className="notes-title">Notes to Editors</h2>
           
           <div className="note-item">
-            <p>For full details on the AIFA Awards 2025 event, including finalists and featured artists, please visit: <a href="https://www.aifaventures.com/events/art'otel-awards-2025" target="_blank" rel="noopener noreferrer">www.aifaventures.com/events/art'otel-awards-2025</a></p>
+            <p>For full details on the AIFA Awards 2025 events, including finalists and featured artists, please visit: <a href="https://www.aifaventures.com/events" target="_blank" rel="noopener noreferrer">www.aifaventures.com/events</a></p>
           </div>
           
           <div className="note-item" id="images-section">
@@ -309,14 +345,14 @@ export default function PressRelease() {
           </div>
           
           <div className="note-item">
-            <h3 className="note-subtitle">About Art'otel</h3>
-            <p>Art'otel London Hoxton is a contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district. This stunning venue combines modern design with artistic flair, providing the perfect backdrop for the celebration of innovation in AI-generated filmmaking and digital art.</p>
+            <h3 className="note-subtitle">About art'otel</h3>
+            <p>A contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district. This stunning venue combines modern design with artistic flair, providing the perfect backdrop for our celebration of innovation in AI-generated filmmaking and digital art.</p>
             <p><a href="https://www.artotellondonhoxton.com" target="_blank" rel="noopener noreferrer">artotellondonhoxton.com</a></p>
           </div>
           
           <div className="note-item">
             <h3 className="note-subtitle">About Factory 4</h3>
-            <p>Factory 4 is a nomadic, artist-led gallery founded by Paul Dowling and Olena Yara. It has hosted several digital art exhibitions in London and Lisbon, with a focus on empowering artists and showcasing their work to wider audiences. Featured artists at the AIFA Awards 2025 include Zhannet Podobed, Akane Hiraoka and Flux The Artist (<Link href="/factory-four-artists">more details</Link>).</p>
+            <p>Factory 4 is a nomadic, artist-led gallery founded by Paul Dowling and Olena Yara. It has hosted several digital art exhibitions in London and Lisbon, with a focus on empowering artists and showcasing their work to wider audiences. Featured artists at the AIFA Awards 2025 include Zhannet Podobed, Akane Hiraoka and Flux the Artist (<Link href="/factory-four-artists">more details</Link>).</p>
             <p><a href="https://www.instagram.com/factory.4.0" target="_blank" rel="noopener noreferrer">instagram.com/factory.4.0</a></p>
           </div>
           
@@ -324,7 +360,6 @@ export default function PressRelease() {
             <h3 className="note-subtitle">Sponsors & Partners</h3>
             <ul className="sponsors-list">
               <li><a href="https://wirededucation.com" target="_blank" rel="noopener noreferrer">WIRED Summer Lab</a></li>
-              <li><a href="https://nastymagazine.com" target="_blank" rel="noopener noreferrer">Nasty Magazine</a></li>
               <li><a href="https://noprblm.com" target="_blank" rel="noopener noreferrer">NOPRBLM</a></li>
               <li><a href="https://seditionart.com" target="_blank" rel="noopener noreferrer">Sedition</a></li>
               <li><a href="https://museframe.io" target="_blank" rel="noopener noreferrer">Muse Frame</a></li>
@@ -342,7 +377,7 @@ export default function PressRelease() {
           <h3>Get in Touch</h3>
           <ul>
             <li>
-              <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
+              <a href="mailto:aifa@aifaventures.com">aifa@aifaventures.com</a>
             </li>
           </ul>
         </div>

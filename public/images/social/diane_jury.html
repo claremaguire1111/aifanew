@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diane Pernet Jury Image</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background-color: black;
+    }
+    .image-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9) contrast(1.1);
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+      pointer-events: none;
+    }
+    .text-top-left {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: white;
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .text-top-right {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: white;
+      font-size: 24px;
+    }
+    .text-bottom-right {
+      position: absolute;
+      bottom: 150px;
+      right: 30px;
+      color: white;
+      font-size: 48px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    .text-bottom-left {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      color: white;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-container">
+      <img src="/images/jury2025/diane_pernet.jpg" alt="Diane Pernet">
+    </div>
+    <div class="overlay"></div>
+    <div class="text-top-left">
+      AIFA JURY<br>
+      2025
+    </div>
+    <div class="text-top-right">
+      <!-- Play button icon if needed -->
+    </div>
+    <div class="text-bottom-right">
+      DIANE<br>
+      PERNET
+    </div>
+    <div class="text-bottom-left">
+      FASHION FILM<br>
+      PIONEER
+    </div>
+  </div>
+</body>
+</html>

@@ -227,8 +227,8 @@ export default function MediaPass() {
           <div className="contact-info">
             <p>
               Clare Maguire, NOPRBLM<br />
-              <a href="mailto:clare@noprblm.com">clare@noprblm.com</a><br />
-              cc <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
+              <a href="mailto:clare@aifaventures.com">clare@aifaventures.com</a><br />
+              <a href="mailto:leo@aifaventures.com">leo@aifaventures.com</a>
             </p>
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function MediaPass() {
           <h3>Get in Touch</h3>
           <ul>
             <li>
-              <a href="mailto:aifa@aifilm.academy">aifa@aifilm.academy</a>
+              <a href="mailto:aifa@aifaventures.com">aifa@aifaventures.com</a>
             </li>
           </ul>
         </div>

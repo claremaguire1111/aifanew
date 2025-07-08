@@ -522,6 +522,14 @@
   .sponsors-list {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  /* Sponsor logos responsive styles */
+  .press-hero-content img {
+    height: auto !important;
+    max-height: 25px !important;
+    width: auto !important;
+    max-width: 100px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -557,5 +565,18 @@
   
   .sponsors-list {
     grid-template-columns: 1fr;
+  }
+  
+  /* Sponsor logos responsive styles */
+  .press-hero-content img {
+    height: auto !important;
+    max-height: 20px !important;
+    width: auto !important;
+    max-width: 80px !important;
+  }
+  
+  /* Adjust spacing between logos */
+  .press-hero-content div[style*="display: flex"] {
+    gap: 15px !important;
   }
 }

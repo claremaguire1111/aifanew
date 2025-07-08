@@ -357,6 +357,12 @@ export default function PressRelease() {
           </div>
           
           <div className="note-item">
+            <h3 className="note-subtitle">About Vultr</h3>
+            <p>Vultr is on a mission to make high-performance cloud infrastructure easy to use, affordable, and locally accessible for enterprises and AI innovators around the world. Vultr is trusted by hundreds of thousands of active customers across 185 countries for its flexible, scalable, global Cloud Compute, Cloud GPU, Bare Metal, and Cloud Storage solutions.</p>
+            <p>Learn more at: <a href="https://www.vultr.com" target="_blank" rel="noopener noreferrer">www.vultr.com</a>.</p>
+          </div>
+          
+          <div className="note-item">
             <h3 className="note-subtitle">Sponsors & Partners</h3>
             <ul className="sponsors-list">
               <li><a href="https://wirededucation.com" target="_blank" rel="noopener noreferrer">WIRED Summer Lab</a></li>

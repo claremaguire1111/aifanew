@@ -214,22 +214,22 @@ export default function Awards2025() {
       {/* HERO SECTION */}
       <section className="awards-hero">
         <div className="video-wrapper">
-          <video
-            src="/videos/Sheldrick.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="background-video"
-          >
-            Your browser does not support the video tag.
-          </video>
+          <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
+            <iframe 
+              src="https://player.vimeo.com/video/1098531929?h=28098bdc89&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} 
+              title="Ethereal Moon header 01">
+            </iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
           <div className="video-overlay" style={{ backgroundColor: 'transparent' }}></div>
         </div>
         <div className="awards-hero-content">
           <h1 className="awards-hero-title">AIFA Awards 2025</h1>
           <p className="awards-hero-subtitle">Launching June 3 at NFC</p>
-          <p className="awards-hero-partner">Film extract by <a href="https://www.sheldrick.ai/" target="_blank" rel="noopener noreferrer" style={{ color: '#a3a3a3' }}>David Sheldrick</a></p>
+          <p className="awards-hero-partner">Film extract by <a href="https://etherealmoon.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: '#a3a3a3' }}>Ethereal Moon</a></p>
         </div>
       </section>
 

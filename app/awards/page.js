@@ -191,7 +191,7 @@ export default function Awards() {
               <div className="edition-content">
                 <h3>AIFA Awards 2025</h3>
                 <p style={{ minHeight: "105px" }}>Launching June 3 at NFC. The upcoming AIFA Awards 2025 will take place on July 19, 2025, celebrating the most innovative AI-generated films and artworks of the year. View our distinguished jury, submission process, and preliminary events.</p>
-                <p style={{ marginTop: "15px", fontSize: "0.85rem", color: "#777" }}>Film extract by <a href="https://www.sheldrick.ai/" target="_blank" rel="noopener noreferrer" style={{ color: '#777' }}>David Sheldrick</a></p>
+                <p style={{ marginTop: "15px", fontSize: "0.85rem", color: "#777" }}>Film extract by <a href="https://etherealmoon.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: '#777' }}>Ethereal Moon</a></p>
                 <Link href="/awards/2025" className="edition-button">Explore 2025 Awards</Link>
               </div>
             </div>

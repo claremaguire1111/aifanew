@@ -1521,49 +1521,49 @@ export default function SocialMapsForever() {
                 }}>Partners and Sponsors</p>
                 
                 {/* First row of logos */}
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '15px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px', marginBottom: '12px' }}>
                   <img 
                     src="/images/logo-abberation-white.svg" 
                     alt="ARIA Logo" 
-                    style={{ height: '18px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                    style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                   />
                   <img 
                     src="/partners/Muse Frame wh text.png" 
                     alt="Muse Frame Logo" 
-                    style={{ height: '18px', objectFit: 'contain' }}
+                    style={{ height: '15px', objectFit: 'contain' }}
                   />
                   <img 
                     src="/partners/sedition logo wh long.png" 
                     alt="Sedition Logo" 
-                    style={{ height: '18px', objectFit: 'contain' }}
+                    style={{ height: '15px', objectFit: 'contain' }}
                   />
                 </div>
                 
                 {/* Second row of logos */}
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '15px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px', marginBottom: '12px' }}>
                   <img 
                     src="/images/Factory logo.PNG" 
                     alt="Factory 4 Logo" 
-                    style={{ height: '18px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                    style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                   />
                   <img 
                     src="/images/vultr wh tr.png" 
                     alt="Vultr Logo" 
-                    style={{ height: '18px', objectFit: 'contain' }}
+                    style={{ height: '15px', objectFit: 'contain' }}
                   />
                 </div>
                 
                 {/* Third row of logos */}
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px', marginBottom: '18px' }}>
                   <img 
                     src="/images/arthotel_London Hoxton_White.png" 
                     alt="art'otel Logo" 
-                    style={{ height: '15px', objectFit: 'contain' }}
+                    style={{ height: '13px', objectFit: 'contain' }}
                   />
                   <img 
                     src="/images/Asprey_Studio_logo.webp" 
                     alt="Asprey Studio Logo" 
-                    style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                    style={{ height: '13px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                   />
                 </div>
                 
@@ -1573,32 +1573,36 @@ export default function SocialMapsForever() {
                   margin: '0 auto',
                   width: '90%'
                 }}>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 6px 0', 
-                    textAlign: 'center',
-                    fontSize: '11px',
-                    lineHeight: '1.3',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>Also supported by</p>
-                  
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
                     <p style={{ 
                       fontWeight: '300', 
                       margin: '0', 
                       textAlign: 'center',
                       fontSize: '10px',
-                      lineHeight: '1.3'
-                    }}>NOPRBLM</p>
-                    <span style={{ fontSize: '8px', color: 'rgba(255,255,255,0.5)' }}>•</span>
-                    <p style={{ 
-                      fontWeight: '300', 
-                      margin: '0', 
-                      textAlign: 'center',
-                      fontSize: '10px',
-                      lineHeight: '1.3'
-                    }}>WIRED Summer Lab</p>
+                      lineHeight: '1.3',
+                      letterSpacing: '0.5px'
+                    }}>NOPRBLM.</p>
+                    
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <img 
+                        src="/images/wired.png" 
+                        alt="WIRED Logo" 
+                        style={{ 
+                          height: '13px', 
+                          objectFit: 'contain', 
+                          marginBottom: '2px',
+                          filter: 'brightness(0) invert(1)',
+                          background: 'transparent'
+                        }}
+                      />
+                      <p style={{ 
+                        fontWeight: '300', 
+                        margin: '0', 
+                        textAlign: 'center',
+                        fontSize: '8px',
+                        lineHeight: '1.2'
+                      }}>Summer Lab</p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -228,7 +228,7 @@ export default function Awards2025() {
         </div>
         <div className="awards-hero-content">
           <h1 className="awards-hero-title">AIFA Awards 2025</h1>
-          <p className="awards-hero-subtitle">Launching June 3 at NFC</p>
+          <p className="awards-hero-subtitle">July 19th London</p>
           <p className="awards-hero-partner">Film extract by <a href="https://etherealmoon.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: '#a3a3a3' }}>Ethereal Moon</a></p>
         </div>
       </section>

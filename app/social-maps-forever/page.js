@@ -1509,7 +1509,7 @@ export default function SocialMapsForever() {
                   style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                 />
               </div>
-              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.75)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.75)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box', marginTop: '-10px' }}>
                 <p className="event-invite-desc" style={{ 
                   fontWeight: '400', 
                   margin: '0 0 15px 0', 
@@ -1520,60 +1520,63 @@ export default function SocialMapsForever() {
                   lineHeight: '1.2'
                 }}>Partners and Sponsors</p>
                 
-                {/* First row of logos */}
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px', marginBottom: '12px' }}>
-                  <img 
-                    src="/images/logo-abberation-white.svg" 
-                    alt="ARIA Logo" 
-                    style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-                  />
-                  <img 
-                    src="/partners/Muse Frame wh text.png" 
-                    alt="Muse Frame Logo" 
-                    style={{ height: '15px', objectFit: 'contain' }}
-                  />
-                  <img 
-                    src="/partners/sedition logo wh long.png" 
-                    alt="Sedition Logo" 
-                    style={{ height: '15px', objectFit: 'contain' }}
-                  />
-                </div>
-                
-                {/* Second row of logos */}
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px', marginBottom: '12px' }}>
-                  <img 
-                    src="/images/Factory logo.PNG" 
-                    alt="Factory 4 Logo" 
-                    style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-                  />
-                  <img 
-                    src="/images/vultr wh tr.png" 
-                    alt="Vultr Logo" 
-                    style={{ height: '15px', objectFit: 'contain' }}
-                  />
-                </div>
-                
-                {/* Third row of logos */}
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px', marginBottom: '18px' }}>
-                  <img 
-                    src="/images/arthotel_London Hoxton_White.png" 
-                    alt="art'otel Logo" 
-                    style={{ height: '13px', objectFit: 'contain' }}
-                  />
-                  <img 
-                    src="/images/Asprey_Studio_logo.webp" 
-                    alt="Asprey Studio Logo" 
-                    style={{ height: '13px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-                  />
-                </div>
-                
-                <div style={{
-                  borderTop: '1px solid rgba(255,255,255,0.2)',
-                  padding: '10px 0 0',
-                  margin: '0 auto',
-                  width: '90%'
-                }}>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                {/* Logo grid - more balanced layout */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginBottom: '15px', width: '90%', margin: '0 auto' }}>
+                  {/* Row 1 */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/images/logo-abberation-white.svg" 
+                      alt="ARIA Logo" 
+                      style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/partners/Muse Frame wh text.png" 
+                      alt="Muse Frame Logo" 
+                      style={{ height: '15px', objectFit: 'contain' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/partners/sedition logo wh long.png" 
+                      alt="Sedition Logo" 
+                      style={{ height: '15px', objectFit: 'contain' }}
+                    />
+                  </div>
+                  
+                  {/* Row 2 */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/images/Factory logo.PNG" 
+                      alt="Factory 4 Logo" 
+                      style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/images/vultr wh tr.png" 
+                      alt="Vultr Logo" 
+                      style={{ height: '15px', objectFit: 'contain' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/images/arthotel_London Hoxton_White.png" 
+                      alt="art'otel Logo" 
+                      style={{ height: '14px', objectFit: 'contain' }}
+                    />
+                  </div>
+                  
+                  {/* Row 3 */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/images/Asprey_Studio_logo.webp" 
+                      alt="Asprey Studio Logo" 
+                      style={{ height: '14px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                    />
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <p style={{ 
                       fontWeight: '300', 
                       margin: '0', 
@@ -1582,27 +1585,24 @@ export default function SocialMapsForever() {
                       lineHeight: '1.3',
                       letterSpacing: '0.5px'
                     }}>NOPRBLM.</p>
-                    
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <img 
-                        src="/images/wired.png" 
-                        alt="WIRED Logo" 
-                        style={{ 
-                          height: '13px', 
-                          objectFit: 'contain', 
-                          marginBottom: '2px',
-                          filter: 'brightness(0) invert(1)',
-                          background: 'transparent'
-                        }}
-                      />
-                      <p style={{ 
-                        fontWeight: '300', 
-                        margin: '0', 
-                        textAlign: 'center',
-                        fontSize: '8px',
-                        lineHeight: '1.2'
-                      }}>Summer Lab</p>
-                    </div>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <img 
+                      src="/images/Wired Logo White.png" 
+                      alt="WIRED Logo" 
+                      style={{ 
+                        height: '12px', 
+                        objectFit: 'contain', 
+                        marginBottom: '2px'
+                      }}
+                    />
+                    <p style={{ 
+                      fontWeight: '300', 
+                      margin: '0', 
+                      textAlign: 'center',
+                      fontSize: '7px',
+                      lineHeight: '1.2'
+                    }}>Summer Lab</p>
                   </div>
                 </div>
               </div>

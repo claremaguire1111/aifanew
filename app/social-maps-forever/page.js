@@ -1498,6 +1498,112 @@ export default function SocialMapsForever() {
               </div>
             </div>
           </div>
+          
+          {/* Partners and Sponsors Card */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
+              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.75)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box' }}>
+                <p className="event-invite-desc" style={{ 
+                  fontWeight: '400', 
+                  margin: '0 0 15px 0', 
+                  textAlign: 'center', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1px',
+                  fontSize: '15px',
+                  lineHeight: '1.2'
+                }}>Partners and Sponsors</p>
+                
+                {/* First row of logos */}
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '15px' }}>
+                  <img 
+                    src="/images/logo-abberation-white.svg" 
+                    alt="ARIA Logo" 
+                    style={{ height: '18px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                  />
+                  <img 
+                    src="/partners/Muse Frame wh text.png" 
+                    alt="Muse Frame Logo" 
+                    style={{ height: '18px', objectFit: 'contain' }}
+                  />
+                  <img 
+                    src="/partners/sedition logo wh long.png" 
+                    alt="Sedition Logo" 
+                    style={{ height: '18px', objectFit: 'contain' }}
+                  />
+                </div>
+                
+                {/* Second row of logos */}
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '15px' }}>
+                  <img 
+                    src="/images/Factory logo.PNG" 
+                    alt="Factory 4 Logo" 
+                    style={{ height: '18px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                  />
+                  <img 
+                    src="/images/vultr wh tr.png" 
+                    alt="Vultr Logo" 
+                    style={{ height: '18px', objectFit: 'contain' }}
+                  />
+                </div>
+                
+                {/* Third row of logos */}
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                  <img 
+                    src="/images/arthotel_London Hoxton_White.png" 
+                    alt="art'otel Logo" 
+                    style={{ height: '15px', objectFit: 'contain' }}
+                  />
+                  <img 
+                    src="/images/Asprey_Studio_logo.webp" 
+                    alt="Asprey Studio Logo" 
+                    style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                  />
+                </div>
+                
+                <div style={{
+                  borderTop: '1px solid rgba(255,255,255,0.2)',
+                  padding: '10px 0 0',
+                  margin: '0 auto',
+                  width: '90%'
+                }}>
+                  <p style={{ 
+                    fontWeight: '300', 
+                    margin: '0 0 6px 0', 
+                    textAlign: 'center',
+                    fontSize: '11px',
+                    lineHeight: '1.3',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>Also supported by</p>
+                  
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                    <p style={{ 
+                      fontWeight: '300', 
+                      margin: '0', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      lineHeight: '1.3'
+                    }}>NOPRBLM</p>
+                    <span style={{ fontSize: '8px', color: 'rgba(255,255,255,0.5)' }}>•</span>
+                    <p style={{ 
+                      fontWeight: '300', 
+                      margin: '0', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      lineHeight: '1.3'
+                    }}>WIRED Summer Lab</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       

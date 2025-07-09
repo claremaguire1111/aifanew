@@ -175,6 +175,14 @@ export default function PressRelease() {
                 objectFit: 'contain' 
               }}
             />
+            <img 
+              src="/partners/aria/logo-abbreation-white.svg" 
+              alt="Aria Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain' 
+              }}
+            />
           </div>
         </div>
       </section>

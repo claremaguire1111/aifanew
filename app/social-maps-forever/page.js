@@ -1501,106 +1501,130 @@ export default function SocialMapsForever() {
           
           {/* Partners and Sponsors Card */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/tartan_hotel.png')", backgroundSize: "cover", position: "relative" }}>
-            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px 10px' }}>
+            <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              {/* Logo at the top */}
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                padding: '15px', 
+                height: '50px',
+                marginBottom: '5px' 
+              }}>
                 <img 
                   src="/images/AIFAlogo.png" 
                   alt="AIFA Logo" 
-                  style={{ height: '25px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                  style={{ height: '24px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                 />
               </div>
-              <div className="event-invite-details" style={{ background: 'rgba(0, 0, 0, 0.75)', width: '90%', margin: '0 auto 15px', padding: '15px', boxSizing: 'border-box', marginTop: '-10px' }}>
-                <p className="event-invite-desc" style={{ 
+              
+              {/* Main content with title inside */}
+              <div style={{ 
+                background: 'rgba(0, 0, 0, 0.75)', 
+                width: '90%', 
+                margin: '0 auto 20px', 
+                padding: '15px 15px 20px', 
+                boxSizing: 'border-box', 
+                marginTop: '0',
+                flex: '1',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                borderRadius: '3px'
+              }}>
+                {/* Title inside the black box */}
+                <p style={{ 
                   fontWeight: '400', 
                   margin: '0 0 15px 0', 
                   textAlign: 'center', 
                   textTransform: 'uppercase', 
                   letterSpacing: '1px',
-                  fontSize: '15px',
-                  lineHeight: '1.2'
+                  fontSize: '14px',
+                  lineHeight: '1.2',
+                  color: 'white'
                 }}>Partners and Sponsors</p>
                 
-                {/* Logo grid - more balanced layout */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginBottom: '15px', width: '90%', margin: '0 auto' }}>
+                {/* Logo grid - more balanced layout with more space */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginBottom: '15px', width: '100%', margin: '0 auto' }}>
                   {/* Row 1 */}
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/logo-abberation-white.svg" 
                       alt="ARIA Logo" 
-                      style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                      style={{ height: '16px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                     />
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/partners/Muse Frame wh text.png" 
                       alt="Muse Frame Logo" 
-                      style={{ height: '15px', objectFit: 'contain' }}
+                      style={{ height: '16px', objectFit: 'contain' }}
                     />
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/partners/sedition logo wh long.png" 
                       alt="Sedition Logo" 
-                      style={{ height: '15px', objectFit: 'contain' }}
+                      style={{ height: '16px', objectFit: 'contain' }}
                     />
                   </div>
                   
                   {/* Row 2 */}
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/Factory logo.PNG" 
                       alt="Factory 4 Logo" 
-                      style={{ height: '15px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                      style={{ height: '16px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                     />
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/vultr wh tr.png" 
                       alt="Vultr Logo" 
-                      style={{ height: '15px', objectFit: 'contain' }}
+                      style={{ height: '16px', objectFit: 'contain' }}
                     />
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/arthotel_London Hoxton_White.png" 
                       alt="art'otel Logo" 
-                      style={{ height: '14px', objectFit: 'contain' }}
+                      style={{ height: '16px', objectFit: 'contain' }}
                     />
                   </div>
                   
-                  {/* Row 3 */}
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  {/* Row 3 with more space */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/Asprey_Studio_logo.webp" 
                       alt="Asprey Studio Logo" 
-                      style={{ height: '14px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                      style={{ height: '16px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                     />
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <p style={{ 
                       fontWeight: '300', 
                       margin: '0', 
                       textAlign: 'center',
-                      fontSize: '10px',
+                      fontSize: '11px',
                       lineHeight: '1.3',
                       letterSpacing: '0.5px'
                     }}>NOPRBLM.</p>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/Wired Logo White.png" 
                       alt="WIRED Logo" 
                       style={{ 
-                        height: '12px', 
+                        height: '13px', 
                         objectFit: 'contain', 
-                        marginBottom: '2px'
+                        marginBottom: '3px'
                       }}
                     />
                     <p style={{ 
                       fontWeight: '300', 
                       margin: '0', 
                       textAlign: 'center',
-                      fontSize: '7px',
+                      fontSize: '8px',
                       lineHeight: '1.2'
                     }}>Summer Lab</p>
                   </div>

@@ -142,7 +142,7 @@ export default function PressRelease() {
           </p>
           
           {/* Sponsor Logos */}
-          <div style={{ 
+          <div className="sponsor-logos-container" style={{ 
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center', 
@@ -156,7 +156,8 @@ export default function PressRelease() {
               style={{ 
                 height: '35px', 
                 objectFit: 'contain',
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
+                filter: 'brightness(0) invert(1)'
               }}
             />
             <img 
@@ -164,7 +165,8 @@ export default function PressRelease() {
               alt="Sedition Logo" 
               style={{ 
                 height: '30px', 
-                objectFit: 'contain' 
+                objectFit: 'contain',
+                filter: 'brightness(0) invert(1)'
               }}
             />
             <img 
@@ -172,7 +174,8 @@ export default function PressRelease() {
               alt="Muse Frame Logo" 
               style={{ 
                 height: '30px', 
-                objectFit: 'contain' 
+                objectFit: 'contain',
+                filter: 'brightness(0) invert(1)' 
               }}
             />
             <img 
@@ -180,7 +183,8 @@ export default function PressRelease() {
               alt="Aria Logo" 
               style={{ 
                 height: '30px', 
-                objectFit: 'contain' 
+                objectFit: 'contain',
+                filter: 'brightness(0) invert(1)' 
               }}
             />
           </div>

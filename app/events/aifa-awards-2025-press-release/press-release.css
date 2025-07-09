@@ -504,7 +504,8 @@
   }
   
   .film-stills-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
   
   .press-quote {
@@ -529,6 +530,60 @@
     max-height: 25px !important;
     width: auto !important;
     max-width: 100px !important;
+  }
+  
+  /* Adjust spacing for section padding */
+  .event-details-section,
+  .film-stills-section,
+  .press-content-section,
+  .media-contact-section,
+  .notes-section {
+    padding: 40px 0;
+  }
+  
+  .note-item {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .press-hero {
+    height: 65vh;
+  }
+  
+  .press-hero-title {
+    font-size: 2rem;
+  }
+  
+  .press-hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .film-stills-row {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Improve logo display on smaller screens */
+  .sponsor-logos-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+    background-color: rgba(0,0,0,0.3) !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    margin-top: 30px !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .press-hero-content img {
+    height: auto !important;
+    max-height: 25px !important;
+    width: auto !important;
+    max-width: 120px !important;
+    margin: 5px 0;
   }
 }
 
@@ -567,16 +622,33 @@
     grid-template-columns: 1fr;
   }
   
-  /* Sponsor logos responsive styles */
-  .press-hero-content img {
-    height: auto !important;
-    max-height: 20px !important;
-    width: auto !important;
-    max-width: 80px !important;
-  }
-  
   /* Adjust spacing between logos */
   .press-hero-content div[style*="display: flex"] {
     gap: 15px !important;
+  }
+  
+  /* Make section titles more readable on small screens */
+  .notes-title,
+  .media-contact-title {
+    font-size: 1.5rem;
+  }
+  
+  .note-subtitle {
+    font-size: 1rem;
+  }
+  
+  /* Improve quote readability */
+  .press-quote p {
+    font-size: 0.95rem;
+  }
+  
+  .press-quote cite {
+    font-size: 0.8rem;
+  }
+  
+  /* Improve media buttons */
+  .media-kit-button {
+    padding: 12px 8px;
+    font-size: 0.65rem;
   }
 }

@@ -1213,6 +1213,25 @@
   .sponsors-logos {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+  
+  .sponsor-logo {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .sponsor-info-item {
+    padding: 20px 15px;
+  }
+  
+  .sponsor-info-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .sponsor-info-item p {
+    font-size: 0.85rem;
   }
 }
 

@@ -580,6 +580,9 @@
 .signup-section {
   padding: 80px 20px;
   background-color: var(--white);
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 20px;
 }
 
 .signup-box {
@@ -1100,6 +1103,116 @@
   .jury-image {
     width: 90px;
     height: 90px;
+  }
+}
+
+/* SPONSORS SECTION */
+.awards-sponsors {
+  padding: 60px 20px 80px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.sponsors-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsors-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+.sponsors-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding: 30px;
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.sponsor-logo img {
+  filter: brightness(0) invert(1); /* Ensure logos are white */
+  max-height: 35px;
+}
+
+.sponsors-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.sponsor-info-item {
+  padding: 25px;
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.sponsor-info-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.sponsor-info-item p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 15px;
+}
+
+.sponsor-info-item a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: opacity 0.3s;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 2px;
+}
+
+.sponsor-info-item a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 992px) {
+  .sponsors-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-logos {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sponsors-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .sponsors-logos {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

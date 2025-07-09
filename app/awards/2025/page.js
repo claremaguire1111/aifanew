@@ -351,14 +351,72 @@ export default function Awards2025() {
         </div>
       </section>
 
+      {/* SPONSORS SECTION */}
+      <section className="awards-sponsors">
+        <div className="sponsors-container">
+          <h2 className="sponsors-title">Our Sponsors</h2>
+          
+          <div className="sponsors-logos visible">
+            <div className="sponsor-logo">
+              <img 
+                src="/images/vultr wh tr.png" 
+                alt="Vultr Logo" 
+                style={{ height: '35px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+            <div className="sponsor-logo">
+              <img 
+                src="/partners/sedition logo wh long.png" 
+                alt="Sedition Logo" 
+                style={{ height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+            <div className="sponsor-logo">
+              <img 
+                src="/partners/Muse Frame wh text.png" 
+                alt="Muse Frame Logo" 
+                style={{ height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+            <div className="sponsor-logo">
+              <img 
+                src="/images/logo-abberation-white.svg" 
+                alt="Aria Logo" 
+                style={{ height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+          </div>
+          
+          <div className="sponsors-info visible">
+            <div className="sponsor-info-item">
+              <h3>Factory 4</h3>
+              <p>Factory 4 is a nomadic, artist-led gallery founded by Paul Dowling and Olena Yara. It has hosted several digital art exhibitions in London and Lisbon, with a focus on empowering artists and showcasing their work to wider audiences. Featured artists at the AIFA Awards 2025 include Zhannet Podobed, Akane Hiraoka and Flux the Artist.</p>
+              <p><a href="https://www.instagram.com/factory.4.0" target="_blank" rel="noopener noreferrer">instagram.com/factory.4.0</a></p>
+            </div>
+            
+            <div className="sponsor-info-item">
+              <h3>Vultr</h3>
+              <p>Vultr is on a mission to make high-performance cloud infrastructure easy to use, affordable, and locally accessible for enterprises and AI innovators around the world. Vultr is trusted by hundreds of thousands of active customers across 185 countries for its flexible, scalable, global Cloud Compute, Cloud GPU, Bare Metal, and Cloud Storage solutions.</p>
+              <p><a href="https://www.vultr.com" target="_blank" rel="noopener noreferrer">www.vultr.com</a></p>
+            </div>
+            
+            <div className="sponsor-info-item">
+              <h3>Aria</h3>
+              <p>Founded in 2025, Aria is an investment platform that transforms iconic cultural intellectual property assets into digital financial assets. With Aria, investors can already buy and sell rights tied to real-world income from music performed by major artists like Justin Bieber, Miley Cyrus, and BLACKPINK. Aria ensures transparent, verifiable IP ownership and revenue sharing via the Story blockchain. Aria is also developing programmable IP tools allowing for cultural assets such as music, art, and film to be licensed, remixed, and monetized through digital contracts directly from rights holders.</p>
+              <p><a href="https://ariaprotocol.xyz/" target="_blank" rel="noopener noreferrer">ariaprotocol.xyz</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SIGNUP SECTION */}
       <section className="signup-section" id="signup">
         <div className="signup-box">
-          <h1 className="fade-in">Join Our Community</h1>
-          <p className="fade-in">
+          <h1 className="visible">Join Our Community</h1>
+          <p className="visible">
             For all enquiries and to stay up to date, sign up below. For any questions, send us a message.
           </p>
-          <form action="https://formspree.io/f/mnnqqvqd" method="POST" className="fade-in">
+          <form action="https://formspree.io/f/mnnqqvqd" method="POST" className="visible">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message (Optional)" rows="4"></textarea>

@@ -176,7 +176,7 @@ export default function PressRelease() {
               }}
             />
             <img 
-              src="/partners/aria/logo-abberation-white.jpg" 
+              src="/images/logo-abberation-white.svg" 
               alt="Aria Logo" 
               style={{ 
                 height: '30px', 

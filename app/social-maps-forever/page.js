@@ -1904,174 +1904,245 @@ export default function SocialMapsForever() {
               display: 'grid',
               gridTemplateColumns: 'repeat(5, 1fr)',
               gridTemplateRows: 'repeat(8, 1fr)',
-              padding: '6%'
+              padding: '7%', /* Increased padding for better edge spacing */
+              rowGap: '10px', /* Added row gap for more vertical spacing */
+              columnGap: '10px' /* Added column gap for more horizontal spacing */
             }}>
               {/* Row 1 */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              
-              {/* Row 2 */}
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
-              </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
-              </div>
-              <div></div>
-              
-              {/* Row 3 */}
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Factory logo.PNG" alt="Factory 4 Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              
-              {/* Row 4 */}
-              <div></div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
               </div>
-              <div></div> {/* Center position - will be occupied by main AIFA logo */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Factory logo.PNG" alt="Factory 4 Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
+              </div>
+              
+              {/* Row 2 */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/arthotel_London Hoxton_White.png" alt="art'otel Logo" style={{ height: '22px' }} />
               </div>
-              <div></div>
-              
-              {/* Row 5 */}
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              
-              {/* Row 6 */}
-              <div></div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
               </div>
-              <div></div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
-              </div>
-              <div></div>
-              
-              {/* Row 7 */}
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <div></div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
-              <div></div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
               </div>
-              
-              {/* Row 8 */}
-              <div></div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
               </div>
-              <div></div>
+              
+              {/* Row 3 */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
-              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
+              </div>
+              
+              {/* Row 4 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Factory logo.PNG" alt="Factory 4 Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
+              </div>
+              
+              {/* Row 5 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
+              </div>
+              
+              {/* Row 6 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/arthotel_London Hoxton_White.png" alt="art'otel Logo" style={{ height: '22px' }} />
+              </div>
+              
+              {/* Row 7 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              
+              {/* Row 8 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+              </div>
             </div>
             
-            {/* Central AIFA Logo - Main focal point */}
-            <div style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 2,
-              backgroundColor: 'rgba(0,0,0,0.5)',
-              borderRadius: '50%',
-              padding: '30px',
-              boxShadow: '0 0 30px rgba(0,0,0,0.3)'
-            }}>
-              <img 
-                src="/images/AIFAlogo.png" 
-                alt="AIFA Logo" 
-                style={{ 
-                  height: '90px', 
-                  filter: 'brightness(0) invert(1)',
-                  opacity: 1
-                }}
-              />
-            </div>
-            
-            {/* Size Information */}
-            <div style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              width: '100%',
-              padding: '15px',
-              backgroundColor: 'rgba(0,0,0,0.7)',
-              color: 'white',
-              textAlign: 'center',
-              fontSize: '14px',
-              zIndex: 3
-            }}>
-              AIFA Step and Repeat Background • 1506mm × 2006mm
-            </div>
+            {/* Removed central AIFA logo for a more consistent pattern */}
           </div>
           
           <div style={{ marginTop: '30px', textAlign: 'center' }}>
-            {/* Download Button - Actual Download Link */}
+            {/* Download Button - Actual Download Link with html2canvas implementation */}
             <a 
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                // Create a canvas element
-                const stepAndRepeat = document.getElementById('step-and-repeat');
                 
-                // Since we can't directly download a div as an image, we'll show instructions for a proper download
-                const instructions = `
-                To download this step and repeat background:
+                // Check if html2canvas and FileSaver.js are available
+                if (typeof window !== 'undefined') {
+                  // First, dynamically load html2canvas if it's not already available
+                  if (!window.html2canvas) {
+                    const script1 = document.createElement('script');
+                    script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+                    script1.async = true;
+                    
+                    script1.onload = () => {
+                      // Now load FileSaver.js if it's not already available
+                      if (!window.saveAs) {
+                        const script2 = document.createElement('script');
+                        script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js';
+                        script2.async = true;
+                        
+                        script2.onload = () => {
+                          // Both libraries are loaded, proceed with capture and save
+                          captureAndSave();
+                        };
+                        
+                        document.body.appendChild(script2);
+                      } else {
+                        // FileSaver already loaded, just proceed
+                        captureAndSave();
+                      }
+                    };
+                    
+                    document.body.appendChild(script1);
+                  } else if (!window.saveAs) {
+                    // html2canvas is loaded but FileSaver is not
+                    const script = document.createElement('script');
+                    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js';
+                    script.async = true;
+                    
+                    script.onload = () => {
+                      captureAndSave();
+                    };
+                    
+                    document.body.appendChild(script);
+                  } else {
+                    // Both libraries are already loaded
+                    captureAndSave();
+                  }
+                }
                 
-                1. Right-click or long-press on the image above
-                2. Select "Save Image As..." or "Download Image"
-                3. Choose a location and save
-                
-                Alternatively, you can take a screenshot:
-                - Windows: Use Snipping Tool or press PrtScn
-                - Mac: Press Shift+Command+4, then select the area
-                - Mobile: Take a screenshot using your device's method
-                
-                The dimensions are 1506mm × 2006mm.
-                `;
-                
-                alert(instructions);
-                
-                // You would normally call html2canvas here to actually generate a download
-                // But for the mockup, we'll just provide the screenshot instructions
+                function captureAndSave() {
+                  const stepAndRepeat = document.getElementById('step-and-repeat');
+                  
+                  // Show a loading indicator
+                  const loadingDiv = document.createElement('div');
+                  loadingDiv.style.position = 'fixed';
+                  loadingDiv.style.top = '0';
+                  loadingDiv.style.left = '0';
+                  loadingDiv.style.width = '100%';
+                  loadingDiv.style.height = '100%';
+                  loadingDiv.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                  loadingDiv.style.display = 'flex';
+                  loadingDiv.style.justifyContent = 'center';
+                  loadingDiv.style.alignItems = 'center';
+                  loadingDiv.style.zIndex = '9999';
+                  loadingDiv.innerHTML = '<div style="color: white; font-size: 20px;">Generating image, please wait...</div>';
+                  document.body.appendChild(loadingDiv);
+                  
+                  // Use setTimeout to allow the loading indicator to render
+                  setTimeout(() => {
+                    // Use html2canvas to capture the step and repeat div
+                    window.html2canvas(stepAndRepeat, {
+                      backgroundColor: '#131313',
+                      scale: 2, // Higher quality
+                      useCORS: true,
+                      allowTaint: true,
+                      logging: false
+                    }).then(canvas => {
+                      // Convert to image data
+                      canvas.toBlob(function(blob) {
+                        // Use FileSaver.js to save the image
+                        window.saveAs(blob, 'AIFA-Step-and-Repeat-Background.jpg');
+                        
+                        // Remove the loading indicator
+                        document.body.removeChild(loadingDiv);
+                      }, 'image/jpeg', 0.95); // High quality JPEG
+                    }).catch(error => {
+                      console.error('Error generating image:', error);
+                      document.body.removeChild(loadingDiv);
+                      alert('There was an error generating the image. Please try taking a screenshot instead.');
+                    });
+                  }, 100);
+                }
               }}
               style={{ 
                 display: 'inline-block',
@@ -2102,15 +2173,15 @@ export default function SocialMapsForever() {
                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
               </svg>
-              Download Step and Repeat
+              Download as JPG
             </a>
             
             <p style={{ color: 'white', fontSize: '14px', fontWeight: '300', marginTop: '20px' }}>
               Step and repeat background with partner and sponsor logos (1506mm × 2006mm)
             </p>
             <p style={{ color: '#aaa', fontSize: '13px', marginTop: '10px' }}>
-              This mockup is designed to be screenshot-ready. For a production-quality version,
-              please have a designer create a high-resolution file with proper print specifications.
+              Click the button above to download a high-resolution JPG of the step and repeat background.
+              This can be used for printing at full size (1506mm × 2006mm).
             </p>
           </div>
         </div>

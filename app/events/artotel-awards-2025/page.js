@@ -230,6 +230,108 @@ export default function ArtotelAwards() {
             />
             <span style={{ verticalAlign: 'middle' }}>1-3 Rivington St, London EC2A 3DT</span>
           </p>
+          
+          {/* Sponsor Logos */}
+          <div className="sponsor-logos-container" style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            gap: '40px', 
+            marginTop: '40px',
+            flexWrap: 'wrap',
+            padding: '15px'
+          }}>
+            <img 
+              src="/images/vultr wh tr.png" 
+              alt="Vultr Logo" 
+              style={{ 
+                height: '35px', 
+                objectFit: 'contain'
+              }}
+            />
+            <img 
+              src="/partners/sedition logo wh long.png" 
+              alt="Sedition Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain'
+              }}
+            />
+            <img 
+              src="/partners/Muse Frame wh text.png" 
+              alt="Muse Frame Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain'
+              }}
+            />
+            <img 
+              src="/images/logo-abberation-white.svg" 
+              alt="Aria Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain'
+              }}
+            />
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/wired_tran.png" 
+                alt="WIRED Logo" 
+                style={{ 
+                  height: '30px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
+              />
+            </div>
+            <div style={{ height: '35px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/Factory logo.PNG" 
+                alt="Factory4 Logo" 
+                style={{ 
+                  height: '35px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
+              />
+            </div>
+            <div style={{ height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/support/innovateuk.jpg" 
+                alt="Innovate UK Logo" 
+                style={{ 
+                  height: '25px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
+              />
+            </div>
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/Asprey_Studio_logo.webp" 
+                alt="Asprey Studios Logo" 
+                style={{ 
+                  height: '30px',
+                  filter: 'brightness(0) invert(1)'
+                }}
+              />
+            </div>
+            <div
+              style={{
+                height: '30px',
+                display: 'flex',
+                alignItems: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                letterSpacing: '0.05em'
+              }}
+            >
+              NOPRBLM.
+            </div>
+          </div>
         </div>
       </section>
 

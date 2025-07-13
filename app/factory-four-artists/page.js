@@ -49,7 +49,7 @@ export default function FactoryFourArtists() {
       name: "Olena Yara", 
       role: "Curator",
       website: "https://theyaragency.com/",
-      image: "/images/Olena Yara.JPG",
+      image: "/images/olena.JPG",
       description: "Olena is the founder and creative director of Factory 4, leading the collaborative initiative to showcase innovative AI artists in unique settings.",
       bio: "Olena is a Web3 marketing expert and founder of Yara Agency, a digital art marketing & PR firm supporting artists worldwide. She has led digital strategy at Fuelarts and LiveArt, collaborating with institutions like Christie's Education, Forbes Web3, and Tezos. A speaker at NFC Lisbon, Zebu Live, she also co-founded Factory 4.0."
     },

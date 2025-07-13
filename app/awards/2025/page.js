@@ -378,13 +378,12 @@ export default function Awards2025() {
             />
             <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/wired_tran.png" 
+                src="/images/Wired Logo White.png" 
                 alt="WIRED Logo" 
                 style={{ 
-                  height: '30px',
-                  backgroundColor: '#fff',
-                  padding: '2px 5px',
-                  borderRadius: '3px'
+                  height: '25px', 
+                  objectFit: 'contain',
+                  maxWidth: '100%'
                 }}
               />
             </div>

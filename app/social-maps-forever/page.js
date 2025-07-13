@@ -1375,44 +1375,87 @@ export default function SocialMapsForever() {
                 <div style={{
                   borderTop: '1px solid rgba(255,255,255,0.2)',
                   borderBottom: '1px solid rgba(255,255,255,0.2)',
-                  padding: '5px 0',
+                  padding: '10px 0',
                   margin: '0 0 8px 0'
                 }}>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 2px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>Art o'tel</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 2px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>Factory4</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 2px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>ARIA Protocol</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 2px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>Vultr</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>Sedition</p>
+                  <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(3, 1fr)', 
+                    gap: '10px',
+                    width: '100%',
+                    maxWidth: '200px',
+                    margin: '0 auto'
+                  }}>
+                    {/* Row 1 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/arthotel_London Hoxton_White.png" 
+                        alt="Art'otel Logo" 
+                        style={{ height: '12px', objectFit: 'contain' }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/Factory logo.PNG" 
+                        alt="Factory4 Logo" 
+                        style={{ 
+                          height: '15px', 
+                          objectFit: 'contain',
+                          filter: 'brightness(0) invert(1)'
+                        }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/logo-abberation-white.svg" 
+                        alt="Aria Logo" 
+                        style={{ height: '12px', objectFit: 'contain' }}
+                      />
+                    </div>
+                    
+                    {/* Row 2 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/vultr wh tr.png" 
+                        alt="Vultr Logo" 
+                        style={{ height: '14px', objectFit: 'contain' }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/partners/sedition logo wh long.png" 
+                        alt="Sedition Logo" 
+                        style={{ height: '12px', objectFit: 'contain' }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <p style={{ 
+                        fontWeight: '300', 
+                        margin: '0', 
+                        textAlign: 'center',
+                        fontSize: '8px',
+                        lineHeight: '1.2',
+                        color: 'white'
+                      }}>SMASH MEDIA</p>
+                    </div>
+                    
+                    {/* Row 3 - NOPRBLM centered */}
+                    <div style={{ 
+                      gridColumn: '2 / span 1',
+                      display: 'flex', 
+                      justifyContent: 'center', 
+                      alignItems: 'center'
+                    }}>
+                      <p style={{ 
+                        fontWeight: '300', 
+                        margin: '0', 
+                        textAlign: 'center',
+                        fontSize: '8px',
+                        lineHeight: '1.2',
+                        color: 'white'
+                      }}>NOPRBLM.</p>
+                    </div>
+                  </div>
                 </div>
                 
                 <p style={{ 
@@ -1453,37 +1496,71 @@ export default function SocialMapsForever() {
                 <div style={{
                   borderTop: '1px solid rgba(255,255,255,0.2)',
                   borderBottom: '1px solid rgba(255,255,255,0.2)',
-                  padding: '6px 0',
+                  padding: '10px 0',
                   margin: '0 0 10px 0'
                 }}>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 3px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>WIRED Summer Lab</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 3px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>House of Lords</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0 0 3px 0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>Asprey Studio</p>
-                  <p style={{ 
-                    fontWeight: '300', 
-                    margin: '0', 
-                    textAlign: 'center',
-                    fontSize: '10px',
-                    lineHeight: '1.3'
-                  }}>ARIA Protocol</p>
+                  <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(3, 1fr)', 
+                    gap: '10px',
+                    width: '100%',
+                    maxWidth: '200px',
+                    margin: '0 auto'
+                  }}>
+                    {/* Row 1 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/Wired Logo White.png" 
+                        alt="WIRED Logo" 
+                        style={{ height: '12px', objectFit: 'contain', maxWidth: '100%' }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <p style={{ 
+                        fontWeight: '300', 
+                        margin: '0', 
+                        textAlign: 'center',
+                        fontSize: '8px',
+                        lineHeight: '1.2',
+                        color: 'white'
+                      }}>House of Lords</p>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/Asprey_Studio_logo.webp" 
+                        alt="Asprey Studio Logo" 
+                        style={{ 
+                          height: '12px', 
+                          objectFit: 'contain',
+                          filter: 'brightness(0) invert(1)'
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Row 2 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/logo-abberation-white.svg" 
+                        alt="Aria Logo" 
+                        style={{ height: '12px', objectFit: 'contain' }}
+                      />
+                    </div>
+                    <div style={{ 
+                      gridColumn: '2 / span 2',
+                      display: 'flex', 
+                      justifyContent: 'center', 
+                      alignItems: 'center'
+                    }}>
+                      <p style={{ 
+                        fontWeight: '300', 
+                        margin: '0', 
+                        textAlign: 'center',
+                        fontSize: '8px',
+                        lineHeight: '1.2',
+                        color: 'white'
+                      }}>NOPRBLM.</p>
+                    </div>
+                  </div>
                 </div>
                 
                 <p style={{ 
@@ -1549,9 +1626,9 @@ export default function SocialMapsForever() {
                   {/* Row 1 */}
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/images/logo-abberation-white.svg" 
+                      src="/partners/aria/logo-abberation-symbol_white.svg" 
                       alt="ARIA Logo" 
-                      style={{ height: '16px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                      style={{ height: '16px', objectFit: 'contain' }}
                     />
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
@@ -1610,24 +1687,33 @@ export default function SocialMapsForever() {
                       letterSpacing: '0.5px'
                     }}>NOPRBLM.</p>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
                       src="/images/Wired Logo White.png" 
                       alt="WIRED Logo" 
                       style={{ 
                         height: '13px', 
-                        objectFit: 'contain', 
-                        marginBottom: '3px'
+                        objectFit: 'contain',
+                        maxWidth: '100%'
                       }}
                     />
+                  </div>
+                </div>
+                
+                {/* Add SMASH MEDIA as a new row */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', width: '100%', margin: '10px auto 0' }}>
+                  <div></div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <p style={{ 
                       fontWeight: '300', 
                       margin: '0', 
                       textAlign: 'center',
-                      fontSize: '8px',
-                      lineHeight: '1.2'
-                    }}>Summer Lab</p>
+                      fontSize: '11px',
+                      lineHeight: '1.3',
+                      letterSpacing: '0.5px'
+                    }}>SMASH MEDIA</p>
                   </div>
+                  <div></div>
                 </div>
               </div>
             </div>

@@ -733,6 +733,35 @@ export default function QRPage() {
               NOPRBLM.
             </div>
           </div>
+          
+          <div style={{ textAlign: 'center', marginTop: '40px' }} className="fade-in">
+            <a 
+              href="/events/aifa-awards-2025-press-release" 
+              className="link-button"
+              style={{ 
+                display: 'inline-block',
+                padding: '10px 20px',
+                backgroundColor: 'transparent',
+                color: 'white',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                fontSize: '0.8rem',
+                letterSpacing: '0.1em',
+                border: '1px solid white',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = 'white';
+                e.target.style.color = 'black';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.color = 'white';
+              }}
+            >
+              Read the Press Release
+            </a>
+          </div>
         </div>
       </section>
 
@@ -773,22 +802,6 @@ export default function QRPage() {
             />
           </div>
           <p className="copyright-text">© {new Date().getFullYear()} AIFA Ventures. All rights reserved.</p>
-          <div style={{ marginTop: '10px', textAlign: 'center' }}>
-            <a 
-              href="/events/aifa-awards-2025-press-release" 
-              style={{ 
-                color: 'white', 
-                textDecoration: 'underline', 
-                fontSize: '0.9rem',
-                opacity: '0.8',
-                transition: 'opacity 0.3s ease'
-              }}
-              onMouseOver={(e) => e.target.style.opacity = '1'}
-              onMouseOut={(e) => e.target.style.opacity = '0.8'}
-            >
-              Read the Press Release
-            </a>
-          </div>
         </div>
       </div>
 

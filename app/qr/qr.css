@@ -1,0 +1,491 @@
+/* Import global styling */
+@import '../home.css';
+
+/* QR PAGE SPECIFIC STYLES */
+.qr-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  background-color: var(--black);
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/tartan_hotel.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.qr-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--white);
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.qr-hero-title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.qr-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.qr-hero-date {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+/* SCHEDULE SECTION */
+.schedule-section {
+  background-color: var(--white);
+  padding: 60px 0;
+  position: relative;
+}
+
+.schedule-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.schedule-timeline {
+  position: relative;
+  padding: 30px 0;
+}
+
+.schedule-timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 120px;
+  width: 1px;
+  background-color: var(--black);
+}
+
+.schedule-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.schedule-time {
+  width: 100px;
+  font-weight: 500;
+  text-align: right;
+  padding-right: 20px;
+  font-size: 0.9rem;
+}
+
+.schedule-dot {
+  position: absolute;
+  left: 120px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--black);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.schedule-activity {
+  padding-left: 40px;
+  font-size: 1rem;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  position: relative;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* FILM STILLS SECTION */
+.film-stills-section {
+  background-color: var(--white);
+  padding: 60px 0;
+  position: relative;
+}
+
+.film-stills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.film-stills-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.film-still-item {
+  position: relative;
+}
+
+.film-still-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.film-still-caption {
+  font-size: 0.8rem;
+  color: #333;
+  padding: 10px 0;
+  text-align: center;
+  font-style: italic;
+}
+
+/* SECTIONS: FINALISTS, FEATURED ARTISTS, FACTORY FOUR, JURY */
+.finalists-section,
+.featured-artists-section,
+.factory-four-section,
+.jury-section,
+.venue-section {
+  padding: 60px 0;
+  position: relative;
+}
+
+.finalists-section {
+  background-color: var(--white);
+}
+
+.featured-artists-section {
+  background-color: #f9f9f9;
+}
+
+.factory-four-section {
+  background-color: var(--white);
+}
+
+.jury-section {
+  background-color: #f9f9f9;
+}
+
+.venue-section {
+  background-color: var(--white);
+}
+
+.finalists-container,
+.featured-container,
+.factory-container,
+.jury-container,
+.venue-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.finalists-description,
+.featured-description,
+.factory-description,
+.jury-description,
+.venue-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.finalists-grid,
+.featured-grid,
+.factory-grid,
+.jury-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.finalist-item,
+.featured-item,
+.factory-item,
+.jury-member {
+  background-color: #f9f9f9;
+  padding: 25px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.finalist-item:hover,
+.featured-item:hover,
+.factory-item:hover,
+.jury-member:hover {
+  transform: translateY(-5px);
+}
+
+.finalist-title,
+.featured-name,
+.factory-name,
+.jury-name {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.finalist-meta,
+.featured-project,
+.factory-role,
+.jury-role {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.finalist-description,
+.featured-bio,
+.factory-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.finalists-note,
+.featured-note,
+.factory-note,
+.jury-note {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  border: 1px solid var(--black);
+}
+
+.link-button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* VENUE SECTION */
+.venue-info {
+  background-color: #f9f9f9;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.venue-address {
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+/* SPONSORS SECTION */
+.sponsors-section {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 60px 0;
+}
+
+.sponsors-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.sponsors-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.sponsor-logo {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.sponsor-logo img {
+  max-height: 40px;
+  max-width: 150px;
+}
+
+/* FADE IN ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .qr-hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .qr-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .qr-hero-date {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .schedule-timeline:before {
+    left: 80px;
+  }
+  
+  .schedule-time {
+    width: 70px;
+  }
+  
+  .schedule-dot {
+    left: 80px;
+  }
+  
+  .schedule-activity {
+    padding-left: 30px;
+  }
+  
+  .film-stills-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .finalists-grid,
+  .featured-grid,
+  .factory-grid,
+  .jury-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sponsors-grid {
+    gap: 25px;
+  }
+  
+  .sponsor-logo img {
+    max-height: 30px;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-hero {
+    height: 60vh;
+  }
+  
+  .qr-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .schedule-timeline:before {
+    left: 70px;
+  }
+  
+  .schedule-time {
+    width: 60px;
+    font-size: 0.8rem;
+  }
+  
+  .schedule-dot {
+    left: 70px;
+  }
+  
+  .schedule-activity {
+    padding-left: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .film-stills-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .sponsors-grid {
+    gap: 20px;
+  }
+  
+  .sponsor-logo {
+    padding: 10px;
+  }
+  
+  .sponsor-logo img {
+    max-height: 25px;
+    max-width: 100px;
+  }
+  
+  .sponsor-logos-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+    background-color: rgba(0,0,0,0.3) !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    margin-top: 30px !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

@@ -1429,6 +1429,15 @@ export default function SocialMapsForever() {
                       />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/partners/Muse Frame wh text.png" 
+                        alt="Muse Frame Logo" 
+                        style={{ height: '12px', objectFit: 'contain' }}
+                      />
+                    </div>
+                    
+                    {/* Row 3 */}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <p style={{ 
                         fontWeight: '300', 
                         margin: '0', 
@@ -1438,10 +1447,7 @@ export default function SocialMapsForever() {
                         color: 'white'
                       }}>SMASH MEDIA</p>
                     </div>
-                    
-                    {/* Row 3 - NOPRBLM centered */}
                     <div style={{ 
-                      gridColumn: '2 / span 1',
                       display: 'flex', 
                       justifyContent: 'center', 
                       alignItems: 'center'
@@ -1454,6 +1460,19 @@ export default function SocialMapsForever() {
                         lineHeight: '1.2',
                         color: 'white'
                       }}>NOPRBLM.</p>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/support/innovateuk.jpg" 
+                        alt="Innovate UK Logo" 
+                        style={{ 
+                          height: '10px',
+                          objectFit: 'contain',
+                          backgroundColor: '#fff',
+                          padding: '2px 3px',
+                          borderRadius: '2px'
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -1546,7 +1565,6 @@ export default function SocialMapsForever() {
                       />
                     </div>
                     <div style={{ 
-                      gridColumn: '2 / span 2',
                       display: 'flex', 
                       justifyContent: 'center', 
                       alignItems: 'center'
@@ -1559,6 +1577,19 @@ export default function SocialMapsForever() {
                         lineHeight: '1.2',
                         color: 'white'
                       }}>NOPRBLM.</p>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <img 
+                        src="/images/support/innovateuk.jpg" 
+                        alt="Innovate UK Logo" 
+                        style={{ 
+                          height: '10px',
+                          objectFit: 'contain',
+                          backgroundColor: '#fff',
+                          padding: '2px 3px',
+                          borderRadius: '2px'
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -1626,7 +1657,7 @@ export default function SocialMapsForever() {
                   {/* Row 1 */}
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/partners/aria/logo-abberation-symbol_white.svg" 
+                      src="/images/logo-abberation-white.svg" 
                       alt="ARIA Logo" 
                       style={{ height: '16px', objectFit: 'contain' }}
                     />
@@ -1700,9 +1731,8 @@ export default function SocialMapsForever() {
                   </div>
                 </div>
                 
-                {/* Add SMASH MEDIA as a new row */}
+                {/* Add SMASH MEDIA and Innovate UK in one row */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', width: '100%', margin: '10px auto 0' }}>
-                  <div></div>
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <p style={{ 
                       fontWeight: '300', 
@@ -1714,6 +1744,19 @@ export default function SocialMapsForever() {
                     }}>SMASH MEDIA</p>
                   </div>
                   <div></div>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
+                    <img 
+                      src="/images/support/innovateuk.jpg" 
+                      alt="Innovate UK Logo" 
+                      style={{ 
+                        height: '14px',
+                        objectFit: 'contain',
+                        backgroundColor: '#fff',
+                        padding: '2px 4px',
+                        borderRadius: '3px'
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1819,6 +1862,255 @@ export default function SocialMapsForever() {
             </div>
             <p style={{ color: 'white', fontSize: '14px', textAlign: 'center', marginTop: '15px', fontWeight: '300' }}>
               Back envelope with "You're Invited" text
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      {/* STEP AND REPEAT SECTION */}
+      <section className="step-repeat-section" style={{ padding: '40px 20px', backgroundColor: 'black' }}>
+        <h2 className="section-title fade-in" style={{ color: 'white', textAlign: 'center', marginBottom: '30px', fontSize: '1.5rem', fontWeight: '300' }}>Step and Repeat Background</h2>
+        
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div id="step-and-repeat" style={{ 
+            position: 'relative',
+            width: '100%',
+            paddingBottom: '133.3%', /* Aspect ratio of 1506mm x 2006mm */
+            backgroundColor: '#131313',
+            borderRadius: '4px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+          }}>
+            {/* Background Pattern - Clearer tartan */}
+            <div style={{ 
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundImage: "url('/images/Tartan_Lords.png')",
+              backgroundSize: '300px', /* Exact pattern size for visibility */
+              backgroundPosition: 'center',
+              opacity: 0.4 /* Higher opacity to clearly see the pattern */
+            }}></div>
+            
+            {/* Perfect grid of logos - evenly spaced and aligned */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(5, 1fr)',
+              gridTemplateRows: 'repeat(8, 1fr)',
+              padding: '6%'
+            }}>
+              {/* Row 1 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              
+              {/* Row 2 */}
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div>
+              
+              {/* Row 3 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Factory logo.PNG" alt="Factory 4 Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              
+              {/* Row 4 */}
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div> {/* Center position - will be occupied by main AIFA logo */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/arthotel_London Hoxton_White.png" alt="art'otel Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div>
+              
+              {/* Row 5 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              
+              {/* Row 6 */}
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
+              </div>
+              <div></div>
+              
+              {/* Row 7 */}
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              
+              {/* Row 8 */}
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
+              </div>
+              <div></div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
+              </div>
+              <div></div>
+            </div>
+            
+            {/* Central AIFA Logo - Main focal point */}
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 2,
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              borderRadius: '50%',
+              padding: '30px',
+              boxShadow: '0 0 30px rgba(0,0,0,0.3)'
+            }}>
+              <img 
+                src="/images/AIFAlogo.png" 
+                alt="AIFA Logo" 
+                style={{ 
+                  height: '90px', 
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 1
+                }}
+              />
+            </div>
+            
+            {/* Size Information */}
+            <div style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              padding: '15px',
+              backgroundColor: 'rgba(0,0,0,0.7)',
+              color: 'white',
+              textAlign: 'center',
+              fontSize: '14px',
+              zIndex: 3
+            }}>
+              AIFA Step and Repeat Background • 1506mm × 2006mm
+            </div>
+          </div>
+          
+          <div style={{ marginTop: '30px', textAlign: 'center' }}>
+            {/* Download Button - Actual Download Link */}
+            <a 
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                // Create a canvas element
+                const stepAndRepeat = document.getElementById('step-and-repeat');
+                
+                // Since we can't directly download a div as an image, we'll show instructions for a proper download
+                const instructions = `
+                To download this step and repeat background:
+                
+                1. Right-click or long-press on the image above
+                2. Select "Save Image As..." or "Download Image"
+                3. Choose a location and save
+                
+                Alternatively, you can take a screenshot:
+                - Windows: Use Snipping Tool or press PrtScn
+                - Mac: Press Shift+Command+4, then select the area
+                - Mobile: Take a screenshot using your device's method
+                
+                The dimensions are 1506mm × 2006mm.
+                `;
+                
+                alert(instructions);
+                
+                // You would normally call html2canvas here to actually generate a download
+                // But for the mockup, we'll just provide the screenshot instructions
+              }}
+              style={{ 
+                display: 'inline-block',
+                padding: '14px 28px',
+                backgroundColor: '#2563EB',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px',
+                fontWeight: '500',
+                textTransform: 'uppercase',
+                fontSize: '14px',
+                letterSpacing: '1px',
+                border: 'none',
+                marginBottom: '20px',
+                boxShadow: '0 4px 6px rgba(37, 99, 235, 0.25)',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = '#1D4ED8';
+                e.target.style.boxShadow = '0 6px 8px rgba(37, 99, 235, 0.3)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = '#2563EB';
+                e.target.style.boxShadow = '0 4px 6px rgba(37, 99, 235, 0.25)';
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style={{ marginRight: '8px', verticalAlign: 'text-top' }} viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+              </svg>
+              Download Step and Repeat
+            </a>
+            
+            <p style={{ color: 'white', fontSize: '14px', fontWeight: '300', marginTop: '20px' }}>
+              Step and repeat background with partner and sponsor logos (1506mm × 2006mm)
+            </p>
+            <p style={{ color: '#aaa', fontSize: '13px', marginTop: '10px' }}>
+              This mockup is designed to be screenshot-ready. For a production-quality version,
+              please have a designer create a high-resolution file with proper print specifications.
             </p>
           </div>
         </div>

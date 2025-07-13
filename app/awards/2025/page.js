@@ -216,7 +216,7 @@ export default function Awards2025() {
         <div className="video-wrapper">
           <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
             <iframe 
-              src="https://player.vimeo.com/video/1098531929?h=28098bdc89&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+              src="https://player.vimeo.com/video/1098531929?h=28098bdc89&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;background=1" 
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
               style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} 
@@ -296,27 +296,6 @@ export default function Awards2025() {
         </div>
       </section>
 
-      {/* PARTNERS SECTION */}
-      <section className="awards-partners">
-        <div className="partners-container">
-          <h2 className="partners-title">Our Partners</h2>
-          
-          <div className="moving-brands">
-            <div className="brand-row">
-              {brandNames.map((brand, idx) => (
-                <div key={idx} className="brand-name">
-                  {brand}
-                </div>
-              ))}
-              {brandNames.map((brand, idx) => (
-                <div key={`dup-${idx}`} className="brand-name">
-                  {brand}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* JURY SECTION */}
       <section className="awards-jury">
@@ -351,66 +330,158 @@ export default function Awards2025() {
         </div>
       </section>
 
-      {/* SPONSORS SECTION */}
-      <section className="awards-sponsors">
+      {/* PARTNERS & SPONSORS SECTION */}
+      <section className="awards-sponsors" style={{ paddingBottom: '0', marginBottom: '0' }}>
         <div className="sponsors-container">
-          <h2 className="sponsors-title">Our Sponsors</h2>
+          <h2 className="sponsors-title">Our Partners & Sponsors</h2>
           
-          <div className="sponsors-logos visible">
-            <div className="sponsor-logo">
+          <div className="sponsors-logos visible" style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '40px',
+            padding: '20px',
+            maxWidth: '900px',
+            margin: '0 auto'
+          }}>
+            <img 
+              src="/images/vultr wh tr.png" 
+              alt="Vultr Logo" 
+              style={{ 
+                height: '35px', 
+                objectFit: 'contain'
+              }}
+            />
+            <img 
+              src="/partners/sedition logo wh long.png" 
+              alt="Sedition Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain'
+              }}
+            />
+            <img 
+              src="/partners/Muse Frame wh text.png" 
+              alt="Muse Frame Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain'
+              }}
+            />
+            <img 
+              src="/images/logo-abberation-white.svg" 
+              alt="Aria Logo" 
+              style={{ 
+                height: '30px', 
+                objectFit: 'contain'
+              }}
+            />
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/vultr wh tr.png" 
-                alt="Vultr Logo" 
-                style={{ height: '35px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                src="/images/wired_tran.png" 
+                alt="WIRED Logo" 
+                style={{ 
+                  height: '30px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
               />
             </div>
-            <div className="sponsor-logo">
+            <div style={{ height: '35px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/partners/sedition logo wh long.png" 
-                alt="Sedition Logo" 
-                style={{ height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                src="/images/Factory logo.PNG" 
+                alt="Factory4 Logo" 
+                style={{ 
+                  height: '35px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
               />
             </div>
-            <div className="sponsor-logo">
+            <div style={{ height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/partners/Muse Frame wh text.png" 
-                alt="Muse Frame Logo" 
-                style={{ height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                src="/images/support/innovateuk.jpg" 
+                alt="Innovate UK Logo" 
+                style={{ 
+                  height: '25px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
               />
             </div>
-            <div className="sponsor-logo">
-              <img 
-                src="/images/logo-abberation-white.svg" 
-                alt="Aria Logo" 
-                style={{ height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-              />
+            <div style={{
+              height: '30px',
+              display: 'flex',
+              alignItems: 'center',
+              color: 'white',
+              fontWeight: 'bold',
+              letterSpacing: '0.05em'
+            }}>
+              NOPRBLM.
+            </div>
+            <img 
+              src="/images/Asprey_Studio_logo.webp" 
+              alt="Asprey Studios Logo" 
+              style={{ 
+                height: '30px',
+                filter: 'brightness(0) invert(1)'
+              }}
+            />
+            <img 
+              src="/images/arthotel_London Hoxton_White.png" 
+              alt="art'otel London Hoxton Logo" 
+              style={{ 
+                height: '30px'
+              }}
+            />
+            <div style={{
+              height: '30px',
+              display: 'flex',
+              alignItems: 'center',
+              color: 'white',
+              fontWeight: 'bold',
+              letterSpacing: '0.05em'
+            }}>
+              SMASH MEDIA
             </div>
           </div>
           
-          <div className="sponsors-info visible">
-            <div className="sponsor-info-item">
-              <h3>Factory 4</h3>
-              <p>Factory 4 is a nomadic, artist-led gallery founded by Paul Dowling and Olena Yara. It has hosted several digital art exhibitions in London and Lisbon, with a focus on empowering artists and showcasing their work to wider audiences. Featured artists at the AIFA Awards 2025 include Zhannet Podobed, Akane Hiraoka and Flux the Artist.</p>
-              <p><a href="https://www.instagram.com/factory.4.0" target="_blank" rel="noopener noreferrer">instagram.com/factory.4.0</a></p>
-            </div>
-            
-            <div className="sponsor-info-item">
-              <h3>Vultr</h3>
-              <p>Vultr is on a mission to make high-performance cloud infrastructure easy to use, affordable, and locally accessible for enterprises and AI innovators around the world. Vultr is trusted by hundreds of thousands of active customers across 185 countries for its flexible, scalable, global Cloud Compute, Cloud GPU, Bare Metal, and Cloud Storage solutions.</p>
-              <p><a href="https://www.vultr.com" target="_blank" rel="noopener noreferrer">www.vultr.com</a></p>
-            </div>
-            
-            <div className="sponsor-info-item">
-              <h3>Aria</h3>
-              <p>Founded in 2025, Aria is an investment platform that transforms iconic cultural intellectual property assets into digital financial assets. With Aria, investors can already buy and sell rights tied to real-world income from music performed by major artists like Justin Bieber, Miley Cyrus, and BLACKPINK. Aria ensures transparent, verifiable IP ownership and revenue sharing via the Story blockchain. Aria is also developing programmable IP tools allowing for cultural assets such as music, art, and film to be licensed, remixed, and monetized through digital contracts directly from rights holders.</p>
-              <p><a href="https://ariaprotocol.xyz/" target="_blank" rel="noopener noreferrer">ariaprotocol.xyz</a></p>
-            </div>
+          <div style={{ 
+            textAlign: 'center',
+            marginTop: '40px',
+            paddingBottom: '60px'
+          }}>
+            <a 
+              href="/events/aifa-awards-2025-press-release" 
+              style={{
+                display: 'inline-block',
+                padding: '10px 20px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '4px',
+                fontWeight: '500',
+                transition: 'all 0.3s ease',
+                border: '1px solid rgba(255, 255, 255, 0.3)'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              }}
+            >
+              Read the Press Release
+            </a>
           </div>
         </div>
       </section>
 
       {/* SIGNUP SECTION */}
-      <section className="signup-section" id="signup">
+      <section className="signup-section" id="signup" style={{ marginTop: '0', paddingTop: '60px' }}>
         <div className="signup-box">
           <h1 className="visible">Join Our Community</h1>
           <p className="visible">

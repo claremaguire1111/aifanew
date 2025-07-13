@@ -744,6 +744,9 @@ export default function QRPage() {
             <div className="sponsor-logo" style={{ fontWeight: 'bold', fontSize: '18px' }}>
               NOPRBLM.
             </div>
+            <div className="sponsor-logo" style={{ fontWeight: 'bold', fontSize: '18px', letterSpacing: '0.05em' }}>
+              SMASH MEDIA
+            </div>
           </div>
           
           <div className="press-release-container fade-in">

@@ -331,6 +331,18 @@ export default function ArtotelAwards() {
             >
               NOPRBLM.
             </div>
+            <div
+              style={{
+                height: '30px',
+                display: 'flex',
+                alignItems: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                letterSpacing: '0.05em'
+              }}
+            >
+              SMASH MEDIA
+            </div>
           </div>
         </div>
       </section>

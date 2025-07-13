@@ -486,6 +486,10 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .sponsor-logos-container {
+    gap: 20px !important;
+    margin-top: 30px !important;
+  }
   .press-hero-title {
     font-size: 2.2rem;
   }
@@ -588,6 +592,16 @@
 }
 
 @media (max-width: 480px) {
+  .sponsor-logos-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    background-color: rgba(0,0,0,0.3) !important;
+    padding: 15px !important;
+    border-radius: 8px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: fit-content !important;
+  }
   .press-hero {
     height: 60vh;
   }

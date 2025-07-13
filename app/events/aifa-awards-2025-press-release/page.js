@@ -146,18 +146,17 @@ export default function PressRelease() {
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            gap: '30px', 
+            gap: '40px', 
             marginTop: '40px',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            padding: '15px'
           }}>
             <img 
               src="/images/vultr wh tr.png" 
               alt="Vultr Logo" 
               style={{ 
                 height: '35px', 
-                objectFit: 'contain',
-                backgroundColor: 'transparent',
-                filter: 'brightness(0) invert(1)'
+                objectFit: 'contain'
               }}
             />
             <img 
@@ -165,8 +164,7 @@ export default function PressRelease() {
               alt="Sedition Logo" 
               style={{ 
                 height: '30px', 
-                objectFit: 'contain',
-                filter: 'brightness(0) invert(1)'
+                objectFit: 'contain'
               }}
             />
             <img 
@@ -174,8 +172,7 @@ export default function PressRelease() {
               alt="Muse Frame Logo" 
               style={{ 
                 height: '30px', 
-                objectFit: 'contain',
-                filter: 'brightness(0) invert(1)' 
+                objectFit: 'contain'
               }}
             />
             <img 
@@ -183,10 +180,76 @@ export default function PressRelease() {
               alt="Aria Logo" 
               style={{ 
                 height: '30px', 
-                objectFit: 'contain',
-                filter: 'brightness(0) invert(1)' 
+                objectFit: 'contain'
               }}
             />
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/wired_tran.png" 
+                alt="WIRED Logo" 
+                style={{ 
+                  height: '30px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
+              />
+            </div>
+            <div style={{ height: '35px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/Factory logo.PNG" 
+                alt="Factory4 Logo" 
+                style={{ 
+                  height: '35px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
+              />
+            </div>
+            <div style={{ height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/support/innovateuk.jpg" 
+                alt="Innovate UK Logo" 
+                style={{ 
+                  height: '25px',
+                  backgroundColor: '#fff',
+                  padding: '2px 5px',
+                  borderRadius: '3px'
+                }}
+              />
+            </div>
+            <div
+              style={{
+                height: '30px',
+                display: 'flex',
+                alignItems: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                letterSpacing: '0.05em'
+              }}
+            >
+              NOPRBLM.
+            </div>
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/arthotel_London Hoxton_White.png" 
+                alt="art'otel London Hoxton Logo" 
+                style={{ 
+                  height: '30px'
+                }}
+              />
+            </div>
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/Asprey_Studio_logo.webp" 
+                alt="Asprey Studios Logo" 
+                style={{ 
+                  height: '30px',
+                  filter: 'brightness(0) invert(1)'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -389,6 +452,10 @@ export default function PressRelease() {
               <li><a href="https://museframe.io" target="_blank" rel="noopener noreferrer">Muse Frame</a></li>
               <li><a href="https://vultr.com" target="_blank" rel="noopener noreferrer">Vultr</a></li>
               <li><a href="https://ariaprotocol.xyz" target="_blank" rel="noopener noreferrer">Aria</a></li>
+              <li><a href="https://www.artotellondonhoxton.com" target="_blank" rel="noopener noreferrer">art'otel London Hoxton</a></li>
+              <li><a href="https://aspreystudios.com" target="_blank" rel="noopener noreferrer">Asprey Studios</a></li>
+              <li><a href="https://www.instagram.com/factory.4.0" target="_blank" rel="noopener noreferrer">Factory4</a></li>
+              <li><a href="https://www.gov.uk/government/organisations/innovate-uk" target="_blank" rel="noopener noreferrer">Innovate UK</a></li>
             </ul>
           </div>
           

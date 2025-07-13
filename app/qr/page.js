@@ -734,30 +734,10 @@ export default function QRPage() {
             </div>
           </div>
           
-          <div style={{ textAlign: 'center', marginTop: '40px' }} className="fade-in">
+          <div className="press-release-container fade-in">
             <a 
               href="/events/aifa-awards-2025-press-release" 
-              className="link-button"
-              style={{ 
-                display: 'inline-block',
-                padding: '10px 20px',
-                backgroundColor: 'transparent',
-                color: 'white',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-                fontSize: '0.8rem',
-                letterSpacing: '0.1em',
-                border: '1px solid white',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = 'white';
-                e.target.style.color = 'black';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = 'white';
-              }}
+              className="press-release-link"
             >
               Read the Press Release
             </a>

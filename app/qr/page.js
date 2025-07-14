@@ -283,7 +283,7 @@ export default function QRPage() {
             }
           }}>
             <img 
-              src="/images/vultr wh tr.png" 
+              src="/images/logo__mono-on-dark.png" 
               alt="Vultr Logo" 
               style={{ 
                 height: '35px', 
@@ -695,9 +695,9 @@ export default function QRPage() {
           <div className="sponsors-grid fade-in" style={{ gap: '40px' }}>
             <div className="sponsor-logo">
               <img 
-                src="/images/vultr wh tr.png" 
+                src="/images/logo__mono-on-dark.png" 
                 alt="Vultr Logo"
-                style={{ background: 'transparent', filter: 'brightness(0) invert(1)' }}
+                style={{ background: 'transparent' }}
               />
             </div>
             <div className="sponsor-logo">

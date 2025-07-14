@@ -158,7 +158,7 @@ export default function PressRelease() {
             }
           }}>
             <img 
-              src="/images/vultr wh tr.png" 
+              src="/images/logo__mono-on-dark.png" 
               alt="Vultr Logo" 
               style={{ 
                 height: '35px', 

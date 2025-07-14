@@ -2297,13 +2297,13 @@ export default function SocialMapsForever() {
                         const aspreyLogos = clonedDoc.querySelectorAll('img[src="/images/Asprey_final_ok.png"]');
                         aspreyLogos.forEach(logo => {
                           // Apply multiple techniques to ensure it appears white
-                          logo.style.filter = 'brightness(0) invert(1) contrast(1.5)';
+                          logo.style.filter = 'brightness(0) invert(1) contrast(1.5) saturate(0)';
                           logo.style.opacity = '1';
                           logo.style.mixBlendMode = 'screen';
                           logo.style.backgroundColor = 'transparent';
                           
-                          // Increase size
-                          logo.style.height = '38px';
+                          // Maintain the 58px size
+                          logo.style.height = '58px';
                           
                           // Add a special class
                           logo.classList.add('white-asprey-logo');
@@ -2312,9 +2312,10 @@ export default function SocialMapsForever() {
                           const parentDiv = logo.parentNode;
                           if (parentDiv) {
                             const whiteLogoFallback = document.createElement('div');
-                            whiteLogoFallback.innerHTML = '<svg width="100" height="38" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="12">ASPREY STUDIOS</text></svg>';
+                            whiteLogoFallback.innerHTML = '<svg width="100" height="58" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="12">ASPREY STUDIOS</text></svg>';
                             whiteLogoFallback.style.position = 'absolute';
                             whiteLogoFallback.style.opacity = '0';
+                            whiteLogoFallback.style.zIndex = '-1';
                             parentDiv.appendChild(whiteLogoFallback);
                           }
                         });
@@ -2348,7 +2349,13 @@ export default function SocialMapsForever() {
                           if (logo.src.includes('factory_four_new.png') || 
                               logo.src.includes('innovate_uk_new.png') || 
                               logo.src.includes('smash_media_new.png')) {
-                            logo.style.filter = 'brightness(0) invert(1)';
+                            logo.style.filter = 'brightness(0) invert(1) contrast(1.2)';
+                            logo.style.opacity = '1';
+                            // Increase their size slightly for better visibility
+                            const currentHeight = parseInt(logo.style.height);
+                            if (!isNaN(currentHeight)) {
+                              logo.style.height = Math.round(currentHeight * 1.2) + 'px';
+                            }
                           }
                           
                           // Ensure AIFA logo is white and larger
@@ -2387,24 +2394,43 @@ export default function SocialMapsForever() {
                       }
                     });
                     
-                    // Special handling for Asprey logos - replace with text instead
+                    // Special handling for Asprey logos - use the image but with strong filters
                     const aspreyLogos = clone.querySelectorAll('img[src="/images/Asprey_final_ok.png"]');
                     aspreyLogos.forEach(logo => {
-                      // Get parent container
+                      // Apply stronger filters to ensure visibility
+                      logo.style.filter = 'brightness(0) invert(1) contrast(2) saturate(0)';
+                      logo.style.opacity = '1';
+                      logo.style.mixBlendMode = 'screen';
+                      logo.style.height = '58px';
+                      
+                      // Add a backup text element just in case
                       const container = logo.parentNode;
                       if (container) {
-                        // Create replacement text element
-                        const textElement = document.createElement('div');
-                        textElement.textContent = 'ASPREY STUDIOS';
-                        textElement.style.color = 'white';
-                        textElement.style.fontFamily = 'Arial, sans-serif';
-                        textElement.style.fontWeight = 'bold';
-                        textElement.style.fontSize = '16px';
-                        textElement.style.letterSpacing = '0.5px';
+                        // Add a fallback text element
+                        const fallbackText = document.createElement('div');
+                        fallbackText.textContent = 'ASPREY STUDIOS';
+                        fallbackText.style.color = 'white';
+                        fallbackText.style.fontFamily = 'Arial, sans-serif';
+                        fallbackText.style.fontWeight = 'bold';
+                        fallbackText.style.fontSize = '16px';
+                        fallbackText.style.letterSpacing = '0.5px';
+                        fallbackText.style.position = 'absolute';
+                        fallbackText.style.top = '0';
+                        fallbackText.style.left = '0';
+                        fallbackText.style.width = '100%';
+                        fallbackText.style.height = '100%';
+                        fallbackText.style.display = 'flex';
+                        fallbackText.style.alignItems = 'center';
+                        fallbackText.style.justifyContent = 'center';
+                        fallbackText.style.opacity = '0';
+                        fallbackText.style.zIndex = '-1';
                         
-                        // Replace the image with text
-                        container.innerHTML = '';
-                        container.appendChild(textElement);
+                        // Add position relative to container if needed
+                        if (window.getComputedStyle(container).position === 'static') {
+                          container.style.position = 'relative';
+                        }
+                        
+                        container.appendChild(fallbackText);
                       }
                     });
                     
@@ -2417,7 +2443,13 @@ export default function SocialMapsForever() {
                       if (src && (src.includes('factory_four_new.png') || 
                                  src.includes('innovate_uk_new.png') || 
                                  src.includes('smash_media_new.png'))) {
-                        img.style.filter = 'brightness(0) invert(1)';
+                        img.style.filter = 'brightness(0) invert(1) contrast(1.2)';
+                        img.style.opacity = '1';
+                        // Ensure they have good size
+                        const currentHeight = parseInt(img.style.height);
+                        if (!isNaN(currentHeight)) {
+                          img.style.height = Math.round(currentHeight * 1.2) + 'px';
+                        }
                       }
                       
                       // Ensure AIFA logo is white
@@ -2440,7 +2472,7 @@ export default function SocialMapsForever() {
                         // Create a download link
                         const url = URL.createObjectURL(blob);
                         const link = document.createElement('a');
-                        link.download = 'AIFA_Step_and_Repeat.png';
+                        link.download = 'AIFA_Step_and_Repeat_Background.png';
                         link.href = url;
                         link.click();
                         
@@ -2449,7 +2481,7 @@ export default function SocialMapsForever() {
                           URL.revokeObjectURL(url);
                           document.body.removeChild(loadingOverlay);
                         }, 1000);
-                      }, 'image/png');
+                      }, 'image/png', 0.95); // Increase quality to 0.95
                     }).catch(error => {
                       console.error('Error generating image:', error);
                       document.body.removeChild(loadingOverlay);
@@ -2485,7 +2517,7 @@ export default function SocialMapsForever() {
                               <div class="container">
                                 <div class="grid">
                                   <!-- Row 1 -->
-                                  <div><img src="/images/factory_four_new.png" height="22" style="filter: brightness(0) invert(1);"></div>
+                                  <div><img src="/images/factory_four_new.png" height="36" style="filter: brightness(0) invert(1) contrast(1.2);"></div>
                                   <div><img src="/images/logo-abberation-white.svg" height="22"></div>
                                   <div><img src="/images/AIFAlogo.png" height="28" style="filter: brightness(0) invert(1);"></div>
                                   <div><img src="/partners/Muse Frame wh text.png" height="22"></div>
@@ -2501,7 +2533,7 @@ export default function SocialMapsForever() {
                                   <!-- Row 3 -->
                                   <div><img src="/images/smash_media_new.png" height="28" style="filter: brightness(0) invert(1);"></div>
                                   <div><img src="/images/innovate_uk_new.png" height="28" style="filter: brightness(0) invert(1);"></div>
-                                  <div><div class="asprey-text">ASPREY STUDIOS</div></div>
+                                  <div><img src="/images/Asprey_final_ok.png" height="58" style="filter: brightness(0) invert(1) contrast(1.5) saturate(0);"></div>
                                   
                                   <!-- Repeat rows as needed -->
                                 </div>

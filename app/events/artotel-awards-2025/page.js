@@ -237,14 +237,16 @@ export default function ArtotelAwards() {
             justifyContent: 'center', 
             alignItems: 'center', 
             gap: '20px', 
-            marginTop: '40px',
+            marginTop: '25px',
+            marginBottom: '25px',
             flexWrap: 'wrap',
-            padding: '15px',
+            padding: '20px 15px 30px',
             maxWidth: '100%',
             overflow: 'hidden',
             '@media (max-width: 768px)': {
               gap: '15px',
-              marginTop: '20px'
+              marginTop: '20px',
+              marginBottom: '20px'
             }
           }}>
             <img 

@@ -149,7 +149,7 @@ export default function PressRelease() {
             gap: '20px', 
             marginTop: '40px',
             flexWrap: 'wrap',
-            padding: '15px',
+            padding: '20px 15px 30px',
             maxWidth: '100%',
             overflow: 'hidden',
             '@media (max-width: 768px)': {

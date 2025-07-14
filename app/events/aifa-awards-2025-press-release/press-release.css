@@ -5,8 +5,9 @@
 .press-hero {
   position: relative;
   width: 100%;
-  height: 80vh;
-  min-height: 500px;
+  height: auto;
+  min-height: 650px;
+  padding: 100px 0;
   background-color: var(--black);
   background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/private_events.jpg');
   background-size: cover;
@@ -79,6 +80,8 @@
   background-color: var(--white);
   padding: 60px 0;
   position: relative;
+  margin-top: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .event-details-container {
@@ -602,7 +605,13 @@
 
 @media (max-width: 480px) {
   .press-hero {
-    min-height: 600px !important;
+    min-height: 700px !important;
+    padding: 60px 0 90px !important;
+  }
+  
+  .press-hero-content {
+    max-width: 95% !important;
+    padding: 15px !important;
   }
   
   .sponsor-logos-container {

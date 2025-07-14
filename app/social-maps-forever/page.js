@@ -912,6 +912,211 @@ export default function SocialMapsForever() {
       <section className="event-invites-section">
         <h2 className="event-invites-title fade-in">Event Invites</h2>
         <div className="event-invites-grid fade-in">
+          {/* AIFA x Vultr Collaboration Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/vultr wh tr.png" 
+                  alt="Vultr Logo" 
+                  style={{ height: '36px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x Aria Collaboration Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/logo-abberation-white.svg" 
+                  alt="Aria Logo" 
+                  style={{ height: '36px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x Sedition Collaboration Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/partners/sedition logo wh long.png" 
+                  alt="Sedition Logo" 
+                  style={{ height: '36px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x Factory Four Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/factory_four_new.png" 
+                  alt="Factory Four Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x art'otel Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/arthotel_London Hoxton_White.png" 
+                  alt="art'otel Logo" 
+                  style={{ height: '36px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x Muse Frame Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/partners/Muse Frame wh text.png" 
+                  alt="Muse Frame Logo" 
+                  style={{ height: '36px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x Asprey Studios Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/Asprey_final_ok.png" 
+                  alt="Asprey Studios Logo" 
+                  style={{ height: '58px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x SMASH MEDIA Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/smash_media_new.png" 
+                  alt="SMASH MEDIA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x NOPRBLM Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <div style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', letterSpacing: '0.5px' }}>NOPRBLM.</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x Innovate UK Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/innovate_uk_new.png" 
+                  alt="Innovate UK Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* AIFA x WIRED Invite */}
+          <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
+            <div className="event-invite-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+                <img 
+                  src="/images/AIFAlogo.png" 
+                  alt="AIFA Logo" 
+                  style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                />
+                <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
+                <img 
+                  src="/images/Wired Logo White.png" 
+                  alt="WIRED Logo" 
+                  style={{ height: '36px', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
+          </div>
+          
           {/* House of Lords Invite */}
           <div className="event-invite-item" style={{ backgroundImage: "url('/images/Tartan_Lords.png')", backgroundSize: "cover", position: "relative" }}>
             <div className="event-invite-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
@@ -945,12 +1150,11 @@ export default function SocialMapsForever() {
                 />
                 <div style={{ fontSize: '18px', color: 'white', margin: '0 15px' }}>×</div>
                 <img 
-                  src="/images/Asprey_Studio_logo.webp" 
+                  src="/images/Asprey_final_ok.png" 
                   alt="Asprey Studio Logo" 
                   style={{ 
-                    height: '45px', 
-                    objectFit: 'contain', 
-                    filter: 'brightness(0) invert(1)',
+                    height: '58px', 
+                    objectFit: 'contain',
                     marginLeft: '15px'
                   }}
                 />
@@ -1467,10 +1671,7 @@ export default function SocialMapsForever() {
                         alt="Innovate UK Logo" 
                         style={{ 
                           height: '10px',
-                          objectFit: 'contain',
-                          backgroundColor: '#fff',
-                          padding: '2px 3px',
-                          borderRadius: '2px'
+                          objectFit: 'contain'
                         }}
                       />
                     </div>
@@ -1546,12 +1747,11 @@ export default function SocialMapsForever() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img 
-                        src="/images/Asprey_Studio_logo.webp" 
+                        src="/images/Asprey_final_ok.png" 
                         alt="Asprey Studio Logo" 
                         style={{ 
-                          height: '12px', 
-                          objectFit: 'contain',
-                          filter: 'brightness(0) invert(1)'
+                          height: '58px', 
+                          objectFit: 'contain'
                         }}
                       />
                     </div>
@@ -1584,25 +1784,13 @@ export default function SocialMapsForever() {
                         alt="Innovate UK Logo" 
                         style={{ 
                           height: '10px',
-                          objectFit: 'contain',
-                          backgroundColor: '#fff',
-                          padding: '2px 3px',
-                          borderRadius: '2px'
+                          objectFit: 'contain'
                         }}
                       />
                     </div>
                   </div>
                 </div>
                 
-                <p style={{ 
-                  fontWeight: '300', 
-                  margin: '0',
-                  textAlign: 'center',
-                  fontSize: '11px',
-                  letterSpacing: '1px',
-                  textTransform: 'uppercase',
-                  paddingTop: '8px'
-                }}>Invitation Only</p>
               </div>
             </div>
           </div>
@@ -1703,9 +1891,9 @@ export default function SocialMapsForever() {
                   {/* Row 3 with more space */}
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/images/Asprey_Studio_logo.webp" 
+                      src="/images/Asprey_final_ok.png" 
                       alt="Asprey Studio Logo" 
-                      style={{ height: '16px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                      style={{ height: '58px', objectFit: 'contain' }}
                     />
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
@@ -1750,10 +1938,7 @@ export default function SocialMapsForever() {
                       alt="Innovate UK Logo" 
                       style={{ 
                         height: '14px',
-                        objectFit: 'contain',
-                        backgroundColor: '#fff',
-                        padding: '2px 4px',
-                        borderRadius: '3px'
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
@@ -1895,7 +2080,7 @@ export default function SocialMapsForever() {
             }}></div>
             
             {/* Perfect grid of logos - evenly spaced and aligned */}
-            <div style={{
+            <div className="step-repeat-grid" style={{
               position: 'absolute',
               top: 0,
               left: 0,
@@ -1947,7 +2132,7 @@ export default function SocialMapsForever() {
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
+                <img src="/images/Asprey_final_ok.png" alt="Asprey Studio Logo" style={{ height: '58px' }} className="asprey-logo" />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
@@ -1984,7 +2169,7 @@ export default function SocialMapsForever() {
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
+                <img src="/images/Asprey_final_ok.png" alt="Asprey Studio Logo" style={{ height: '58px' }} className="asprey-logo" />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
@@ -2004,7 +2189,7 @@ export default function SocialMapsForever() {
                 <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
+                <img src="/images/Asprey_final_ok.png" alt="Asprey Studio Logo" style={{ height: '58px' }} className="asprey-logo" />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/arthotel_London Hoxton_White.png" alt="art'otel Logo" style={{ height: '22px' }} />
@@ -2024,7 +2209,7 @@ export default function SocialMapsForever() {
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
+                <img src="/images/Asprey_final_ok.png" alt="Asprey Studio Logo" style={{ height: '58px' }} className="asprey-logo" />
               </div>
               
               {/* Row 8 */}
@@ -2055,78 +2240,285 @@ export default function SocialMapsForever() {
               onClick={(e) => {
                 e.preventDefault();
                 
-                // Open the step and repeat in a new tab for easy saving
-                // This is a reliable method that will work on all browsers
+                // Direct download method using html2canvas
                 const stepAndRepeat = document.getElementById('step-and-repeat');
                 
-                // Create a popup window that shows just the step and repeat background
-                const popup = window.open('', 'AIFA Step and Repeat', 'width=800,height=1000');
+                // Create a loading overlay
+                const loadingOverlay = document.createElement('div');
+                loadingOverlay.style.position = 'fixed';
+                loadingOverlay.style.top = '0';
+                loadingOverlay.style.left = '0';
+                loadingOverlay.style.width = '100%';
+                loadingOverlay.style.height = '100%';
+                loadingOverlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                loadingOverlay.style.display = 'flex';
+                loadingOverlay.style.justifyContent = 'center';
+                loadingOverlay.style.alignItems = 'center';
+                loadingOverlay.style.zIndex = '9999';
+                loadingOverlay.innerHTML = '<div style="color: white; font-size: 20px; text-align: center; padding: 20px; background: #222; border-radius: 8px;">Preparing image for download...<br><br>Please wait a moment.</div>';
+                document.body.appendChild(loadingOverlay);
                 
-                if (popup) {
-                  // Write HTML content to the popup
-                  popup.document.write(`
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                      <title>AIFA Step and Repeat Background</title>
-                      <style>
-                        body, html {
-                          margin: 0;
-                          padding: 0;
-                          background-color: #000;
-                          height: 100%;
-                          overflow: hidden;
-                          display: flex;
-                          justify-content: center;
-                          align-items: center;
-                        }
-                        
-                        .container {
-                          position: relative;
-                          width: 90%;
-                          height: 0;
-                          padding-bottom: 120%;
-                          background-color: #131313;
-                          margin: 20px auto;
-                          overflow: hidden;
-                        }
-                        
-                        .instructions {
-                          color: white;
-                          text-align: center;
-                          padding: 10px;
-                          position: absolute;
-                          bottom: 0;
-                          left: 0;
-                          width: 100%;
-                          background: rgba(0,0,0,0.7);
-                        }
-                        
-                        h3 {
-                          color: white;
-                          text-align: center;
-                          margin-top: 20px;
-                        }
-                      </style>
-                    </head>
-                    <body>
-                      <h3>AIFA Step and Repeat Background</h3>
-                      <div class="container">
-                        ${stepAndRepeat.innerHTML}
-                        <div class="instructions">
-                          <p>Right-click on this image and select "Save Image As..." to download</p>
-                          <p>Or press Ctrl+S (Windows) or Command+S (Mac) to save the entire page</p>
-                        </div>
-                      </div>
-                    </body>
-                    </html>
-                  `);
-                  
-                  // Close the document to finish loading
-                  popup.document.close();
+                // Function to load a script dynamically
+                function loadScript(url, callback) {
+                  const script = document.createElement('script');
+                  script.type = 'text/javascript';
+                  script.src = url;
+                  script.onload = callback;
+                  document.head.appendChild(script);
+                }
+                
+                // Check if html2canvas is loaded, if not, load it
+                if (typeof html2canvas === 'undefined') {
+                  loadScript('https://html2canvas.hertzen.com/dist/html2canvas.min.js', captureAndDownload);
                 } else {
-                  // If popup is blocked, show instructions
-                  alert('Pop-up blocked! Please allow pop-ups to download the step and repeat background, or take a screenshot of it directly from this page.');
+                  captureAndDownload();
+                }
+                
+                function captureAndDownload() {
+                  setTimeout(() => {
+                    // Set up options for better quality and cross-browser compatibility
+                    const options = {
+                      scale: 2,
+                      useCORS: true,
+                      allowTaint: true,
+                      backgroundColor: '#131313',
+                      logging: false,
+                      removeContainer: false,
+                      imageTimeout: 0,
+                      foreignObjectRendering: false,
+                      ignoreElements: (element) => {
+                        // Ignore elements that might cause issues
+                        return element.classList && element.classList.contains('ignore-in-screenshot');
+                      },
+                      onclone: (clonedDoc) => {
+                        // Make sure all logos are white and bigger
+                        
+                        // 1. Fix Asprey Studios logos with stronger approach
+                        const aspreyLogos = clonedDoc.querySelectorAll('img[src="/images/Asprey_final_ok.png"]');
+                        aspreyLogos.forEach(logo => {
+                          // Apply multiple techniques to ensure it appears white
+                          logo.style.filter = 'brightness(0) invert(1) contrast(1.5)';
+                          logo.style.opacity = '1';
+                          logo.style.mixBlendMode = 'screen';
+                          logo.style.backgroundColor = 'transparent';
+                          
+                          // Increase size
+                          logo.style.height = '38px';
+                          
+                          // Add a special class
+                          logo.classList.add('white-asprey-logo');
+                          
+                          // Add inline SVG placeholder as fallback
+                          const parentDiv = logo.parentNode;
+                          if (parentDiv) {
+                            const whiteLogoFallback = document.createElement('div');
+                            whiteLogoFallback.innerHTML = '<svg width="100" height="38" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="12">ASPREY STUDIOS</text></svg>';
+                            whiteLogoFallback.style.position = 'absolute';
+                            whiteLogoFallback.style.opacity = '0';
+                            parentDiv.appendChild(whiteLogoFallback);
+                          }
+                        });
+                        
+                        // 2. Increase sizes of all logos
+                        const allLogoDivs = clonedDoc.querySelectorAll('.step-repeat-grid > div');
+                        allLogoDivs.forEach(div => {
+                          // Increase image sizes
+                          const img = div.querySelector('img');
+                          if (img) {
+                            const currentHeight = parseInt(img.style.height);
+                            if (!isNaN(currentHeight)) {
+                              img.style.height = Math.round(currentHeight * 1.2) + 'px';
+                            }
+                          }
+                          
+                          // Increase text sizes for NOPRBLM
+                          const textEl = div.querySelector('div');
+                          if (textEl && textEl.textContent.includes('NOPRBLM')) {
+                            textEl.style.fontSize = '18px';
+                          }
+                        });
+                        
+                        // 3. Fix all other logos to ensure they're white
+                        const allLogos = clonedDoc.querySelectorAll('.step-repeat-grid img');
+                        allLogos.forEach(logo => {
+                          // Don't process Asprey logos again
+                          if (logo.src.includes('Asprey_final_ok.png')) return;
+                          
+                          // Factory Four, Innovate UK, and SMASH MEDIA logos need inversion
+                          if (logo.src.includes('factory_four_new.png') || 
+                              logo.src.includes('innovate_uk_new.png') || 
+                              logo.src.includes('smash_media_new.png')) {
+                            logo.style.filter = 'brightness(0) invert(1)';
+                          }
+                          
+                          // Ensure AIFA logo is white and larger
+                          if (logo.src.includes('AIFAlogo.png')) {
+                            logo.style.filter = 'brightness(0) invert(1)';
+                            logo.style.height = '34px';
+                          }
+                        });
+                      }
+                    };
+                    
+                    // Create a clone with the exact dimensions
+                    const clone = stepAndRepeat.cloneNode(true);
+                    clone.style.position = 'absolute';
+                    clone.style.left = '-9999px';
+                    clone.style.width = '1506px';
+                    clone.style.height = '2006px';
+                    clone.style.paddingBottom = 'unset';
+                    
+                    // Increase all logo sizes by 20%
+                    const allLogoContainers = clone.querySelectorAll('.step-repeat-grid > div');
+                    allLogoContainers.forEach(container => {
+                      const img = container.querySelector('img');
+                      if (img) {
+                        const currentHeight = parseInt(img.style.height);
+                        if (!isNaN(currentHeight)) {
+                          const newHeight = Math.round(currentHeight * 1.2);
+                          img.style.height = newHeight + 'px';
+                        }
+                      }
+                      
+                      // Increase text size for NOPRBLM
+                      const noprblmText = container.querySelector('div');
+                      if (noprblmText && noprblmText.textContent.includes('NOPRBLM')) {
+                        noprblmText.style.fontSize = '18px';
+                      }
+                    });
+                    
+                    // Special handling for Asprey logos - replace with text instead
+                    const aspreyLogos = clone.querySelectorAll('img[src="/images/Asprey_final_ok.png"]');
+                    aspreyLogos.forEach(logo => {
+                      // Get parent container
+                      const container = logo.parentNode;
+                      if (container) {
+                        // Create replacement text element
+                        const textElement = document.createElement('div');
+                        textElement.textContent = 'ASPREY STUDIOS';
+                        textElement.style.color = 'white';
+                        textElement.style.fontFamily = 'Arial, sans-serif';
+                        textElement.style.fontWeight = 'bold';
+                        textElement.style.fontSize = '16px';
+                        textElement.style.letterSpacing = '0.5px';
+                        
+                        // Replace the image with text
+                        container.innerHTML = '';
+                        container.appendChild(textElement);
+                      }
+                    });
+                    
+                    // Ensure all logos display correctly in white
+                    const allImages = clone.querySelectorAll('img');
+                    allImages.forEach(img => {
+                      const src = img.getAttribute('src');
+                      
+                      // Factory Four, Innovate UK, and SMASH MEDIA logos need to be inverted
+                      if (src && (src.includes('factory_four_new.png') || 
+                                 src.includes('innovate_uk_new.png') || 
+                                 src.includes('smash_media_new.png'))) {
+                        img.style.filter = 'brightness(0) invert(1)';
+                      }
+                      
+                      // Ensure AIFA logo is white
+                      if (src && src.includes('AIFAlogo.png')) {
+                        img.style.filter = 'brightness(0) invert(1)';
+                        // Make AIFA logo larger
+                        img.style.height = '34px';
+                      }
+                    });
+                    
+                    document.body.appendChild(clone);
+                    
+                    // Capture the element
+                    html2canvas(clone, options).then(canvas => {
+                      // Remove the clone
+                      document.body.removeChild(clone);
+                      
+                      // Create an image from the canvas
+                      canvas.toBlob(function(blob) {
+                        // Create a download link
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.download = 'AIFA_Step_and_Repeat.png';
+                        link.href = url;
+                        link.click();
+                        
+                        // Clean up
+                        setTimeout(() => {
+                          URL.revokeObjectURL(url);
+                          document.body.removeChild(loadingOverlay);
+                        }, 1000);
+                      }, 'image/png');
+                    }).catch(error => {
+                      console.error('Error generating image:', error);
+                      document.body.removeChild(loadingOverlay);
+                      
+                      // Provide a fallback option
+                      if (confirm('There was an error generating the image. Would you like to try the alternative download method?')) {
+                        // Fallback to simple window open method
+                        const popup = window.open('', 'AIFA Step and Repeat', 'width=1000,height=1333');
+                        
+                        if (popup) {
+                          // Create a simplified version for more reliable download
+                          popup.document.write(`
+                            <!DOCTYPE html>
+                            <html>
+                            <head>
+                              <title>AIFA Step and Repeat Background</title>
+                              <style>
+                                body { margin: 0; padding: 20px; background: #000; color: white; font-family: sans-serif; }
+                                .container { background: #131313; margin: 0 auto; width: 100%; max-width: 800px; position: relative; }
+                                h2 { text-align: center; margin-bottom: 20px; font-size: 24px; }
+                                .download-btn { background: #2563EB; color: white; padding: 10px 20px; text-decoration: none; 
+                                    display: block; width: 200px; margin: 20px auto; text-align: center; border-radius: 4px; }
+                                .grid { display: grid; grid-template-columns: repeat(5, 1fr); padding: 30px; gap: 25px; }
+                                .grid div { display: flex; justify-content: center; align-items: center; min-height: 50px; }
+                                img { max-width: 100%; }
+                                .asprey-text { font-family: Arial, sans-serif; font-weight: bold; color: white; font-size: 16px; letter-spacing: 0.5px; }
+                                .noprblm { font-size: 18px; font-weight: bold; letter-spacing: 0.5px; }
+                              </style>
+                            </head>
+                            <body>
+                              <h2>AIFA Step and Repeat Background</h2>
+                              <p style="text-align: center">Right-click on this image and select "Save Image As..." to download</p>
+                              <div class="container">
+                                <div class="grid">
+                                  <!-- Row 1 -->
+                                  <div><img src="/images/factory_four_new.png" height="22" style="filter: brightness(0) invert(1);"></div>
+                                  <div><img src="/images/logo-abberation-white.svg" height="22"></div>
+                                  <div><img src="/images/AIFAlogo.png" height="28" style="filter: brightness(0) invert(1);"></div>
+                                  <div><img src="/partners/Muse Frame wh text.png" height="22"></div>
+                                  <div><img src="/partners/sedition logo wh long.png" height="22"></div>
+                                  
+                                  <!-- Row 2 -->
+                                  <div><img src="/images/vultr wh tr.png" height="22"></div>
+                                  <div><div class="noprblm">NOPRBLM.</div></div>
+                                  <div><img src="/images/arthotel_London Hoxton_White.png" height="22"></div>
+                                  <div><div class="noprblm">NOPRBLM.</div></div>
+                                  <div><img src="/images/Wired Logo White.png" height="22"></div>
+                                  
+                                  <!-- Row 3 -->
+                                  <div><img src="/images/smash_media_new.png" height="28" style="filter: brightness(0) invert(1);"></div>
+                                  <div><img src="/images/innovate_uk_new.png" height="28" style="filter: brightness(0) invert(1);"></div>
+                                  <div><div class="asprey-text">ASPREY STUDIOS</div></div>
+                                  
+                                  <!-- Repeat rows as needed -->
+                                </div>
+                              </div>
+                              <p style="text-align: center; margin-top: 20px;">
+                                If you still have issues, please take a screenshot directly from the website.
+                              </p>
+                            </body>
+                            </html>
+                          `);
+                          popup.document.close();
+                        } else {
+                          alert('Pop-up blocked! Please allow pop-ups or take a screenshot directly from the page.');
+                        }
+                      }
+                    });
+                  }, 500); // Short delay to ensure the loading overlay is shown
                 }
               }}
               style={{ 
@@ -2158,15 +2550,15 @@ export default function SocialMapsForever() {
                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
               </svg>
-              Open in New Window to Save
+              Download Full Step and Repeat
             </a>
             
             <p style={{ color: 'white', fontSize: '14px', fontWeight: '300', marginTop: '20px' }}>
               Step and repeat background with partner and sponsor logos (1506mm × 2006mm)
             </p>
             <p style={{ color: '#aaa', fontSize: '13px', marginTop: '10px' }}>
-              Click the button above to open the step and repeat in a new window.
-              Then you can save it by right-clicking or using the browser's save function.
+              Click the button above to download the full step and repeat background as a PNG image.
+              The image will be generated and downloaded automatically (this may take a few seconds).
             </p>
           </div>
         </div>

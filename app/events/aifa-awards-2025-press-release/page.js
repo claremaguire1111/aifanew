@@ -241,11 +241,10 @@ export default function PressRelease() {
             </div>
             <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/Asprey_Studio_logo.webp" 
+                src="/images/Asprey_final_ok.png" 
                 alt="Asprey Studios Logo" 
                 style={{ 
-                  height: '30px',
-                  filter: 'brightness(0) invert(1)'
+                  height: '58px'
                 }}
               />
             </div>

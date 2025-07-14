@@ -357,6 +357,15 @@ export default function QRPage() {
             >
               SMASH MEDIA
             </div>
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/Asprey_final_ok.png" 
+                alt="Asprey Studios Logo" 
+                style={{ 
+                  height: '58px'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -742,6 +751,15 @@ export default function QRPage() {
                 alt="SMASH MEDIA Logo" 
                 style={{ 
                   height: '25px'
+                }}
+              />
+            </div>
+            <div className="sponsor-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/Asprey_final_ok.png" 
+                alt="Asprey Studios Logo" 
+                style={{ 
+                  height: '58px'
                 }}
               />
             </div>

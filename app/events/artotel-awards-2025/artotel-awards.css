@@ -100,11 +100,11 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Only show separation on mobile */
+/* No separation on any screen size */
 @media (max-width: 480px) {
   .about-section {
-    margin-top: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: -1px; /* Keep connected on mobile too */
+    border-top: none;
   }
 }
 
@@ -1003,15 +1003,15 @@
 @media (max-width: 480px) {
   .artotel-hero {
     min-height: 850px !important;
-    padding: 60px 0 150px !important;
+    padding: 60px 0 100px !important;
     position: relative !important;
   }
   
-  /* Fix for overlapping hero and about section */
+  /* Clear separation between hero and about section on mobile */
   .artotel-hero::after {
     content: '';
     display: block;
-    height: 100px;
+    height: 60px;  /* Create space */
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -1020,10 +1020,12 @@
     z-index: 4;
   }
   
-  /* Add extra space between sections */
+  /* Create proper spacing between sections */
   .about-section {
-    margin-top: 60px !important;
-    padding-top: 50px !important;
+    margin-top: 0 !important; /* No negative margin */
+    border-top: none !important; /* No border */
+    padding-top: 30px !important;
+    background-color: var(--black) !important;
   }
   
   .artotel-hero-content {

@@ -217,7 +217,7 @@ export default function ArtotelAwards() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="artotel-hero" style={{ paddingBottom: '150px' }}>
+      <section className="artotel-hero" style={{ paddingBottom: '150px', marginBottom: '-1px' }}>
         <div className="artotel-hero-content">
           <h1 className="artotel-hero-title">AIFA Awards 2025</h1>
           <p className="artotel-hero-subtitle">In collaboration with Factory4</p>
@@ -346,7 +346,7 @@ export default function ArtotelAwards() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section className="about-section" style={{ marginTop: '50px' }}>
+      <section className="about-section">
         <div className="about-container">
           <h2 className="about-title fade-in about-text-white">AIFA Awards 2025</h2>
           <p className="about-description fade-in about-text-white">

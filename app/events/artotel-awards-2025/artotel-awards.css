@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-bottom: none;
 }
 
 .artotel-hero-content {
@@ -83,10 +84,10 @@
   background-color: var(--black);
   padding: 80px 0;
   position: relative;
-  margin-top: 0;
+  margin-top: -1px; /* Connect with hero section */
   margin-bottom: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 5;
+  border-top: 0; /* Remove any border */
 }
 
 .about-section::after {
@@ -97,6 +98,14 @@
   right: 10%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Only show separation on mobile */
+@media (max-width: 480px) {
+  .about-section {
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 .about-container {

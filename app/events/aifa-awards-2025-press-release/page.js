@@ -447,7 +447,7 @@ export default function PressRelease() {
           
           <div className="note-item">
             <h3 className="note-subtitle">About Aria</h3>
-            <p>Founded in 2025, Aria is an investment platform that transforms iconic cultural intellectual property assets into digital financial assets. With Aria, investors can already buy and sell rights tied to real-world income from music performed by major artists like Justin Bieber, Miley Cyrus, and BLACKPINK. Aria ensures transparent, verifiable IP ownership and revenue sharing via the Story blockchain. Aria is also developing programmable IP tools allowing for cultural assets such as music, art, and film to be licensed, remixed, and monetized through digital contracts directly from rights holders. Aria is creating the financial infrastructure for iconic IP.</p>
+            <p>Founded in 2025, Aria is an investment platform that transforms iconic cultural intellectual property assets into digital financial assets. With Aria, investors can buy and sell rights tied to real-world income from music performed by major artists like Justin Bieber, Miley Cyrus, and BLACKPINK. Aria ensures transparent, verifiable IP ownership and revenue sharing via the Story blockchain. Aria is also developing programmable IP tools allowing for cultural assets such as music, art, and film to be licensed, remixed, and monetized through digital contracts directly from rights holders. Aria is creating IP financial markets.</p>
             <p>Learn more at: <a href="https://ariaprotocol.xyz/" target="_blank" rel="noopener noreferrer">ariaprotocol.xyz</a>.</p>
           </div>
           

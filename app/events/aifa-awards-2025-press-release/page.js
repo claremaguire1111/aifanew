@@ -544,7 +544,7 @@ export default function PressRelease() {
             marginBottom: "15px"
           }}>
             <span style={{ fontSize: "12px", color: "var(--dark-grey)", marginRight: "8px" }}>Supported by</span>
-            <img src="/images/support/innovateuk.jpg" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
+            <img src="/images/innovate_uk_new.png" alt="Innovate UK" style={{ height: "20px", width: "auto" }} />
           </div>
           <p style={{ fontSize: "14px", color: "var(--dark-grey)", margin: 0, textAlign: "center" }}>© 2025 AIFA Ventures. All rights reserved</p>
         </div>

@@ -286,25 +286,19 @@ export default function ArtotelAwards() {
             </div>
             <div style={{ height: '35px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/Factory logo.PNG" 
+                src="/images/factory_four_new.png" 
                 alt="Factory4 Logo" 
                 style={{ 
-                  height: '35px',
-                  backgroundColor: '#fff',
-                  padding: '2px 5px',
-                  borderRadius: '3px'
+                  height: '35px'
                 }}
               />
             </div>
             <div style={{ height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/support/innovateuk.jpg" 
+                src="/images/innovate_uk_new.png" 
                 alt="Innovate UK Logo" 
                 style={{ 
-                  height: '25px',
-                  backgroundColor: '#fff',
-                  padding: '2px 5px',
-                  borderRadius: '3px'
+                  height: '25px'
                 }}
               />
             </div>
@@ -330,17 +324,14 @@ export default function ArtotelAwards() {
             >
               NOPRBLM.
             </div>
-            <div
-              style={{
-                height: '30px',
-                display: 'flex',
-                alignItems: 'center',
-                color: 'white',
-                fontWeight: 'bold',
-                letterSpacing: '0.05em'
-              }}
-            >
-              SMASH MEDIA
+            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/smash_media_new.png" 
+                alt="SMASH MEDIA Logo" 
+                style={{ 
+                  height: '25px'
+                }}
+              />
             </div>
           </div>
         </div>

@@ -1396,7 +1396,7 @@ export default function SocialMapsForever() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img 
-                        src="/images/Factory logo.PNG" 
+                        src="/images/factory_four_new.png" 
                         alt="Factory4 Logo" 
                         style={{ 
                           height: '15px', 
@@ -1445,7 +1445,7 @@ export default function SocialMapsForever() {
                         fontSize: '8px',
                         lineHeight: '1.2',
                         color: 'white'
-                      }}>SMASH MEDIA</p>
+                      }}><img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '14px' }} /></p>
                     </div>
                     <div style={{ 
                       display: 'flex', 
@@ -1463,7 +1463,7 @@ export default function SocialMapsForever() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img 
-                        src="/images/support/innovateuk.jpg" 
+                        src="/images/innovate_uk_new.png" 
                         alt="Innovate UK Logo" 
                         style={{ 
                           height: '10px',
@@ -1580,7 +1580,7 @@ export default function SocialMapsForever() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img 
-                        src="/images/support/innovateuk.jpg" 
+                        src="/images/innovate_uk_new.png" 
                         alt="Innovate UK Logo" 
                         style={{ 
                           height: '10px',
@@ -1680,7 +1680,7 @@ export default function SocialMapsForever() {
                   {/* Row 2 */}
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/images/Factory logo.PNG" 
+                      src="/images/factory_four_new.png" 
                       alt="Factory 4 Logo" 
                       style={{ height: '16px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                     />
@@ -1741,12 +1741,12 @@ export default function SocialMapsForever() {
                       fontSize: '11px',
                       lineHeight: '1.3',
                       letterSpacing: '0.5px'
-                    }}>SMASH MEDIA</p>
+                    }}><img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '14px' }} /></p>
                   </div>
                   <div></div>
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/images/support/innovateuk.jpg" 
+                      src="/images/innovate_uk_new.png" 
                       alt="Innovate UK Logo" 
                       style={{ 
                         height: '14px',
@@ -1919,7 +1919,7 @@ export default function SocialMapsForever() {
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Factory logo.PNG" alt="Factory 4 Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/factory_four_new.png" alt="Factory 4 Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
@@ -1936,10 +1936,10 @@ export default function SocialMapsForever() {
                 <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
+                <img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
+                <img src="/images/innovate_uk_new.png" alt="Innovate UK Logo" style={{ height: '22px' }} />
               </div>
               
               {/* Row 3 */}
@@ -1947,7 +1947,7 @@ export default function SocialMapsForever() {
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
@@ -1961,10 +1961,10 @@ export default function SocialMapsForever() {
               
               {/* Row 4 */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
+                <img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Factory logo.PNG" alt="Factory 4 Logo" style={{ height: '22px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/factory_four_new.png" alt="Factory 4 Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
@@ -1978,13 +1978,13 @@ export default function SocialMapsForever() {
               
               {/* Row 5 */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
+                <img src="/images/innovate_uk_new.png" alt="Innovate UK Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/vultr wh tr.png" alt="Vultr Logo" style={{ height: '22px' }} />
@@ -2004,7 +2004,7 @@ export default function SocialMapsForever() {
                 <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/arthotel_London Hoxton_White.png" alt="art'otel Logo" style={{ height: '22px' }} />
@@ -2015,7 +2015,7 @@ export default function SocialMapsForever() {
                 <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/support/innovateuk.jpg" alt="Innovate UK Logo" style={{ height: '22px', backgroundColor: '#fff', padding: '2px 4px', borderRadius: '2px' }} />
+                <img src="/images/innovate_uk_new.png" alt="Innovate UK Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
@@ -2024,7 +2024,7 @@ export default function SocialMapsForever() {
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '32px', filter: 'brightness(0) invert(1)', opacity: 1 }} />
               </div>
               
               {/* Row 8 */}
@@ -2038,10 +2038,10 @@ export default function SocialMapsForever() {
                 <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>SMASH MEDIA</div>
+                <img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Asprey_Studio_logo.webp" alt="Asprey Studio Logo" style={{ height: '26px', filter: 'brightness(0) invert(1)' }} />
+                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
             </div>
             
@@ -2055,93 +2055,78 @@ export default function SocialMapsForever() {
               onClick={(e) => {
                 e.preventDefault();
                 
-                // Check if html2canvas and FileSaver.js are available
-                if (typeof window !== 'undefined') {
-                  // First, dynamically load html2canvas if it's not already available
-                  if (!window.html2canvas) {
-                    const script1 = document.createElement('script');
-                    script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-                    script1.async = true;
-                    
-                    script1.onload = () => {
-                      // Now load FileSaver.js if it's not already available
-                      if (!window.saveAs) {
-                        const script2 = document.createElement('script');
-                        script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js';
-                        script2.async = true;
-                        
-                        script2.onload = () => {
-                          // Both libraries are loaded, proceed with capture and save
-                          captureAndSave();
-                        };
-                        
-                        document.body.appendChild(script2);
-                      } else {
-                        // FileSaver already loaded, just proceed
-                        captureAndSave();
-                      }
-                    };
-                    
-                    document.body.appendChild(script1);
-                  } else if (!window.saveAs) {
-                    // html2canvas is loaded but FileSaver is not
-                    const script = document.createElement('script');
-                    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js';
-                    script.async = true;
-                    
-                    script.onload = () => {
-                      captureAndSave();
-                    };
-                    
-                    document.body.appendChild(script);
-                  } else {
-                    // Both libraries are already loaded
-                    captureAndSave();
-                  }
-                }
+                // Open the step and repeat in a new tab for easy saving
+                // This is a reliable method that will work on all browsers
+                const stepAndRepeat = document.getElementById('step-and-repeat');
                 
-                function captureAndSave() {
-                  const stepAndRepeat = document.getElementById('step-and-repeat');
-                  
-                  // Show a loading indicator
-                  const loadingDiv = document.createElement('div');
-                  loadingDiv.style.position = 'fixed';
-                  loadingDiv.style.top = '0';
-                  loadingDiv.style.left = '0';
-                  loadingDiv.style.width = '100%';
-                  loadingDiv.style.height = '100%';
-                  loadingDiv.style.backgroundColor = 'rgba(0,0,0,0.7)';
-                  loadingDiv.style.display = 'flex';
-                  loadingDiv.style.justifyContent = 'center';
-                  loadingDiv.style.alignItems = 'center';
-                  loadingDiv.style.zIndex = '9999';
-                  loadingDiv.innerHTML = '<div style="color: white; font-size: 20px;">Generating image, please wait...</div>';
-                  document.body.appendChild(loadingDiv);
-                  
-                  // Use setTimeout to allow the loading indicator to render
-                  setTimeout(() => {
-                    // Use html2canvas to capture the step and repeat div
-                    window.html2canvas(stepAndRepeat, {
-                      backgroundColor: '#131313',
-                      scale: 2, // Higher quality
-                      useCORS: true,
-                      allowTaint: true,
-                      logging: false
-                    }).then(canvas => {
-                      // Convert to image data
-                      canvas.toBlob(function(blob) {
-                        // Use FileSaver.js to save the image
-                        window.saveAs(blob, 'AIFA-Step-and-Repeat-Background.jpg');
+                // Create a popup window that shows just the step and repeat background
+                const popup = window.open('', 'AIFA Step and Repeat', 'width=800,height=1000');
+                
+                if (popup) {
+                  // Write HTML content to the popup
+                  popup.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                      <title>AIFA Step and Repeat Background</title>
+                      <style>
+                        body, html {
+                          margin: 0;
+                          padding: 0;
+                          background-color: #000;
+                          height: 100%;
+                          overflow: hidden;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
                         
-                        // Remove the loading indicator
-                        document.body.removeChild(loadingDiv);
-                      }, 'image/jpeg', 0.95); // High quality JPEG
-                    }).catch(error => {
-                      console.error('Error generating image:', error);
-                      document.body.removeChild(loadingDiv);
-                      alert('There was an error generating the image. Please try taking a screenshot instead.');
-                    });
-                  }, 100);
+                        .container {
+                          position: relative;
+                          width: 90%;
+                          height: 0;
+                          padding-bottom: 120%;
+                          background-color: #131313;
+                          margin: 20px auto;
+                          overflow: hidden;
+                        }
+                        
+                        .instructions {
+                          color: white;
+                          text-align: center;
+                          padding: 10px;
+                          position: absolute;
+                          bottom: 0;
+                          left: 0;
+                          width: 100%;
+                          background: rgba(0,0,0,0.7);
+                        }
+                        
+                        h3 {
+                          color: white;
+                          text-align: center;
+                          margin-top: 20px;
+                        }
+                      </style>
+                    </head>
+                    <body>
+                      <h3>AIFA Step and Repeat Background</h3>
+                      <div class="container">
+                        ${stepAndRepeat.innerHTML}
+                        <div class="instructions">
+                          <p>Right-click on this image and select "Save Image As..." to download</p>
+                          <p>Or press Ctrl+S (Windows) or Command+S (Mac) to save the entire page</p>
+                        </div>
+                      </div>
+                    </body>
+                    </html>
+                  `);
+                  
+                  // Close the document to finish loading
+                  popup.document.close();
+                } else {
+                  // If popup is blocked, show instructions
+                  alert('Pop-up blocked! Please allow pop-ups to download the step and repeat background, or take a screenshot of it directly from this page.');
                 }
               }}
               style={{ 
@@ -2173,15 +2158,15 @@ export default function SocialMapsForever() {
                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
               </svg>
-              Download as JPG
+              Open in New Window to Save
             </a>
             
             <p style={{ color: 'white', fontSize: '14px', fontWeight: '300', marginTop: '20px' }}>
               Step and repeat background with partner and sponsor logos (1506mm × 2006mm)
             </p>
             <p style={{ color: '#aaa', fontSize: '13px', marginTop: '10px' }}>
-              Click the button above to download a high-resolution JPG of the step and repeat background.
-              This can be used for printing at full size (1506mm × 2006mm).
+              Click the button above to open the step and repeat in a new window.
+              Then you can save it by right-clicking or using the browser's save function.
             </p>
           </div>
         </div>

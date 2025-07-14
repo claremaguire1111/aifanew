@@ -532,7 +532,7 @@ export default function QRPage() {
         <div className="factory-container">
           <h2 className="section-title fade-in">Factory Four Exhibition</h2>
           <div style={{ textAlign: 'center', marginBottom: '30px' }} className="fade-in">
-            <img src="/images/Factory logo.PNG" alt="Factory Four Logo" style={{ height: '60px', marginBottom: '20px' }} />
+            <img src="/images/factory_four_new.png" alt="Factory Four Logo" style={{ height: '60px', marginBottom: '20px' }} />
           </div>
           <p className="factory-description fade-in">
             Factory 4 is a nomadic, artist-led gallery founded by Paul Dowling and Olena Yara. 
@@ -717,33 +717,33 @@ export default function QRPage() {
             </div>
             <div className="sponsor-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/Factory logo.PNG" 
+                src="/images/factory_four_new.png" 
                 alt="Factory4 Logo" 
                 style={{ 
-                  height: '35px',
-                  backgroundColor: '#fff',
-                  padding: '2px 5px',
-                  borderRadius: '3px'
+                  height: '35px'
                 }}
               />
             </div>
             <div className="sponsor-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/support/innovateuk.jpg" 
+                src="/images/innovate_uk_new.png" 
                 alt="Innovate UK Logo" 
                 style={{ 
-                  height: '25px',
-                  backgroundColor: '#fff',
-                  padding: '2px 5px',
-                  borderRadius: '3px'
+                  height: '25px'
                 }}
               />
             </div>
             <div className="sponsor-logo" style={{ fontWeight: 'bold', fontSize: '18px' }}>
               NOPRBLM.
             </div>
-            <div className="sponsor-logo" style={{ fontWeight: 'bold', fontSize: '18px', letterSpacing: '0.05em' }}>
-              SMASH MEDIA
+            <div className="sponsor-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src="/images/smash_media_new.png" 
+                alt="SMASH MEDIA Logo" 
+                style={{ 
+                  height: '25px'
+                }}
+              />
             </div>
           </div>
           
@@ -789,7 +789,7 @@ export default function QRPage() {
           <div className="support-logo">
             <span>Supported by</span>
             <img 
-              src="/images/support/innovateuk.jpg" 
+              src="/images/innovate_uk_new.png" 
               alt="Innovate UK" 
               style={{ height: "20px", maxHeight: "20px", width: "auto" }}
             />

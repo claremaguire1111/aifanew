@@ -987,15 +987,47 @@
 }
 
 @media (max-width: 480px) {
+  .artotel-hero {
+    min-height: 650px !important;
+  }
+  
   .sponsor-logos-container {
-    flex-direction: column;
-    gap: 15px;
-    background-color: rgba(0,0,0,0.3);
-    padding: 15px;
-    border-radius: 8px;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    padding: 15px !important;
+    border-radius: 8px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90% !important;
+    justify-content: center !important;
+    margin-top: 25px !important;
+  }
+  
+  /* Scale down logos proportionally */
+  .sponsor-logos-container img {
+    max-height: 35px !important;
+    transform: scale(0.8);
+  }
+  
+  /* Special handling for larger logos */
+  .sponsor-logos-container img[alt="Asprey Studios Logo"] {
+    height: 45px !important;
+    transform: scale(0.85);
+  }
+  
+  .sponsor-logos-container img[alt="Factory4 Logo"] {
+    height: 30px !important;
+  }
+  
+  /* Make sure all images fit properly */
+  .sponsor-logos-container > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 80px !important;
   }
   .artotel-hero-title {
     font-size: 2.2rem;

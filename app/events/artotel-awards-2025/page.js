@@ -236,10 +236,16 @@ export default function ArtotelAwards() {
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            gap: '40px', 
+            gap: '20px', 
             marginTop: '40px',
             flexWrap: 'wrap',
-            padding: '15px'
+            padding: '15px',
+            maxWidth: '100%',
+            overflow: 'hidden',
+            '@media (max-width: 768px)': {
+              gap: '15px',
+              marginTop: '20px'
+            }
           }}>
             <img 
               src="/images/vultr wh tr.png" 
@@ -302,12 +308,13 @@ export default function ArtotelAwards() {
                 }}
               />
             </div>
-            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ height: '45px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
                 src="/images/Asprey_final_ok.png" 
                 alt="Asprey Studios Logo" 
                 style={{ 
-                  height: '58px'
+                  height: '45px',
+                  objectFit: 'contain'
                 }}
               />
             </div>

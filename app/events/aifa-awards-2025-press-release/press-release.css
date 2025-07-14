@@ -487,8 +487,15 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .sponsor-logos-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: 20px !important;
     margin-top: 30px !important;
+    justify-items: center !important;
+  }
+  
+  .asprey-logo-container {
+    grid-column: span 4 !important;
   }
   .press-hero-title {
     font-size: 2.2rem;
@@ -570,14 +577,16 @@
   
   /* Improve logo display on smaller screens */
   .sponsor-logos-container {
-    flex-direction: column !important;
-    gap: 20px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 15px 25px !important;
     align-items: center !important;
+    justify-content: center !important;
     background-color: rgba(0,0,0,0.3) !important;
     padding: 20px !important;
     border-radius: 8px !important;
     margin-top: 30px !important;
-    width: fit-content !important;
+    width: 90% !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -592,15 +601,47 @@
 }
 
 @media (max-width: 480px) {
+  .press-hero {
+    min-height: 600px !important;
+  }
+  
   .sponsor-logos-container {
-    flex-direction: column !important;
-    gap: 15px !important;
-    background-color: rgba(0,0,0,0.3) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    background-color: rgba(0,0,0,0.5) !important;
     padding: 15px !important;
     border-radius: 8px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    width: fit-content !important;
+    width: 90% !important;
+    justify-content: center !important;
+    margin-top: 25px !important;
+  }
+  
+  /* Scale down logos proportionally */
+  .sponsor-logos-container img {
+    max-height: 35px !important;
+    transform: scale(0.8);
+  }
+  
+  /* Special handling for larger logos */
+  .sponsor-logos-container img[alt="Asprey Studios Logo"] {
+    height: 45px !important;
+    transform: scale(0.85);
+  }
+  
+  .sponsor-logos-container img[alt="Factory4 Logo"] {
+    height: 30px !important;
+  }
+  
+  /* Make sure all images fit properly */
+  .sponsor-logos-container > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 80px !important;
   }
   .press-hero {
     height: 60vh;

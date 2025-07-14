@@ -1109,7 +1109,7 @@ export default function SocialMapsForever() {
                 />
                 <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
                 <img 
-                  src="/images/Wired Logo White.png" 
+                  src="/images/wired_logo_white.png" 
                   alt="WIRED Logo" 
                   style={{ height: '36px', objectFit: 'contain' }}
                 />
@@ -1730,7 +1730,7 @@ export default function SocialMapsForever() {
                     {/* Row 1 */}
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img 
-                        src="/images/Wired Logo White.png" 
+                        src="/images/wired_logo_white.png" 
                         alt="WIRED Logo" 
                         style={{ height: '12px', objectFit: 'contain', maxWidth: '100%' }}
                       />
@@ -1908,7 +1908,7 @@ export default function SocialMapsForever() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/images/Wired Logo White.png" 
+                      src="/images/wired_logo_white.png" 
                       alt="WIRED Logo" 
                       style={{ 
                         height: '13px', 
@@ -2118,7 +2118,7 @@ export default function SocialMapsForever() {
                 <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+                <img src="/images/wired_logo_white.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '22px' }} />
@@ -2155,7 +2155,7 @@ export default function SocialMapsForever() {
                 <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+                <img src="/images/wired_logo_white.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={{ color: 'white', fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.05em' }}>NOPRBLM.</div>
@@ -2203,7 +2203,7 @@ export default function SocialMapsForever() {
                 <img src="/images/innovate_uk_new.png" alt="Innovate UK Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+                <img src="/images/wired_logo_white.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
@@ -2226,7 +2226,7 @@ export default function SocialMapsForever() {
                 <img src="/images/smash_media_new.png" alt="SMASH MEDIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/Wired Logo White.png" alt="WIRED Logo" style={{ height: '22px' }} />
+                <img src="/images/wired_logo_white.png" alt="WIRED Logo" style={{ height: '22px' }} />
               </div>
             </div>
             
@@ -2496,7 +2496,7 @@ export default function SocialMapsForever() {
                                   <div><div class="noprblm">NOPRBLM.</div></div>
                                   <div><img src="/images/arthotel_London Hoxton_White.png" height="22"></div>
                                   <div><div class="noprblm">NOPRBLM.</div></div>
-                                  <div><img src="/images/Wired Logo White.png" height="22"></div>
+                                  <div><img src="/images/wired_logo_white.png" height="22"></div>
                                   
                                   <!-- Row 3 -->
                                   <div><img src="/images/smash_media_new.png" height="28" style="filter: brightness(0) invert(1);"></div>

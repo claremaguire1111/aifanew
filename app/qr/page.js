@@ -300,7 +300,7 @@ export default function QRPage() {
             />
             <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/Wired Logo White.png" 
+                src="/images/wired_logo_white.png" 
                 alt="WIRED Logo" 
                 style={{ 
                   height: '25px', 
@@ -706,7 +706,7 @@ export default function QRPage() {
             </div>
             <div className="sponsor-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
-                src="/images/Wired Logo White.png" 
+                src="/images/wired_logo_white.png" 
                 alt="WIRED Logo" 
                 style={{ 
                   height: '25px', 

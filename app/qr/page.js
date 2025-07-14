@@ -6,6 +6,16 @@ import Head from "next/head";
 import "../global.css";
 import "./qr.css";
 
+// Add responsive logo styles
+const responsiveLogoStyle = {
+  '@media (max-width: 768px)': {
+    height: (size) => `${Math.max(Math.floor(size * 0.8), 20)}px`,
+  },
+  '@media (max-width: 480px)': {
+    height: (size) => `${Math.max(Math.floor(size * 0.7), 18)}px`,
+  }
+};
+
 export default function QRPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -178,7 +188,7 @@ export default function QRPage() {
       name: "Zhannet Podobed", 
       role: "Artist",
       image: "/images/zhannetpodobed.jpeg",
-      description: "Zhannet Podobed's work for Factory 4 explores the intersection of nature, technology, and human experience through innovative AI-generated digital art.",
+      description: "Zhannet Podobed's work for Factory 4 explores the intersection of human experience, nature and new media art, creating pieces that reveal both their harmony and their chaos.",
       bio: "Zhannet Podobed is a Ukrainian multidisciplinary artist based in London. Her work spans digital art, painting, and interactive media, exploring nature, humanity, and technology."
     },
     { 
@@ -261,10 +271,16 @@ export default function QRPage() {
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            gap: '40px', 
+            gap: '20px', 
             marginTop: '40px',
             flexWrap: 'wrap',
-            padding: '15px'
+            padding: '15px',
+            maxWidth: '100%',
+            overflow: 'hidden',
+            '@media (max-width: 768px)': {
+              gap: '15px',
+              marginTop: '20px'
+            }
           }}>
             <img 
               src="/images/vultr wh tr.png" 
@@ -348,12 +364,13 @@ export default function QRPage() {
                 }}
               />
             </div>
-            <div style={{ height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
                 src="/images/Asprey_final_ok.png" 
                 alt="Asprey Studios Logo" 
                 style={{ 
-                  height: '58px'
+                  height: '58px',
+                  objectFit: 'contain'
                 }}
               />
             </div>
@@ -750,7 +767,8 @@ export default function QRPage() {
                 src="/images/Asprey_final_ok.png" 
                 alt="Asprey Studios Logo" 
                 style={{ 
-                  height: '58px'
+                  height: '58px',
+                  objectFit: 'contain'
                 }}
               />
             </div>

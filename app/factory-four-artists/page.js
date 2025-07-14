@@ -58,7 +58,7 @@ export default function FactoryFourArtists() {
       role: "Artist",
       website: "https://zhannetpodobed.com/",
       image: "/images/zhannetpodobed.jpeg",
-      description: "Zhannet Podobed's work for Factory 4 explores the intersection of nature, technology, and human experience through innovative AI-generated digital art.",
+      description: "Zhannet Podobed's work for Factory 4 explores the intersection of human experience, nature and new media art, creating pieces that reveal both their harmony and their chaos.",
       bio: "Zhannet Podobed is a Ukrainian multidisciplinary artist based in London. Her work spans digital art, painting, and interactive media, exploring nature, humanity, and technology. With a background in graphic and motion design, she is pursuing an MA in Computational Arts at Camberwell College of Arts, University of the Arts London."
     },
     { 

@@ -513,15 +513,29 @@
   }
   
   .sponsor-logos-container {
-    flex-direction: column !important;
-    gap: 20px !important;
-    align-items: center !important;
+    gap: 15px !important;
     background-color: rgba(0,0,0,0.3) !important;
-    padding: 20px !important;
+    padding: 15px !important;
     border-radius: 8px !important;
-    margin-top: 30px !important;
-    width: fit-content !important;
+    margin-top: 20px !important;
+    max-width: 95% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  /* Scale down logos proportionally */
+  .sponsor-logos-container img {
+    max-height: 35px !important;
+    transform: scale(0.8);
+  }
+  
+  /* Special handling for larger logos */
+  .sponsor-logos-container img[alt="Asprey Studios Logo"] {
+    height: 58px !important;
+    transform: scale(0.75);
+  }
+  
+  .sponsor-logos-container img[alt="Factory4 Logo"] {
+    height: 36px !important;
   }
 }

@@ -345,7 +345,7 @@ export default function Awards2025() {
             margin: '0 auto'
           }}>
             <img 
-              src="/images/logo__mono-on-dark.png" 
+              src="/images/vultr_logo_dark.png" 
               alt="Vultr Logo" 
               style={{ 
                 height: '35px', 

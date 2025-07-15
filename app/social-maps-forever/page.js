@@ -923,7 +923,7 @@ export default function SocialMapsForever() {
                 />
                 <span style={{ color: 'white', fontSize: '24px', fontWeight: '300' }}>×</span>
                 <img 
-                  src="/images/logo__mono-on-dark.png" 
+                  src="/images/vultr_logo_dark.png" 
                   alt="Vultr Logo" 
                   style={{ height: '36px', objectFit: 'contain' }}
                 />
@@ -1620,7 +1620,7 @@ export default function SocialMapsForever() {
                     {/* Row 2 */}
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img 
-                        src="/images/logo__mono-on-dark.png" 
+                        src="/images/vultr_logo_dark.png" 
                         alt="Vultr Logo" 
                         style={{ height: '14px', objectFit: 'contain' }}
                       />
@@ -1875,7 +1875,7 @@ export default function SocialMapsForever() {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px 0' }}>
                     <img 
-                      src="/images/logo__mono-on-dark.png" 
+                      src="/images/vultr_logo_dark.png" 
                       alt="Vultr Logo" 
                       style={{ height: '16px', objectFit: 'contain' }}
                     />
@@ -2098,7 +2098,7 @@ export default function SocialMapsForever() {
                 <img src="/images/logo-abberation-white.svg" alt="ARIA Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/logo__mono-on-dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
+                <img src="/images/vultr_logo_dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
@@ -2138,7 +2138,7 @@ export default function SocialMapsForever() {
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/logo__mono-on-dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
+                <img src="/images/vultr_logo_dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
@@ -2172,7 +2172,7 @@ export default function SocialMapsForever() {
                 <img src="/images/Asprey_final_ok.png" alt="Asprey Studio Logo" style={{ height: '58px' }} className="asprey-logo" />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/logo__mono-on-dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
+                <img src="/images/vultr_logo_dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
@@ -2180,7 +2180,7 @@ export default function SocialMapsForever() {
               
               {/* Row 6 */}
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/logo__mono-on-dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
+                <img src="/images/vultr_logo_dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/partners/sedition logo wh long.png" alt="Sedition Logo" style={{ height: '22px' }} />
@@ -2217,7 +2217,7 @@ export default function SocialMapsForever() {
                 <img src="/partners/Muse Frame wh text.png" alt="Muse Frame Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src="/images/logo__mono-on-dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
+                <img src="/images/vultr_logo_dark.png" alt="Vultr Logo" style={{ height: '22px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="/images/AIFAlogo.png" alt="AIFA Logo" style={{ height: '28px', filter: 'brightness(0) invert(1)' }} />
@@ -2524,7 +2524,7 @@ export default function SocialMapsForever() {
                                   <div><img src="/partners/sedition logo wh long.png" height="22"></div>
                                   
                                   <!-- Row 2 -->
-                                  <div><img src="/images/logo__mono-on-dark.png" height="22"></div>
+                                  <div><img src="/images/vultr_logo_dark.png" height="22"></div>
                                   <div><div class="noprblm">NOPRBLM.</div></div>
                                   <div><img src="/images/arthotel_London Hoxton_White.png" height="22"></div>
                                   <div><div class="noprblm">NOPRBLM.</div></div>

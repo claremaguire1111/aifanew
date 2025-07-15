@@ -66,8 +66,8 @@ export default function FactoryFourArtists() {
       role: "Artist",
       website: "https://akamidget.com/",
       image: "/images/akane profile picture.jpg",
-      description: "Akane's contributions to Factory 4 feature immersive interactive installations that invite viewers to engage directly with AI-generated content.",
-      bio: "Akane is a London-based new media artist specialising in interactive art installations. She won the 2025 KXSB AI HackXcelerator (Creative AI) and presented her work at the RAISE Summit at the Louvre, Paris. Upcoming projects include Expo Japan and a collaborative interactive performance with Jiarong Yu at Sadler's Wells."
+      description: "Akane's contributions to Factory 4 feature playful interactive installations that draw audiences into the heart of the experience.",
+      bio: "Akane is a London-based new media artist specialising in interactive art installations. She won the 2025 KXSB AI HackXcelerator (Creative AI) and presented her work at the RAISE Summit at the ​​​Carrousel du Louvre, Paris. Upcoming projects include Expo Japan and a collaborative interactive performance with Jiarong Yu at Sadler's Wells."
     },
     { 
       name: "Flux The Artist, Paul Dowling", 

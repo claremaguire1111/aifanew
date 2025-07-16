@@ -60,43 +60,51 @@ export default function Awards2024() {
   const winners = [
     {
       name: "Not a Problem",
-      artist: "Ethereal Moon",
+      artist: "B O E Y",
       image: "/images/Awards2024/awardwinners/not_a_problem.png",
       type: "narrative",
-      award: "Best Narrative Short",
-      link: "https://twitter.com/0xEtherealMoon"
+      award: "Best Visuals",
+      link: "https://boey.design/"
     },
     {
       name: "Birthday Story",
-      artist: "Rainisto",
+      artist: "RAINISTO - innovation award",
       image: "/images/Awards2024/awardwinners/birthday_story.png",
       type: "narrative",
-      award: "Best AI Narrative Film",
+      award: "",
       link: "https://www.rainisto.com/"
     },
     {
       name: "Bacillus Anthracis",
-      artist: "B O E Y",
+      artist: "Hallidonto",
       image: "/images/Awards2024/awardwinners/Bacillus_Anthracis.png",
       type: "abstract",
-      award: "Best AI Abstract Film",
-      link: "https://boey.design/"
-    },
-    {
-      name: "Mind Wank",
-      artist: "Hallidonto",
-      image: "/images/Awards2024/awardwinners/mind_wank.png",
-      type: "animation",
-      award: "Best AI Animation",
+      award: "Community Award",
       link: "https://hallidonto.com/"
     },
     {
+      name: "Mind Wank",
+      artist: "You are unfortunately an ai artist",
+      image: "/images/Awards2024/awardwinners/mind_wank.png",
+      type: "animation",
+      award: "Best AI Animation",
+      link: "#"
+    },
+    {
       name: "denny the shark",
-      artist: "MFlux",
+      artist: "Ethereal Moon",
       image: "/images/Awards2024/awardwinners/denny_the_shark.png",
       type: "character",
-      award: "Best Character Design",
-      link: "https://x.com/mfluxcreative"
+      award: "Best Film",
+      link: "https://twitter.com/0xEtherealMoon"
+    },
+    {
+      name: "MFLUX",
+      artist: "MFLUX",
+      image: "/images/Awards2024/awardwinners/mflux.png",
+      type: "sound",
+      award: "Best Sound",
+      link: "#"
     }
   ];
 

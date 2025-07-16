@@ -64,7 +64,7 @@ export default function Awards2024() {
       image: "/images/Awards2024/awardwinners/not_a_problem.png",
       type: "narrative",
       award: "Best Visuals",
-      link: "https://boey.design/"
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48231"
     },
     {
       name: "Birthday Story",
@@ -72,7 +72,7 @@ export default function Awards2024() {
       image: "/images/Awards2024/awardwinners/birthday_story.png",
       type: "narrative",
       award: "",
-      link: "https://www.rainisto.com/"
+      link: "https://superrare.com/artwork/eth/0x2f158646fe967db4bd49c5438269470b619cb270/2"
     },
     {
       name: "Bacillus Anthracis",
@@ -80,7 +80,7 @@ export default function Awards2024() {
       image: "/images/Awards2024/awardwinners/Bacillus_Anthracis.png",
       type: "abstract",
       award: "Community Award",
-      link: "https://hallidonto.com/"
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48243"
     },
     {
       name: "Mind Wank",
@@ -88,7 +88,7 @@ export default function Awards2024() {
       image: "/images/Awards2024/awardwinners/mind_wank.png",
       type: "narrative",
       award: "Best Narrative",
-      link: "#"
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48245"
     },
     {
       name: "denny the shark",
@@ -96,7 +96,7 @@ export default function Awards2024() {
       image: "/images/Awards2024/awardwinners/denny_the_shark.png",
       type: "character",
       award: "Best Film",
-      link: "https://twitter.com/0xEtherealMoon"
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48246"
     },
     {
       name: "MFLUX",
@@ -104,7 +104,7 @@ export default function Awards2024() {
       image: "/images/Awards2024/awardwinners/mflux.png",
       type: "sound",
       award: "Best Sound",
-      link: "#"
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48450"
     }
   ];
 
@@ -113,37 +113,44 @@ export default function Awards2024() {
     {
       name: "O_Studio",
       image: "/images/Awards2024/finalists/o_studio.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48235"
     },
     {
       name: "Arielko",
       image: "/images/Awards2024/finalists/Arielko.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48210"
     },
     {
       name: "Katie Morris",
       image: "/images/Awards2024/finalists/katie_morris.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48224"
     },
     {
       name: "ejaneress",
       image: "/images/Awards2024/finalists/ejaneress.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48241"
     },
     {
       name: "Mindeye",
       image: "/images/Awards2024/finalists/Mindeye.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48276"
     },
     {
       name: "Ilya Shapko",
       image: "/images/Awards2024/finalists/ilya_shapko.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48192"
     },
     {
       name: "Kiel",
       image: "/images/Awards2024/finalists/kiel.png",
-      type: "AI Film Artist"
+      type: "AI Film Artist",
+      link: "https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/48247"
     }
   ];
 
@@ -405,15 +412,18 @@ export default function Awards2024() {
       <section className="awards-gallery">
         <div className="gallery-grid">
           {finalists.map((finalist, index) => (
-            <div key={index} className="gallery-item">
+            <a href={finalist.link} target="_blank" rel="noopener noreferrer" key={index} className="gallery-item">
               <div className="gallery-image">
                 <img src={finalist.image} alt={finalist.name} />
+                <div className="collect-overlay">
+                  <span>View Artist</span>
+                </div>
               </div>
               <div className="gallery-info">
                 <h3>{finalist.name}</h3>
                 <p className="gallery-type">{finalist.type}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>

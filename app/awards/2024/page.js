@@ -86,8 +86,8 @@ export default function Awards2024() {
       name: "Mind Wank",
       artist: "You are unfortunately an ai artist",
       image: "/images/Awards2024/awardwinners/mind_wank.png",
-      type: "animation",
-      award: "Best AI Animation",
+      type: "narrative",
+      award: "Best Narrative",
       link: "#"
     },
     {

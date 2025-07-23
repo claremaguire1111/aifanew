@@ -89,15 +89,6 @@ export default function PressRelease() {
     }
   ];
 
-  const eventDetails = [
-    { label: "When", value: "Saturday 19 July, 5-11pm" },
-    { label: "Where", value: "art'otel London Hoxton, 1-3 Rivington St, London EC2A 3DT" },
-    { label: "What", value: "The Award of Awards for AI Film" },
-    { label: "", value: "Screening, panel, awards and party ", valueLink: "/events/artotel-awards-2025", valueLinkText: "(event page)" },
-    { label: "", value: "Digital art displays curated by Factory 4" },
-    { label: "Join", value: "Invitation only - register here for media pass" }
-  ];
-
   return (
     <div className="press-release-page">
       <Head>
@@ -262,31 +253,6 @@ export default function PressRelease() {
         </div>
       </section>
 
-      {/* EVENT DETAILS SECTION */}
-      <section className="event-details-section">
-        <div className="event-details-container fade-in">
-          <div className="event-details-grid">
-            {eventDetails.map((detail, index) => (
-              <div className="event-detail-row" key={index}>
-                {detail.label && (
-                  <div className="event-detail-label">{detail.label}</div>
-                )}
-                <div className={`event-detail-value ${!detail.label ? 'full-width' : ''}`}>
-                  {detail.label === "Where" ? (
-                    <Link href="/events/artotel-awards-2025">{detail.value}</Link>
-                  ) : detail.label === "Join" ? (
-                    <>Invitation only - <Link href="/events/media-pass" className="media-pass-link">register here for media pass</Link></>
-                  ) : detail.valueLink ? (
-                    <>{detail.value}<Link href={detail.valueLink}>{detail.valueLinkText}</Link></>
-                  ) : (
-                    detail.value
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FILM STILLS SECTION */}
       <section className="film-stills-section">
@@ -318,29 +284,59 @@ export default function PressRelease() {
         <div className="press-content-container fade-in">
           <div className="press-content">
             <p className="press-paragraph">
-              From China to Canada, the UK to Senegal, the AIFA Awards reveal a new generation of filmmakers using AI-powered storytelling to challenge the big studios. At a time when AI poses a very real threat to creativity and livelihoods in film and entertainment, AIFA champions those who use the same technologies to fight back.
+              <strong>FOR IMMEDIATE RELEASE<br />July 2025</strong><br /><br />
+              <strong>AIFA Awards show how AI can shape a more equitable and creative global film industry</strong>
             </p>
             
+            <p className="press-paragraph">
+              From China to Canada, Senegal to Scotland, the AIFA Awards 2025 celebrated a new generation redefining film. Launched with a VIP screening and party at art'otel London Hoxton, followed by a high-level discussion at the House of Lords, the Awards brought global attention to creators using emerging technologies to build a more equitable, more creative film industry.
+            </p>
+
             <div className="press-quote">
-              <p>"The core issue is the incredibly high barrier to entry in traditional filmmaking. The costs associated with equipment, crews, locations, and post-production are simply prohibitive for most aspiring Senegalese filmmakers. With synthetic production, I can democratise access to high‑end visual storytelling and position authentic African narratives on the global stage."</p>
-              <cite>Hussein Dembel Sow, filmmaker from Senegal and AIFA Awards finalist</cite>
+              <p>"At a time when AI poses a very real threat to creativity and livelihoods in film and entertainment, AIFA champions those who use the same technologies to fight back," said Leo Crane, co-founder of AIFA Ventures. "It's vital to ensure that innovation leads to inclusion and that the future of creative tech is equitable, especially for the artist."</p>
             </div>
             
             <p className="press-paragraph">
-              The AIFA Awards will be announced at a VIP event at art'otel London Hoxton on 19 July. After scouring films at over 30 AIFA-qualifying festivals, three themes have emerged: Digital Futures, War & Conflict, and Memory & Afterlife. 14 Finalists have been selected to showcase these themes, representing talent from Asia, the Middle East, Africa, Europe and North America (<Link href="/awards/2025/finalists">full list of finalists</Link>).
+              This year's Awards were drawn from over 30 AIFA-qualifying festivals. The winners were selected by a jury of film pioneers including SXSW winner Pinny Grylls, fashion film legend Diane Pernet, and AIFA 2024 winners Ethereal Moon. This year's prestigious Best Film Award included a £1,000 cash prize and a benefits package from Sedition to support financing, distribution, and community building.
+            </p>
+
+            <p className="press-paragraph">
+              <strong>AIFA Awards 2025</strong><br /><br />
+              <strong>BEST FILM</strong><br />
+              sponsored by Sedition<br />
+              e^(iπ) + 1 = 0* by Junie Lau<br /><br />
+              <strong>INNOVATION AWARD</strong><br />
+              sponsored by Aria<br />
+              The Future Can Be Yours by Simon Ball<br /><br />
+              <strong>BEST NARRATIVE</strong><br />
+              sponsored by Vultr<br />
+              Do Bangladroids Dream of Electric Tagore? by Aleem Hossain<br /><br />
+              <strong>BEST VISUALS</strong><br />
+              Remembering by Diego Maclean<br /><br />
+              <strong>BEST SOUND</strong><br />
+              Aqua Alta by Fouzi Louahem<br /><br />
+              <strong>HIGHLY COMMENDED</strong><br />
+              Thiaroye 44 by Hussein Dembel Sow<br />
+              FOSSiLS by Roxanne Ducharme<br />
+              Duck by Rachel Maclean
             </p>
             
             <p className="press-paragraph">
-              Awards for Best Film, Innovation, Narrative, Visuals and Sound are determined by a jury of industry experts, including SXSW Winner Pinny Grylls and fashion film pioneer Diane Pernet (<Link href="/awards/2025">full jury</Link>). Winners will be supported in financing, distribution and community building through partnerships with Sedition (<a href="https://www.seditionart.com/" target="_blank" rel="noopener noreferrer">seditionart.com</a>) and SMASH Media (<a href="https://www.mysmash.media/" target="_blank" rel="noopener noreferrer">mysmash.media</a>).
+              The 14 outstanding Finalists (link) demonstrate how AI can unlock new artistic possibilities, from deepfakes and surrealist aesthetics to reflections on memory, displacement, and identity. They also show how affordable AI tools open up opportunities for those otherwise excluded from the global film industry.
             </p>
             
             <div className="press-quote">
-              <p>"At AIFA, we're exploring how emerging technologies, including AI, can support not just the creation of work but the ecosystems around that work. The more we live in an online, 24/7 world, the more important it is to create infrastructures of care and connection. It is vital to ensure that innovation leads to inclusion and that the future of creative tech is equitable, especially for the artist."</p>
-              <cite>Leo Crane, co-founder of AIFA Ventures</cite>
+              <p>"The core issue is the incredibly high barrier to entry in traditional filmmaking," said Senegalese filmmaker and finalist Hussein Dembel Sow. "With synthetic production, I can democratise access to high-end visual storytelling and position authentic African narratives on the global stage."</p>
             </div>
             
             <p className="press-paragraph">
-              As well as a screening and panel discussion, the event will feature digital art displays curated by Factory 4. Using art'otel's immersive projections and Muse Frame's fine art screens, guests will experience experimental new work, exploring the themes of the awards in greater depth. Artists include Zhannet Popobed, Akane Hiraoka and Flux the Artist (<Link href="/factory-four-artists">more info on digital art displays</Link>).
+              <strong>THANK YOU TO OUR SPONSORS & PARTNERS</strong><br />
+              WIRED, Aria Protocol, Vultr, Sedition, NOPRBLM, Asprey Studio, art'otel, Innovate UK, NFC Summit, Muse Frame, Factory 4, My SMASH Media
+            </p>
+            
+            <p className="press-paragraph">
+              <strong>About AIFA Ventures</strong><br />
+              ​AIFA Ventures celebrates a positive future for entertainment with the world's premier awards for AI-powered creativity. Based in the UK, we are partnering with cultural institutions to build educational tools and tech-confident communities. This is our mission: to open up access to creativity and draw out incredible storytelling from all parts of the world.
             </p>
           </div>
         </div>
@@ -374,11 +370,10 @@ export default function PressRelease() {
       {/* MEDIA CONTACT SECTION */}
       <section className="media-contact-section" id="media-contact">
         <div className="media-contact-container fade-in">
-          <h2 className="media-contact-title">Contact for media enquiries</h2>
+          <h2 className="media-contact-title">All media enquiries</h2>
           <p className="media-contact-info">
-            Clare Maguire, NOPRBLM<br />
-            <a href="mailto:clare@aifaventures.com">clare@aifaventures.com</a><br />
-            <a href="mailto:leo@aifaventures.com">leo@aifaventures.com</a>
+            Clare Maguire: <a href="mailto:clare@aifaventures.com">clare@aifaventures.com</a><br />
+            Leo Crane: <a href="mailto:leo@aifaventures.com">leo@aifaventures.com</a>
           </p>
         </div>
       </section>
@@ -387,10 +382,6 @@ export default function PressRelease() {
       <section className="notes-section">
         <div className="notes-container fade-in">
           <h2 className="notes-title">Notes to Editors</h2>
-          
-          <div className="note-item">
-            <p>For full details on the AIFA Awards 2025 events, including finalists and featured artists, please visit: <a href="https://www.aifaventures.com/events" target="_blank" rel="noopener noreferrer">www.aifaventures.com/events</a></p>
-          </div>
           
           <div className="note-item" id="images-section">
             <h3 className="note-subtitle">Images</h3>
@@ -417,6 +408,7 @@ export default function PressRelease() {
             <div className="download-media-section">
               <a href="/images/filmstills/STILL01 Everyone is Chair.jpg" download="Everyone_is_Chair.jpg" className="media-kit-button">Everyone is Chair</a>
               <a href="/images/filmstills/STILL03 third_impact.jpg" download="Third_Impact.jpg" className="media-kit-button">Third Impact</a>
+              <a href="/images/Junie_Lau.jpg" download="Junie_Lau.jpg" className="media-kit-button">Junie Lau Photo</a>
               <a href="https://drive.google.com/drive/folders/1BMGgnzfr4ejwsY4oeklJpx0fXDIIFsYP" target="_blank" rel="noopener noreferrer" className="media-kit-button">All Images (Google Drive)</a>
             </div>
           </div>
@@ -428,15 +420,13 @@ export default function PressRelease() {
           </div>
           
           <div className="note-item">
-            <h3 className="note-subtitle">About art'otel</h3>
-            <p>A contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district. This stunning venue combines modern design with artistic flair, providing the perfect backdrop for our celebration of innovation in AI-generated filmmaking and digital art.</p>
-            <p><a href="https://www.artotellondonhoxton.com" target="_blank" rel="noopener noreferrer">artotellondonhoxton.com</a></p>
+            <h3 className="note-subtitle">About Our Sponsors and Partners</h3>
           </div>
-          
+
           <div className="note-item">
-            <h3 className="note-subtitle">About Factory 4</h3>
-            <p>Factory 4 is a nomadic, artist-led gallery founded by Paul Dowling and Olena Yara. It has hosted several digital art exhibitions in London and Lisbon, with a focus on empowering artists and showcasing their work to wider audiences. Featured artists at the AIFA Awards 2025 include Zhannet Podobed, Akane Hiraoka and Flux the Artist (<Link href="/factory-four-artists">more details</Link>).</p>
-            <p><a href="https://www.instagram.com/factory.4.0" target="_blank" rel="noopener noreferrer">instagram.com/factory.4.0</a></p>
+            <h3 className="note-subtitle">Aria Protocol</h3>
+            <p>Founded in 2025, Aria is an investment platform that transforms iconic cultural intellectual property assets into digital financial assets. With Aria, investors can buy and sell rights tied to real-world income from music performed by major artists like Justin Bieber, Miley Cyrus, and BLACKPINK. Aria ensures transparent, verifiable IP ownership and revenue sharing via the Story blockchain. Aria is also developing programmable IP tools allowing for cultural assets such as music, art, and film to be licensed, remixed, and monetized through digital contracts directly from rights holders. Aria is creating IP financial markets.</p>
+            <p>Learn more at: <a href="https://ariaprotocol.xyz/" target="_blank" rel="noopener noreferrer">ariaprotocol.xyz</a>.</p>
           </div>
           
           <div className="note-item">
@@ -446,9 +436,15 @@ export default function PressRelease() {
           </div>
           
           <div className="note-item">
-            <h3 className="note-subtitle">About Aria</h3>
-            <p>Founded in 2025, Aria is an investment platform that transforms iconic cultural intellectual property assets into digital financial assets. With Aria, investors can buy and sell rights tied to real-world income from music performed by major artists like Justin Bieber, Miley Cyrus, and BLACKPINK. Aria ensures transparent, verifiable IP ownership and revenue sharing via the Story blockchain. Aria is also developing programmable IP tools allowing for cultural assets such as music, art, and film to be licensed, remixed, and monetized through digital contracts directly from rights holders. Aria is creating IP financial markets.</p>
-            <p>Learn more at: <a href="https://ariaprotocol.xyz/" target="_blank" rel="noopener noreferrer">ariaprotocol.xyz</a>.</p>
+            <h3 className="note-subtitle">About art'otel</h3>
+            <p>A contemporary hotel and arts venue in the heart of London's vibrant Shoreditch district. This stunning venue combines modern design with artistic flair, providing the perfect backdrop for our celebration of innovation in AI-generated filmmaking and digital art.</p>
+            <p>Learn more: <a href="https://www.artotellondonhoxton.com" target="_blank" rel="noopener noreferrer">artotellondonhoxton.com</a></p>
+          </div>
+          
+          <div className="note-item">
+            <h3 className="note-subtitle">About Sedition</h3>
+            <p>Sedition is a pioneer in digital art collecting, founded in 2011. The platform offers a curated selection of artworks in digital formats, specifically designed for viewing on screens and connected devices. Sedition aims to make art collecting more accessible and affordable, allowing users to own limited digital editions with certificates of authenticity.</p>
+            <p>Learn more: <a href="https://seditionart.com" target="_blank" rel="noopener noreferrer">seditionart.com</a></p>
           </div>
           
           <div className="note-item">

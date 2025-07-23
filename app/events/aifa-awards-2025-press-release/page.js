@@ -129,7 +129,11 @@ export default function PressRelease() {
           <div className="press-label">Press Release</div>
           <h1 className="press-hero-title">AIFA Awards 2025</h1>
           <p className="press-hero-subtitle">
-            Honouring pioneering filmmakers using AI to reshape the global film industry
+            FOR IMMEDIATE RELEASE<br />
+            July 2025
+          </p>
+          <p className="press-hero-description" style={{ fontSize: '1.2rem', marginTop: '1rem' }}>
+            AIFA Awards show how AI can shape a more equitable and creative global film industry
           </p>
           
           {/* Sponsor Logos */}
@@ -304,7 +308,8 @@ export default function PressRelease() {
               <strong>AIFA Awards 2025</strong><br /><br />
               <strong>BEST FILM</strong><br />
               sponsored by Sedition<br />
-              e^(iπ) + 1 = 0* by Junie Lau<br /><br />
+              e^(iπ) + 1 = 0* by Junie Lau<br />
+              <img src="/images/Junie_Lau.jpg" alt="Junie Lau" style={{ maxWidth: '60%', height: 'auto', margin: '10px 0 20px 0', display: 'block' }} /><br />
               <strong>INNOVATION AWARD</strong><br />
               sponsored by Aria<br />
               The Future Can Be Yours by Simon Ball<br /><br />
@@ -332,11 +337,6 @@ export default function PressRelease() {
             <p className="press-paragraph">
               <strong>THANK YOU TO OUR SPONSORS & PARTNERS</strong><br />
               WIRED, Aria Protocol, Vultr, Sedition, NOPRBLM, Asprey Studio, art'otel, Innovate UK, NFC Summit, Muse Frame, Factory 4, My SMASH Media
-            </p>
-            
-            <p className="press-paragraph">
-              <strong>About AIFA Ventures</strong><br />
-              ​AIFA Ventures celebrates a positive future for entertainment with the world's premier awards for AI-powered creativity. Based in the UK, we are partnering with cultural institutions to build educational tools and tech-confident communities. This is our mission: to open up access to creativity and draw out incredible storytelling from all parts of the world.
             </p>
           </div>
         </div>

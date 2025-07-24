@@ -327,7 +327,7 @@ export default function PressRelease() {
             </p>
             
             <p className="press-paragraph">
-              The 14 outstanding Finalists (link) demonstrate how AI can unlock new artistic possibilities, from deepfakes and surrealist aesthetics to reflections on memory, displacement, and identity. They also show how affordable AI tools open up opportunities for those otherwise excluded from the global film industry.
+              The <a href="https://www.aifaventures.com/awards/2025/finalists" target="_blank" rel="noopener noreferrer">14 outstanding Finalists</a> demonstrate how AI can unlock new artistic possibilities, from deepfakes and surrealist aesthetics to reflections on memory, displacement, and identity. They also show how affordable AI tools open up opportunities for those otherwise excluded from the global film industry.
             </p>
             
             <div className="press-quote">

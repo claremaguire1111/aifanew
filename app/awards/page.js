@@ -56,6 +56,16 @@ export default function Awards() {
 
   // Brand partners
   const brandNames = [
+    "WIRED",
+    "ARIA PROTOCOL",
+    "VULTR",
+    "NOPRBLM",
+    "ASPREY STUDIO",
+    "ART'OTEL",
+    "INNOVATE UK",
+    "NFC SUMMIT",
+    "FACTORY 4",
+    "MY SMASH MEDIA",
     "SOTHEBY'S INSTITUTE OF ART",
     "NFC",
     "GALXE",
@@ -146,7 +156,7 @@ export default function Awards() {
         <div className="overview-container fade-in">
           <h2 className="overview-title">Celebrating an Innovative Future</h2>
           <p className="overview-description">
-            The AIFA Awards is the world's premier celebration of digital innovation in filmmaking and art, recognizing visionary creators who push the boundaries of what's possible with cutting-edge technology. We spotlight groundbreaking works that showcase the fusion of human creativity and technological innovation to shape the future of entertainment.
+            The AIFA Awards is the world's premier celebration of digital innovation in filmmaking, recognising visionary creators at the forefront of a New Wave of cinematic production. Those selected for the AIFA Awards demonstrate how cutting-edge technology can shape a more creative, more equitable global film industry.
           </p>
           
           <div className="overview-highlights">

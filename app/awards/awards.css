@@ -869,7 +869,7 @@
 .brand-row {
   display: flex;
   white-space: nowrap;
-  animation: moveLeft 8s linear infinite;
+  animation: moveLeft 30s linear infinite;
 }
 
 .brand-name {
@@ -887,7 +887,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 

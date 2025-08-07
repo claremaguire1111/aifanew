@@ -759,7 +759,7 @@
 .brand-row {
   display: flex;
   gap: 50px;
-  animation: moveLeft 8s linear infinite;
+  animation: moveLeft 30s linear infinite;
   white-space: nowrap;
 }
 
@@ -776,7 +776,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 

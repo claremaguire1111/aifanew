@@ -119,6 +119,16 @@ export default function NFCPage() {
   ];
 
   const brandNames = [
+    "WIRED",
+    "ARIA PROTOCOL",
+    "VULTR",
+    "NOPRBLM",
+    "ASPREY STUDIO",
+    "ART'OTEL",
+    "INNOVATE UK",
+    "NFC SUMMIT",
+    "FACTORY 4",
+    "MY SMASH MEDIA",
     "SOTHEBY'S INSTITUTE OF ART",
     "NFC",
     "GALXE",

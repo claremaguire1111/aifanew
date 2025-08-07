@@ -217,6 +217,16 @@ export default function Awards2024() {
   ];
 
   const brandNames = [
+    "WIRED",
+    "ARIA PROTOCOL",
+    "VULTR",
+    "NOPRBLM",
+    "ASPREY STUDIO",
+    "ART'OTEL",
+    "INNOVATE UK",
+    "NFC SUMMIT",
+    "FACTORY 4",
+    "MY SMASH MEDIA",
     "SOTHEBY'S INSTITUTE OF ART",
     "NFC",
     "GALXE",
@@ -308,6 +318,27 @@ export default function Awards2024() {
         <div className="awards-hero-content">
           <h1 className="awards-hero-title">AIFA Awards 2024</h1>
           <p className="awards-hero-subtitle">The Silver Mirror by <a href="https://superrare.com/artwork/eth/0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0/silver-mirror-48191" target="_blank" rel="noopener noreferrer" style={{ color: '#a3a3a3' }}>Fantastic Planet</a></p>
+        </div>
+      </section>
+
+      {/* INTRO SECTION */}
+      <section className="awards-about" style={{ backgroundColor: 'var(--white)', paddingTop: '60px', paddingBottom: '40px' }}>
+        <div className="about-container">
+          <h2 className="about-title">Inaugural AIFA Awards celebrates an extraordinary explosion of artists' film</h2>
+          
+          <div className="about-content" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '20px' }}>
+              On 28 May 2024, we launched the inaugural AIFA Awards at the NFC Summit in Lisbon. The red-carpet gala was held in the historic Carlos Lopes Paivilion with immersive experiences by featured artist Fantastic Planet and a spectacular live music performance by Noanne.
+            </p>
+            
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '20px' }}>
+              The award for Best Film went to Denny the Shark by collaborative duo LeMoon (Melody Bossan, France) and Ethereal Gwirl (Dina Lockamy, USA). Having previously struggled to find a place in the film industry, both Bossan and Lockamy now create award-winning tales from home, earning a successful income by selling their films as NFTs.
+            </p>
+            
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '20px', fontStyle: 'italic' }}>
+              Bossan says: "It's amazing how my faded dream of becoming a filmmaker has been brought back to life thanks to AI. I found a creative partner in Ethereal Gwirl, who shares a similar life experience — we were both stay-at-home mothers when we discovered AI art and were immediately hooked. Even though we have never met, we are able to create these amazing stories together. We are truly living in exciting times for creatives."
+            </p>
+          </div>
         </div>
       </section>
 

@@ -12,6 +12,16 @@ export default function HomePage() {
 
   // List of brand/press partners
   const brandNames = [
+    "WIRED",
+    "ARIA PROTOCOL",
+    "VULTR",
+    "NOPRBLM",
+    "ASPREY STUDIO",
+    "ART'OTEL",
+    "INNOVATE UK",
+    "NFC SUMMIT",
+    "FACTORY 4",
+    "MY SMASH MEDIA",
     "SOTHEBY'S INSTITUTE OF ART",
     "NFC",
     "GALXE",
@@ -201,19 +211,15 @@ export default function HomePage() {
           <h2 className="section-header fade-in">What We Do</h2>
           <div className="services-columns fade-in">
             <div className="service-column">
-              <h3>Film Awards</h3>
+              <h3><Link href="/awards">Film Awards</Link></h3>
               <p>
-                We shine a spotlight on creators who push the boundaries of innovation in film and technology. 
-                From our first awards in 2024 to our upcoming 2025 edition, we celebrate groundbreaking 
-                achievements in storytelling, cinematic artistry, and emerging tech.
+                AIFA Awards show how AI can unlock new artistic possibilities for a more equitable and creative global film industry. Since our first awards in 2024, we celebrate ground-breaking achievements in storytelling, cinematic innovation, and emerging tech.
               </p>
             </div>
             <div className="service-column">
-              <h3>Partnerships & Events</h3>
+              <h3><Link href="/events">Partnerships & Events</Link></h3>
               <p>
-                We're proud to collaborate with innovators in art, tech, and film, such as ASVOFF, 
-                Sotheby's Institute, and other cultural institutions. We host lectures, panels, and showcases that shape 
-                the conversation around the future of online entertainment and filmmaking.
+                We bring together artists, investors, founders, curators, policymakers and technologists to shape a positive future for the creative industries. From the House of Lords to the WIRED Summer Lab, we host talks, panels, showcases and events to encourage debate and discussion.
               </p>
             </div>
           </div>
